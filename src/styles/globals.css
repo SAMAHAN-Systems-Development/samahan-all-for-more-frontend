@@ -1,1 +1,24 @@
 /* TBA */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --color-blue: 9 35 186;
+    --color-white: 255 255 255;
+    --font-inter: 'Inter', sans-serif;
+}
+*,
+*::before,
+*::after {
+  box-sizing: 'border-box';
+}
+
+* {
+  margin: '0';
+}
+
+img {
+  max-width: '100%';
+  display: 'block';
+}
