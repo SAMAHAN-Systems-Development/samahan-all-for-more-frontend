@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { cva } from 'class-variance-authority';
 import { FaXTwitter, FaInstagram, FaFacebook } from 'react-icons/fa6';
-import { inter } from '../styles/font';
+import { inter } from '../../styles/font';
 import Image from 'next/image';
 // import UniversitySealLogo from '../public/assets/images/UniversitySealLogo.png';
 // import SamahanLogoWhite from '../public/assets/images/SamahanLogoWhite.png';
