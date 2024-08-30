@@ -4,16 +4,14 @@ import Image from 'next/image';
 import email_icon from '@/stories/assets/hero/email_icon.png';
 import website_icon from '@/stories/assets/hero/website_icon.png';
 import sns_icon from '@/stories/assets/hero/sns_icon.png';
+import edge from '@/stories/assets/hero/round end.svg';
 
 export default function HeroSection() {
   return (
-    <section className="bg-blue font-inter h-screen w-full p-10 relative">
-      <div className="w-full h-full flex flex-col items-center justify-center text-white">
-        {/* temp search bar */}
-        <input
-          type="text"
-          className="w-9/12 mx-auto rounded-full bg-white h-14 sticky top-10 z-10 "
-        />
+    <section className="font-inter h-screen w-full p-10 relative max-w-[1440px]">
+      <div className="w-full h-full bg-blue flex flex-col items-center justify-center text-white">
+        {/* temp navigation bar */}
+        <div className="w-9/12 mx-auto rounded-full bg-white h-14 sticky top-10 z-10 " />
 
         {/* logo and titles */}
         <div className="w-full h-full flex flex-col gap-4 items-center z-10 relative justify-center ">
@@ -38,6 +36,9 @@ export default function HeroSection() {
           {/* socials */}
           <div className="flex justify-between"></div>
         </div>
+      </div>
+      <div className="w-full h-40 relative">
+        <Image src={edge} alt="" fill className="object-cover" />
       </div>
     </section>
   );
