@@ -3,19 +3,27 @@ import React from 'react';
 const AboutPage = () => {
   return (
     <main className="p-12">
+      
+      <section>
+        <div>
+          <img src="/assets/images/Property 1=WHITE.png" alt="" />
+          <p className='text-blue mb-14 leading-tight text-center'>The Samahan ng Mga Mag-Aaral ng Pamantasang Ateneo de Davao of SAMAHAN in the lone autonomous Student Government of the College unit of Ateneo de Davao University</p>
+        </div>
+      </section>
       <article>
-        <header className="flex items-center">
+        <div className="flex items-center">
+          {/*waiting for the logo for*/}
           <img
-            src="/assets/images/Property 1=WHITE.png"
+            src="/assets/images/Layer 1.png"
             alt="Samahan White Logo"
-            className="w-36 h-auto"
+            className="w-36 h-auto "
           />
           <img
             src="/assets/images/A4M LOGO.png"
             alt="A4M Logo"
             className="w-48 h-auto"
           />
-        </header>
+        </div>
 
         {/*to align this whole section with the logo*/}
         <section className="mx-6">
