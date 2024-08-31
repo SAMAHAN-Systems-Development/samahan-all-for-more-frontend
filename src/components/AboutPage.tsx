@@ -3,7 +3,7 @@ import React from 'react';
 const AboutPage = () => {
   return (
     <main className="p-12 overflow-x-hidden">
-      <section className="flex items-center flex-col mb-72">
+      <section className="flex items-center flex-col mb-20">
         <div className="flex items-center flex-col mx-[24rem] mb-10">
           <img
             src="/assets/images/Property 1=WHITE.png"
