@@ -1,8 +1,10 @@
 import React from 'react';
+import ContactItem from '@/components/AboutPage/ContactItem';
 
 const AboutPage = () => {
   return (
     <main className="p-12 overflow-x-hidden">
+      {/*adjust section spacing here (mb-value)*/}
       <section className="flex items-center flex-col mb-20">
         <div className="flex items-center flex-col mx-[24rem] mb-10">
           <img
@@ -18,39 +20,24 @@ const AboutPage = () => {
         </div>
 
         <div className="flex items-center">
-          <div className="text-blue text-xs mb-14 flex items-center mr-6">
-            <div className="w-4 h-4 bg-blue rounded-full mr-2 flex items-center justify-center">
-              <img src="/assets/images/Email Vector.png" alt="Email Vector" />
-            </div>
-            <p>
-              <a href="mailto:samahan@addu.edu.ph" className="hover:underline">
-                samahan@addu.edu.ph
-              </a>
-            </p>
-          </div>
-          <div className="text-blue text-xs mb-14 flex items-center mr-6">
-            <div className="w-4 h-4 bg-blue rounded-full mr-2 flex items-center justify-center">
-              <img
-                src="/assets/images/Website Vector.png"
-                alt="Website Vector"
-              />
-            </div>
-            <p>
-              <a href="" className="hover:underline">
-                samahan.addu.edu.ph
-              </a>
-            </p>
-          </div>
-          <div className="text-blue text-xs mb-14 flex items-center mr-6">
-            <div className="w-4 h-4 bg-blue rounded-full mr-2 flex items-center justify-center">
-              <img src="/assets/images/@ Vector.png" alt="@ Vector" />
-            </div>
-            <p>
-              <a href="" className="hover:underline">
-                addusamahan
-              </a>
-            </p>
-          </div>
+          <ContactItem
+            href="mailto:samahan@addu.edu.ph"
+            imgSrc="/assets/images/Email Vector.png"
+            altText="Email Vector"
+            children="samahan@addu.edu.ph"
+          ></ContactItem>
+          <ContactItem
+            href=""
+            imgSrc="/assets/images/Website Vector.png"
+            altText="Website Vector"
+            children="samahan.addu.edu.ph"
+          ></ContactItem>
+          <ContactItem
+            href=""
+            imgSrc="/assets/images/@ Vector.png"
+            altText="@ Vector"
+            children="addusamahan"
+          ></ContactItem>
         </div>
       </section>
 
