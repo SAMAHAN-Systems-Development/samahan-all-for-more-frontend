@@ -51,7 +51,21 @@ const socialIcon = cva('mx-1', {
   },
 });
 
-const Footer = () => {
+interface FooterProps {
+  size?: 'small' | 'medium';
+  background?: 'default' | 'blue';
+  linkSize?: 'small' | 'medium' | 'regular';
+  linkWeight?: 'superThin' | 'thin' | 'normal' | 'bold';
+  iconSize?: 'small' | 'medium';
+}
+
+const Footer: React.FC<FooterProps> = ({
+  size = 'medium',
+  background = 'default',
+  linkSize = 'regular',
+  linkWeight = 'normal',
+  iconSize = 'medium',
+}) => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -64,8 +78,22 @@ const Footer = () => {
 
   return (
     <div className="relative w-full">
+      <svg
+        width="100%"
+        height="auto"
+        viewBox="0 0 1400 65"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M0 65.0002L1400 65.0002C1219.57 24.7903 972.507 0 700 0C427.493 0 180.432 24.7903 0 65.0002Z"
+          fill="#0923BA"
+        />
+      </svg>
       {/* Oblong Shape - WIP*/}
-      <div className="absolute w-full h-[227.65px] bg-blue rounded-t-full rounded-b-full -translate-y-1/2 z-[-1]" />
+
       <div
         id="main"
         className={`${footerSection({ background: 'blue' })} ${footerLink()} w-full flex flex-col px-[50px] md:px-[50px] items-center`}
