@@ -30,7 +30,7 @@ const BrandingSection = () => {
         <div className="flex items-center mb-7 mt-28">
           {/*waiting for the logo for*/}
           <img
-            src="/assets/images/A4M S-LOGO.png"
+            src="/assets/images/A4M S-LOGOHD.png"
             alt=""
             className="w-28 h-auto "
           />
