@@ -16,7 +16,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className={` h-[80vh] w-full relative max-w-[1440px] tracking-wider`}
+      className={`h-[80vh] w-full relative max-w-[1440px] tracking-wider`}
     >
       <div className="w-full h-full bg-blue flex flex-col items-center justify-center text-white">
         {/* temp navigation bar */}
@@ -33,17 +33,17 @@ export default function HeroSection() {
             />
           </div>
           <span className="leading-tight text-center">
-            <h2 className="text-base font-medium" style={{ fontWeight: 600 }}>
+            <h2 className="text-base font-medium">
               SAMAHAN NG MGA MAG-AARAL NG PAMANTASANG ATENEO DE DAVAO
             </h2>
-            <h3 className="font-thin text-xs" style={{ fontWeight: 400 }}>
+            <h3 className={`font-light text-xs`}>
               The Student Government of the College Unit of Ateneo de Davao
               University
             </h3>
           </span>
 
           {/* socials */}
-          <div className="flex justify-between">
+          <div className="flex justify-between font-light mt-20">
             {socials.map((social) => (
               <div className="flex gap-2 text-xs p-2 items-center">
                 <div className="rounded-full h-5 w-5 bg-white p-1 flex justify-center items-center overflow-visible">
