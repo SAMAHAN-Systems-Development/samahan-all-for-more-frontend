@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 interface ContactItemProps {
   href: string;
@@ -16,11 +17,9 @@ const ContactItem: React.FC<ContactItemProps> = ({
     <div className="w-4 h-4 bg-blue rounded-full mr-2 flex items-center justify-center">
       <img src={imgSrc} alt={altText} />
     </div>
-    <p>
-      <a href={href} className="hover:underline">
-        {children}
-      </a>
-    </p>
+    <Link href={href} className="hover:underline">
+      {children}
+    </Link>
   </div>
 );
 

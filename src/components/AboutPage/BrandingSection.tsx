@@ -1,27 +1,34 @@
+import Image from 'next/image';
 const BrandingSection = () => {
   return (
     <article className="flex relative">
       <div>
         <div>
-          <img
+          <Image
             src="/assets/images/Blue SMHN Logo Normal.png"
             alt="Left Image 1"
+            width={576}
+            height={576}
             className="w-[20rem] h-auto absolute top-0 left-[-10rem] rotate-[30deg]"
-          />
+          ></Image>
         </div>
         <div className="">
-          <img
+          <Image
             src="/assets/images/Blue E1.png"
             alt="Left Image 2"
+            width={576}
+            height={576}
             className="w-28 h-auto absolute left-12 top-1/2 transform -translate-y-1/2 rotate-[-30deg]"
-          />
+          ></Image>
         </div>
         <div className="">
-          <img
+          <Image
             src="/assets/images/Blue O3.png"
             alt="Left Image 3"
+            width={576}
+            height={576}
             className="w-[16rem] h-auto absolute bottom-0 left-[-10rem] rotate-[-150deg]"
-          />
+          ></Image>
         </div>
       </div>
 
@@ -29,16 +36,20 @@ const BrandingSection = () => {
       <section className="mx-[15rem]">
         <div className="flex items-center mb-7 mt-28">
           {/*waiting for the logo for*/}
-          <img
+          <Image
             src="/assets/images/A4M S-LOGOHD.png"
             alt=""
+            width={576}
+            height={576}
             className="w-28 h-auto "
-          />
-          <img
+          ></Image>
+          <Image
             src="/assets/images/A4M LOGO.png"
             alt="A4M Logo"
+            width={576}
+            height={576}
             className="w-48 h-auto"
-          />
+          ></Image>
         </div>
         <h1 className="text-blue font-bold text-7xl mb-14">THE BRANDING</h1>
         <p className="text-blue mb-14 leading-tight">
@@ -78,25 +89,31 @@ const BrandingSection = () => {
       </section>
       <div>
         <div>
-          <img
+          <Image
             src="/assets/images/Blue M1.png"
             alt="Left Image 1"
+            width={576}
+            height={576}
             className="w-[19rem] h-auto absolute top-28 right-[-10rem] rotate-[-30deg]"
-          />
+          ></Image>
         </div>
         <div className="">
-          <img
+          <Image
             src="/assets/images/Blue R1.png"
             alt="Left Image 2"
+            width={576}
+            height={576}
             className="w-24 h-auto absolute right-12 top-[60%] transform -translate-y-1/2 rotate-[-30deg]"
-          />
+          ></Image>
         </div>
         <div className="">
-          <img
+          <Image
             src="/assets/images/Blue E1.png"
             alt="Left Image 3"
+            width={576}
+            height={576}
             className="w-[13rem] h-auto absolute bottom-0 right-[-6rem] rotate-[30deg]"
-          />
+          ></Image>
         </div>
       </div>
     </article>

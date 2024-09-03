@@ -1,14 +1,17 @@
+import Image from 'next/image';
 import ContactItem from '@/components/AboutPage/ContactItem';
 const LogoSection = () => {
   return (
     <section className="flex items-center flex-col mb-20">
       {/*adjust section spacing here (mb-value)^^*/}
       <div className="flex items-center flex-col mx-[24rem] mb-10">
-        <img
+        <Image
           src="/assets/images/Property 1=WHITE.png"
           alt="Samahan White Logo"
+          width={576}
+          height={576}
           className="w-[36rem] h-auto"
-        />
+        ></Image>
         <p className="text-blue leading-tight text-center">
           The Samahan ng Mga Mag-Aaral ng Pamantasang Ateneo de Davao, or
           SAMAHAN, is the lone autonomous Student Government of the College unit
