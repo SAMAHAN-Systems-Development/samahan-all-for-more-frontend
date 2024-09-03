@@ -5,10 +5,11 @@ import email_icon from '@/stories/assets/hero/email_icon.png';
 import website_icon from '@/stories/assets/hero/website_icon.png';
 import sns_icon from '@/stories/assets/hero/sns_icon.png';
 import edge from '@/stories/assets/hero/round end.svg';
+import BallFrame from '../ui/BallFrame';
 
 export default function HeroSection() {
   return (
-    <section className="font-inter h-screen w-full p-10 relative max-w-[1440px]">
+    <section className="font-inter h-[80vh] w-full relative max-w-[1440px]">
       <div className="w-full h-full bg-blue flex flex-col items-center justify-center text-white">
         {/* temp navigation bar */}
         <div className="w-9/12 mx-auto rounded-full bg-white h-14 sticky top-10 z-10 " />
@@ -37,9 +38,14 @@ export default function HeroSection() {
           <div className="flex justify-between"></div>
         </div>
       </div>
-      <div className="w-full h-40 relative">
+
+      {/* edge */}
+      <div className="w-full h-[25vh] relative">
         <Image src={edge} alt="" fill className="object-cover" />
       </div>
+
+      {/* balls */}
+      <BallFrame />
     </section>
   );
 }
