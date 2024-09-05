@@ -1,9 +1,14 @@
 import React from 'react';
-import m_ball from '@/stories/assets/hero/M.svg';
-import o_ball from '@/stories/assets/hero/O.svg';
-import r_ball from '@/stories/assets/hero/R.svg';
-import e_ball from '@/stories/assets/hero/E.svg';
+import Image, { StaticImageData } from 'next/image';
 
-export default function Balls() {
-  return <div>Balls</div>;
-}
+const Ball = (props: { style: string; letter: StaticImageData }) => {
+  return (
+    <>
+      <div className={` absolute ${props.style}  z-10`}>
+        <Image src={props.letter} alt="ball" className="object-contain" />
+      </div>
+    </>
+  );
+};
+
+export default Ball;

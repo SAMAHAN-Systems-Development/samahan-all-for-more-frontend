@@ -9,8 +9,8 @@ import BallFrame from '../ui/BallFrame';
 
 export default function HeroSection() {
   return (
-    <section className="font-inter h-[80vh] w-full relative max-w-[1440px]">
-      <div className="w-full h-full bg-blue flex flex-col items-center justify-center text-white">
+    <section className="font-inter h-screen border border-black w-full relative max-w-[1440px]">
+      <div className="w-full h-[60vh] bg-blue flex flex-col items-center justify-center text-white">
         {/* temp navigation bar */}
         <div className="w-9/12 mx-auto rounded-full bg-white h-14 sticky top-10 z-10 " />
 
@@ -38,6 +38,7 @@ export default function HeroSection() {
           <div className="flex justify-between"></div>
         </div>
       </div>
+      <BallFrame />
 
       {/* edge */}
       <div className="w-full h-[25vh] relative">
@@ -45,7 +46,6 @@ export default function HeroSection() {
       </div>
 
       {/* balls */}
-      <BallFrame />
     </section>
   );
 }
