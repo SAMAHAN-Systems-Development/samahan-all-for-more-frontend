@@ -9,11 +9,12 @@ import UniversitySealLogo from '../../../../public/assets/images/UniversitySealL
 import Link from 'next/link';
 
 import {
-  ICON_SIZE_ENUM,
   LINK_SIZE_ENUM,
   LINK_WEIGHT_ENUM,
   FOOTER_SIZE_ENUM,
   LINK_TITLE_ENUM,
+  FOOTER_BACKGROUND_ENUM,
+  SOCIAL_ICON_SIZE_ENUM,
 } from '../Footer/enums';
 
 const getCurrentYear = () => {
@@ -25,12 +26,12 @@ const currentYear = getCurrentYear();
 const footerSection = cva('mb-4', {
   variants: {
     size: {
-      small: 'mb-2',
-      medium: 'mb-4',
+      [FOOTER_SIZE_ENUM.SMALL]: 'mb-2',
+      [FOOTER_SIZE_ENUM.MEDIUM]: 'mb-4',
     },
     background: {
-      default: 'bg-white',
-      blue: 'bg-[#0923BA] text-white',
+      [FOOTER_BACKGROUND_ENUM.DEFAULT]: 'bg-white',
+      [FOOTER_BACKGROUND_ENUM.BLUE]: 'bg-[#0923BA] text-white',
     },
   },
 });
@@ -38,15 +39,15 @@ const footerSection = cva('mb-4', {
 const footerLink = cva('text-white', {
   variants: {
     size: {
-      small: 'text-sm',
-      medium: 'text-base',
-      regular: 'text-[14px]',
+      [LINK_SIZE_ENUM.SMALL]: 'text-sm',
+      [LINK_SIZE_ENUM.MEDIUM]: 'text-base',
+      [LINK_SIZE_ENUM.REGULAR]: 'text-[14px]',
     },
     weight: {
-      superThin: 'font-extralight',
-      thin: 'font-thin',
-      normal: 'font-normal',
-      bold: 'font-bold',
+      [LINK_WEIGHT_ENUM.SUPER_THIN]: 'font-extralight',
+      [LINK_WEIGHT_ENUM.THIN]: 'font-thin',
+      [LINK_WEIGHT_ENUM.NORMAL]: 'font-normal',
+      [LINK_WEIGHT_ENUM.BOLD]: 'font-bold',
     },
   },
 });
@@ -54,8 +55,8 @@ const footerLink = cva('text-white', {
 const socialIcon = cva('mx-1', {
   variants: {
     size: {
-      small: 'mx-0.5',
-      medium: 'mx-1',
+      [SOCIAL_ICON_SIZE_ENUM.SMALL]: 'mx-0.5',
+      [SOCIAL_ICON_SIZE_ENUM.MEDIUM]: 'mx-1',
     },
   },
 });
@@ -65,7 +66,7 @@ interface FooterProps {
   background?: 'default' | 'blue';
   linkSize?: LINK_SIZE_ENUM;
   linkWeight?: LINK_WEIGHT_ENUM;
-  iconSize?: ICON_SIZE_ENUM;
+  iconSize?: SOCIAL_ICON_SIZE_ENUM;
 }
 
 // Store links in constants
@@ -90,17 +91,29 @@ const policyLinks = [{ href: '', label: 'Privacy Policy' }];
 const socialLinks = [
   {
     href: 'https://www.facebook.com/AdDUSAMAHAN',
-    icon: <FaFacebook className={socialIcon({ size: 'medium' })} />,
+    icon: (
+      <FaFacebook
+        className={socialIcon({ size: SOCIAL_ICON_SIZE_ENUM.MEDIUM })}
+      />
+    ),
     size: LINK_SIZE_ENUM.MEDIUM,
   },
   {
     href: 'https://www.instagram.com/samahan_ateneo',
-    icon: <FaInstagram className={socialIcon({ size: 'medium' })} />,
+    icon: (
+      <FaInstagram
+        className={socialIcon({ size: SOCIAL_ICON_SIZE_ENUM.MEDIUM })}
+      />
+    ),
     size: LINK_SIZE_ENUM.MEDIUM,
   },
   {
     href: 'https://x.com/addusamahan',
-    icon: <FaXTwitter className={socialIcon({ size: 'medium' })} />,
+    icon: (
+      <FaXTwitter
+        className={socialIcon({ size: SOCIAL_ICON_SIZE_ENUM.MEDIUM })}
+      />
+    ),
     size: LINK_SIZE_ENUM.MEDIUM,
   },
 ];
@@ -136,7 +149,7 @@ const Footer: React.FC<FooterProps> = ({}) => {
 
       <div
         id="main"
-        className={`${footerSection({ background: 'blue' })} ${footerLink()} w-full flex flex-col px-[50px] md:px-[50px] items-center`}
+        className={`${footerSection({ background: FOOTER_BACKGROUND_ENUM.BLUE })} ${footerLink()} w-full flex flex-col px-[50px] md:px-[50px] items-center`}
       >
         <div className="w-full flex items-center">
           <div

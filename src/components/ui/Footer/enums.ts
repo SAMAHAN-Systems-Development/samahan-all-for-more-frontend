@@ -1,4 +1,4 @@
-export enum ICON_SIZE_ENUM {
+export enum SOCIAL_ICON_SIZE_ENUM {
     SMALL = 'small',
     MEDIUM = 'medium',
 }
@@ -21,7 +21,11 @@ export enum FOOTER_SIZE_ENUM {
     MEDIUM = 'medium',
 }
 
-// New Enum for Footer Titles
+export enum FOOTER_BACKGROUND_ENUM {
+    DEFAULT = 'default',
+    BLUE = 'blue',
+}
+
 export enum LINK_TITLE_ENUM {
     ADDRESS = "Address",
     TELEPHONE = "Telephone",
