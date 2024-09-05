@@ -31,7 +31,7 @@ const footerSection = cva('mb-4', {
     },
     background: {
       [FOOTER_BACKGROUND_ENUM.DEFAULT]: 'bg-white',
-      [FOOTER_BACKGROUND_ENUM.BLUE]: 'bg-[#0923BA] text-white',
+      [FOOTER_BACKGROUND_ENUM.BLUE]: 'bg-blue text-white',
     },
   },
 });
@@ -145,7 +145,7 @@ const Footer: React.FC<FooterProps> = ({}) => {
           fill="#0923BA"
         />
       </svg>
-      {/* Oblong Shape - WIP*/}
+      {/* Oblong Shape*/}
 
       <div
         id="main"
@@ -336,7 +336,7 @@ const Footer: React.FC<FooterProps> = ({}) => {
                 className="font-bold mb-[0.938rem] mt-3"
                 style={{ fontSize: '16px' }}
               >
-                {LINK_TITLE_ENUM.SOCIALS} {/* Use enum for the title */}
+                {LINK_TITLE_ENUM.SOCIALS}
               </h3>
               <div className="flex justify-center xl:justify-end">
                 {socialLinks.map((link, index) => (
