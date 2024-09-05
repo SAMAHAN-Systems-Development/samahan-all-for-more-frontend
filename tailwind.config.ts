@@ -17,6 +17,13 @@ const config: Config = {
       fontFamily: {
         inter: ['var(--font-inter)'],
       },
+      fontSize: {
+        'title': '50px',        // Title - 50px
+        'main': '16px',         // Main - 16px
+        'footer-main': '14px',  // Footer Main - 14px
+        'thin': '40px',         // Thin Text - 40px
+        'bold': '50px',         // Bold Text - 50px
+      },
     },
     fontFamily: {
       inter: ['var(--font-inter)'],
