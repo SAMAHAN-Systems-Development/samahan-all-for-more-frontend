@@ -4,8 +4,17 @@ import { cva } from 'class-variance-authority';
 import { FaXTwitter, FaInstagram, FaFacebook } from 'react-icons/fa6';
 import Image from 'next/image';
 import { GoArrowUpRight } from 'react-icons/go';
-import UniversitySealLogo from '../../../public/assets/images/UniversitySealLogo.png';
-import SamahanLogoWhite from '../../../public/assets/images/SamahanLogoWhite.png';
+import SamahanLogoWhite from '../../../../public/assets/images/SamahanLogoWhite.png';
+import UniversitySealLogo from '../../../../public/assets/images/UniversitySealLogo.png';
+import Link from 'next/link';
+
+import {
+  ICON_SIZE_ENUM,
+  LINK_SIZE_ENUM,
+  LINK_WEIGHT_ENUM,
+  FOOTER_SIZE_ENUM,
+  LINK_TITLE_ENUM,
+} from '../Footer/enums';
 
 const getCurrentYear = () => {
   return new Date().getFullYear();
@@ -52,20 +61,51 @@ const socialIcon = cva('mx-1', {
 });
 
 interface FooterProps {
-  size?: 'small' | 'medium';
+  size?: FOOTER_SIZE_ENUM;
   background?: 'default' | 'blue';
-  linkSize?: 'small' | 'medium' | 'regular';
-  linkWeight?: 'superThin' | 'thin' | 'normal' | 'bold';
-  iconSize?: 'small' | 'medium';
+  linkSize?: LINK_SIZE_ENUM;
+  linkWeight?: LINK_WEIGHT_ENUM;
+  iconSize?: ICON_SIZE_ENUM;
 }
 
-const Footer: React.FC<FooterProps> = ({
-  size = 'medium',
-  background = 'default',
-  linkSize = 'regular',
-  linkWeight = 'normal',
-  iconSize = 'medium',
-}) => {
+// Store links in constants
+const quickLinks = [
+  { href: '#', label: 'About' },
+  { href: '#', label: 'Academix' },
+  {
+    href: '#',
+    label: 'Meet the Developers',
+    icon: <GoArrowUpRight className="inline-block align-middle ml-1" />,
+  },
+];
+const officeLinks = [
+  { href: '#', label: 'President' },
+  { href: '#', label: 'Vice President' },
+  { href: '#', label: 'Secretary-General' },
+  { href: '#', label: 'Treasurer' },
+];
+
+const policyLinks = [{ href: '', label: 'Privacy Policy' }];
+
+const socialLinks = [
+  {
+    href: 'https://www.facebook.com/AdDUSAMAHAN',
+    icon: <FaFacebook className={socialIcon({ size: 'medium' })} />,
+    size: LINK_SIZE_ENUM.MEDIUM,
+  },
+  {
+    href: 'https://www.instagram.com/samahan_ateneo',
+    icon: <FaInstagram className={socialIcon({ size: 'medium' })} />,
+    size: LINK_SIZE_ENUM.MEDIUM,
+  },
+  {
+    href: 'https://x.com/addusamahan',
+    icon: <FaXTwitter className={socialIcon({ size: 'medium' })} />,
+    size: LINK_SIZE_ENUM.MEDIUM,
+  },
+];
+
+const Footer: React.FC<FooterProps> = ({}) => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -156,41 +196,23 @@ const Footer: React.FC<FooterProps> = ({
               <h3 className="font-bold" style={{ fontSize: '16px' }}>
                 Quick Links
               </h3>
+              {/* Map Function */}
               <ul className="space-y-[0.938rem]">
-                <li>
-                  <a
-                    href="#"
-                    className={footerLink({
-                      size: 'regular',
-                      weight: 'superThin',
-                    })}
-                  >
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className={footerLink({
-                      size: 'regular',
-                      weight: 'superThin',
-                    })}
-                  >
-                    Academix
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className={footerLink({
-                      size: 'regular',
-                      weight: 'superThin',
-                    })}
-                  >
-                    Meet the Developers
-                    <GoArrowUpRight className="inline-block align-middle ml-1" />
-                  </a>
-                </li>
+                {quickLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link href={link.href} legacyBehavior>
+                      <a
+                        className={footerLink({
+                          size: LINK_SIZE_ENUM.REGULAR,
+                          weight: LINK_WEIGHT_ENUM.SUPER_THIN,
+                        })}
+                      >
+                        {link.label}
+                        {link.icon && link.icon}
+                      </a>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -203,50 +225,20 @@ const Footer: React.FC<FooterProps> = ({
                 Offices
               </h3>
               <ul className="space-y-[0.938rem]">
-                <li>
-                  <a
-                    href="#"
-                    className={footerLink({
-                      size: 'regular',
-                      weight: 'superThin',
-                    })}
-                  >
-                    President
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className={footerLink({
-                      size: 'regular',
-                      weight: 'superThin',
-                    })}
-                  >
-                    Vice President
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className={footerLink({
-                      size: 'regular',
-                      weight: 'superThin',
-                    })}
-                  >
-                    Secretary-General
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className={footerLink({
-                      size: 'regular',
-                      weight: 'superThin',
-                    })}
-                  >
-                    Treasurer
-                  </a>
-                </li>
+                {officeLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link href={link.href} legacyBehavior>
+                      <a
+                        className={footerLink({
+                          size: LINK_SIZE_ENUM.REGULAR,
+                          weight: LINK_WEIGHT_ENUM.SUPER_THIN,
+                        })}
+                      >
+                        {link.label}
+                      </a>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -259,30 +251,35 @@ const Footer: React.FC<FooterProps> = ({
                 Policies
               </h3>
               <ul className="space-y-[0.938rem]">
-                <li>
-                  <a
-                    href="#"
-                    className={footerLink({
-                      size: 'regular',
-                      weight: 'superThin',
-                    })}
-                  >
-                    Privacy Policy
-                  </a>
-                </li>
+                {policyLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link href={link.href} legacyBehavior>
+                      <a
+                        className={footerLink({
+                          size: LINK_SIZE_ENUM.REGULAR,
+                          weight: LINK_WEIGHT_ENUM.SUPER_THIN,
+                        })}
+                      >
+                        {link.label}
+                      </a>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
             {/* Address */}
             <div
               id="address"
-              className=" flex flex-col text-center lg:text-left lg:mb-0 space-y-[0.938rem]"
+              className="flex flex-col text-center lg:text-left lg:mb-0 space-y-[0.938rem]"
             >
               <p className="font-bold text-[16px]">Address</p>
               <p
                 className={
-                  footerLink({ size: 'regular', weight: 'superThin' }) +
-                  ' h-[139px] w-[150px] leading-[18px]'
+                  footerLink({
+                    size: LINK_SIZE_ENUM.REGULAR, // Use enum for size
+                    weight: LINK_WEIGHT_ENUM.SUPER_THIN, // Use enum for weight
+                  }) + ' h-[139px] w-[150px] leading-[18px]'
                 }
               >
                 Mezzanine Level, Martin Building
@@ -299,7 +296,10 @@ const Footer: React.FC<FooterProps> = ({
                 Telephone
               </h3>
               <p
-                className={footerLink({ size: 'regular', weight: 'superThin' })}
+                className={footerLink({
+                  size: LINK_SIZE_ENUM.REGULAR,
+                  weight: LINK_WEIGHT_ENUM.SUPER_THIN,
+                })}
               >
                 (082) 221 2411 LOC 8328
               </p>
@@ -311,7 +311,10 @@ const Footer: React.FC<FooterProps> = ({
                 Email
               </h3>
               <p
-                className={footerLink({ size: 'regular', weight: 'superThin' })}
+                className={footerLink({
+                  size: LINK_SIZE_ENUM.REGULAR,
+                  weight: LINK_WEIGHT_ENUM.SUPER_THIN,
+                })}
               >
                 samahan@addu.edu.ph
               </p>
@@ -320,27 +323,16 @@ const Footer: React.FC<FooterProps> = ({
                 className="font-bold mb-[0.938rem] mt-3"
                 style={{ fontSize: '16px' }}
               >
-                Socials
+                {LINK_TITLE_ENUM.SOCIALS} {/* Use enum for the title */}
               </h3>
               <div className="flex justify-center xl:justify-end">
-                <a
-                  href="https://www.facebook.com/AdDUSAMAHAN"
-                  className={footerLink({ size: 'regular' })}
-                >
-                  <FaFacebook className={socialIcon({ size: 'medium' })} />
-                </a>
-                <a
-                  href="https://www.instagram.com/samahan_ateneo"
-                  className={footerLink({ size: 'medium' })}
-                >
-                  <FaInstagram className={socialIcon({ size: 'medium' })} />
-                </a>
-                <a
-                  href="https://x.com/addusamahan"
-                  className={footerLink({ size: 'medium' })}
-                >
-                  <FaXTwitter className={socialIcon({ size: 'medium' })} />
-                </a>
+                {socialLinks.map((link, index) => (
+                  <Link href={link.href} key={index} legacyBehavior>
+                    <a className={footerLink({ size: link.size })}>
+                      {link.icon}
+                    </a>
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
