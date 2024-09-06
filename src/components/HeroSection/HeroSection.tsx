@@ -16,21 +16,16 @@ export default function HeroSection() {
 
   return (
     <section
-      className={`h-[80vh] w-full relative max-w-[1440px] tracking-wider`}
+      className={`h-[120vh] w-full relative max-w-[1440px] tracking-wider border`}
     >
-      <div className="w-full h-full bg-blue flex flex-col items-center justify-center text-white">
+      <div className="w-full h-[90vh] bg-blue flex flex-col items-center border justify-center text-white">
         {/* temp navigation bar */}
-        <div className="w-9/12 mx-auto rounded-full bg-white h-14 sticky top-10 z-10 " />
+        <div className="w-9/12 mx-auto rounded-full bg-white h-10 fixed top-10 z-10 " />
 
         {/* logo and titles */}
-        <div className="w-full h-full flex flex-col gap-4 items-center z-10 relative justify-center ">
+        <div className="w-full h-full flex flex-col gap-4 pt-20 items-center z-10 justify-center ">
           <div className="w-[650px] h-[305px] relative">
-            <Image
-              src={logo}
-              alt="Logo"
-              fill
-              className="relative object-contain"
-            />
+            <Image src={logo} alt="Logo" />
           </div>
           <span className="leading-tight text-center">
             <h2 className="text-base font-medium">
@@ -57,7 +52,7 @@ export default function HeroSection() {
       </div>
 
       {/* edge */}
-      <div className="w-full h-[25vh] relative">
+      <div className="w-full h-[30vh] relative border">
         <Image src={edge} alt="" fill className="object-cover" />
       </div>
 
