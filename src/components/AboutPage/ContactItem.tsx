@@ -3,19 +3,17 @@ import Link from 'next/link';
 
 interface ContactItemProps {
   href: string;
-  imgSrc: string;
-  altText: string;
+  icon: React.ElementType;
   children: React.ReactNode;
 }
 const ContactItem: React.FC<ContactItemProps> = ({
   href,
-  imgSrc,
-  altText,
+  icon: Icon,
   children,
 }) => (
-  <div className="text-blue text-xs mb-14 flex items-center mr-6">
+  <div className="text-blue text-footer-main mb-14 flex items-center mr-6">
     <div className="w-4 h-4 bg-blue rounded-full mr-2 flex items-center justify-center">
-      <img src={imgSrc} alt={altText} />
+      <Icon className="text-white w-2 h-2" />
     </div>
     <Link href={href} className="hover:underline">
       {children}

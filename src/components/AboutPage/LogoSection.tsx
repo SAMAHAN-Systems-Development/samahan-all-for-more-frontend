@@ -1,5 +1,9 @@
 import Image from 'next/image';
 import ContactItem from '@/components/AboutPage/ContactItem';
+import { MdOutlineAlternateEmail } from 'react-icons/md';
+import { MdOutlineEmail } from 'react-icons/md';
+import { SlGlobe } from 'react-icons/sl';
+
 const LogoSection = () => {
   return (
     <section className="flex items-center flex-col mb-20">
@@ -12,7 +16,7 @@ const LogoSection = () => {
           height={576}
           className="w-[36rem] h-auto"
         ></Image>
-        <p className="text-blue leading-tight text-center">
+        <p className="text-blue text-main leading-tight text-center">
           The Samahan ng Mga Mag-Aaral ng Pamantasang Ateneo de Davao, or
           SAMAHAN, is the lone autonomous Student Government of the College unit
           of Ateneo de Davao University
@@ -20,25 +24,13 @@ const LogoSection = () => {
       </div>
 
       <div className="flex items-center">
-        <ContactItem
-          href="mailto:samahan@addu.edu.ph"
-          imgSrc="/assets/images/Email Vector.png"
-          altText="Email Vector"
-        >
+        <ContactItem href="mailto:samahan@addu.edu.ph" icon={MdOutlineEmail}>
           samahan@addu.edu.ph
         </ContactItem>
-        <ContactItem
-          href=""
-          imgSrc="/assets/images/Website Vector.png"
-          altText="Website Vector"
-        >
+        <ContactItem href="" icon={SlGlobe}>
           samahan.addu.edu.ph
         </ContactItem>
-        <ContactItem
-          href=""
-          imgSrc="/assets/images/@ Vector.png"
-          altText="@ Vector"
-        >
+        <ContactItem href="" icon={MdOutlineAlternateEmail}>
           addusamahan
         </ContactItem>
       </div>
