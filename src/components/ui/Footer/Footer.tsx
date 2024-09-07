@@ -12,7 +12,6 @@ import {
   LINK_SIZE_ENUM,
   LINK_WEIGHT_ENUM,
   FOOTER_SIZE_ENUM,
-  LINK_TITLE_ENUM,
   FOOTER_BACKGROUND_ENUM,
   SOCIAL_ICON_SIZE_ENUM,
 } from '../Footer/enums';
@@ -41,7 +40,8 @@ const footerLink = cva('text-white', {
     size: {
       [LINK_SIZE_ENUM.SMALL]: 'text-sm',
       [LINK_SIZE_ENUM.MEDIUM]: 'text-base',
-      [LINK_SIZE_ENUM.REGULAR]: 'text-[14px]',
+      [LINK_SIZE_ENUM.REGULAR]: 'text-footer-main',
+      [LINK_SIZE_ENUM.MAIN]: 'text-main',
     },
     weight: {
       [LINK_WEIGHT_ENUM.SUPER_THIN]: 'font-extralight',
@@ -118,6 +118,79 @@ const socialLinks = [
   },
 ];
 
+// Office Links
+const OfficeLinks = () => (
+  <ul className="space-y-[0.938rem]">
+    {officeLinks.map((link, index) => (
+      <li key={index}>
+        <Link
+          href={link.href}
+          className={footerLink({
+            size: LINK_SIZE_ENUM.REGULAR,
+            weight: LINK_WEIGHT_ENUM.SUPER_THIN,
+          })}
+        >
+          {link.label}
+        </Link>
+      </li>
+    ))}
+  </ul>
+);
+
+// Quick Links
+const QuickLinks = () => (
+  <ul className="space-y-[0.938rem]">
+    {quickLinks.map((link, index) => (
+      <li key={index}>
+        <Link
+          href={link.href}
+          className={footerLink({
+            size: LINK_SIZE_ENUM.REGULAR,
+            weight: LINK_WEIGHT_ENUM.SUPER_THIN,
+          })}
+        >
+          {link.label}
+          {link.icon && link.icon}
+        </Link>
+      </li>
+    ))}
+  </ul>
+);
+
+// Policy Links
+const PolicyLinks = () => (
+  <ul className="space-y-[0.938rem]">
+    {policyLinks.map((link, index) => (
+      <li key={index}>
+        <Link
+          href={link.href}
+          className={footerLink({
+            size: LINK_SIZE_ENUM.REGULAR,
+            weight: LINK_WEIGHT_ENUM.SUPER_THIN,
+          })}
+        >
+          {link.label}
+        </Link>
+      </li>
+    ))}
+  </ul>
+);
+
+// Social Links
+const SocialLinks = () => (
+  <div className="flex justify-center xl:justify-end">
+    {socialLinks.map((link, index) => (
+      <Link
+        href={link.href}
+        key={index}
+        className={footerLink({ size: link.size })}
+      >
+        {link.icon}
+      </Link>
+    ))}
+  </div>
+);
+
 const Footer: React.FC<FooterProps> = ({}) => {
   const [isClient, setIsClient] = useState(false);
 
@@ -145,8 +218,8 @@ const Footer: React.FC<FooterProps> = ({}) => {
           fill="#0923BA"
         />
       </svg>
-      {/* Oblong Shape*/}
 
+      {/* Oblong Shape*/}
       <div
         id="main"
         className={`${footerSection({ background: FOOTER_BACKGROUND_ENUM.BLUE })} ${footerLink()} w-full flex flex-col px-[50px] md:px-[50px] items-center`}
@@ -185,7 +258,7 @@ const Footer: React.FC<FooterProps> = ({}) => {
               <h3 className="text-2xl font-semibold font-inter mb-2">
                 ng Ateneo de Davao
               </h3>
-              <p className="font-inter" style={{ fontSize: '14px' }}>
+              <p className="font-inter text-footer-main">
                 The Student Government of College Unit of the Ateneo de Davao
                 University
               </p>
@@ -206,27 +279,10 @@ const Footer: React.FC<FooterProps> = ({}) => {
               id="links"
               className="flex flex-col space-y-3 text-center lg:text-left mb-[3.125rem] lg:mb-0"
             >
-              <h3 className="font-bold" style={{ fontSize: '16px' }}>
+              <h3 className={`font-bold ${LINK_SIZE_ENUM.MAIN}`}>
                 Quick Links
               </h3>
-              {/* Map Function */}
-              <ul className="space-y-[0.938rem]">
-                {quickLinks.map((link, index) => (
-                  <li key={index}>
-                    <Link href={link.href} legacyBehavior>
-                      <a
-                        className={footerLink({
-                          size: LINK_SIZE_ENUM.REGULAR,
-                          weight: LINK_WEIGHT_ENUM.SUPER_THIN,
-                        })}
-                      >
-                        {link.label}
-                        {link.icon && link.icon}
-                      </a>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <QuickLinks />
             </div>
 
             {/* Offices */}
@@ -234,25 +290,8 @@ const Footer: React.FC<FooterProps> = ({}) => {
               id="Offices"
               className="flex flex-col space-y-3 text-center lg:text-left mb-[3.125rem] lg:mb-0"
             >
-              <h3 className="font-bold" style={{ fontSize: '16px' }}>
-                Offices
-              </h3>
-              <ul className="space-y-[0.938rem]">
-                {officeLinks.map((link, index) => (
-                  <li key={index}>
-                    <Link href={link.href} legacyBehavior>
-                      <a
-                        className={footerLink({
-                          size: LINK_SIZE_ENUM.REGULAR,
-                          weight: LINK_WEIGHT_ENUM.SUPER_THIN,
-                        })}
-                      >
-                        {link.label}
-                      </a>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <h3 className={`font-bold ${LINK_SIZE_ENUM.MAIN}`}>Offices</h3>
+              <OfficeLinks />
             </div>
 
             {/* Policies */}
@@ -260,25 +299,8 @@ const Footer: React.FC<FooterProps> = ({}) => {
               id="Policies"
               className="flex flex-col space-y-3 text-center lg:text-left mb-[3.125rem] lg:mb-0"
             >
-              <h3 className="font-bold" style={{ fontSize: '16px' }}>
-                Policies
-              </h3>
-              <ul className="space-y-[0.938rem]">
-                {policyLinks.map((link, index) => (
-                  <li key={index}>
-                    <Link href={link.href} legacyBehavior>
-                      <a
-                        className={footerLink({
-                          size: LINK_SIZE_ENUM.REGULAR,
-                          weight: LINK_WEIGHT_ENUM.SUPER_THIN,
-                        })}
-                      >
-                        {link.label}
-                      </a>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <h3 className={`font-bold ${LINK_SIZE_ENUM.MAIN}`}>Policies</h3>
+              <PolicyLinks />
             </div>
 
             {/* Address */}
@@ -286,12 +308,12 @@ const Footer: React.FC<FooterProps> = ({}) => {
               id="address"
               className="flex flex-col text-center lg:text-left lg:mb-0 space-y-[0.938rem]"
             >
-              <p className="font-bold text-[16px]">Address</p>
+              <p className={`font-bold ${LINK_SIZE_ENUM.MAIN}`}>Address</p>
               <p
                 className={
                   footerLink({
-                    size: LINK_SIZE_ENUM.REGULAR, // Use enum for size
-                    weight: LINK_WEIGHT_ENUM.SUPER_THIN, // Use enum for weight
+                    size: LINK_SIZE_ENUM.REGULAR,
+                    weight: LINK_WEIGHT_ENUM.SUPER_THIN,
                   }) + ' h-[139px] w-[150px] leading-[18px]'
                 }
               >
@@ -305,9 +327,8 @@ const Footer: React.FC<FooterProps> = ({}) => {
 
           <div id="right" className="flex flex-col lg:flex-row">
             <div className="w-[200px] h-[180px] flex flex-col space-y-3 text-center lg:text-right lg:mb-0">
-              <h3 className="font-bold" style={{ fontSize: '16px' }}>
-                Telephone
-              </h3>
+              {/* Telephone Section */}
+              <h3 className={`font-bold ${LINK_SIZE_ENUM.MAIN}`}>Telephone</h3>
               <p
                 className={footerLink({
                   size: LINK_SIZE_ENUM.REGULAR,
@@ -317,36 +338,19 @@ const Footer: React.FC<FooterProps> = ({}) => {
                 (082) 221 2411 LOC 8328
               </p>
 
-              <h3
-                className="font-bold mb-[0.938rem] mt-3"
-                style={{ fontSize: '16px' }}
-              >
-                Email
-              </h3>
+              {/* Email Section */}
+              <h3 className={`font-bold ${LINK_SIZE_ENUM.MAIN}`}>Email</h3>
               <p
                 className={footerLink({
-                  size: LINK_SIZE_ENUM.REGULAR,
+                  size: LINK_SIZE_ENUM.MAIN,
                   weight: LINK_WEIGHT_ENUM.SUPER_THIN,
                 })}
               >
                 samahan@addu.edu.ph
               </p>
-
-              <h3
-                className="font-bold mb-[0.938rem] mt-3"
-                style={{ fontSize: '16px' }}
-              >
-                {LINK_TITLE_ENUM.SOCIALS}
-              </h3>
-              <div className="flex justify-center xl:justify-end">
-                {socialLinks.map((link, index) => (
-                  <Link href={link.href} key={index} legacyBehavior>
-                    <a className={footerLink({ size: link.size })}>
-                      {link.icon}
-                    </a>
-                  </Link>
-                ))}
-              </div>
+              {/* Socials Section */}
+              <h3 className={`font-bold ${LINK_SIZE_ENUM.MAIN}`}>Socials</h3>
+              <SocialLinks />
             </div>
           </div>
         </div>
@@ -356,7 +360,9 @@ const Footer: React.FC<FooterProps> = ({}) => {
             id="credits"
             className="flex flex-col text-center lg:flex-row items-center lg:justify-between px-0 w-full mt-[2.625rem]"
           >
-            <div className="text-center xl:text-left mb-4 lg:mb-0 text-sm">
+            <div
+              className={`text-center xl:text-left mb-4 lg:mb-0 text-sm ${LINK_SIZE_ENUM.REGULAR}`}
+            >
               <p>
                 Assets by <strong>SAMAHAN Creative Team</strong>
               </p>

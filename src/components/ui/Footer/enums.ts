@@ -6,7 +6,8 @@ export enum SOCIAL_ICON_SIZE_ENUM {
 export enum LINK_SIZE_ENUM {
     SMALL = 'small',
     MEDIUM = 'medium',
-    REGULAR = 'regular',
+    REGULAR = 'text-footer-main',
+    MAIN = 'text-main',
 }
 
 export enum LINK_WEIGHT_ENUM {
@@ -26,10 +27,3 @@ export enum FOOTER_BACKGROUND_ENUM {
     BLUE = 'blue',
 }
 
-export enum LINK_TITLE_ENUM {
-    ADDRESS = "Address",
-    TELEPHONE = "Telephone",
-    EMAIL = "Email",
-    QUICK_LINKS = "Quick Links",
-    SOCIALS = "Socials",
-}
