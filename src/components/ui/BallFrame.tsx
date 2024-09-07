@@ -23,6 +23,7 @@ interface Ball {
 
 export default function BallFrame(props: { hero?: boolean }) {
   const hero = props.hero;
+
   const [loadedCount, setLoadedCount] = useState<number>(0);
   const [allLoaded, setAllLoaded] = useState<boolean>(false);
 
@@ -147,7 +148,8 @@ export default function BallFrame(props: { hero?: boolean }) {
         translateFrom: 180,
         offsetMargin: 24 /*tailwind value*/,
       };
-
+  // eslint-disable-next-line no-console
+  console.log(initialSizes.ballScale);
   // initial responsive values
   const responsiveSizes: string = `xsm:[--scale-to:0.3] sm:[--scale-to:0.5] md:[--scale-to:0.6] lg:[--scale-to:${initialSizes.ballScale}]`;
 
