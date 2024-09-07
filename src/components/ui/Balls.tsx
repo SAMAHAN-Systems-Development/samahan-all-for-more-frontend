@@ -1,30 +1,31 @@
-import React from 'react';
-import Image, { StaticImageData } from 'next/image';
+'use client';
+import React, { useState } from 'react';
+import type { StaticImageData } from 'next/image';
+import Image from 'next/image';
+
 import { motion } from 'framer-motion';
 
 const Ball = (props: {
-  style: string;
+  isVisible: boolean;
   letter: StaticImageData;
-  top?: number;
+  onLoad: () => void;
+  style: string;
+
   bottom?: number;
   left?: number;
   right?: number;
+  top?: number;
 }) => {
-  return (
-    <>
-      <motion.div
-        className={`absolute ${props.style} z-10 origin-top-left`}
-        initial={{
-          rotate: 12,
-          scale: 1.5,
-          translateY: 200,
-          translateX: -200,
-          top: props.top! * 0.5,
-          bottom: props.bottom! * 0.5,
-          left: props.left! * 0.5,
-          right: props.right! * 0.15,
-        }}
-        animate={{
+  const [loaded, setLoaded] = useState<boolean>(false);
+  const onLoad = props.onLoad;
+  const handleLoad = () => {
+    setLoaded(true);
+    onLoad();
+  };
+
+  const animation =
+    props.isVisible && loaded // trigger animation when all spheres are loaded
+      ? {
           rotate: 0,
           scale: 1,
           translateY: 0,
@@ -33,10 +34,25 @@ const Ball = (props: {
           bottom: props.bottom,
           left: props.left,
           right: props.right,
+        }
+      : {};
+
+  return (
+    <>
+      <motion.div
+        className={`absolute ${props.style} z-10 origin-top-left`}
+        initial={{
+          rotate: 12,
+          scale: 1.2,
+          top: props.top! * 0.5,
+          bottom: props.bottom! * 0.5,
+          left: props.left! * 0.5,
+          right: props.right! * 0.5,
         }}
+        animate={animation}
         transition={{
           type: 'spring',
-          duration: 2,
+          duration: 4,
           mass: 1,
           stiffness: 28.44,
           damping: 8,
@@ -46,6 +62,7 @@ const Ball = (props: {
         <Image
           src={props.letter}
           alt="ball"
+          onLoad={handleLoad}
           className="object-contain"
           priority
         />
