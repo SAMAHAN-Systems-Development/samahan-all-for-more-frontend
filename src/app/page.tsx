@@ -1,4 +1,3 @@
-import HeroSection from '@/components/HeroSection/HeroSection';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -7,9 +6,5 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return (
-    <main>
-      <HeroSection />
-    </main>
-  );
+  return <main>{/* add sections here */}</main>;
 }
