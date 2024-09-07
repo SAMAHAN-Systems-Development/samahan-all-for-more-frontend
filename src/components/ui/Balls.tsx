@@ -14,6 +14,7 @@ const Ball = (props: {
   bottom?: number;
   left?: number;
   right?: number;
+  rotate?: number;
   top?: number;
 }) => {
   const [loaded, setLoaded] = useState<boolean>(false);
@@ -26,7 +27,6 @@ const Ball = (props: {
   const animation =
     props.isVisible && loaded // trigger animation when all spheres are loaded
       ? {
-          rotate: 0,
           scale: 1,
           translateY: 0,
           translateX: 0,
@@ -40,14 +40,14 @@ const Ball = (props: {
   return (
     <>
       <motion.div
-        className={`absolute ${props.style} z-10 origin-top-left`}
+        className={`absolute ${props.style} z-10`}
         initial={{
-          rotate: 12,
           scale: 1.2,
           top: props.top! * 0.5,
           bottom: props.bottom! * 0.5,
           left: props.left! * 0.5,
           right: props.right! * 0.5,
+          rotate: props.rotate,
         }}
         animate={animation}
         transition={{

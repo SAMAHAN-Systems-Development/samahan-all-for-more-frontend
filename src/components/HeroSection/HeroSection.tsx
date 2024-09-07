@@ -1,11 +1,9 @@
 import React from 'react';
-import logo from '@/stories/assets/hero/A4M LOGO.png';
 import Image from 'next/image';
-import email_icon from '@/stories/assets/hero/email_icon.png';
-import website_icon from '@/stories/assets/hero/website_icon.png';
-import sns_icon from '@/stories/assets/hero/sns_icon.png';
+
+import BallFrame from '@/components/ui/BallFrame';
+import logo from '@/stories/assets/hero/A4M LOGO.png';
 import edge from '@/stories/assets/hero/round end.svg';
-import BallFrame from '../ui/BallFrame';
 
 export default function HeroSection() {
   return (
@@ -35,10 +33,10 @@ export default function HeroSection() {
           </span>
 
           {/* socials */}
-          <div className="flex justify-between"></div>
+          <div className="flex justify-between" />
         </div>
       </div>
-      <BallFrame />
+      <BallFrame hero />
 
       {/* edge */}
       <div className="w-full h-[25vh] relative">
