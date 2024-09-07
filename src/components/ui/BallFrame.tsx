@@ -135,9 +135,17 @@ export default function BallFrame(props: { hero?: boolean }) {
     },
   ];
 
-  const initialSizes: { ballScale: number; translateFrom: number } = hero
-    ? { ballScale: 1, translateFrom: 128 }
-    : { ballScale: 0.7, translateFrom: 180 /* replace with banner scaling*/ };
+  const initialSizes: {
+    ballScale: number;
+    offsetMargin: number;
+    translateFrom: number;
+  } = hero
+    ? { ballScale: 1, translateFrom: 128, offsetMargin: 32 }
+    : {
+        /* replace with banner scaling*/ ballScale: 0.7,
+        translateFrom: 180,
+        offsetMargin: 24 /*tailwind value*/,
+      };
 
   // initial responsive values
   const responsiveSizes: string = `xsm:[--scale-to:0.3] sm:[--scale-to:0.5] md:[--scale-to:0.6] lg:[--scale-to:${initialSizes.ballScale}]`;
@@ -150,14 +158,14 @@ export default function BallFrame(props: { hero?: boolean }) {
           initial={{
             translateX: initialSizes.translateFrom * -1,
             translateY: initialSizes.translateFrom,
+            scale: 'var(--scale-to)',
           }}
           animate={{
             translateX: 0,
             translateY: 0,
-            scale: 'var(--scale-to)',
           }}
           transition={{ duration: 0.5 }}
-          className={`h-[670px] w-[720px] absolute transform origin-bottom-left bottom-0 z-10 lg:-ml-32 md:-ml-18 sm:-ml-16 xsm:-ml-8 overflow-visible ${responsiveSizes}`}
+          className={`h-[670px] w-[720px] absolute transform origin-bottom-left bottom-0 z-10 lg:-ml-${initialSizes.offsetMargin} md:-ml-18 sm:-ml-16 xsm:-ml-8 overflow-visible ${responsiveSizes}`}
         >
           {left_balls.map((ball: Ball, index: number) => (
             <Ball
@@ -176,15 +184,15 @@ export default function BallFrame(props: { hero?: boolean }) {
         </motion.div>
         {/* right spheres */}
         <motion.div
-          className={`h-[670px] w-[720px] absolute transform origin-bottom-right lg:-mr-32 md:-mr-18 sm:-mr-16 xsm:-mr-8 bottom-0 right-0 z-10 overflow-visible ${responsiveSizes}`}
+          className={`h-[670px] w-[720px] absolute transform origin-bottom-right lg:-mr-${initialSizes.offsetMargin} md:-mr-20 sm:-mr-16 xsm:-mr-8 bottom-0 right-0 z-10 overflow-visible ${responsiveSizes}`}
           initial={{
             translateX: initialSizes.translateFrom,
             translateY: initialSizes.translateFrom,
+            scale: 'var(--scale-to)',
           }}
           animate={{
             translateX: 0,
             translateY: 0,
-            scale: 'var(--scale-to)',
           }}
           transition={{ duration: 0.5 }}
         >
