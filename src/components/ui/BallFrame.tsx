@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import type { StaticImageData } from 'next/image';
 
+import { cva } from 'class-variance-authority';
 import { motion } from 'framer-motion';
 
-import Ball from '@/components/ui/Balls';
+import Ball from '@/components/ui/Ball';
 import e_ball from '@/stories/assets/hero/E.svg';
 import m_ball from '@/stories/assets/hero/M.svg';
 import o_ball from '@/stories/assets/hero/O.svg';
@@ -150,6 +151,18 @@ export default function BallFrame(props: { hero?: boolean }) {
   // initial responsive values
   const responsiveSizes: string = `xsm:[--scale-to:0.3] sm:[--scale-to:0.5] md:[--scale-to:0.6] lg:[--scale-to:${initialSizes.ballScale}]`;
 
+  const sphereGroup = cva(
+    `h-[670px] w-[720px] absolute transform bottom-0 z-10 overflow-visible ${responsiveSizes}`,
+    {
+      variants: {
+        side: {
+          left: `origin-bottom-left lg:-ml-${initialSizes.offsetMargin} md:-ml-18 sm:-ml-16 xsm:-ml-8`,
+          right: `origin-bottom-right right-0 lg:-mr-${initialSizes.offsetMargin} md:-mr-20 sm:-mr-16 xsm:-mr-8 `,
+        },
+      },
+    }
+  );
+
   return (
     <>
       <div className="w-screen">
@@ -165,7 +178,7 @@ export default function BallFrame(props: { hero?: boolean }) {
             translateY: 0,
           }}
           transition={{ duration: 0.5 }}
-          className={`h-[670px] w-[720px] absolute transform origin-bottom-left bottom-0 z-10 lg:-ml-${initialSizes.offsetMargin} md:-ml-18 sm:-ml-16 xsm:-ml-8 overflow-visible ${responsiveSizes}`}
+          className={`${sphereGroup({ side: 'left' })}`}
         >
           {left_balls.map((ball: Ball, index: number) => (
             <Ball
@@ -184,7 +197,7 @@ export default function BallFrame(props: { hero?: boolean }) {
         </motion.div>
         {/* right spheres */}
         <motion.div
-          className={`h-[670px] w-[720px] absolute transform origin-bottom-right lg:-mr-${initialSizes.offsetMargin} md:-mr-20 sm:-mr-16 xsm:-mr-8 bottom-0 right-0 z-10 overflow-visible ${responsiveSizes}`}
+          className={`${sphereGroup({ side: 'right' })}`}
           initial={{
             translateX: initialSizes.translateFrom,
             translateY: initialSizes.translateFrom,
