@@ -21,8 +21,8 @@ const config: Config = {
         'title': '50px',
         'main': '16px',
         'footer-main': '14px',
-        'thin': '40px',
-        'bold': '50px',
+        'thin': '30px', //changed from 40px
+        'bold': '40px', //changed from 50px
       },
     },
     fontFamily: {
