@@ -1,7 +1,7 @@
-import { BannerContainer } from '@/components/banner/banner-container/BannerContainer';
-import { BannerOverlay } from '@/components/banner/banner-overlay/BannerOverlay';
-import { SAMAHANMembersBanner } from '@/components/ui/banner/samahan-members-banner/SAMAHANMembersBanner';
 import type { Meta, StoryObj } from '@storybook/react';
+
+import { BannerContainer } from '@/components/banner/banner-container/BannerContainer';
+import { SAMAHANMembersBanner } from '@/components/banner/banner-images/samahan-members-banner/SAMAHANMembersBanner';
 
 const Banner: React.FC = () => {
   return (

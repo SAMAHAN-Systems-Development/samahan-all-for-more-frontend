@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { SAMAHANMembersBanner } from './SAMAHANMembersBanner';
+import { SAMAHANMembersBanner } from '@/components/banner/banner-images/samahan-members-banner/SAMAHANMembersBanner';
 
 const meta: Meta<typeof SAMAHANMembersBanner> = {
   component: SAMAHANMembersBanner,

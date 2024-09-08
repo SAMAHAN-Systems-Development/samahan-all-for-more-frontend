@@ -1,11 +1,12 @@
-import Image from 'next/image';
 import React from 'react';
-import BannerGradient from '../../../banner/banner-gradient/BannerGradient';
-import { BannerImage } from '../../../banner/banner-image/BannerImage';
+import Image from 'next/image';
+
+import { BannerGradient } from '@/components/banner/banner-gradient/BannerGradient';
+import { BannerImageContainer } from '@/components/banner/banner-image-container/BannerImageContainer';
 
 export interface Props {
-  title?: string;
   subtitle?: string;
+  title?: string;
 }
 
 export const SAMAHANMembersBanner: React.FC<Props> = ({
@@ -14,9 +15,9 @@ export const SAMAHANMembersBanner: React.FC<Props> = ({
 }: Props) => {
   return (
     <div className="absolute w-full h-full">
-      <BannerImage position={'absolute'}>
+      <BannerImageContainer position={'absolute'}>
         <BannerGradient />
-      </BannerImage>
+      </BannerImageContainer>
 
       <div className=" flex justify-center items-center absolute w-[100%] h-[100%]">
         <p className="text-title text-white text-center">
@@ -25,7 +26,7 @@ export const SAMAHANMembersBanner: React.FC<Props> = ({
         </p>
       </div>
 
-      <BannerImage>
+      <BannerImageContainer>
         <Image
           alt="SAMAHANN Members"
           src={'/images/samahan-members.png'}
@@ -33,7 +34,7 @@ export const SAMAHANMembersBanner: React.FC<Props> = ({
           height={0}
           className="w-full h-full object-cover pb-8"
         />
-      </BannerImage>
+      </BannerImageContainer>
     </div>
   );
 };

@@ -1,6 +1,7 @@
-import { inter } from '@/styles/font';
-import { cva, VariantProps } from 'class-variance-authority';
 import React from 'react';
+
+import type { VariantProps } from 'class-variance-authority';
+import { cva } from 'class-variance-authority';
 
 /**
  *
@@ -28,7 +29,7 @@ interface Props
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof variants> {}
 
-export const BannerImage: React.FC<Props> = ({
+export const BannerImageContainer: React.FC<Props> = ({
   children,
   className,
   position,

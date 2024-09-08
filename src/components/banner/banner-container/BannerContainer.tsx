@@ -1,5 +1,5 @@
 import React from 'react';
-import { BannerOverlay } from '../banner-overlay/BannerOverlay';
+
 
 /**
  *

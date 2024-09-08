@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { BannerOverlay } from './BannerOverlay';
+import { BannerOverlay } from '@/components/banner/banner-overlay/BannerOverlay';
 
 const meta: Meta<typeof BannerOverlay> = {
   component: BannerOverlay,
