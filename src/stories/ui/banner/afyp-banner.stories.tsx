@@ -1,5 +1,5 @@
 import { AFYPBanner } from '@/components/ui/banner/afyp-banner/AFYPBanner';
-import { BannerContainer } from '@/components/ui/banner/banner-container/BannerContainer';
+import { BannerContainer } from '@/components/banner/banner-container/BannerContainer';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const Banner: React.FC = () => {

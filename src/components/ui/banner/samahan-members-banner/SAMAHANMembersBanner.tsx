@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
-import BannerGradient from '../banner-gradient/BannerGradient';
-import { BannerImage } from '../banner-image/BannerImage';
+import BannerGradient from '../../../banner/banner-gradient/BannerGradient';
+import { BannerImage } from '../../../banner/banner-image/BannerImage';
 
 export interface Props {
   title?: string;
