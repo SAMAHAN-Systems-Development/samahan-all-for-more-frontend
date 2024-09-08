@@ -1,5 +1,5 @@
 import { BannerContainer } from '@/components/banner/banner-container/BannerContainer';
-import { BannerOverlay } from '@/components/ui/banner/banner-overlay/BannerOverlay';
+import { BannerOverlay } from '@/components/banner/banner-overlay/BannerOverlay';
 import { SAMAHANMembersBanner } from '@/components/ui/banner/samahan-members-banner/SAMAHANMembersBanner';
 import type { Meta, StoryObj } from '@storybook/react';
 

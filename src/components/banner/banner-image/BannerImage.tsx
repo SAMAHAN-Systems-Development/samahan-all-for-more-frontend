@@ -2,7 +2,11 @@ import { inter } from '@/styles/font';
 import { cva, VariantProps } from 'class-variance-authority';
 import React from 'react';
 
-// Awaiting confirmation of pull request for spheres component
+/**
+ *
+ * Used for SAMAHANMembersBanner and AFYPBanner as the base, this component is to give that rounded look.
+ *
+ */
 
 const variants = cva(
   ['rounded-[10%_10%_50%_50%/0%_0%_20%_20%] overflow-hidden w-full h-full'],

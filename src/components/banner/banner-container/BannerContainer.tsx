@@ -1,15 +1,22 @@
 import React from 'react';
 import { BannerOverlay } from '../banner-overlay/BannerOverlay';
 
-type Props = {
-  children: React.ReactNode;
-};
+/**
+ *
+ * Container for all SAMAHANMembersBanner and AFYPBanner:
+ * @param children - place BannerImage as the child
+ *
+ *
+ */
 
-export const BannerContainer: React.FC<Props> = ({ children }) => {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode;
+}
+
+export const BannerContainer: React.FC<Props> = ({ children, ...props }) => {
   return (
-    <div className="w-full relative h-96 overflow-hidden ">
+    <div {...props} className="w-full relative h-96 overflow-hidden ">
       {children}
-      <BannerOverlay />
     </div>
   );
 };
