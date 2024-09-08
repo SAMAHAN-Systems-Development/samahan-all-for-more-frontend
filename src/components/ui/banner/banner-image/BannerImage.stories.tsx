@@ -1,11 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { AFYPBanner } from './AFYPBanner';
+import { BannerImage } from './BannerImage';
 
-const meta: Meta<typeof AFYPBanner> = {
-  component: AFYPBanner,
-  title: 'Components/Banner/AFYPBanner',
-  argTypes: {},
+const meta: Meta<typeof BannerImage> = {
+  component: BannerImage,
+  title: 'Components/Banner/BannerImage',
 };
 
 export default meta;

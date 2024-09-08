@@ -7,7 +7,7 @@ type Props = {
 
 export const BannerContainer: React.FC<Props> = ({ children }) => {
   return (
-    <div className="w-full relative h-96 bg-blue overflow-hidden ">
+    <div className="w-full relative h-96 overflow-hidden ">
       {children}
       <BannerOverlay />
     </div>
