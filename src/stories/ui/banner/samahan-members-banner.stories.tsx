@@ -13,7 +13,7 @@ const Banner: React.FC = () => {
 
 const meta: Meta<typeof BannerContainer> = {
   component: Banner,
-  title: 'UI/Banner',
+  title: 'UI/Banner/SAMAHANMembersBanner',
   argTypes: {},
 };
 
@@ -22,9 +22,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {},
-};
-
-export const CustomBackground: Story = {
   args: {},
 };
