@@ -10,7 +10,7 @@ import { cva } from 'class-variance-authority';
  */
 
 const variants = cva(
-  ['rounded-[10%_10%_50%_50%/0%_0%_20%_20%] overflow-hidden w-full h-full'],
+  ['rounded-[10%_10%_50%_50%/0%_0%_20%_20%] overflow-hidden w-full h-full '],
   {
     variants: {
       position: {
