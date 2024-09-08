@@ -3,19 +3,18 @@ import { BannerOverlay } from '@/components/ui/banner/banner-overlay/BannerOverl
 import { SAMAHANMembersBanner } from '@/components/ui/banner/samahan-members-banner/SAMAHANMembersBanner';
 import type { Meta, StoryObj } from '@storybook/react';
 
-
 const Banner: React.FC = () => {
-    return <BannerContainer>
-        <SAMAHANMembersBanner title='SAMAHAN' subtitle='About'/>
+  return (
+    <BannerContainer>
+      <SAMAHANMembersBanner title="SAMAHAN" subtitle="About" />
     </BannerContainer>
-}
+  );
+};
 
 const meta: Meta<typeof BannerContainer> = {
   component: Banner,
   title: 'UI/Banner',
-  argTypes: {
-    
-  },
+  argTypes: {},
 };
 
 export default meta;

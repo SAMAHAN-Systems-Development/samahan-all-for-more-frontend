@@ -1,15 +1,15 @@
-import React from 'react'
-import { BannerOverlay } from '../banner-overlay/BannerOverlay'
+import React from 'react';
+import { BannerOverlay } from '../banner-overlay/BannerOverlay';
 
 type Props = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
-export const BannerContainer: React.FC<Props> = ({children}) => {
+export const BannerContainer: React.FC<Props> = ({ children }) => {
   return (
-    <div className='w-auto'>
-        {children}
-        <BannerOverlay />
+    <div className="w-full relative h-96 bg-blue overflow-hidden ">
+      {children}
+      <BannerOverlay />
     </div>
-  )
-}
+  );
+};

@@ -6,7 +6,7 @@ const meta: Meta<typeof BannerOverlay> = {
   component: BannerOverlay,
   title: 'Components/Banner/BannerOverlay',
   argTypes: {
-    size: {}
+    size: {},
   },
 };
 

@@ -6,8 +6,8 @@ const meta: Meta<typeof SAMAHANMembersBanner> = {
   component: SAMAHANMembersBanner,
   title: 'Components/Banner/SAMAHANMembersBanner',
   argTypes: {
-    title: {}, 
-    subtitle: {}
+    title: {},
+    subtitle: {},
   },
 };
 
