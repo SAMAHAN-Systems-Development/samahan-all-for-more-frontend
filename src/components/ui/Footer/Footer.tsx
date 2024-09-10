@@ -229,7 +229,7 @@ const Footer: React.FC<FooterProps> = ({}) => {
             id="Logo-Text"
             className="flex flex-col xl:flex-row items-center xl:items-center xl:justify-start justify-center w-full"
           >
-            {/* Logos Image */}
+            {/* Logos */}
 
             <div id="logo " className="flex flex-row items-center">
               <Image
