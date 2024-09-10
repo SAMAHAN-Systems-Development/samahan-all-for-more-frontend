@@ -19,6 +19,7 @@ export enum LINK_WEIGHT_ENUM {
 
 export enum FOOTER_SIZE_ENUM {
     SMALL = 'small',
+    MEDIUM = 'medium',
 }
 
 export enum FOOTER_BACKGROUND_ENUM {

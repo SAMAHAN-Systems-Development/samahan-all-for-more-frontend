@@ -1,6 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import Footer from './Footer/Footer';
+import {
+  FOOTER_SIZE_ENUM,
+  LINK_SIZE_ENUM,
+  LINK_WEIGHT_ENUM,
+  SOCIAL_ICON_SIZE_ENUM,
+} from './Footer/enums';
 
 const meta: Meta<typeof Footer> = {
   component: Footer,
@@ -35,19 +41,19 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    size: 'medium',
+    size: FOOTER_SIZE_ENUM.MEDIUM,
     background: 'default',
-    linkSize: 'medium',
-    linkWeight: 'bold',
-    iconSize: 'small',
+    linkSize: LINK_SIZE_ENUM.MEDIUM,
+    linkWeight: LINK_WEIGHT_ENUM.BOLD,
+    iconSize: SOCIAL_ICON_SIZE_ENUM.SMALL,
   },
 };
 
 export const CustomBackground: Story = {
   args: {
-    size: 'medium',
-    linkSize: 'regular',
-    linkWeight: 'normal',
-    iconSize: 'medium',
+    size: FOOTER_SIZE_ENUM.MEDIUM,
+    linkSize: LINK_SIZE_ENUM.REGULAR,
+    linkWeight: LINK_WEIGHT_ENUM.NORMAL,
+    iconSize: SOCIAL_ICON_SIZE_ENUM.MEDIUM,
   },
 };
