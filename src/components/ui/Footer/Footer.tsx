@@ -26,7 +26,6 @@ const footerSection = cva('mb-4', {
   variants: {
     size: {
       [FOOTER_SIZE_ENUM.SMALL]: 'mb-2',
-      [FOOTER_SIZE_ENUM.MEDIUM]: 'mb-4',
     },
     background: {
       [FOOTER_BACKGROUND_ENUM.DEFAULT]: 'bg-white',
