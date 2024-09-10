@@ -3,7 +3,7 @@ import React from 'react';
 
 /**
  *
- * Container for all SAMAHANMembersBanner and AFYPBanner:
+ * @returns Container for all SAMAHANMembersBanner and AFYPBanner:
  * @param children - place BannerImage as the child
  *
  *
