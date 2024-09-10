@@ -4,8 +4,8 @@ import { cva } from 'class-variance-authority';
 import { FaXTwitter, FaInstagram, FaFacebook } from 'react-icons/fa6';
 import Image from 'next/image';
 import { GoArrowUpRight } from 'react-icons/go';
-import SamahanLogoWhite from '../../../../public/assets/images/SamahanLogoWhite.png';
-import UniversitySealLogo from '../../../../public/assets/images/UniversitySealLogo.png';
+import SamahanLogoWhite from 'public/assets/images/SamahanLogoWhite.png';
+import UniversitySealLogo from 'public/assets/images/UniversitySealLogo.png';
 import Link from 'next/link';
 
 import {
@@ -59,13 +59,12 @@ const socialIcon = cva('mx-1', {
     },
   },
 });
-
 interface FooterProps {
-  size?: FOOTER_SIZE_ENUM;
   background?: 'default' | 'blue';
+  size?: FOOTER_SIZE_ENUM;
   linkSize?: LINK_SIZE_ENUM;
-  linkWeight?: LINK_WEIGHT_ENUM;
   iconSize?: SOCIAL_ICON_SIZE_ENUM;
+  linkWeight?: LINK_WEIGHT_ENUM;
 }
 
 // Store links in constants

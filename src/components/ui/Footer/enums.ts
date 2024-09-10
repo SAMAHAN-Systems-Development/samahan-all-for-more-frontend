@@ -1,29 +1,28 @@
 export enum SOCIAL_ICON_SIZE_ENUM {
-    SMALL = 'small',
     MEDIUM = 'medium',
+    SMALL = 'small',
 }
 
 export enum LINK_SIZE_ENUM {
-    SMALL = 'small',
+    MAIN = 'text-main',
     MEDIUM = 'medium',
     REGULAR = 'text-footer-main',
-    MAIN = 'text-main',
+    SMALL = 'small',
 }
 
 export enum LINK_WEIGHT_ENUM {
-    SUPER_THIN = 'superThin',
-    THIN = 'thin',
-    NORMAL = 'normal',
     BOLD = 'bold',
+    NORMAL = 'normal',
+    THIN = 'thin',
+    SUPER_THIN = 'superThin',
 }
 
 export enum FOOTER_SIZE_ENUM {
-    SMALL = 'small',
     MEDIUM = 'medium',
+    SMALL = 'small',
 }
 
 export enum FOOTER_BACKGROUND_ENUM {
-    DEFAULT = 'default',
     BLUE = 'blue',
+    DEFAULT = 'default',
 }
-

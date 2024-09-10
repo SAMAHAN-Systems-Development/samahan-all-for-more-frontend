@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Footer from './Footer/Footer';
+import Footer from 'src/components/ui/Footer/Footer';
 import {
   FOOTER_SIZE_ENUM,
   LINK_SIZE_ENUM,
   LINK_WEIGHT_ENUM,
   SOCIAL_ICON_SIZE_ENUM,
-} from './Footer/enums';
+} from '@/components/ui/Footer/enums';
 
 const meta: Meta<typeof Footer> = {
   component: Footer,
