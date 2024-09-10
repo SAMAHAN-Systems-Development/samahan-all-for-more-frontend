@@ -13,8 +13,9 @@ export enum LINK_SIZE_ENUM {
 export enum LINK_WEIGHT_ENUM {
     BOLD = 'bold',
     NORMAL = 'normal',
-    THIN = 'thin',
     SUPER_THIN = 'superThin',
+    THIN = 'thin',
+
 }
 
 export enum FOOTER_SIZE_ENUM {

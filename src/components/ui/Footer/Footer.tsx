@@ -14,7 +14,7 @@ import {
   FOOTER_SIZE_ENUM,
   FOOTER_BACKGROUND_ENUM,
   SOCIAL_ICON_SIZE_ENUM,
-} from '../Footer/enums';
+} from '@/components/ui/Footer/enums';
 
 const getCurrentYear = () => {
   return new Date().getFullYear();
@@ -61,9 +61,9 @@ const socialIcon = cva('mx-1', {
 });
 interface FooterProps {
   background?: 'default' | 'blue';
-  size?: FOOTER_SIZE_ENUM;
-  linkSize?: LINK_SIZE_ENUM;
   iconSize?: SOCIAL_ICON_SIZE_ENUM;
+  linkSize?: LINK_SIZE_ENUM;
+  size?: FOOTER_SIZE_ENUM;
   linkWeight?: LINK_WEIGHT_ENUM;
 }
 
@@ -352,8 +352,8 @@ const Footer: React.FC<FooterProps> = ({}) => {
             </div>
           </div>
         </div>
-        <div className="mb-[2.625rem]"></div>
-        <div className="font-inter border-t border-gray-500 pb-10 text-center w-full flex justify-center items-center">
+
+        <div className="font-inter border-t border-gray-500 pb-10 text-center w-full flex justify-center items-center mt-[2.625rem]">
           <div
             id="credits"
             className="flex flex-col text-center lg:flex-row items-center lg:justify-between px-0 w-full mt-[2.625rem]"
