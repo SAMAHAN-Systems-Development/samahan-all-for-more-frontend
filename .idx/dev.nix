@@ -7,6 +7,7 @@
     
   ];
   idx.previews = {
+    enable = true;
     previews = {
       web = {
         command = [
@@ -18,6 +19,7 @@
           "$PORT"
           "--hostname"
           "0.0.0.0"
+          "storybook"
         ];
         manager = "web";
       };

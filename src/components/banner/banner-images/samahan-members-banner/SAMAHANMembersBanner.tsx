@@ -6,6 +6,14 @@ import { motion } from 'framer-motion';
 import { BannerGradient } from '@/components/banner/banner-gradient/BannerGradient';
 import { BannerImageContainer } from '@/components/banner/banner-image-container/BannerImageContainer';
 
+
+/**
+ * 
+ * Use ui/banner.tsx, not this. 
+ * 
+ */
+
+
 export interface Props {
   subtitle?: string;
   title?: string;
@@ -48,13 +56,13 @@ export const SAMAHANMembersBanner: React.FC<Props> = ({
           transition={{
             duration: animationDuration,
           }}
-          className="text-title text-white text-center"
+          className="text-title text-white text-center max-md:mb-7 max-sm:mb-5"
         >
           <h2 className=" ">{subtitle}</h2>
-          <h1 className="  font-bold ">{title}</h1>
+          <h1 className=" font-bold ">{title}</h1>
         </motion.p>
       </div>
-      <BannerImageContainer>
+      <BannerImageContainer >
         <motion.div
           initial={{
             opacity: 0,
@@ -66,13 +74,14 @@ export const SAMAHANMembersBanner: React.FC<Props> = ({
             duration: animationDuration,
             delay: imageDelay,
           }}
+          className="w-full h-full "
         >
           <Image
-            alt="SAMAHANN Members"
+            alt="SAMAHAN Members"
             src={'/images/samahan-members.png'}
             width={0}
             height={0}
-            className="w-full h-full object-cover pb-8"
+            className="w-full h-full object-cover mb-14 "
           />
         </motion.div>
       </BannerImageContainer>

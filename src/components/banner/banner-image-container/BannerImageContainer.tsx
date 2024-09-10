@@ -18,9 +18,18 @@ const variants = cva(
         absolute: 'absolute',
         relative: 'relative',
       },
+      width: {
+        full: 'w-full',
+        auto: 'w-auto',
+      },
+      height: {
+        full: 'h-full',
+        auto: 'h-auto',
+      }
     },
     defaultVariants: {
       position: 'default',
+      width: 'full', 
     },
   }
 );
@@ -33,13 +42,15 @@ export const BannerImageContainer: React.FC<Props> = ({
   children,
   className,
   position,
+  width, 
   ...props
 }) => {
   return (
     <div
       className={variants({
         position,
-        className,
+        className, 
+        width, 
       })}
       {...props}
     >
