@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 /**
  *
  * @returns Container for all SAMAHANMembersBanner and AFYPBanner:
@@ -15,7 +14,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 
 export const BannerContainer: React.FC<Props> = ({ children, ...props }) => {
   return (
-    <div {...props} className="w-full relative h-96 overflow-hidden ">
+    <div {...props} className="w-full relative h-96 ">
       {children}
     </div>
   );

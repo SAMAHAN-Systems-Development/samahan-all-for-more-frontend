@@ -6,8 +6,9 @@ export const Banner: React.FC = () => {
   return (
     <BannerContainer>
       <BallFrame />
-      <SAMAHANMembersBanner title="SAMAHAN" subtitle="About" />
+      <div className="overflow-hidden ">
+        <SAMAHANMembersBanner title="SAMAHAN" subtitle="About" />
+      </div>
     </BannerContainer>
   );
 };
-

@@ -6,13 +6,11 @@ import { motion } from 'framer-motion';
 import { BannerGradient } from '@/components/banner/banner-gradient/BannerGradient';
 import { BannerImageContainer } from '@/components/banner/banner-image-container/BannerImageContainer';
 
-
 /**
- * 
- * Use ui/banner.tsx, not this. 
- * 
+ *
+ * Use ui/banner.tsx, not this.
+ *
  */
-
 
 export interface Props {
   subtitle?: string;
@@ -56,13 +54,13 @@ export const SAMAHANMembersBanner: React.FC<Props> = ({
           transition={{
             duration: animationDuration,
           }}
-          className="text-title text-white text-center max-md:mb-7 max-sm:mb-5"
+          className="text-title text-white text-center max-md:mb-9 max-sm:mb-10"
         >
           <h2 className=" ">{subtitle}</h2>
           <h1 className=" font-bold ">{title}</h1>
         </motion.p>
       </div>
-      <BannerImageContainer >
+      <BannerImageContainer>
         <motion.div
           initial={{
             opacity: 0,
