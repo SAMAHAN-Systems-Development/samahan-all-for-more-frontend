@@ -1,11 +1,13 @@
 import React from 'react';
-import logo from '@/stories/assets/hero/A4M LOGO.png';
-import Image, { StaticImageData } from 'next/image';
-import email_icon from '@/stories/assets/hero/email_icon.png';
-import website_icon from '@/stories/assets/hero/website_icon.png';
-import sns_icon from '@/stories/assets/hero/sns_icon.png';
-import edge from '@/stories/assets/hero/round end.svg';
-import BallFrame from '../ui/BallFrame';
+import type { StaticImageData } from 'next/image';
+import Image from 'next/image';
+
+import BallFrame from '@/components/ui/BallFrame';
+import logo from '@/stories/assets/hero/A4M LOGO.svg';
+import email_icon from '@/stories/assets/hero/email_icon.svg';
+import edge from '@/stories/assets/hero/round_end.svg';
+import sns_icon from '@/stories/assets/hero/sns_icon.svg';
+import website_icon from '@/stories/assets/hero/website_icon.svg';
 
 export default function HeroSection() {
   const socials: { icon: StaticImageData; title: string; value: string }[] = [
@@ -16,9 +18,9 @@ export default function HeroSection() {
 
   return (
     <section
-      className={`h-[120vh] w-full relative max-w-[1440px] tracking-wider border`}
+      className={`h-[110vh] w-full relative max-w-[1440px] tracking-wide overflow-clip`}
     >
-      <div className="w-full h-[90vh] bg-blue flex flex-col items-center border justify-center text-white">
+      <div className="w-full h-[72vh] bg-blue pt-16 flex flex-col items-center justify-center text-white">
         {/* temp navigation bar */}
         <div className="w-9/12 mx-auto rounded-full bg-white h-10 fixed top-10 z-10 " />
 
@@ -38,9 +40,9 @@ export default function HeroSection() {
           </span>
 
           {/* socials */}
-          <div className="flex justify-between font-light mt-20">
-            {socials.map((social) => (
-              <div className="flex gap-2 text-xs p-2 items-center">
+          <div className="flex justify-between font-light mt-12">
+            {socials.map((social, index) => (
+              <div key={index} className="flex gap-2 text-xs p-2 items-center">
                 <div className="rounded-full h-5 w-5 bg-white p-1 flex justify-center items-center overflow-visible">
                   <Image src={social.icon} alt={social.title} />
                 </div>
@@ -52,12 +54,14 @@ export default function HeroSection() {
       </div>
 
       {/* edge */}
-      <div className="w-full h-[30vh] relative border">
+      <div className="w-full h-[22vh] relative">
         <Image src={edge} alt="" fill className="object-cover" />
       </div>
 
       {/* balls */}
-      <BallFrame />
+      <div className="w-full absolute bottom-0 scale-110 ">
+        <BallFrame hero />
+      </div>
     </section>
   );
 }
