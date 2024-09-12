@@ -21,9 +21,7 @@ interface Ball {
   top?: number;
 }
 
-export default function BallFrame(props: { hero?: boolean }) {
-  const hero = props.hero;
-
+export default function BallFrame(hero?: boolean) {
   const [loadedCount, setLoadedCount] = useState<number>(0);
   const [allLoaded, setAllLoaded] = useState<boolean>(false);
 

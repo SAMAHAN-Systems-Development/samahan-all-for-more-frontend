@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 import { motion } from 'framer-motion';
 
-const Ball = (props: {
+type BallProps = {
   isVisible: boolean;
   letter: StaticImageData;
   onLoad: () => void;
@@ -16,38 +16,49 @@ const Ball = (props: {
   right?: number;
   rotate?: number;
   top?: number;
-}) => {
+};
+
+const Ball = ({
+  isVisible,
+  letter,
+  onLoad,
+  style,
+  bottom,
+  left,
+  right,
+  rotate,
+  top,
+}: BallProps) => {
   const [loaded, setLoaded] = useState<boolean>(false);
-  const onLoad = props.onLoad;
   const handleLoad = () => {
     setLoaded(true);
     onLoad();
   };
 
   const animation =
-    props.isVisible && loaded // trigger animation when all spheres are loaded
+    isVisible && loaded // trigger animation when all spheres are loaded
       ? {
           scale: 1,
           translateY: 0,
           translateX: 0,
-          top: props.top,
-          bottom: props.bottom,
-          left: props.left,
-          right: props.right,
+          top: top,
+          bottom: bottom,
+          left: left,
+          right: right,
         }
       : {};
 
   return (
     <>
       <motion.div
-        className={`absolute ${props.style} z-10`}
+        className={`absolute ${style} z-10`}
         initial={{
           scale: 1.2,
-          top: props.top! * 0.5,
-          bottom: props.bottom! * 0.5,
-          left: props.left! * 0.5,
-          right: props.right! * 0.5,
-          rotate: props.rotate,
+          top: top! * 0.5,
+          bottom: bottom! * 0.5,
+          left: left! * 0.5,
+          right: right! * 0.5,
+          rotate: rotate,
         }}
         animate={animation}
         transition={{
@@ -60,7 +71,7 @@ const Ball = (props: {
         }}
       >
         <Image
-          src={props.letter}
+          src={letter}
           alt="ball"
           onLoad={handleLoad}
           className="object-contain"
