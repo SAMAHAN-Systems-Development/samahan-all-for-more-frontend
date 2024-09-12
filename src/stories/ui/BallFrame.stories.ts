@@ -5,6 +5,6 @@ export default {
   component: BallFrame,
 };
 
-export const Main = {
+export const Frame = {
   args: {},
 };
