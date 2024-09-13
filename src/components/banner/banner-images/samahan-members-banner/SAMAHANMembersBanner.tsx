@@ -54,7 +54,7 @@ export const SAMAHANMembersBanner: React.FC<Props> = ({
           transition={{
             duration: animationDuration,
           }}
-          className="text-title text-white text-center max-md:mb-9 max-sm:mb-10"
+          className="text-title text-white text-center max-md:mb-9"
         >
           <h2 className=" ">{subtitle}</h2>
           <h1 className=" font-bold ">{title}</h1>
