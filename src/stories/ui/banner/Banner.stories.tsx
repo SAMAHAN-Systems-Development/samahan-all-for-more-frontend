@@ -1,4 +1,4 @@
-import { Banner } from '@/components/ui/banner/banner';
+import { Banner } from '@/components/ui/banner/Banner';
 import type { Meta, StoryObj } from '@storybook/react';
 
 

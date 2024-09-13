@@ -5,7 +5,9 @@ import BallFrame from '@/components/ui/BallFrame';
 export const Banner: React.FC = () => {
   return (
     <BannerContainer>
-      <BallFrame />
+      <div className="">
+        <BallFrame />
+      </div>
       <div className="overflow-hidden ">
         <SAMAHANMembersBanner title="SAMAHAN" subtitle="About" />
       </div>
