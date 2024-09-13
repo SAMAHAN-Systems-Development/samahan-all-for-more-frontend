@@ -22,3 +22,11 @@ img {
   max-width: '100%';
   display: 'block';
 }
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+}
+
+body {
+  font-family: var(--font-inter);
+}
