@@ -1,18 +1,19 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { cva } from 'class-variance-authority';
-import { FaXTwitter, FaInstagram, FaFacebook } from 'react-icons/fa6';
-import Image from 'next/image';
+import { FaFacebook,FaInstagram, FaXTwitter } from 'react-icons/fa6';
 import { GoArrowUpRight } from 'react-icons/go';
-import SamahanLogoWhite from 'public/assets/images/SamahanLogoWhite.png';
-import UniversitySealLogo from 'public/assets/images/UniversitySealLogo.png';
+import Image from 'next/image';
 import Link from 'next/link';
 
+import { cva } from 'class-variance-authority';
+import SamahanLogoWhite from 'public/assets/images/SamahanLogoWhite.png';
+import UniversitySealLogo from 'public/assets/images/UniversitySealLogo.png';
+
 import {
+  FOOTER_BACKGROUND_ENUM,
+  FOOTER_SIZE_ENUM,
   LINK_SIZE_ENUM,
   LINK_WEIGHT_ENUM,
-  FOOTER_SIZE_ENUM,
-  FOOTER_BACKGROUND_ENUM,
   SOCIAL_ICON_SIZE_ENUM,
 } from '@/components/ui/Footer/enums';
 
@@ -63,8 +64,8 @@ interface FooterProps {
   background?: 'default' | 'blue';
   iconSize?: SOCIAL_ICON_SIZE_ENUM;
   linkSize?: LINK_SIZE_ENUM;
-  size?: FOOTER_SIZE_ENUM;
   linkWeight?: LINK_WEIGHT_ENUM;
+  size?: FOOTER_SIZE_ENUM;
 }
 
 // Store links in constants

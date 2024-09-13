@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import Footer from 'src/components/ui/Footer/Footer';
+
 import {
   FOOTER_SIZE_ENUM,
   LINK_SIZE_ENUM,
