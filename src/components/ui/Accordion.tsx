@@ -1,5 +1,4 @@
 'use client';
-import type { CSSProperties } from 'react';
 import { useState } from 'react';
 import { HiOutlinePlay } from 'react-icons/hi';
 import { PiPlayCircleFill } from 'react-icons/pi';
@@ -25,15 +24,12 @@ const Accordion = ({ title, content }: AccordionProps) => {
 
   return (
     <div
-      style={{
-        ...styles.accordion,
-        ...(isHovered && styles.accordionHover),
-      }}
+      className={`p-[5px_10px_5px_25px] m-3 border-2 border-blue rounded-[40px] transition-colors duration-300 ${isHovered ? 'bg-white' : ''}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div
-        style={styles.accordionHeader}
+        className="flex justify-between items-center p-2.5 cursor-pointer rounded-[40px] text-blue font-bold text-main leading-[21.78px]"
         onClick={toggleAccordion}
         onKeyDown={handleKeyDown}
         role="button"
@@ -41,65 +37,24 @@ const Accordion = ({ title, content }: AccordionProps) => {
       >
         <h3>{title}</h3>
         <span
-          style={{
-            ...styles.iconButton,
-            ...(isOpen && styles.iconOpen),
-          }}
+          className={`transition-transform duration-300 size-8 ${isOpen ? 'rotate-90' : ''}`}
         >
           {isOpen ? (
-            <PiPlayCircleFill color="blue" size={32} />
+            <PiPlayCircleFill className="size-8" color="#0923BA" />
           ) : (
-            <HiOutlinePlay color="blue" size={32} />
+            <HiOutlinePlay className="size-8" color="#0923BA" />
           )}
         </span>
       </div>
       <section>
-        {isOpen && <article style={styles.accordionContent}>{content}</article>}
+        {isOpen && (
+          <article className="text-blue rounded-[40px] p-[0px_55px_15px_10px] flex flex-col text-main gap-[25px]">
+            {content}
+          </article>
+        )}
       </section>
     </div>
   );
-};
-
-const styles: { [key: string]: CSSProperties } = {
-  accordion: {
-    padding: '5px 10px 5px 25px',
-    border: '2px solid #0923BA',
-    borderRadius: '40px',
-    transition: 'background-color 0.3s ease',
-  },
-  accordionHeader: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '10px',
-    cursor: 'pointer',
-    borderRadius: '40px',
-    fontSize: '18px',
-    fontWeight: 'bold',
-    lineHeight: '21.78px',
-    color: '#0923BA',
-  },
-  iconButton: {
-    border: 'none',
-    background: 'transparent',
-    cursor: 'pointer',
-    transition: 'transform 0.3s ease',
-  },
-  iconOpen: {
-    transform: 'rotate(90deg)',
-  },
-  accordionContent: {
-    color: '#0923BA',
-    borderRadius: '40px',
-    padding: '0px 55px 15px 10px',
-    display: 'flex',
-    flexDirection: 'column',
-    fontSize: '18px',
-    gap: '25px',
-  },
-  accordionHover: {
-    backgroundColor: '#f7f6f6',
-  },
 };
 
 export default Accordion;
