@@ -100,12 +100,6 @@ const styles: { [key: string]: CSSProperties } = {
   accordionHover: {
     backgroundColor: '#f7f6f6',
   },
-  title: {
-    fontSize: '18px',
-    fontWeight: 'bold',
-    lineHeight: '21.78px',
-    color: '#0923BA',
-  },
 };
 
 export default Accordion;
