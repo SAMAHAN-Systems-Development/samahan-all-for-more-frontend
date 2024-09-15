@@ -5,7 +5,7 @@ import { cva } from 'class-variance-authority';
 
 /**
  *
- * Used for SAMAHANMembersBanner and AFYPBanner as the base, this component is to give that rounded look.
+ * Used for BannerImage and AFYPBanner as the base, this component is to give that rounded look.
  *
  */
 
@@ -25,11 +25,11 @@ const variants = cva(
       height: {
         full: 'h-full',
         auto: 'h-auto',
-      }
+      },
     },
     defaultVariants: {
       position: 'default',
-      width: 'full', 
+      width: 'full',
     },
   }
 );
@@ -42,15 +42,15 @@ export const BannerImageContainer: React.FC<Props> = ({
   children,
   className,
   position,
-  width, 
+  width,
   ...props
 }) => {
   return (
     <div
       className={variants({
         position,
-        className, 
-        width, 
+        className,
+        width,
       })}
       {...props}
     >

@@ -1,5 +1,5 @@
 import { BannerContainer } from '@/components/banner/banner-container/BannerContainer';
-import { SAMAHANMembersBanner } from '@/components/banner/banner-images/samahan-members-banner/SAMAHANMembersBanner';
+import { BannerImage } from '@/components/banner/banner-image/BannerImage';
 import BallFrame from '@/components/ui/BallFrame';
 
 export const Banner: React.FC = () => {
@@ -9,7 +9,7 @@ export const Banner: React.FC = () => {
         <BallFrame />
       </div>
       <div className="overflow-hidden ">
-        <SAMAHANMembersBanner title="SAMAHAN" subtitle="About" />
+        <BannerImage title="SAMAHAN" subtitle="About" />
       </div>
     </BannerContainer>
   );

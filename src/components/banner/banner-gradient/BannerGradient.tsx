@@ -2,7 +2,7 @@ import React from 'react';
 
 /**
  *
- * @returns Gradient used for SAMAHANMembersBanner
+ * @returns Gradient used for BannerImage
  *
  */
 

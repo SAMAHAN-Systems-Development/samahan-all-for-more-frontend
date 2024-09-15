@@ -12,15 +12,12 @@ import { BannerImageContainer } from '@/components/banner/banner-image-container
  *
  */
 
-export interface Props {
+export interface BannerProps {
   subtitle?: string;
   title?: string;
 }
 
-export const SAMAHANMembersBanner: React.FC<Props> = ({
-  title,
-  subtitle,
-}: Props) => {
+export const BannerImage: React.FC<BannerProps> = ({ title, subtitle }) => {
   const animationDuration = 1.1;
   const imageDelay = 0.3;
 
