@@ -3,7 +3,7 @@ import { BannerImage } from '@/components/banner/banner-image/BannerImage';
 
 export const Banner: React.FC = () => {
   return (
-    <BannerContainer height="80vh">
+    <BannerContainer>
       <div className="overflow-hidden ">
         <BannerImage
           title="SAMAHAN"

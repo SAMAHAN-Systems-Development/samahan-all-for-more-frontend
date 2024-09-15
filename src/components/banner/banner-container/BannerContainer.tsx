@@ -32,17 +32,15 @@ export interface BannerContainerProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof BannerContainerVariants> {
   children: React.ReactNode;
-  height?: string;
 }
 
 export const BannerContainer: React.FC<BannerContainerProps> = ({
   children,
-  height,
   hasBallFrame,
   ...props
 }) => {
   return (
-    <div {...props} className={`w-full relative h-[${height}]`}>
+    <div {...props} className={`w-full relative h-[80vh]`}>
       <div className=" absolute bottom-[-4rem] max-sm:bottom-[-2rem]">
         <div className={BannerContainerVariants({ hasBallFrame })}>
           <BallFrame />
