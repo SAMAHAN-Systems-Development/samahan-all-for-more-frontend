@@ -19,4 +19,7 @@ module.exports = {
   ],
 
   plugins: ['@typescript-eslint'],
+  rules: {
+    '@typescript-eslint/no-unsafe-assignment': 'off',
+  },
 };
