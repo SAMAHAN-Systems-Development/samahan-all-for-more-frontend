@@ -9,7 +9,7 @@ import { cva } from 'class-variance-authority';
  *
  */
 
-const variants = cva(
+export const BannerImageContainerVariants = cva(
   ['rounded-[10%_10%_50%_50%/0%_0%_20%_20%] overflow-hidden w-full h-full '],
   {
     variants: {
@@ -36,7 +36,7 @@ const variants = cva(
 
 interface Props
   extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof variants> {}
+    VariantProps<typeof BannerImageContainerVariants> {}
 
 export const BannerImageContainer: React.FC<Props> = ({
   children,
@@ -47,7 +47,7 @@ export const BannerImageContainer: React.FC<Props> = ({
 }) => {
   return (
     <div
-      className={variants({
+      className={BannerImageContainerVariants({
         position,
         className,
         width,

@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 
@@ -13,16 +15,23 @@ import { BannerImageContainer } from '@/components/banner/banner-image-container
  */
 
 export interface BannerProps {
+  image: string;
+  imageAlt: string;
   subtitle?: string;
   title?: string;
 }
 
-export const BannerImage: React.FC<BannerProps> = ({ title, subtitle }) => {
+export const BannerImage: React.FC<BannerProps> = ({
+  title,
+  subtitle,
+  image,
+  imageAlt,
+}) => {
   const animationDuration = 1.1;
   const imageDelay = 0.3;
 
   return (
-    <div className="absolute w-full h-full">
+    <div className="absolute w-full h-full overflow-hidden">
       <BannerImageContainer position={'absolute'} className="z-[1]">
         <motion.div
           initial={{
@@ -41,7 +50,7 @@ export const BannerImage: React.FC<BannerProps> = ({ title, subtitle }) => {
       </BannerImageContainer>
 
       <div className=" flex justify-center items-center absolute w-[100%] h-[100%] z-[2]">
-        <motion.p
+        <motion.div
           initial={{
             translateY: '200%',
           }}
@@ -55,7 +64,7 @@ export const BannerImage: React.FC<BannerProps> = ({ title, subtitle }) => {
         >
           <h2 className=" ">{subtitle}</h2>
           <h1 className=" font-bold ">{title}</h1>
-        </motion.p>
+        </motion.div>
       </div>
       <BannerImageContainer>
         <motion.div
@@ -69,15 +78,16 @@ export const BannerImage: React.FC<BannerProps> = ({ title, subtitle }) => {
             duration: animationDuration,
             delay: imageDelay,
           }}
-          className="w-full h-full "
+          className="w-full h-full bg-blue pb-5 "
         >
           <Image
-            alt="SAMAHAN Members"
-            src={'/images/samahan-members.png'}
-            width={0}
-            height={0}
-            className="w-full h-full object-cover mb-14 "
+            alt={imageAlt}
+            src={image}
+            width={5600}
+            height={2028}
+            className="w-full h-full object-cover  "
           />
+          {/* <div className="w-full h-full bg-[rgb(0,255,0)]" /> */}
         </motion.div>
       </BannerImageContainer>
     </div>

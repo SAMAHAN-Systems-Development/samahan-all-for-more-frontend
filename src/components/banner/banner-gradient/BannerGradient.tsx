@@ -6,8 +6,13 @@ import React from 'react';
  *
  */
 
-export const BannerGradient = () => {
+export const BannerGradient: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+  ...props
+}) => {
   return (
-    <div className="bg-gradient-to-t from-blue from-10% to-transparent to-80% absolute w-full h-full " />
+    <div
+      className="bg-gradient-to-t from-blue from-10% to-transparent to-80% absolute w-full h-full "
+      {...props}
+    />
   );
 };

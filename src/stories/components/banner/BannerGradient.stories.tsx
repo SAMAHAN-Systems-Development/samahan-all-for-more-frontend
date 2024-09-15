@@ -5,9 +5,7 @@ import { BannerGradient } from '@/components/banner/banner-gradient/BannerGradie
 const meta: Meta<typeof BannerGradient> = {
   component: BannerGradient,
   title: 'Components/Banner/BannerGradient',
-  argTypes: {
-    size: {},
-  },
+  argTypes: {},
 };
 
 export default meta;
