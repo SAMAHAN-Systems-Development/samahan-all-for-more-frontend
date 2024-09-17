@@ -35,19 +35,16 @@ const Ball = ({
     onLoad();
   };
 
-  const animation =
-    isVisible && loaded // trigger animation when all spheres are loaded
-      ? {
-          scale: 1,
-          translateY: 0,
-          translateX: 0,
-          top: top,
-          bottom: bottom,
-          left: left,
-          right: right,
-        }
-      : {};
-
+  const animation = isVisible &&
+    loaded && { // trigger animation when all spheres are loaded
+      scale: 1,
+      translateY: 0,
+      translateX: 0,
+      top: top,
+      bottom: bottom,
+      left: left,
+      right: right,
+    };
   return (
     <>
       <motion.div
