@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { BannerContainer } from '@/components/banner/banner-container/BannerContainer';
+import { BannerContainer } from '@/components/banner-section/banner-container/BannerContainer';
 
 const meta: Meta<typeof BannerContainer> = {
   component: BannerContainer,
-  title: 'Components/Banner/BannerContainer',
+  title: 'Components/BannerSection/BannerContainer',
   argTypes: {},
 };
 
