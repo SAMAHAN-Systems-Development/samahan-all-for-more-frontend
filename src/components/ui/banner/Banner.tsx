@@ -1,5 +1,5 @@
-import { BannerContainer } from '@/components/banner-section/banner-container/BannerContainer';
-import { BannerImage } from '@/components/banner-section/banner-image/BannerImage';
+import { BannerContainer } from '@/components/banner/banner-container/BannerContainer';
+import { BannerImage } from '@/components/banner/banner-image/BannerImage';
 
 export const Banner: React.FC = () => {
   return (

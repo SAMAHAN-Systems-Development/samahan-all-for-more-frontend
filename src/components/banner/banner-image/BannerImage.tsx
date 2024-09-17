@@ -3,8 +3,8 @@
 import React from 'react';
 import Image from 'next/image';
 
-import { BannerGradient } from '@/components/banner-section/banner-gradient/BannerGradient';
-import { BannerImageContainer } from '@/components/banner-section/banner-image-container/BannerImageContainer';
+import { BannerGradient } from '@/components/banner/banner-gradient/BannerGradient';
+import { BannerImageContainer } from '@/components/banner/banner-image-container/BannerImageContainer';
 
 /**
  *

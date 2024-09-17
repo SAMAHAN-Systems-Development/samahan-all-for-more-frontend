@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { BannerImage } from '@/components/banner-section/banner-image/BannerImage';
+import { BannerImage } from '@/components/banner/banner-image/BannerImage';
 
 const meta: Meta<typeof BannerImage> = {
   component: BannerImage,
-  title: 'Components/BannerSection/BannerImage',
+  title: 'Components/Banner/BannerImage',
   argTypes: {},
 };
 
