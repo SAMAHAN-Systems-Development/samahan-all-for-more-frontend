@@ -59,7 +59,7 @@ export default function HeroSection() {
       </div>
 
       {/* balls */}
-      <div className="w-full absolute bottom-0 scale-110 ">
+      <div className="w-full absolute bottom-0 lg:scale-110 ">
         <BallFrame hero />
       </div>
     </section>
