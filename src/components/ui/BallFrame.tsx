@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect, useState } from 'react';
 import type { StaticImageData } from 'next/image';
 
@@ -21,9 +22,11 @@ interface Ball {
   top?: number;
 }
 
-export default function BallFrame(props: { hero?: boolean }) {
-  const hero = props.hero;
+type BallFrameProp = {
+  hero?: boolean;
+};
 
+export default function BallFrame({ hero }: BallFrameProp) {
   const [loadedCount, setLoadedCount] = useState<number>(0);
   const [allLoaded, setAllLoaded] = useState<boolean>(false);
 
