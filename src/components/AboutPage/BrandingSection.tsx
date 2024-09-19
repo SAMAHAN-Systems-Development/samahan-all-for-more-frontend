@@ -2,7 +2,7 @@ import Image from 'next/image';
 const BrandingSection = () => {
   return (
     <article className="flex relative">
-      <div>
+      <div className="hidden lg:block">
         <div>
           <Image
             src="/assets/images/Blue SMHN Logo Normal.png"
@@ -33,7 +33,7 @@ const BrandingSection = () => {
       </div>
 
       {/*to align this whole section with the logo*/}
-      <section className="mx-[15rem]">
+      <section className="lg:mx-[15rem]">
         <div className="flex items-center mb-5 mt-28">
           <Image
             src="/assets/images/A4M S-LOGOHD.png"
@@ -86,7 +86,7 @@ const BrandingSection = () => {
           milestones-All for More.
         </p>
       </section>
-      <div>
+      <div className="hidden lg:block">
         <div>
           <Image
             src="/assets/images/Blue M1.png"
