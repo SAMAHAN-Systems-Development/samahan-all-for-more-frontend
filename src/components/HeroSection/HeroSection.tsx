@@ -1,19 +1,30 @@
 import React from 'react';
-import type { StaticImageData } from 'next/image';
+import { FaAt } from 'react-icons/fa6';
+import { MdOutlineMail } from 'react-icons/md';
+import { PiGlobe } from 'react-icons/pi';
+// import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 
 import BallFrame from '@/components/ui/BallFrame';
 import logo from '@/stories/assets/hero/A4M LOGO.svg';
-import email_icon from '@/stories/assets/hero/email_icon.svg';
+// import email_icon from '@/stories/assets/hero/email_icon.svg';
 import edge from '@/stories/assets/hero/round_end.svg';
-import sns_icon from '@/stories/assets/hero/sns_icon.svg';
-import website_icon from '@/stories/assets/hero/website_icon.svg';
+// import sns_icon from '@/stories/assets/hero/sns_icon.svg';
+// import website_icon from '@/stories/assets/hero/website_icon.svg';
 
 export default function HeroSection() {
-  const socials: { icon: StaticImageData; title: string; value: string }[] = [
-    { icon: email_icon, title: 'email', value: 'samahan@addu.edu.ph' },
-    { icon: website_icon, title: 'website', value: 'samahan.addu.edu.ph' },
-    { icon: sns_icon, title: 'sns', value: 'addusamahan' },
+  const socials: { icon: React.ReactNode; title: string; value: string }[] = [
+    {
+      icon: <MdOutlineMail className="scale-110" />,
+      title: 'email',
+      value: 'samahan@addu.edu.ph',
+    },
+    {
+      icon: <PiGlobe className="scale-125" />,
+      title: 'website',
+      value: 'samahan.addu.edu.ph',
+    },
+    { icon: <FaAt />, title: 'sns', value: 'addusamahan' },
   ];
 
   return (
@@ -43,10 +54,10 @@ export default function HeroSection() {
           <div className="flex justify-between font-light mt-12">
             {socials.map((social, index) => (
               <div key={index} className="flex gap-2 text-xs p-2 items-center">
-                <div className="rounded-full h-5 w-5 bg-white p-1 flex justify-center items-center overflow-visible">
-                  <Image src={social.icon} alt={social.title} />
+                <div className="rounded-full h-5 w-5 bg-white text-blue flex justify-center items-center overflow-visible">
+                  {social.icon}
                 </div>
-                <span>{social.value}</span>
+                {social.value}
               </div>
             ))}
           </div>

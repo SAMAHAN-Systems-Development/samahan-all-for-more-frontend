@@ -29,6 +29,11 @@ type BallFrameProp = {
 export default function BallFrame({ hero }: BallFrameProp) {
   const [loadedCount, setLoadedCount] = useState<number>(0);
   const [allLoaded, setAllLoaded] = useState<boolean>(false);
+  const [ballScale, setBallScale] = useState<number>(hero ? 1 : 0.7);
+
+  useEffect(() => {
+    setBallScale(hero ? 1 : 0.7);
+  }, [hero]);
 
   const handleImageLoad = () => {
     setLoadedCount((prev) => prev + 1);
@@ -144,13 +149,11 @@ export default function BallFrame({ hero }: BallFrameProp) {
     ballScale: number;
     offsetMargin: number;
     translateFrom: number;
-  } = hero
-    ? { ballScale: 1, translateFrom: 128, offsetMargin: 32 }
-    : {
-        /* replace with banner scaling*/ ballScale: 0.7,
-        translateFrom: 180,
-        offsetMargin: 24 /*tailwind value*/,
-      };
+  } = {
+    ballScale: ballScale,
+    offsetMargin: hero ? 32 : 24,
+    translateFrom: hero ? 128 : 180,
+  };
 
   // initial responsive values
   const responsiveSizes: string = `xsm:[--scale-to:0.3] sm:[--scale-to:0.5] md:[--scale-to:0.6] lg:[--scale-to:${initialSizes.ballScale}]`;
