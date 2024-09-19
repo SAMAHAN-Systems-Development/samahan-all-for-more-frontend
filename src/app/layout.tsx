@@ -3,8 +3,6 @@ import { Inter } from 'next/font/google';
 
 import '@/styles/globals.css';
 
-import Footer from '@/components/ui/Footer/Footer';
-
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -20,7 +18,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
-      <Footer />
     </html>
   );
 }
