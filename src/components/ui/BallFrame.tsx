@@ -26,6 +26,12 @@ type BallFrameProp = {
   hero?: boolean;
 };
 
+type InitialBallStyle = {
+  ballScale: string;
+  offsetMargin: number;
+  translateFrom: number;
+};
+
 export default function BallFrame({ hero }: BallFrameProp) {
   const [loadedCount, setLoadedCount] = useState<number>(0);
   const [allLoaded, setAllLoaded] = useState<boolean>(false);
@@ -140,20 +146,22 @@ export default function BallFrame({ hero }: BallFrameProp) {
     },
   ];
 
-  const initialSizes: {
-    ballScale: number;
-    offsetMargin: number;
-    translateFrom: number;
-  } = hero
-    ? { ballScale: 1, translateFrom: 128, offsetMargin: 32 }
-    : {
-        /* replace with banner scaling*/ ballScale: 0.7,
-        translateFrom: 180,
-        offsetMargin: 24 /*tailwind value*/,
-      };
+  const heroBallStyle: InitialBallStyle = {
+    ballScale: 'lg:[--scale-to:0.8] xl:[--scale-to:1]',
+    offsetMargin: 32,
+    translateFrom: 128,
+  };
 
-  // initial responsive values
-  const responsiveSizes: string = `xsm:[--scale-to:0.3] sm:[--scale-to:0.5] md:[--scale-to:0.6] lg:[--scale-to:${initialSizes.ballScale}]`;
+  const bannerBallStyle: InitialBallStyle = {
+    ballScale: 'lg:[--scale-to:0.6]',
+    offsetMargin: 24,
+    translateFrom: 180,
+  };
+
+  const initialSizes: InitialBallStyle = hero ? heroBallStyle : bannerBallStyle;
+
+  // initial responsive sizes
+  const responsiveSizes: string = `xsm:[--scale-to:0.3] sm:[--scale-to:0.5] md:[--scale-to:0.6] ${initialSizes.ballScale}`;
 
   const sphereGroup = cva(
     `h-[670px] w-[720px] absolute transform bottom-0 z-10 overflow-visible ${responsiveSizes}`,
@@ -199,6 +207,7 @@ export default function BallFrame({ hero }: BallFrameProp) {
             />
           ))}
         </motion.div>
+
         {/* right spheres */}
         <motion.div
           className={`${sphereGroup({ side: 'right' })}`}
