@@ -29,11 +29,6 @@ type BallFrameProp = {
 export default function BallFrame({ hero }: BallFrameProp) {
   const [loadedCount, setLoadedCount] = useState<number>(0);
   const [allLoaded, setAllLoaded] = useState<boolean>(false);
-  const [ballScale, setBallScale] = useState<number>(hero ? 1 : 0.7);
-
-  useEffect(() => {
-    setBallScale(hero ? 1 : 0.7);
-  }, [hero]);
 
   const handleImageLoad = () => {
     setLoadedCount((prev) => prev + 1);
@@ -145,26 +140,25 @@ export default function BallFrame({ hero }: BallFrameProp) {
     },
   ];
 
-  const initialSizes: {
-    ballScale: number;
+  const initialPositioning: {
     offsetMargin: number;
     translateFrom: number;
   } = {
-    ballScale: ballScale,
     offsetMargin: hero ? 32 : 24,
     translateFrom: hero ? 128 : 180,
   };
 
-  // initial responsive values
-  const responsiveSizes: string = `xsm:[--scale-to:0.3] sm:[--scale-to:0.5] md:[--scale-to:0.6] lg:[--scale-to:${initialSizes.ballScale}]`;
+  const responsiveSizes: string = hero
+    ? `xsm:[--scale-to:0.3] sm:[--scale-to:0.6] md:[--scale-to:0.6] lg:[--scale-to:0.8] xl:[--scale-to:1] `
+    : `xsm:[--scale-to:0.3] sm:[--scale-to:0.5] md:[--scale-to:0.6] lg:[--scale-to:0.7] `;
 
   const sphereGroup = cva(
     `h-[670px] w-[720px] absolute transform bottom-0 z-10 overflow-visible ${responsiveSizes}`,
     {
       variants: {
         side: {
-          left: `origin-bottom-left lg:-ml-${initialSizes.offsetMargin} md:-ml-18 sm:-ml-16 xsm:-ml-8`,
-          right: `origin-bottom-right right-0 lg:-mr-${initialSizes.offsetMargin} md:-mr-20 sm:-mr-16 xsm:-mr-8 `,
+          left: `origin-bottom-left lg:-ml-${initialPositioning.offsetMargin} md:-ml-18 sm:-ml-16 xsm:-ml-8`,
+          right: `origin-bottom-right right-0 lg:-mr-${initialPositioning.offsetMargin} md:-mr-20 sm:-mr-16 xsm:-mr-8 `,
         },
       },
     }
@@ -176,8 +170,8 @@ export default function BallFrame({ hero }: BallFrameProp) {
         {/* left spheres */}
         <motion.div
           initial={{
-            translateX: initialSizes.translateFrom * -1,
-            translateY: initialSizes.translateFrom,
+            translateX: initialPositioning.translateFrom * -1,
+            translateY: initialPositioning.translateFrom,
             scale: 'var(--scale-to)',
           }}
           animate={{
@@ -202,12 +196,13 @@ export default function BallFrame({ hero }: BallFrameProp) {
             />
           ))}
         </motion.div>
+
         {/* right spheres */}
         <motion.div
           className={`${sphereGroup({ side: 'right' })}`}
           initial={{
-            translateX: initialSizes.translateFrom,
-            translateY: initialSizes.translateFrom,
+            translateX: initialPositioning.translateFrom,
+            translateY: initialPositioning.translateFrom,
             scale: 'var(--scale-to)',
           }}
           animate={{
