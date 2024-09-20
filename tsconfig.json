@@ -30,6 +30,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/stories/*",
+    "src/**/*.ts",
+    "src/**/*.tsx",
     "src/contexts/WebsocketContext.jsx"
   ],
   "exclude": ["node_modules"]
