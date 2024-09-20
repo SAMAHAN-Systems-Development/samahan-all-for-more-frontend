@@ -141,19 +141,24 @@ export default function BallFrame({ hero }: BallFrameProp) {
   ];
 
   const initialPositioning: {
+    ballScale: string;
     offsetMargin: number;
     translateFrom: number;
   } = {
+    ballScale: hero
+      ? 'lg:[--scale-to:0.8] xl:[--scale-to:1]'
+      : 'lg:[--scale-to:0.7]',
     offsetMargin: hero ? 32 : 24,
     translateFrom: hero ? 128 : 180,
   };
 
+  // initial responsive sizes
   const responsiveSizes: string = hero
-    ? `xsm:[--scale-to:0.3] sm:[--scale-to:0.6] md:[--scale-to:0.6] lg:[--scale-to:0.8] xl:[--scale-to:1] `
-    : `xsm:[--scale-to:0.3] sm:[--scale-to:0.5] md:[--scale-to:0.6] lg:[--scale-to:0.7] `;
+    ? `xsm:[--scale-to:0.3] sm:[--scale-to:0.5] md:[--scale-to:0.6] ${initialPositioning.ballScale} `
+    : ``;
 
   const sphereGroup = cva(
-    `h-[670px] w-[720px] absolute transform bottom-0 z-10 overflow-visible ${responsiveSizes}`,
+    `h-[670px] w-[720px] absolute transform bottom-0 z-10 overflow-visible xsm:[--scale-to:0.3] sm:[--scale-to:0.5] md:[--scale-to:0.6]  ${responsiveSizes}`,
     {
       variants: {
         side: {
