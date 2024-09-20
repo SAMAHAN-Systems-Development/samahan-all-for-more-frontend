@@ -7,8 +7,14 @@ import Image from 'next/image';
 import BallFrame from '@/components/ui/BallFrame';
 import logo from '@/stories/assets/hero/A4M LOGO.svg';
 
+type SocialIconType = {
+  icon: React.ReactNode;
+  title: string;
+  value: string;
+};
+
 export default function HeroSection() {
-  const socials: { icon: React.ReactNode; title: string; value: string }[] = [
+  const socials: SocialIconType[] = [
     {
       icon: <MdOutlineMail className="scale-110" />,
       title: 'email',
