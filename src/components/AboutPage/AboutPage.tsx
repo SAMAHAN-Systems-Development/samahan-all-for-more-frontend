@@ -1,7 +1,7 @@
 import React from 'react';
 import LogoSection from '@/components/AboutPage/LogoSection';
 import BrandingSection from '@/components/AboutPage/BrandingSection';
-import { Banner } from '../ui/banner/Banner';
+import { Banner } from '@/components/ui/banner/Banner';
 
 const AboutPage = () => {
   return (

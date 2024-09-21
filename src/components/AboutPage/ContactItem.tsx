@@ -2,14 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 
 interface ContactItemProps {
-  href: string;
-  icon: React.ElementType;
   children: React.ReactNode;
+  icon: React.ElementType;
+  href: string;
 }
 const ContactItem: React.FC<ContactItemProps> = ({
-  href,
-  icon: Icon,
   children,
+  icon: Icon,
+  href,
 }) => (
   <div className="text-blue text-footer-main lg:mb-14 flex items-center mr-6">
     <div className="w-4 h-4 bg-blue rounded-full mr-2 flex items-center justify-center">

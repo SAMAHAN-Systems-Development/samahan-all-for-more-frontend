@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import ContactItem from '@/components/AboutPage/ContactItem';
-import { MdOutlineAlternateEmail } from 'react-icons/md';
+import { AiOutlineMail } from 'react-icons/ai';
 import { MdOutlineEmail } from 'react-icons/md';
 import { SlGlobe } from 'react-icons/sl';
 
@@ -30,7 +30,7 @@ const LogoSection = () => {
         <ContactItem href="" icon={SlGlobe}>
           samahan.addu.edu.ph
         </ContactItem>
-        <ContactItem href="" icon={MdOutlineAlternateEmail}>
+        <ContactItem href="" icon={AiOutlineMail}>
           addusamahan
         </ContactItem>
       </div>
