@@ -64,10 +64,10 @@ const BrandingSection = () => {
           Ignatian Ideals of Magis, Cura Personalis, and Ad Majorem Dei Gloriam
           (AMDG), inspiring us to aspire for greater depth, care for the whole
           person and the greater glory of God where students feel empowered and
-          heard. We go All for More in furthering student's initiatives to shape
-          the direction of our governance. This is a pledge to amplify student
-          engagement and involvement, ensuring that we deliver the service which
-          they deserve, enriching their journey in Ateneo.
+          heard. We go All for More in furthering student&apos;s initiatives to
+          shape the direction of our governance. This is a pledge to amplify
+          student engagement and involvement, ensuring that we deliver the
+          service which they deserve, enriching their journey in Ateneo.
         </p>
         <p className="text-blue mb-14 leading-tight text-main">
           With &quot;All&quot;, we recognize how Ateneo is enriched with
