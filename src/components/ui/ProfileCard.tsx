@@ -1,20 +1,16 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 interface ProfileCardProps {
+  fileName: string;
   fullName: string;
   position: string;
-  fileName: string;
 }
 
 const ProfileCard = ({ fullName, position, fileName }: ProfileCardProps) => {
-  // Log the props to verify data is being passed correctly
-  console.log('ProfileCard Props:', { fullName, position, fileName });
-
   return (
     <div className="relative w-[250px] h-[380px] text-blue hover:scale-105 transition ease-in-out delay-100">
-        
       <div className="relative">
-        {/* Blue Shape */}
+        {/* blue shape */}
         <div className="absolute bg-blue rounded-[32.5px] w-[250px] h-[250px] translate-y-16" />
 
         <div className="rounded-[32px] translate-y-[4px] overflow-hidden">
