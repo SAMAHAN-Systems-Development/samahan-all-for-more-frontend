@@ -1,0 +1,33 @@
+{
+  "OSP": [
+    {
+      "fullName": "Leen Juliet Lapatis",
+      "position": "President",
+      "fileName": "[PRESIDENT] Leen Juliet Lapatis 1.png"
+    },
+    {
+      "fullName": "Rey Angelo Santella",
+      "position": "Vice President",
+      "fileName": "[Executive Undersecretary] Rey Angelo Santella 2.png"
+    }
+  ],
+  "OSVP": [
+    {
+      "fullName": "Shaira R. Alimpulos",
+      "position": "DAA Deputy Director",
+      "fileName": "[DAA Deputy Director] Shaira R. Alimpulos.png"
+    }
+  ],
+  "OSG": [
+    {
+      "fullName": "Francis Rhaey L. Casas",
+      "position": "SYSDEV Director",
+      "fileName": "[SYSDEV Director] Francis Rhaey L. Casas.png"
+    },
+    {
+      "fullName": "Jiyo Seth N. Valmoria",
+      "position": "SYSDEV Deputy Director",
+      "fileName": "[SYSDEV Deputy Director] Jiyo Seth N. Valmoria.png"
+    }
+  ]
+}
