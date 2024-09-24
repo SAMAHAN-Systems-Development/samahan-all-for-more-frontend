@@ -1,4 +1,5 @@
-import { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
+
 import ProfileCard from '@/components/ui/ProfileCard';
 
 const meta: Meta<typeof ProfileCard> = {
@@ -16,8 +17,8 @@ type Story = StoryObj<typeof ProfileCard>;
 
 export const Profile_Card: Story = {
   args: {
-    fullName: "GWYNETH G. VIDANES",
-    position: "Department Deputy Director",
-    fileName: "[SCT Deputy Director] Gwyneth G. Vidanes.png", // Must include .png in the fileName
+    fullName: 'GWYNETH G. VIDANES',
+    position: 'Department Deputy Director',
+    fileName: '[SCT Deputy Director] Gwyneth G. Vidanes.png', // Must include .png in the fileName
   },
 };
