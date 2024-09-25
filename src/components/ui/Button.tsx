@@ -1,6 +1,8 @@
+import React, { forwardRef } from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
+import { Slot } from '@radix-ui/react-slot';
 
-// cva for button styles
+// Define the CVA for button styles
 const buttonStyles = cva(
   'py-3 px-8 rounded-full font-bold text-lg transition-all duration-300 cursor-pointer', 
   {
@@ -33,19 +35,26 @@ const buttonStyles = cva(
   }
 );
 
-// button props
+// Define props for Button
 interface ButtonProps extends VariantProps<typeof buttonStyles> {
-  text: string;
+  asChild?: boolean;
+  children?: React.ReactNode;
   onClick?: () => void;
+  text?: string;
 }
 
-// button component using CVA
-const Button: React.FC<ButtonProps> = ({ text, variant, colorScheme, onClick }) => {
+// Button component using forwardRef and Radix UI Slot
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ text, children, variant, colorScheme, onClick, asChild, ...props }, ref) => {
+  const Comp = asChild ? Slot : 'button'; // Use Radix Slot component when asChild is true
+  
   return (
-    <button onClick={onClick} className={buttonStyles({ variant, colorScheme })}>
-      {text}
-    </button>
+    <Comp ref={ref} onClick={onClick} className={buttonStyles({ variant, colorScheme })} {...props}>
+      {text ? text : children} 
+    </Comp>
   );
-};
+});
+
+
+Button.displayName = 'Button';
 
 export default Button;
