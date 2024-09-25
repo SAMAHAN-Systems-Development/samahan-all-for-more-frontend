@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/ban-types */
 import type { Config } from 'tailwindcss';
 const plugin = require('tailwindcss/plugin');
 
