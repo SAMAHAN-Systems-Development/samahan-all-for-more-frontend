@@ -16,14 +16,12 @@ export const Banner: React.FC<BannerProps> = ({
 }) => {
   return (
     <BannerContainer>
-      <div className="overflow-auto">
-        <BannerImage
-          title={title}
-          subtitle={subtitle}
-          image={image}
-          imageAlt={imageAlt}
-        />
-      </div>
+      <BannerImage
+        title={title}
+        subtitle={subtitle}
+        image={image}
+        imageAlt={imageAlt}
+      />
     </BannerContainer>
   );
 };
