@@ -1,15 +1,27 @@
 import { BannerContainer } from '@/components/banner-section/banner-container/BannerContainer';
 import { BannerImage } from '@/components/banner-section/banner-image/BannerImage';
 
-export const Banner: React.FC = () => {
+interface BannerProps {
+  image: string;
+  imageAlt: string;
+  subtitle: string;
+  title: string;
+}
+
+export const Banner: React.FC<BannerProps> = ({
+  title,
+  subtitle,
+  image,
+  imageAlt,
+}) => {
   return (
     <BannerContainer>
-      <div className="overflow-hidden ">
+      <div className="overflow-auto">
         <BannerImage
-          title="SAMAHAN"
-          subtitle="About"
-          image="/images/samahan-members.png"
-          imageAlt="SAMAHAN Members Image"
+          title={title}
+          subtitle={subtitle}
+          image={image}
+          imageAlt={imageAlt}
         />
       </div>
     </BannerContainer>

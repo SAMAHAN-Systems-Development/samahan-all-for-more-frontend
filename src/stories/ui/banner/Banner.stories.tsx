@@ -5,7 +5,12 @@ import { Banner } from '@/components/ui/banner/Banner';
 const meta: Meta<typeof Banner> = {
   component: Banner,
   title: 'UI/Banner',
-  argTypes: {},
+  argTypes: {
+    title: { control: 'text' },
+    subtitle: { control: 'text' },
+    image: { control: 'text' },
+    imageAlt: { control: 'text' },
+  },
 };
 
 export default meta;
@@ -13,5 +18,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    title: 'Default Title',
+    subtitle: 'Default Subtitle',
+    image: '/images/samahan-members.png',
+    imageAlt: 'Default Image Alt',
+  },
 };
