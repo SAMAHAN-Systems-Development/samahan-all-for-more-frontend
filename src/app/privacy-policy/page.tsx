@@ -8,8 +8,13 @@ import privacyData from '@/data/privacyData.json';
 const Page = () => {
   return (
     <div>
-      <Banner />
-      <div className="container-2xl mt-40">
+      <Banner
+        image={'/images/samahan-members.png'}
+        imageAlt={'SAMAHAN Members'}
+        subtitle={'SAMAHAN'}
+        title={'Privacy Policy'}
+      />
+      <div className="container-2xl mt-40 px-20">
         {privacyData.map((section, index) => (
           <div key={index} className="mb-8">
             <p className="text-title text-blue font-bold mb-2">
@@ -19,13 +24,26 @@ const Page = () => {
 
             {section.title === 'SUMMARY OF KEY POINTS' && (
               <>
-                {accordionData.map((item, accordionIndex) => (
-                  <Accordion
-                    key={accordionIndex}
-                    title={item.title}
-                    content={item.content}
-                  />
-                ))}
+                {accordionData.map((item, accordionIndex) => {
+                  const email = 'samahan@addu.edu.ph';
+
+                  const updatedContent = item.content.replace(
+                    email,
+                    `<a href="mailto:${email}" class="font-bold">${email}</a>`
+                  );
+
+                  return (
+                    <Accordion
+                      key={accordionIndex}
+                      title={item.title}
+                      content={
+                        <span
+                          dangerouslySetInnerHTML={{ __html: updatedContent }}
+                        />
+                      }
+                    />
+                  );
+                })}
 
                 <div className="mt-14">
                   <p className="text-main text-blue mb-4 text-center">
