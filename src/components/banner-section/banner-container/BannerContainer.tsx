@@ -40,7 +40,7 @@ export const BannerContainer: React.FC<BannerContainerProps> = ({
   ...props
 }) => {
   return (
-    <div {...props} className={`w-full relative h-[80vh]`}>
+    <div {...props} className={`w-full relative h-[80vh] overflow-hidden`}>
       <div className=" absolute bottom-[-4rem] max-sm:bottom-[-2rem]">
         <div className={BannerContainerVariants({ hasBallFrame })}>
           <BallFrame />
