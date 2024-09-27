@@ -1,7 +1,7 @@
 [
   {
     "title": "PRIVACY NOTICE",
-    "content": "This privacy notice for Ateneo de Davao University (\"we,\" \"us,\" or \"our\") describes how and why we might collect, store, use, and/or share (\"process\") your information when you use our services (\"Services\"), such as when you: Visit our website at samahan.addu.edu.ph, or any website of ours that links to this privacy notice. Engage with us in other related ways, including any sales, marketing, or events. Questions or concerns? Reading this privacy notice will help you understand your privacy rights and choices. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at samahan@addu.edu.ph."
+    "content": "This privacy notice for Ateneo de Davao University (\"we,\" \"us,\" or \"our\") describes how and why we might collect, store, use, and/or share (\"process\") your information when you use our services (\"Services\"), such as when you: Visit our website at samahan.addu.edu.ph, or any website of ours that links to this privacy notice.<br /><br />Engage with us in other related ways, including any sales, marketing, or events. Questions or concerns? Reading this privacy notice will help you understand your privacy rights and choices. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at samahan@addu.edu.ph."
   },
   {
     "title": "SUMMARY OF KEY POINTS",
@@ -17,7 +17,12 @@
   },
   {
     "title": "INFORMATION USAGE",
-    "content": "The information collected is used to: Provide, maintain, and improve our website and services. Respond to inquiries and provide customer support. Analyze usage trends and gather insights to enhance user experience."
+    "content": [
+      "The information collected is used to:",
+      "Provide, maintain, and improve our website and services.",
+      "Respond to inquiries and provide customer support.",
+      "Analyze usage trends and gather insights to enhance user experience."
+    ]
   },
   {
     "title": "INFORMATION SHARING",

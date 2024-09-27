@@ -2,8 +2,68 @@ import React from 'react';
 
 import Accordion from '@/components/ui/Accordion';
 import { Banner } from '@/components/ui/banner/Banner';
+import Button from '@/components/ui/Button';
 import accordionData from '@/data/accordionData.json';
 import privacyData from '@/data/privacyData.json';
+
+const formatEmail = (content: string) => {
+  const email = 'samahan@addu.edu.ph';
+  const mailtoLink = `<a href="mailto:${email}" class="font-bold">${email}</a>`;
+  return content.replace(new RegExp(email, 'g'), mailtoLink);
+};
+
+const renderContent = (content: string | string[]) => {
+  if (Array.isArray(content)) {
+    return (
+      <div className="text-main text-blue mb-20">
+        {typeof content[0] === 'string' && <p className="mb-4">{content[0]}</p>}
+        <ul className="list-disc ml-5">
+          {content.slice(1).map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+
+  return (
+    <p className="text-main text-blue mb-20">
+      <span dangerouslySetInnerHTML={{ __html: formatEmail(content) }} />
+    </p>
+  );
+};
+
+const renderAccordion = () => {
+  return (
+    <>
+      {accordionData.map((item, index) => {
+        const updatedContent = formatEmail(item.content);
+        return (
+          <Accordion
+            key={index}
+            title={item.title}
+            content={
+              <span dangerouslySetInnerHTML={{ __html: updatedContent }} />
+            }
+          />
+        );
+      })}
+      <div className="mt-14 flex flex-col items-center">
+        <p className="text-main text-blue mb-4 text-center">
+          If you have any other questions or need help with our Privacy Policy,
+          don&apos;t hesitate to get in touch. We&apos;re happy to assist and
+          want to make sure you feel confident about how we handle your
+          information. Just email us at{' '}
+          <a href="mailto:samahan@addu.edu.ph" className="font-bold">
+            samahan@addu.edu.ph
+          </a>
+          .
+        </p>
+        <Button text="CONTACT US" />
+      </div>
+    </>
+  );
+};
 
 const Page = () => {
   return (
@@ -20,46 +80,10 @@ const Page = () => {
             <p className="text-title text-blue font-bold mb-2">
               {section.title}
             </p>
-            <p className="text-main text-blue mb-20">{section.content}</p>
 
-            {section.title === 'SUMMARY OF KEY POINTS' && (
-              <>
-                {accordionData.map((item, accordionIndex) => {
-                  const email = 'samahan@addu.edu.ph';
+            {renderContent(section.content)}
 
-                  const updatedContent = item.content.replace(
-                    email,
-                    `<a href="mailto:${email}" class="font-bold">${email}</a>`
-                  );
-
-                  return (
-                    <Accordion
-                      key={accordionIndex}
-                      title={item.title}
-                      content={
-                        <span
-                          dangerouslySetInnerHTML={{ __html: updatedContent }}
-                        />
-                      }
-                    />
-                  );
-                })}
-
-                <div className="mt-14">
-                  <p className="text-main text-blue mb-4 text-center">
-                    If you have any other questions or need help with our
-                    Privacy Policy, don&apos;t hesitate to get in touch.
-                    We&apos;re happy to assist and want to make sure you feel
-                    confident about how we handle your information. Just email
-                    us at{' '}
-                    <a href="mailto:samahan@addu.edu.ph" className="font-bold">
-                      samahan@addu.edu.ph
-                    </a>
-                    .
-                  </p>
-                </div>
-              </>
-            )}
+            {section.title === 'SUMMARY OF KEY POINTS' && renderAccordion()}
           </div>
         ))}
       </div>
