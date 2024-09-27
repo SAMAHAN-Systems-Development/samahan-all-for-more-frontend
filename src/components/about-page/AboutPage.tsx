@@ -7,7 +7,12 @@ import { Banner } from '@/components/ui/banner/Banner';
 const AboutPage = () => {
   return (
     <main>
-      <Banner />
+      <Banner
+        image="/images/samahan-members.png"
+        imageAlt="SAMAHAN Members Image"
+        subtitle="About"
+        title="SAMAHAN"
+      />
       <div className="p-12 overflow-x-hidden">
         <LogoSection />
         <BrandingSection />
