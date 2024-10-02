@@ -1,0 +1,195 @@
+{
+  "bookingLinks": [
+    {
+      "href": "https://library.addu.edu.ph/book-a-library-facility",
+      "label": "https://library.addu.edu.ph/book-a-library-facility"
+    }
+  ],
+  "assetsFacilities": [
+    { "label": "Finster Auditorium" },
+    { "label": "F213 Multi-purpose Room" },
+    {
+      "label": "Bapa Benny Tudtud Auditorium Conference Room A - Ricci Hall, 3rd Floor, CCFC Building"
+    },
+    { "label": "Building" },
+    { "label": "Conference Room B - Ricci Hall, 3rd Floor, CCFC Building" },
+    { "label": "Conference Room C1 - Ricci Hall, 3rd Floor, CCFC Building" },
+    { "label": "Conference Room C2 - Ricci Hall, 3rd Floor, CCFC Building" },
+    { "label": "Conference Room D - Ricci Hall, 3rd Floor, CCFC Building" },
+    { "label": "Conference Room E - Ricci Hall, 3rd Floor, CCFC Building" },
+    { "label": "Pakighinabi, Ricci Hall - 3rd Floor, CCFC Building " },
+    { "label": "Training Room - Xavier Hall, 8th Floor, CCFC Building" },
+    { "label": "Media Room - Xavier Hall, 8th Floor, CCFC Building" },
+    { "label": "Arrupe Hall Front Area - Arrupe Hall Martin Building" },
+    { "label": "Bus #1 | AEK-744" },
+    { "label": "Bus #2 | AAG-6656" },
+    { "label": "Bus #3 | AAG-6653" },
+    { "label": "Bus #4 | LHF-260" },
+    { "label": "Coaster Bus | AAH-1719" },
+    { "label": "Dump Truck | LGV-279" },
+    { "label": "Toyota-Grandia | AAG-6059" },
+    { "label": "Toyota-Innova | KEE-237" },
+    {
+      "label": "L300 Van | LHE-238",
+      "nestedInstructions": [
+        "Fill out the information required on the website. For a heads-up, the website requires you to attach your (1) approved concept paper, (2) proof of approval for the rental fee waiver (if you have emailed the Executive Vice President to request waiving of the fee), and (3) floor plan and program flow if applicable.",
+        "After filling out the necessary information, an email will be sent to you confirming your request for booking.",
+        "Wait for the approval of the approvers before proceeding.",
+        "Once the ending approver has approved, you have successfully and officially booked the venue!"
+      ]
+    }
+  ],
+  "physicalPlantOffice": [
+    {
+      "label": "Classrooms",
+      "nestedInstructions": [
+        "First, go to the registrar's office and inquire what are the available rooms at the time of your activity. After the confirmation, you will be directed to go to the Physical Plant Office to request a form that you need to complete."
+      ]
+    }
+  ],
+  "suzanDoromal": [
+    {
+      "label": "Martin Hall (4th, 6th, 7th Floor)",
+      "nestedInstructions": [
+        "First, proceed to the Athletics Office located at the back of the 4th Floor, Martin Hall, and inquire for the availability of the venue. Obtain a copy of the Martin Hall reservation form."
+      ]
+    }
+  ],
+  "libraryFacilities": [
+    { "label": "Multi-purpose Room" },
+    { "label": "Collaboratorium" },
+    {
+      "label": "Audio-visual Room",
+      "nestedInstructions": [
+        "Corresponding steps and guidelines are elucidated on the website."
+      ]
+    }
+  ],
+  "icommpEquipment": {
+    "title": "ICOMMP EQUIPMENT AND STUDIOS BOOKING",
+    "mainText": "Access the link if you intend to book the following equipment and/or studios:",
+    "content": [
+      {
+        "item": "ICOMMP Studio 1 (Blog Room)",
+        "details": "The studio also offers DSLR, Tripod, and Lights upon your request."
+      },
+      {
+        "item": "ICOMMP Studio 2",
+        "details": "The studio also offers DSLR, Tripod, and Lights upon your request."
+      },
+      {
+        "item": "LED Wall 1 (Big) (Only at Martin Hall 4th Floor)"
+      },
+      {
+        "item": "LED Wall 2 (Small)"
+      },
+      {
+        "item": "LED Wall 3 (Small)"
+      },
+      {
+        "item": "BIG TV 1"
+      },
+      {
+        "item": "BIG TV 2"
+      },
+      {
+        "item": "Tech Help or Zoom / Live Stream / Camera Setup 1 & Other Equipment"
+      },
+      {
+        "item": "Tech Help or Zoom / Live Stream / Camera Setup 2 & Other Equipment"
+      },
+      {
+        "item": "Sound System (Martin Hall 4th flr.)"
+      },
+      {
+        "item": "Sound System (3rd floor Community Center)"
+      },
+      {
+        "item": "Sound System (11th floor Community Center)"
+      }
+    ]
+  },
+
+  "requestDocuments": {
+    "title": "REQUEST FOR OFFICIAL DOCUMENTS",
+    "mainText": "The form caters to both current students and alumni. The students and alumni should fill this out in order to request documents and for drive-through payment and claim of the requested document(s). <br /><br /> Access the link if you intend to request for any of the following documents: Transcript of Records (TOR) for Board Exam (Please upload 2x2 picture) -- Required for licensure examinations.",
+    "content": [
+      {
+        "item": "Diploma, (Certified True Copy)",
+        "details": "A certified replica of your diploma."
+      },
+      {
+        "item": "Diploma, Original",
+        "details": "(Issued only once and Subject to verification)."
+      },
+      {
+        "item": "Diploma (Second Copy)",
+        "details": "May be denied release for cause. Affidavits of explanation justifying the request must be sent as part of your response to the confirmation email which you will receive subsequently."
+      },
+      {
+        "item": "Reissued LLB to Juris Doctor Diploma",
+        "details": "A replacement or re-issuance of LLB your diploma, per LLB circular."
+      },
+      {
+        "item": "Honorable Dismissal (Subject to verification)",
+        "details": "Only one copy allowed for release (issued only once). This is requested as part of the credentials for students/graduates who desire to transfer to other schools."
+      },
+      {
+        "item": "Certification, Authentication, and Verification from (CAV) CHED (Local)"
+      },
+      {
+        "item": "Certification, Authentication, and Verification (CAV) from CHED (Abroad) / DFA"
+      },
+      {
+        "item": "Certification: Bona Fide Student",
+        "details": "Certifies the period of attendance of the requesting party as an incumbent student of their specific program."
+      },
+      {
+        "item": "Certification: Complete Academic Requirements (Graduate School)"
+      },
+      {
+        "item": "Certification: Eligibility (C1) Authentication for J.D."
+      },
+      {
+        "item": "Certification: Enrollment",
+        "details": "Specify school year and semester in the details."
+      },
+      {
+        "item": "Certification: Grades",
+        "details": "Please indicate in the details the school year, semester, and number of copies."
+      },
+      {
+        "item": "Certification: Graduation",
+        "details": "Certifies the details relative to the grant of the degree by a graduate."
+      },
+      {
+        "item": "Certification: Medium of Instruction (MOI)",
+        "details": "Indicates that the medium of instruction by the University is English, unless otherwise required by law."
+      },
+      {
+        "item": "Certification: Units Earned"
+      },
+      {
+        "item": "Certification: QPI / GWPA"
+      },
+      {
+        "item": "Course Description",
+        "details": "(Processing time: 2 weeks. Please specify in the details if requesting specific courses (subjects) or all)"
+      },
+      {
+        "item": "Letter of no Objection",
+        "details": "Subject to verification."
+      },
+      {
+        "item": "Australian Health Practitioner Regulation Agency Documents",
+        "details": "2 CTC Diploma, Original TOR abroad with 2 authentications, 2 Letter of Confirmation, Autonomous Certificate (cert. of fee), Certificate of AHPRA, 1 long brown envelope."
+      }
+    ],
+    "OSA": [
+      {
+        "item": "Certificate of Good Moral Character",
+        "details": "Access the link to request the said document. Please note that the form is only intended for the utilization of the Undergraduate Unit."
+      }
+    ]
+  }
+}
