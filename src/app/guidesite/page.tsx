@@ -1,5 +1,4 @@
 import React from 'react';
-import { TbCircleNumber1Filled, TbCircleNumber2Filled } from 'react-icons/tb';
 import Link from 'next/link';
 
 import { Banner } from '@/components/ui/banner/Banner';
@@ -122,7 +121,7 @@ const IcommpEquipment = () => {
 
   return (
     <div>
-      <h2 className="text-bold font-bold mb-4">{title}</h2>
+      <h2 className="text-bold font-bold mb-4 pt-10">{title}</h2>
       <p className="text-main mb-4 ml-10">
         <span
           dangerouslySetInnerHTML={{
@@ -168,7 +167,7 @@ const RequestForDocuments = () => {
 
   return (
     <div>
-      <h2 className="text-bold font-bold mb-4">{title}</h2>
+      <h2 className="text-bold font-bold mb-4 pt-10">{title}</h2>
       <p className="text-main mb-4 ml-10">
         <span className="font-bold block">Registrar&apos;s Office:</span> <br />
         <span
@@ -203,23 +202,35 @@ const RequestForDocuments = () => {
 
       <div className="mt-8">
         <ul className="list-decimal list-outside ml-10">
+          <span className="font-bold block">
+            Office of the Student Affairs:
+          </span>
           {OSA.map((document, index) => (
             <li
               key={index}
-              className="mb-2"
-              style={{ fontWeight: 'bold' }} // Make the numbering bold
+              className="mb-2 ml-5"
+              style={{ fontWeight: 'bold' }}
             >
               <span className="font-normal">{document.item}</span>
-              {document.details && (
-                <ul className="list-[lower-alpha] list-outside ml-6 font-bold">
-                  <li className="font-bold">
-                    <span className="font-normal">{document.details}</span>
-                  </li>
-                </ul>
-              )}
+              {/* Assuming document.details is always defined */}
+              <ul className="list-[lower-alpha] list-outside ml-6 font-bold">
+                <li className="font-bold">
+                  <span className="font-normal">
+                    {document.details.mainText.split('link')[0]}
+                    <Link
+                      href={document.details.linkUrl}
+                      className="underline text-blue"
+                    >
+                      {document.details.linkText}
+                    </Link>
+                    {document.details.mainText.split('link')[1]}
+                  </span>
+                </li>
+              </ul>
             </li>
           ))}
         </ul>
+
         {/* Button Section */}
         <div className="mt-[15px] ml-[70px]">
           <Button text="Request Certificate" />
@@ -230,7 +241,6 @@ const RequestForDocuments = () => {
 };
 const Guidesite = () => {
   const { title, steps } = guidesiteData.venueReservations;
-
   return (
     <>
       <Banner
@@ -242,95 +252,88 @@ const Guidesite = () => {
       <div className="text-blue font-sans px-8 md:px-32 py-10 bg-gray-100">
         <div className="max-w-screen-lg mx-auto">
           <section>
-            <h1 className="text-title font-bold text-blue mb-6 -ml-8 md:-ml-8">
-              {title}
-            </h1>
+            <h2 className="text-bold font-bold mb-4 pt-20">{title}</h2>
 
-            {steps.map((step, index) => (
-              <div key={step.number} className="mb-6 text-blue">
-                <h2 className="text-main flex items-start">
-                  {index === 0 ? (
-                    <TbCircleNumber1Filled className="inline-block mr-3 text-3xl h-8 w-8" /> // Added h-8 and w-8
-                  ) : (
-                    <TbCircleNumber2Filled className="inline-block mr-3 text-3xl h-8 w-8" /> // Added h-8 and w-8
-                  )}
+            <ol className="list-decimal pl-5">
+              {steps.map((step) => (
+                <li key={step.number} className="mb-6 text-blue">
                   <div className="flex flex-col">
-                    <span className="font-bold">{step.description}</span>
-                    {step.linkText && (
-                      <span className="inline">
-                        Secure required parts of the paper (refer to the concept
-                        paper form), and its needed signatures. Afterward,
-                        submit it to the Office of the Student Affairs through
-                        this link:{' '}
-                        <Link
-                          href={step.linkUrl}
-                          className="underline text-blue ml-1"
-                        >
-                          {step.linkText}
-                        </Link>
-                        . Submit your response through this link as well.
-                      </span>
-                    )}
+                    <span>
+                      <span className="font-bold">{step.description}</span>
+                      {step.linkText && (
+                        <>
+                          Secure required parts of the paper (refer to the
+                          concept paper form), and its needed signatures.
+                          Afterward, submit it to the Office of the Student
+                          Affairs through this link:
+                          <Link
+                            href={step.linkUrl}
+                            className="underline text-blue ml-1"
+                          >
+                            {step.linkText}
+                          </Link>
+                          . Submit your response through this link as well.
+                        </>
+                      )}
+                    </span>
                   </div>
-                </h2>
-                {step.assetsLinkText && (
-                  <div className="ml-6">
-                    <ol className="list-[lower-alpha] list-outside mb-6 mt-3 pl-10">
-                      <li>
-                        <span>{step.assetsLinkText}</span>
-                        {step.assetsTable && (
-                          <div className="mt-2">
-                            <AssetsFacilitiesTable />
-                          </div>
-                        )}
-                      </li>
-                      <li>
-                        <span>
-                          <div className="mt-3">
-                            {guidesiteData.bookingLinks.map((link, index) => (
-                              <div key={index}>
-                                <Link
-                                  href={link.href}
-                                  className="underline text-blue"
-                                >
-                                  {link.label}
-                                </Link>{' '}
-                                for the following library facilities:
-                                <div className="ml-6">
-                                  <LibraryFacilities />
+                  {step.assetsLinkText && (
+                    <div className="ml-6">
+                      <ol className="list-[lower-alpha] list-outside mb-6 mt-3 pl-10">
+                        <li>
+                          <span>{step.assetsLinkText}</span>
+                          {step.assetsTable && (
+                            <div className="mt-2">
+                              <AssetsFacilitiesTable />
+                            </div>
+                          )}
+                        </li>
+                        <li>
+                          <span>
+                            <div className="mt-3">
+                              {guidesiteData.bookingLinks.map((link, index) => (
+                                <div key={index}>
+                                  <Link
+                                    href={link.href}
+                                    className="underline text-blue"
+                                  >
+                                    {link.label}
+                                  </Link>{' '}
+                                  for the following library facilities:
+                                  <div className="ml-6">
+                                    <LibraryFacilities />
+                                  </div>
                                 </div>
+                              ))}
+                            </div>
+                          </span>
+                        </li>
+                        <li>
+                          <span>
+                            <div className="mt-3">
+                              Physical Plant Office for:
+                              <div className="ml-6">
+                                <PhysicalPlantOfficeFacilities />
                               </div>
-                            ))}
-                          </div>
-                        </span>
-                      </li>
-
-                      <li>
-                        <span>
-                          <div className="mt-3">
-                            Physical Plant Office for:
-                            <div className="ml-6">
-                              <PhysicalPlantOfficeFacilities />
                             </div>
-                          </div>
-                        </span>
-                      </li>
-
-                      <li>
-                        <span>
-                          <div className="mt-3">
-                            Ma’am Suzanne Doromal, for:
-                            <div className="ml-6">
-                              <SuzanDoromalFacilities />
+                          </span>
+                        </li>
+                        <li>
+                          <span>
+                            <div className="mt-3">
+                              Ma’am Suzanne Doromal, for:
+                              <div className="ml-6">
+                                <SuzanDoromalFacilities />
+                              </div>
                             </div>
-                          </div>
-                        </span>
-                      </li>
-                    </ol>
-                  </div>
-                )}
-              </div>
-            ))}
+                          </span>
+                        </li>
+                      </ol>
+                    </div>
+                  )}
+                </li>
+              ))}
+            </ol>
           </section>
 
           <section>

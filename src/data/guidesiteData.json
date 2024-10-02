@@ -10,9 +10,9 @@
     "steps": [
       {
         "number": 1,
-        "description": "Craft the concept paper for your event/activity.",
+        "description": "Craft the concept paper for your event/activity. ",
         "linkText": "Concept Paper Form",
-        "linkUrl": "#"
+        "linkUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdpCHygaKo64U6MUpV9kO6wCdWpWnuw29TZOPLwxcg5pVpAGA/viewform"
       },
       {
         "number": 2,
@@ -86,7 +86,7 @@
     "title": "ICOMMP EQUIPMENT AND STUDIOS BOOKING",
     "mainText": "Access the link if you intend to book the following equipment and/or studios:",
     "linkText": "link",
-    "linkUrl": "#",
+    "linkUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfZECyMcQ7dCiQUr8dosFKrdfuoExv_9AxDNQzMZ8oWzimhHQ/viewform",
     "content": [
       {
         "item": "ICOMMP Studio 1 (Blog Room)",
@@ -133,7 +133,7 @@
     "title": "REQUEST FOR OFFICIAL DOCUMENTS",
     "mainText": "The form caters to both current students and alumni. The students and alumni should fill this out in order to request documents and for drive-through payment and claim of the requested document(s). <br /><br /> Access the link if you intend to request for any of the following documents: Transcript of Records (TOR) for Board Exam (Please upload 2x2 picture) -- Required for licensure examinations.",
     "linkText": "link",
-    "linkUrl": "#",
+    "linkUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfD7NdpLyGHiFTzhDTwadbOaJ-6SM5oVwFmGi7869z0nHDxAQ/viewform",
     "content": [
       {
         "item": "Diploma, (Certified True Copy)",
@@ -209,7 +209,11 @@
     "OSA": [
       {
         "item": "Certificate of Good Moral Character",
-        "details": "Access the link to request the said document. Please note that the form is only intended for the utilization of the Undergraduate Unit."
+        "details": {
+          "mainText": "Access the link to request the said document. Please note that the form is only intended for the utilization of the Undergraduate Unit.",
+          "linkText": "link",
+          "linkUrl": "https://docs.google.com/forms/d/e/1FAIpQLSf2yDCKM-mBypxukNhE5i0ersX59JjDFObSVGuP8UkenS8kMA/viewform"
+        }
       }
     ]
   }
