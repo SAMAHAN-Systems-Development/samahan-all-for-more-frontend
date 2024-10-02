@@ -113,7 +113,6 @@ const IcommpEquipment = () => {
   const { title, mainText, linkText, linkUrl, content } =
     guidesiteData.icommpEquipment;
 
-  // Insert the link into the mainText dynamically
   const mainTextWithLink = mainText.replace(
     'link',
     `<a href="${linkUrl}" class="text-blue-500 underline" target="_blank" rel="noopener noreferrer">${linkText}</a>`
@@ -148,7 +147,6 @@ const IcommpEquipment = () => {
         ))}
       </ul>
 
-      {/* Button Section */}
       <div className="mt-[15px] ml-[70px]">
         <Button text="Book ICOMMP Equipment" />
       </div>
@@ -159,7 +157,6 @@ const RequestForDocuments = () => {
   const { title, mainText, linkText, linkUrl, content, OSA } =
     guidesiteData.requestDocuments;
 
-  // Insert the link into the mainText dynamically
   const mainTextWithLink = mainText.replace(
     'link',
     `<a href="${linkUrl}" class="text-blue-500 underline" target="_blank" rel="noopener noreferrer">${linkText}</a>`
@@ -180,11 +177,7 @@ const RequestForDocuments = () => {
       {/* Main Content List */}
       <ul className="list-decimal list-outside ml-24">
         {content.map((document, index) => (
-          <li
-            key={index}
-            className=""
-            style={{ fontWeight: 'bold' }} // This will make the numbering bold
-          >
+          <li key={index} className="" style={{ fontWeight: 'bold' }}>
             <span className="font-bold">{document.item}</span>
             {document.details && (
               <>
@@ -212,7 +205,7 @@ const RequestForDocuments = () => {
               style={{ fontWeight: 'bold' }}
             >
               <span className="font-normal">{document.item}</span>
-              {/* Assuming document.details is always defined */}
+
               <ul className="list-[lower-alpha] list-outside ml-6 font-bold">
                 <li className="font-bold">
                   <span className="font-normal">
@@ -231,7 +224,6 @@ const RequestForDocuments = () => {
           ))}
         </ul>
 
-        {/* Button Section */}
         <div className="mt-[15px] ml-[70px]">
           <Button text="Request Certificate" />
         </div>
@@ -340,7 +332,6 @@ const Guidesite = () => {
             <IcommpEquipment />
           </section>
 
-          {/* REQUEST FOR OFFICIAL DOCUMENTS */}
           <section className="mt-10">
             <RequestForDocuments />
           </section>
