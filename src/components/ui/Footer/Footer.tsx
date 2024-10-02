@@ -23,7 +23,7 @@ const getCurrentYear = () => {
 const currentYear = getCurrentYear();
 
 // Variants
-const footerSection = cva('mb-4', {
+const footerSection = cva('pb-4', {
   variants: {
     size: {
       [FOOTER_SIZE_ENUM.SMALL]: 'mb-2',
