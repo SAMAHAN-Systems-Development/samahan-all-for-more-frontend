@@ -5,6 +5,23 @@
       "label": "https://library.addu.edu.ph/book-a-library-facility"
     }
   ],
+  "venueReservations": {
+    "title": "VENUE RESERVATIONS",
+    "steps": [
+      {
+        "number": 1,
+        "description": "Craft the concept paper for your event/activity.",
+        "linkText": "Concept Paper Form",
+        "linkUrl": "#"
+      },
+      {
+        "number": 2,
+        "description": "Once approved, you may proceed with booking your desired venue. Channels may vary depending on your chosen venue:",
+        "assetsLinkText": "booking.addu.edu.ph for the following assets:",
+        "assetsTable": true
+      }
+    ]
+  },
   "assetsFacilities": [
     { "label": "Finster Auditorium" },
     { "label": "F213 Multi-purpose Room" },
@@ -68,6 +85,8 @@
   "icommpEquipment": {
     "title": "ICOMMP EQUIPMENT AND STUDIOS BOOKING",
     "mainText": "Access the link if you intend to book the following equipment and/or studios:",
+    "linkText": "link",
+    "linkUrl": "#",
     "content": [
       {
         "item": "ICOMMP Studio 1 (Blog Room)",
@@ -113,6 +132,8 @@
   "requestDocuments": {
     "title": "REQUEST FOR OFFICIAL DOCUMENTS",
     "mainText": "The form caters to both current students and alumni. The students and alumni should fill this out in order to request documents and for drive-through payment and claim of the requested document(s). <br /><br /> Access the link if you intend to request for any of the following documents: Transcript of Records (TOR) for Board Exam (Please upload 2x2 picture) -- Required for licensure examinations.",
+    "linkText": "link",
+    "linkUrl": "#",
     "content": [
       {
         "item": "Diploma, (Certified True Copy)",
