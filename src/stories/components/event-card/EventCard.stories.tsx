@@ -13,5 +13,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    start_time: new Date(Date.now()),
+    name: 'asdsa',
+    location: 'asdas',
+    poster_images: ['asd'],
+  },
 };
