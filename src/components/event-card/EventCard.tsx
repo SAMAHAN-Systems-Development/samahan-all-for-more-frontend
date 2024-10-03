@@ -11,6 +11,7 @@ import Button from '@/components/ui/Button';
 // import img from '/images/event-card-placeholder.png';
 
 interface EventCardProps extends React.HTMLAttributes<HTMLDivElement> {
+  height: number;
   href: string;
   imageAlt: string;
   imageSrc: string;
@@ -18,6 +19,7 @@ interface EventCardProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string;
   startTime: Date;
   target: string;
+  width: number;
 }
 
 export const EventCard: React.FC<EventCardProps> = ({
@@ -27,6 +29,8 @@ export const EventCard: React.FC<EventCardProps> = ({
   imageAlt,
   location,
   href,
+  width,
+  height,
   target = '_blank',
 }) => {
   function formatDate(date: Date): string {
@@ -42,19 +46,19 @@ export const EventCard: React.FC<EventCardProps> = ({
   const startDate = useMemo(() => formatDate(startTime), [startTime]);
 
   return (
-    <div className=" max-w-[31.25rem] max-h-[27.8125rem]  border-blue rounded-3xl border-2 flex flex-col overflow-hidden ">
+    <div className=" max-w-[31.25rem] h-[27.8125rem]  border-blue rounded-3xl border-2 flex flex-col overflow-hidden ">
       <Image
-        height={0}
-        width={0}
+        height={height}
+        width={width}
         src={imageSrc}
         alt={imageAlt}
-        className=" w-full h-48 object-cover "
+        className=" w-full h-44 object-cover "
       />
-      <div className=" p-5 inline-flex flex-col gap-[0.625rem] justify-around border-t-2 border-blue ">
+      <div className=" p-5 inline-flex flex-col gap-[0.625rem] justify-around border-t-2 border-blue h-full ">
         <div>
-          <div className=" flex flex-wrap  justify-start items-start gap-1 ">
+          <div className=" flex flex-wrap justify-start items-start gap-1 ">
             <EventCardTag
-              icon={<MdPeople className="rounded-full" />}
+              icon={<MdPeople size={20} className="rounded-full" />}
               title="Open to all AdDU students"
             />
           </div>
@@ -65,9 +69,9 @@ export const EventCard: React.FC<EventCardProps> = ({
         <a
           href={href}
           target={target}
-          className=" w-full flex flex-col justify-stretch items-stretch"
+          className=" w-full flex flex-col justify-stretch items-stretch "
         >
-          <Button text="View Details" />
+          <Button fontSize={'sm'} text="View Details" />
         </a>
       </div>
     </div>

@@ -21,6 +21,8 @@ export const Default: Story = {
     name: 'Default Name',
     location: 'Default Location',
     href: '',
+    width: 0,
+    height: 0,
   },
 };
 
@@ -32,5 +34,7 @@ export const WithValues: Story = {
     name: 'UFEST: Battle of the Bands',
     location: 'Martin Hall 4F',
     href: 'https://facebook.com',
+    width: 5600,
+    height: 2028,
   },
 };
