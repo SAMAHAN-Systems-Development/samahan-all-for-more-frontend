@@ -63,8 +63,10 @@ export const EventCard: React.FC<EventCardProps> = ({
             />
           </div>
           <strong className="text-blue text-[25px] ">{name}</strong>
-          <EventCardField icon={<FaRegCalendarAlt />} title={startDate} />
-          <EventCardField icon={<FaLocationDot />} title={location} />
+          <div className="flex flex-col">
+            <EventCardField icon={<FaRegCalendarAlt />} title={startDate} />
+            <EventCardField icon={<FaLocationDot />} title={location} />
+          </div>
         </div>
         <a
           href={href}
