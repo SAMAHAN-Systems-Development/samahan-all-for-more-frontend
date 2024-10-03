@@ -16,8 +16,10 @@
       },
       {
         "number": 2,
-        "description": "Once approved, you may proceed with booking your desired venue. Channels may vary depending on your chosen venue:",
-        "assetsLinkText": "booking.addu.edu.ph for the following assets:",
+        "description": "Once approved, you may proceed with booking your desired venue.",
+        "assetsText": "Channels may vary depending on your chosen venue: ",
+        "assetsLinkText": "booking.addu.edu.ph",
+        "assetsLinkUrl": "https://booking.addu.edu.ph",
         "assetsTable": true
       }
     ]

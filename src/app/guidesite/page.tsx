@@ -129,7 +129,6 @@ const IcommpEquipment = () => {
         />
       </p>
 
-      {/* Main Equipment List */}
       <ul className="list-decimal list-inside ml-20">
         {content.map((equipment, index) => (
           <li key={index} style={{ fontWeight: 'bold' }}>
@@ -252,6 +251,7 @@ const Guidesite = () => {
                   <div className="flex flex-col">
                     <span>
                       <span className="font-bold">{step.description}</span>
+
                       {step.linkText && (
                         <>
                           Secure required parts of the paper (refer to the
@@ -267,13 +267,32 @@ const Guidesite = () => {
                           . Submit your response through this link as well.
                         </>
                       )}
+
+                      {step.assetsLinkText && (
+                        <>
+                          <span className="ml-1 font-normal">
+                            Channels may vary depending on your chosen venue:
+                          </span>
+                        </>
+                      )}
                     </span>
                   </div>
                   {step.assetsLinkText && (
                     <div className="ml-6">
                       <ol className="list-[lower-alpha] list-outside mb-6 mt-3 pl-10">
                         <li>
-                          <span>{step.assetsLinkText}</span>
+                          <span>
+                            <Link
+                              href={step.assetsLinkUrl}
+                              className="text-blue underline ml-1"
+                            >
+                              {step.assetsLinkText}
+                            </Link>
+                            <span className="font-normal">
+                              {' '}
+                              for the following assets:
+                            </span>
+                          </span>
                           {step.assetsTable && (
                             <div className="mt-2">
                               <AssetsFacilitiesTable />
