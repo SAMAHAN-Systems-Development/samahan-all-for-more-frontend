@@ -7,8 +7,9 @@ interface EventFieldProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const EventCardField: React.FC<EventFieldProps> = ({ title, icon }) => {
   return (
-    <div className="text-blue">
-      {icon} {title}
+    <div className="text-blue flex flex-row gap-2 items-center">
+      <div>{icon}</div>
+      <div>{title}</div>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { EventCard } from '@/components/event-card/EventCard';
+// import placeholder from '/event-card-placeholder.png';
 
 const meta: Meta<typeof EventCard> = {
   component: EventCard,
@@ -14,9 +15,22 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    start_time: new Date(Date.now()),
-    name: 'asdsa',
-    location: 'asdas',
-    poster_images: ['asd'],
+    startTime: new Date(Date.now()),
+    imageSrc: '',
+    imageAlt: 'Blank',
+    name: 'Default Name',
+    location: 'Default Location',
+    href: '',
+  },
+};
+
+export const WithValues: Story = {
+  args: {
+    startTime: new Date(Date.now()),
+    imageSrc: '/images/samahan-members.png',
+    imageAlt: 'Samahan Members',
+    name: 'UFEST: Battle of the Bands',
+    location: 'Martin Hall 4F',
+    href: 'https://facebook.com',
   },
 };
