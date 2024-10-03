@@ -5,7 +5,7 @@ import { EventCard } from '@/components/event-card/EventCard';
 
 const meta: Meta<typeof EventCard> = {
   component: EventCard,
-  title: 'Components/EventCard/EventCard',
+  title: 'UI/EventCard',
   argTypes: {},
 };
 
