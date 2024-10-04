@@ -2,7 +2,7 @@ import Button from '@/components/ui/Button';
 
 const GeneralInfoPage = () => {
   return (
-    <div className="p-16">
+    <div className="mx-28">
       <h1 className="text-blue font-bold text-bold mb-8 mt-12">
         GENERAL INFORMATION CENTER
       </h1>
@@ -188,7 +188,7 @@ const GeneralInfoPage = () => {
       <h2 className="text-blue font-bold text-main mt-12">
         6. The University Student Government and Organizations
       </h2>
-      <div className="ml-8 text-blue">
+      <div className="ml-8 text-blue mb-48">
         <p className="mb-5 mt-5">
           <span className="font-bold">
             a. SAMAHAN NG MAG-AARAL NG PAMATASANG ATENEO DE DAVAO (SAMAHAN)
