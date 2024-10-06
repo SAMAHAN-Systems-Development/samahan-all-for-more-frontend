@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Climate Action",
+    "content": "Promotes climate education, sustainable lifestyle, and sustainable development, inspired by global advocates and aims to fight climate change by modeling responsible practices.",
+    "image": "Climate Action.jpg"
+  },
+  {
+    "title": "Good Governance",
+    "content": "Envisions a future where competent leaders and citizens work together towards peace and the common good, with special focus on the underprivileged and rural poor.",
+    "image": "Good Governance.jpg"
+  },
+  {
+    "title": "Youth Empowerment",
+    "content": "Aims to empower the youth to become catalysts of change, recognizing their innovative potential to solve society's issues and shape the country's future.",
+    "image": "Youth Empowerment.jpg"
+  },
+  {
+    "title": "Quality Education",
+    "content": "Champions the right to quality and inclusive education, creating community partnerships and projects aimed at maximizing learning and decreasing educational barriers.",
+    "image": "Quality Education.jpg"
+  },
+  {
+    "title": "Holistic Health",
+    "content": "Focuses on physical, mental, social, and spiritual growth, fostering an environment that encourages holistic development aligned with Ignatian ideals.",
+    "image": "Holistic Health.jpg"
+  },
+  {
+    "title": "SOGIESC (Sexual Orientation, Gender Identity, Gender Expression, and Sex Characteristics)",
+    "content": "Promotes inclusivity and gender sensitivity, advocating for SOGIE-specific education and the Anti-Discrimination Bill to protect LGBTQ+ rights.",
+    "image": "SOGIESC.jpg"
+  }
+]
