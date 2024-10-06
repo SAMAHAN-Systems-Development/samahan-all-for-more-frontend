@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import { HiBars3 } from 'react-icons/hi2';
 import { IoMdArrowDropdown, IoMdArrowDropup } from 'react-icons/io';
@@ -8,6 +9,35 @@ import Link from 'next/link';
 import logo from 'public/images/about-page/A4M LOGO.png';
 
 const Navbar = () => {
+  const navItems = [
+    { title: 'Home', link: '/Home' },
+    { title: 'About', link: '/About' },
+    { title: 'Central Board', link: '/central-board' },
+    { title: 'FAQs', link: '/faqs' },
+  ];
+
+  const officesDropdownItems = [
+    { title: 'Office of the President', link: '/offices/president' },
+    { title: 'Office of the Vice President', link: '/offices/vice-president' },
+    {
+      title: 'Office of the Secretary General',
+      link: '/offices/secretary-general',
+    },
+    { title: 'Office of the Treasurer', link: '/offices/treasurer' },
+  ];
+
+  const infoPortalDropdownItems = [
+    { title: 'Bulletin', link: '/info-portal/bulletin' },
+    { title: 'GuideSite', link: '/info-portal/guidesite' },
+    { title: 'Event Finder', link: '/info-portal/event-finder' },
+  ];
+
+  const academixDropdownItems = [
+    { title: 'AcadHub', link: '/academix/acadhub' },
+    { title: 'AcadDrive', link: '/academix/acaddrive' },
+    { title: 'Atheneum', link: '/academix/atheneum' },
+  ];
+
   const ArrowSize = 15;
   const [openDropdowns, setOpenDropdowns] = useState<string[]>([]);
   const [AcademixDropdowns, setAcademixDropdowns] = useState(false);
@@ -38,16 +68,16 @@ const Navbar = () => {
     }
   };
 
-  const DropdownItems = (items: string[]) =>
-    items.map((item) => (
+  const DropdownItems = (items: { link: string, title: string; }[]) =>
+    items.map(({ title, link }) => (
       <li
-        key={item}
+        key={title}
         className="cursor-pointer p-2"
         tabIndex={0}
         role="menuitem"
       >
         {/* for navigation routings */}
-        <Link href={`/${item.toLowerCase()}`}>{item}</Link>
+        <Link href={link}>{title}</Link>
       </li>
     ));
 
@@ -74,12 +104,11 @@ const Navbar = () => {
         role="menu"
       >
         {/* Home and About Links */}
-        <li className="cursor-pointer">
-          <Link href="/Home">Home</Link>
-        </li>
-        <li className="cursor-pointer">
-          <Link href="/About">About</Link>
-        </li>
+        {navItems.slice(0, 2).map(({ title, link }) => (
+          <ul className="cursor-pointer font-semibold" key={title}>
+            <Link href={link}>{title}</Link>
+          </ul>
+        ))}
 
         {/* Offices Dropdown */}
         <li className="relative">
@@ -104,22 +133,17 @@ const Navbar = () => {
               className="absolute space-y-[-4px] font-normal left-1/2 transform -translate-x-1/2 bg-white w-[255px] text-center shadow-[0_4px_20px_rgba(0,0,0,0.1)] rounded-[20px] py-3 px-7 mt-10 z-10"
               role="menu"
             >
-              {DropdownItems([
-                'Office of the President',
-                'Office of the Vice President',
-                'Office of the Secretary General',
-                'Office of the Treasurer',
-              ])}
+              {DropdownItems(officesDropdownItems)}
             </div>
           )}
         </li>
 
-        <li className="cursor-pointer">
-          <Link href="/central-board">Central Board</Link>
-        </li>
-        <li className="cursor-pointer">
-          <Link href="/faqs">FAQs</Link>
-        </li>
+        {/* Central Board and FAQs Links */}
+        {navItems.slice(2).map(({ title, link }) => (
+          <ul className="cursor-pointer font-semibold" key={title}>
+            <Link href={link}>{title}</Link>
+          </ul>
+        ))}
 
         {/* Information Portal Dropdown */}
         <li className="relative">
@@ -144,7 +168,7 @@ const Navbar = () => {
               className="absolute space-y-[-4px] font-normal left-1/2 transform -translate-x-1/2 pt-3 pb-4 px-7 z-10 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.1)] w-[200px] flex flex-col justify-center items-center rounded-[20px] mt-10"
               role="menu"
             >
-              {DropdownItems(['Bulletin', 'GuideSite', 'Event Finder'])}
+              {DropdownItems(infoPortalDropdownItems)}
               <li
                 role="menuitem"
                 tabIndex={0}
@@ -173,7 +197,7 @@ const Navbar = () => {
                     className="space-y-[-4px]"
                     role="menu"
                   >
-                    {DropdownItems(['AcadHub', 'AcadDrive', 'Atheneum'])}
+                    {DropdownItems(academixDropdownItems)}
                   </ul>
                 )}
               </li>
@@ -184,15 +208,14 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute px-6 left-1/2 transform -translate-x-1/2 top-28 w-full md:hidden">
+        <div className="absolute px-6 left-1/2 transform -translate-x-1/2 top-28 w-full md:hidden z-50">
           <div className="w-full space-y-2 text-blue text-center text-md pt-4 pb-3 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.1)] rounded-[25px] flex flex-col items-center">
             {/* Home and About Links */}
-            <ul className="cursor-pointer font-semibold">
-              <Link href="/Home">Home</Link>
-            </ul>
-            <ul className="cursor-pointer font-semibold">
-              <Link href="/About">About</Link>
-            </ul>
+            {navItems.map(({ title, link }) => (
+              <ul className="cursor-pointer font-semibold" key={title}>
+                <Link href={link}>{title}</Link>
+              </ul>
+            ))}
 
             {/* Offices Dropdown */}
             <ul className="cursor-pointer w-full">
@@ -210,23 +233,10 @@ const Navbar = () => {
                 </div>
               </button>
               {openDropdowns.includes('offices') && (
-                <ul className="space-y-[-6px]">
-                  {DropdownItems([
-                    'Office of the President',
-                    'Office of the Vice President',
-                    'Office of the Secretary General',
-                    'Office of the Treasurer',
-                  ])}
-                </ul>
+                <div className="flex flex-col items-center space-y-[-4px]">
+                  {DropdownItems(officesDropdownItems)}
+                </div>
               )}
-            </ul>
-
-            {/* Central Board and FAQs Links */}
-            <ul className="cursor-pointer font-semibold">
-              <Link href="/central-board">Central Board</Link>
-            </ul>
-            <ul className="cursor-pointer font-semibold">
-              <Link href="/faqs">FAQs</Link>
             </ul>
 
             {/* Information Portal Dropdown */}
@@ -236,7 +246,7 @@ const Navbar = () => {
                 className="flex items-center w-full justify-center"
               >
                 <span className="font-semibold">Information Portal</span>
-                <div className="mt-[3px]">
+                <div className="mt-1">
                   {openDropdowns.includes('infoPortal') ? (
                     <IoMdArrowDropup size={ArrowSize} />
                   ) : (
@@ -245,8 +255,8 @@ const Navbar = () => {
                 </div>
               </button>
               {openDropdowns.includes('infoPortal') && (
-                <ul className="space-y-[-6px]">
-                  {DropdownItems(['Bulletin', 'GuideSite', 'Event Finder'])}
+                <div className="flex flex-col items-center space-y-[-4px]">
+                  {DropdownItems(infoPortalDropdownItems)}
                   <li
                     role="menuitem"
                     tabIndex={0}
@@ -275,11 +285,11 @@ const Navbar = () => {
                         className="space-y-[-4px]"
                         role="menu"
                       >
-                        {DropdownItems(['AcadHub', 'AcadDrive', 'Atheneum'])}
+                        {DropdownItems(academixDropdownItems)}
                       </ul>
                     )}
                   </li>
-                </ul>
+                </div>
               )}
             </ul>
           </div>
