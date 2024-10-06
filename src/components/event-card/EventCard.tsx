@@ -8,31 +8,43 @@ import Image from 'next/image';
 import { EventCardField } from '@/components/event-card/EventCardField';
 import { EventCardTag } from '@/components/event-card/EventCardTag';
 import Button from '@/components/ui/Button';
-// import img from '/images/event-card-placeholder.png';
+import type { EventData } from '@/lib/types/eventData.type';
+import type { EventLocation } from '@/lib/types/eventLocation.type';
+
+// interface EventCardProps extends React.HTMLAttributes<HTMLDivElement> {
+//   height: number;
+//   href: string;
+//   imageAlt: string;
+//   imageSrc: string;
+//   location: string;
+//   name: string;
+//   startTime: Date;
+//   target: string;
+//   width: number;
+// }
 
 interface EventCardProps extends React.HTMLAttributes<HTMLDivElement> {
-  height: number;
+  event: EventData;
   href: string;
   imageAlt: string;
+  imageHeight: number;
   imageSrc: string;
-  location: string;
-  name: string;
-  startTime: Date;
+  imageWidth: number;
+  location: EventLocation;
   target: string;
-  width: number;
 }
 
 export const EventCard: React.FC<EventCardProps> = ({
-  name,
-  startTime,
   imageSrc,
   imageAlt,
   location,
   href,
-  width,
-  height,
+  event,
+  imageWidth,
+  imageHeight,
   target = '_blank',
 }) => {
+  const { startTime, name } = event;
   function formatDate(date: Date): string {
     const options: Intl.DateTimeFormatOptions = {
       year: 'numeric',
@@ -48,8 +60,8 @@ export const EventCard: React.FC<EventCardProps> = ({
   return (
     <div className=" max-w-[31.25rem] h-[27.8125rem]  border-blue rounded-3xl border-2 flex flex-col overflow-hidden ">
       <Image
-        height={height}
-        width={width}
+        height={imageHeight}
+        width={imageWidth}
         src={imageSrc}
         alt={imageAlt}
         className=" w-full h-44 object-cover "
@@ -65,7 +77,7 @@ export const EventCard: React.FC<EventCardProps> = ({
           <strong className="text-blue text-[25px] ">{name}</strong>
           <div className="flex flex-col gap-[0.625rem] ">
             <EventCardField icon={<FaRegCalendarAlt />} title={startDate} />
-            <EventCardField icon={<FaLocationDot />} title={location} />
+            <EventCardField icon={<FaLocationDot />} title={location.name} />
           </div>
         </div>
         <a

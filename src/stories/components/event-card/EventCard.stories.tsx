@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { EventCard } from '@/components/event-card/EventCard';
+import type { EventData } from '@/lib/types/eventData.type';
 // import placeholder from '/event-card-placeholder.png';
+import type { EventLocation } from '@/lib/types/eventLocation.type';
 
 const meta: Meta<typeof EventCard> = {
   component: EventCard,
@@ -15,26 +17,30 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    startTime: new Date(Date.now()),
+    event: {
+      name: 'Missing Name',
+      startTime: new Date(Date.now()),
+    } as EventData,
     imageSrc: '',
     imageAlt: 'Blank',
-    name: 'Default Name',
-    location: 'Default Location',
+    location: { name: '' } as EventLocation,
     href: '',
-    width: 0,
-    height: 0,
+    imageWidth: 0,
+    imageHeight: 0,
   },
 };
 
 export const WithValues: Story = {
   args: {
-    startTime: new Date(Date.now()),
+    event: {
+      name: 'UFEST: Battle of the Bands',
+      startTime: new Date(Date.now()),
+    } as EventData,
     imageSrc: '/images/samahan-members.png',
     imageAlt: 'Samahan Members',
-    name: 'UFEST: Battle of the Bands',
-    location: 'Martin Hall 4F',
+    location: { name: 'Martin Hall 4F' } as EventLocation,
     href: 'https://facebook.com',
-    width: 5600,
-    height: 2028,
+    imageWidth: 5600,
+    imageHeight: 2028,
   },
 };
