@@ -9,7 +9,7 @@ const FaqSection = () => {
   return (
     <div className="mx-28">
       <div className="">
-        <h1 className="text-blue font-bold text-bold mb-8 mt-12">
+        <h1 className="text-blue font-bold text-title mb-8 mt-12">
           FREQUENTLY ASKED QUESTIONS
         </h1>
 
@@ -49,6 +49,7 @@ const FaqSection = () => {
           Scholarships
         </h1>
 
+        {/* Q1 */}
         <Accordion
           title="What are the available scholarship grants that AdDU offers?"
           content={
@@ -65,6 +66,7 @@ const FaqSection = () => {
           }
         />
 
+        {/* Q2 */}
         <Accordion
           title="How much is/are the grants given to the scholars?"
           content={
@@ -90,6 +92,8 @@ const FaqSection = () => {
             </div>
           }
         />
+
+        {/* Q3 */}
         <Accordion
           title="How to apply for the scholarship grant?"
           content={
@@ -100,17 +104,19 @@ const FaqSection = () => {
                 media accounts for further information:
               </p>
               <div className="ml-[3.5rem]">
-                <ul className="list-disc">
+                <ol className="list-disc">
                   <li>
                     Facebook Page: Ateneo de Davao - College Admission and Aid
                   </li>
                   <li>Ateneo de Davao Scholar’s Society</li>
                   <li>X (Formerly known as Twitter): (@addu_scholars)</li>
-                </ul>
+                </ol>
               </div>
             </div>
           }
         />
+
+        {/* Q4 */}
         <Accordion
           title="Is it okay to apply if a student already has an external (government) grant?"
           content={
@@ -130,6 +136,7 @@ const FaqSection = () => {
           }
         />
 
+        {/* Q5 */}
         <Accordion
           title="What are the requirements?"
           content={
@@ -163,6 +170,7 @@ const FaqSection = () => {
           }
         />
 
+        {/* Q6 */}
         <Accordion
           title="Is there a grade that scholars need to maintain?"
           content={
@@ -175,6 +183,7 @@ const FaqSection = () => {
           }
         />
 
+        {/* Q7 */}
         <Accordion
           title="Is it required to render a service to the university offices? If so, how many hours are needed?"
           content="Yes, scholars are now required to render service. The required number of hours of rendering of service depends on the amount of the scholarship grant. (Php 1,000.00 = 1 hour)"
@@ -184,6 +193,8 @@ const FaqSection = () => {
         <h1 className="flex items-center flex-col text-blue font-bold text-thin mb-7 mt-12">
           Enrollment and Registration
         </h1>
+
+        {/* Q1 */}
         <Accordion
           title="What is pre-registration and how can it be done?"
           content={
@@ -202,10 +213,13 @@ const FaqSection = () => {
             </div>
           }
         />
+
+        {/* Q2-Q3 */}
         {EnrollmentAndRegistrationData1.map((item, index) => (
           <Accordion key={index} title={item.title} content={item.content} />
         ))}
 
+        {/* Q4 */}
         <Accordion
           title="Why does a student have un-updated registration during enrollment?"
           content={
@@ -244,10 +258,12 @@ const FaqSection = () => {
           }
         />
 
+        {/* Q5-Q11 */}
         {EnrollmentAndRegistrationData2.map((item, index) => (
           <Accordion key={index} title={item.title} content={item.content} />
         ))}
 
+        {/* Q12 */}
         <Accordion
           title="What are the financial implications of withdrawal?"
           content={

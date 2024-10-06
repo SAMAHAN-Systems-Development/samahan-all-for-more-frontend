@@ -3,13 +3,13 @@ import Button from '@/components/ui/Button';
 const GeneralInfoPage = () => {
   return (
     <div className="mx-28">
-      <h1 className="text-blue font-bold text-bold mb-8 mt-12">
+      <h1 className="text-blue font-bold text-title mt-24">
         GENERAL INFORMATION CENTER
       </h1>
 
       {/*School deans and departments...*/}
       <div>
-        <h2 className="text-blue font-bold text-main mt-12">
+        <h2 className="text-blue font-bold text-main mt-5">
           1. School Deans and Department Heads Directory
         </h2>
         <div className="text-blue text-main ml-8">
@@ -25,9 +25,13 @@ const GeneralInfoPage = () => {
       <h2 className="text-blue font-bold text-main mt-12">2. Grading System</h2>
       <div className="ml-8">
         <p className="text-blue mb-5 mt-5">a. Weighted Percentage Average</p>
-        <WPA />
+        <div className="ml-8">
+          <WPA />
+        </div>
         <p className="text-blue mb-5 mt-5">b. Quality Point Index</p>
-        <QPI />
+        <div className="ml-8">
+          <QPI />
+        </div>
       </div>
 
       {/* Class Attendance and Absences */}
@@ -36,21 +40,23 @@ const GeneralInfoPage = () => {
       </h2>
       <div className="text-blue text-main ml-8">
         <p className="mb-5 mt-5">a. Allowable Absences</p>
-        <AllowableAbsences />
-        <div className="text-blue text-main ml-8">
-          <ol className="list-disc pl-6 mt-5">
-            <li className="mt-5">
-              However, for a five-unit course (i.e., 3 units lecture, 2 units
-              laboratory), any student who has exceeded the allowable number of
-              absences for lecture or laboratory will automatically be debarred
-              for the whole 5-unit course.
-            </li>
-            <li className="mt-5">
-              In the summer, the prescribed maximum number of cuts for a
-              particular subject is five meeting days. This is regardless of the
-              number of units assigned to the subject.
-            </li>
-          </ol>
+        <div className="ml-8">
+          <AllowableAbsences />
+          <div className="text-blue text-main ml-8">
+            <ul className="list-[lower-roman] pl-6 mt-5">
+              <li className="mt-5">
+                However, for a five-unit course (i.e., 3 units lecture, 2 units
+                laboratory), any student who has exceeded the allowable number
+                of absences for lecture or laboratory will automatically be
+                debarred for the whole 5-unit course.
+              </li>
+              <li className="mt-5">
+                In the summer, the prescribed maximum number of cuts for a
+                particular subject is five meeting days. This is regardless of
+                the number of units assigned to the subject.
+              </li>
+            </ul>
+          </div>
         </div>
         <p className="mb-5 mt-5">b. &quot;Unli Cuts&quot; Privilege</p>
         <div className="text-blue text-main ml-8">
@@ -87,13 +93,13 @@ const GeneralInfoPage = () => {
           a. Available scholarship programs offered by the University
         </p>
         <div className="ml-8">
-          <ol className="list-disc pl-6 mt-5">
+          <ol className="list-decimal pl-6 mt-5">
             <li className="mt-5">
               JSF or Jubilee Scholarship Fund (Exclusive for Valedictorians and
               Salutatorians)
             </li>
             <div className="ml-8">
-              <ol className="list-decimal pl-6 mt-5">
+              <ol className="list-[lower-roman] pl-6 mt-5">
                 <li className="mt-5">
                   100% Tuition fee free for High School Valedictorians
                 </li>
@@ -104,7 +110,7 @@ const GeneralInfoPage = () => {
             </div>
             <li className="mt-5">GIA or Grant-in-Aid</li>
             <div className="ml-8">
-              <ol className="list-decimal pl-6 mt-5">
+              <ol className="list-[lower-roman] pl-6 mt-5">
                 <li className="mt-5">10,000 up to 100% tuition and fees</li>
               </ol>
             </div>
@@ -114,7 +120,7 @@ const GeneralInfoPage = () => {
         {/* Application process */}
         <p className="mb-5 mt-5">b. Application process</p>
         <div className="ml-8">
-          <ol className="list-disc pl-6 mt-5">
+          <ol className="list-[lower-roman] pl-6 mt-5">
             <li className="mt-5">
               The application process will be administered by the University’s
               Admission and Aid Office. Its process will be publicized on its
@@ -138,7 +144,7 @@ const GeneralInfoPage = () => {
           is also a scholar of an outside organization/program.
         </p>
         <div className="ml-8">
-          <ol className="list-disc pl-6 mt-5">
+          <ol className="list-[lower-roman] pl-6 mt-5">
             <li className="mt-5">
               For DOST and CHED grants: Eligible. However, GIA/JSF grant will be
               adjusted if the total scholarship grant of the scholar exceeds the
@@ -156,12 +162,11 @@ const GeneralInfoPage = () => {
           c. Grades to maintain in order renew the scholarship
         </p>
         <div className="ml-8">
-          <ol className="list-disc pl-6 mt-5">
+          <ol className="list-[lower-roman] pl-6 mt-5">
             <li className="mt-5">For JSF Grantees: A QPI of 3 (B)</li>
             <li className="mt-5">For GIA Grantees: A QPI of 2.5 (C+)</li>
           </ol>
         </div>
-        {/* -------- */}
       </div>
 
       <h2 className="text-blue font-bold text-main mt-12">
@@ -173,7 +178,7 @@ const GeneralInfoPage = () => {
           follows:
         </p>
         <div className="ml-8">
-          <ol className="list-disc pl-6 mt-5">
+          <ol className="list-[lower-roman] pl-6 mt-5">
             <li className="mt-5">
               Summa cum laude - cumulative QPI of 3.80 to 4.00
             </li>
