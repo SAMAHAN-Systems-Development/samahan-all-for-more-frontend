@@ -1,7 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
-import guidesiteData from '@/data/guidesiteData.json';
+
 import Button from '@/components/ui/Button';
+import guidesiteData from '@/data/guidesiteData.json';
 
 // Table For Roman Numerals
 const romanize = (num: number) => {
@@ -22,12 +23,12 @@ const romanize = (num: number) => {
   };
 
   let roman = '';
-  const keys = Object.keys(numeralLookup); // Get the keys array
+  const keys = Object.keys(numeralLookup);
 
   for (const key of keys) {
-    const numeral = key as keyof typeof numeralLookup; // Cast key for TypeScript
+    const numeral = key as keyof typeof numeralLookup;
     while (num >= numeralLookup[numeral]) {
-      roman += romanSymbols[numeral]; // Use the symbol from the romanSymbols object
+      roman += romanSymbols[numeral];
       num -= numeralLookup[numeral];
     }
   }
@@ -128,7 +129,7 @@ const IcommpEquipment = () => {
           }}
         />
       </p>
-      <ul className="list-decimal list-inside ml-20">
+      <ul className="list-decimal list-outside ml-20">
         {content.map((equipment, index) => (
           <li key={index} className="font-bold">
             <span className="font-normal">{equipment.item}</span>
@@ -170,7 +171,7 @@ const RequestForDocuments = () => {
           }}
         />
       </p>
-      {/* Main Content List */}
+
       <ul className="list-decimal list-outside ml-24">
         {content.map((document, index) => (
           <li key={index} className="font-bold">
@@ -224,7 +225,6 @@ const RequestForDocuments = () => {
   );
 };
 
-// Export all components
 export {
   AssetsFacilitiesTable,
   LibraryFacilities,
