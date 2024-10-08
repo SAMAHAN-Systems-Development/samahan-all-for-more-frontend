@@ -19,11 +19,16 @@ const buttonStyles = cva(
         lg: 'text-lg',
         sm: 'text-[1rem]',
       },
+      width: {
+        full: 'w-full',
+        auto: 'w-auto',
+      },
     },
     defaultVariants: {
       variant: 'outline',
       colorScheme: 'blue',
       fontSize: 'lg',
+      width: 'auto',
     },
   }
 );
@@ -33,6 +38,7 @@ interface ButtonProps extends VariantProps<typeof buttonStyles> {
   children?: React.ReactNode;
   onClick?: () => void;
   text?: string;
+  width?: 'full' | 'auto';
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -44,9 +50,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       colorScheme,
       onClick,
       asChild,
+      width = 'auto',
       fontSize,
       ...props
     },
+
     ref
   ) => {
     const Comp = asChild ? Slot : 'button';
@@ -55,7 +63,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <Comp
         ref={ref}
         onClick={onClick}
-        className={buttonStyles({ variant, colorScheme, fontSize })}
+        className={buttonStyles({ variant, colorScheme, fontSize, width })}
         {...props}
       >
         {text ? text : children}
