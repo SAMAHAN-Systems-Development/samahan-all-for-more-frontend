@@ -26,17 +26,13 @@ import type { EventLocation } from '@/lib/types/eventLocation.type';
 interface EventCardProps extends React.HTMLAttributes<HTMLDivElement> {
   event: EventData;
   href: string;
-  imageAlt: string;
   imageHeight: number;
-  imageSrc: string;
   imageWidth: number;
   location: EventLocation;
   target: string;
 }
 
 export const EventCard: React.FC<EventCardProps> = ({
-  imageSrc,
-  imageAlt,
   location,
   href,
   event,
@@ -44,7 +40,9 @@ export const EventCard: React.FC<EventCardProps> = ({
   imageHeight,
   target = '_blank',
 }) => {
-  const { startTime, name } = event;
+  const { start_time, name, posters } = event;
+  const { image_url } = posters;
+
   function formatDate(date: Date): string {
     const options: Intl.DateTimeFormatOptions = {
       year: 'numeric',
@@ -54,16 +52,17 @@ export const EventCard: React.FC<EventCardProps> = ({
 
     return date.toLocaleDateString('en-US', options);
   }
-
-  const startDate = useMemo(() => formatDate(startTime), [startTime]);
-
+  const startDate = useMemo(
+    () => formatDate(new Date(start_time)),
+    [start_time]
+  );
   return (
-    <div className=" max-w-[31.25rem] h-[27.8125rem]  border-blue rounded-3xl border-2 flex flex-col overflow-hidden ">
+    <div className=" w-[31.25rem] h-[27.8125rem]  border-blue rounded-3xl border-2 flex flex-col overflow-hidden ">
       <Image
         height={imageHeight}
         width={imageWidth}
-        src={imageSrc}
-        alt={imageAlt}
+        src={image_url}
+        alt={'Event Card Image'}
         className=" w-full h-44 object-cover "
       />
       <div className=" p-5 inline-flex flex-col gap-[0.625rem] justify-around border-t-2 border-blue h-full ">
