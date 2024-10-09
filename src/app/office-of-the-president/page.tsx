@@ -47,14 +47,16 @@ const OSPPage: React.FC = () => {
         subtitle="Office of the"
         title="PRESIDENT"
       />
-      <section className="text-center py-10 ">
+      <section className="text-center p-12">
         {sectionTitles.map((section, index) => (
-          <div key={index} className="px-10">
+          <div key={index} className="p-10">
             <h1 className="text-bold font-bold uppercase text-blue pb-2">
               {section.sectionTitle}
             </h1>
             {section.subText && (
-              <p className="text-main text-blue mb-4 ">{section.subText}</p>
+              <p className="text-main text-blue mb-4 md:px-80 sm:px-10">
+                {section.subText}
+              </p>
             )}
 
             {/* Office of the Samahan President */}
