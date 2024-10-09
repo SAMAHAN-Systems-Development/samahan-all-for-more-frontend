@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Q12 from '@/components/faq-page/faq-page-tables/Q12';
 import Accordion from '@/components/ui/Accordion';
 import Button from '@/components/ui/Button';
 import EmailData from '@/data/emailDataFaq.json';
@@ -299,42 +300,3 @@ const FaqSection = () => {
   );
 };
 export default FaqSection;
-
-const Q12 = () => {
-  return (
-    <div className="overflow-x-auto">
-      <table className="table-auto border-collapse border w-full text-blue">
-        <thead>
-          <tr>
-            <th className="border px-4 py-2 text-left w-1/3">Letter Grade</th>
-            <th className="border px-4 py-2 text-left w-1/3">
-              Quality Point Equivalent
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className="border px-4 py-2">1st Week of Classes</td>
-            <td className="border px-4 py-2">10% of Total Assessment</td>
-          </tr>
-          <tr>
-            <td className="border px-4 py-2">2nd and 3rd Week of Classes</td>
-            <td className="border px-4 py-2">25% of Total Assessment</td>
-          </tr>
-          <tr>
-            <td className="border px-4 py-2">4th and 5th Week of Classes</td>
-            <td className="border px-4 py-2">50% of Total Assessment</td>
-          </tr>
-          <tr>
-            <td className="border px-4 py-2">6th Week of Classes</td>
-            <td className="border px-4 py-2">75% of Total Assessment</td>
-          </tr>
-          <tr>
-            <td className="border px-4 py-2">7th Week of Classes</td>
-            <td className="border px-4 py-2">100% of Total Assessment</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  );
-};
