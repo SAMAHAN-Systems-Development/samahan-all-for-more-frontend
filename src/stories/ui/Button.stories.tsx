@@ -12,25 +12,28 @@ const meta: Meta<typeof Button> = {
       control: { type: 'select' },
       options: ['blue', 'white'],
     },
+    size: {
+      control: { type: 'select' },
+      options: ['default', 'wide'],
+    },
     onClick: { action: 'clicked' },
   },
 };
 
 export default meta;
 
-
 const Template: StoryFn<typeof Button> = (args) => <Button {...args} />;
-
 
 export const BlueVariant = Template.bind({});
 BlueVariant.args = {
   text: 'EDIT ME',
   colorScheme: 'blue',
+  size: 'default',
 };
-
 
 export const WhiteVariant = Template.bind({});
 WhiteVariant.args = {
   text: 'EDIT ME',
   colorScheme: 'white',
+  size: 'default',
 };
