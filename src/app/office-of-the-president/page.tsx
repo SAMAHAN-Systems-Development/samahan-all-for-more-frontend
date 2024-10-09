@@ -21,18 +21,22 @@ const sectionTitles: SectionTitleData[] = [
     subText:
       'The OSP, the highest executive office, aims to establish harmony and efficiency in both the internal operations and external relations of the student government.',
   },
-  { sectionTitle: 'Department of External Affairs' },
-  { sectionTitle: 'Ecoteneo Student Unit' },
-  { sectionTitle: 'Department of Campaigns and Advocacies' },
+  {
+    sectionTitle: 'Department of External Affairs',
+    subText:
+      'The Department of External Affairs manages external opportunities for SAMAHAN and represents the student government in various alliances and external entities.',
+  },
+  {
+    sectionTitle: 'Ecoteneo Student Unit',
+    subText:
+      'The Ecoteneo Student Unit advocates for environmental awareness and spearheads sustainability initiatives within the Ateneo de Davao University community.',
+  },
+  {
+    sectionTitle: 'Department of Campaigns and Advocacies',
+    subText:
+      'The Department of Campaigns & Advocacies empowers students to realize their social responsibilities through advocacy initiatives aligned with the SAMAHAN Central Board and the United Nations Sustainable Development Goals.',
+  },
 ];
-
-const isLastCardCentered = (dataLength: number) => dataLength % 3 === 1;
-
-const isLast = (index: number, dataLength: number) => index === dataLength - 1;
-
-const shouldCenterLastCard = (index: number, dataLength: number) => {
-  return isLast(index, dataLength) && isLastCardCentered(dataLength);
-};
 
 const OSPPage: React.FC = () => {
   return (
@@ -43,18 +47,48 @@ const OSPPage: React.FC = () => {
         subtitle="Office of the"
         title="PRESIDENT"
       />
-      <section className="text-center p-12">
+      <section className="text-center py-10 ">
         {sectionTitles.map((section, index) => (
-          <div key={index} className="p-10">
+          <div key={index} className="px-10">
             <h1 className="text-bold font-bold uppercase text-blue pb-2">
               {section.sectionTitle}
             </h1>
             {section.subText && (
-              <p className="text-main text-blue mb-4">{section.subText}</p>
+              <p className="text-main text-blue mb-4 ">{section.subText}</p>
             )}
 
             {/* Office of the Samahan President */}
             {section.sectionTitle === 'Office of the Samahan President' && (
+              <div className="flex flex-col items-center">
+                <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
+                  {PresidentOfficeData.OfficeOfTheSamahanPresident.map(
+                    (officer: Officer, officerIndex: number) => (
+                      <div
+                        key={officerIndex}
+                        className={`flex flex-col items-center ${
+                          officerIndex === 0 // First card is centered
+                            ? 'lg:col-span-3 text-center'
+                            : officerIndex ===
+                                PresidentOfficeData.OfficeOfTheSamahanPresident
+                                  .length -
+                                  1 // Last card is centered
+                              ? 'lg:col-span-3 text-center'
+                              : ''
+                        }`}
+                      >
+                        <ProfileCard
+                          fileName={officer.fileName}
+                          fullName={officer.fullName}
+                          position={officer.position}
+                        />
+                      </div>
+                    )
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* {section.sectionTitle === 'Office of the Samahan President' && (
               <div className="flex justify-center">
                 <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
                   {PresidentOfficeData.OfficeOfTheSamahanPresident.map(
@@ -81,7 +115,7 @@ const OSPPage: React.FC = () => {
                   )}
                 </div>
               </div>
-            )}
+            )} */}
 
             {/* Department of External Affairs */}
             {section.sectionTitle === 'Department of External Affairs' && (
@@ -104,11 +138,18 @@ const OSPPage: React.FC = () => {
             {/* Ecoteneo Student Unit */}
             {section.sectionTitle === 'Ecoteneo Student Unit' && (
               <div className="flex justify-center">
-                <ProfileCard
-                  fileName={PresidentOfficeData.EcoteneoStudentUnit.fileName}
-                  fullName={PresidentOfficeData.EcoteneoStudentUnit.fullName}
-                  position={PresidentOfficeData.EcoteneoStudentUnit.position}
-                />
+                <div className="grid lg:gap-20 lg:grid-cols-2 md:col-span-2 md:gap-10">
+                  {PresidentOfficeData.EcoteneoStudentUnit.map(
+                    (officer: Officer, officerIndex: number) => (
+                      <ProfileCard
+                        key={officerIndex}
+                        fileName={officer.fileName}
+                        fullName={officer.fullName}
+                        position={officer.position}
+                      />
+                    )
+                  )}
+                </div>
               </div>
             )}
 
