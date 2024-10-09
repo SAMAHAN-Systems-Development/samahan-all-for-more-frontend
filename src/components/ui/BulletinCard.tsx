@@ -1,7 +1,9 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { FaPenNib } from 'react-icons/fa';
 import { IoNewspaperOutline } from 'react-icons/io5';
 import { RiCalendar2Fill } from 'react-icons/ri';
+import Link from 'next/link';
 
 import Button from '@/components/ui/Button';
 
@@ -9,6 +11,11 @@ type BulletinCardProps = {
   author: string;
   content: string;
   id: number;
+  pdfAttachments: {
+    category: string;
+    file_path: string;
+    id: number;
+  }[];
   published_at: string;
   title: string;
 };
@@ -19,6 +26,7 @@ const BulletinCard = ({
   content,
   author,
   published_at,
+  pdfAttachments,
 }: BulletinCardProps) => {
   return (
     <div
@@ -48,8 +56,22 @@ const BulletinCard = ({
         </div>
       </div>
 
-      <div className="flex justify-center pb-5 px-2">
-        <Button text="View Details" width="full" />
+      <div className="space-y-1">
+        {pdfAttachments.map((attachment) => (
+          <Link
+            key={attachment.id}
+            href={attachment.file_path}
+            passHref
+            legacyBehavior
+          >
+            <a target="_blank" rel="noopener noreferrer">
+              <Button
+                text={`View Details ${attachment.category}`}
+                width="full"
+              />
+            </a>
+          </Link>
+        ))}
       </div>
     </div>
   );
