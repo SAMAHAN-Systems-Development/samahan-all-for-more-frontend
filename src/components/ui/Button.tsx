@@ -19,11 +19,15 @@ const buttonStyles = cva(
         lg: 'text-lg',
         sm: 'text-[1rem]',
       },
+      size: {
+        default: '',
+        wide: 'w-full',
+      },
     },
     defaultVariants: {
       variant: 'outline',
       colorScheme: 'blue',
-      fontSize: 'lg',
+      size: 'default',
     },
   }
 );
@@ -37,16 +41,7 @@ interface ButtonProps extends VariantProps<typeof buttonStyles> {
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
-    {
-      text,
-      children,
-      variant,
-      colorScheme,
-      onClick,
-      asChild,
-      fontSize,
-      ...props
-    },
+    { text, children, variant, colorScheme, size, onClick, asChild, ...props },
     ref
   ) => {
     const Comp = asChild ? Slot : 'button';
@@ -55,7 +50,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <Comp
         ref={ref}
         onClick={onClick}
-        className={buttonStyles({ variant, colorScheme, fontSize })}
+        className={buttonStyles({ variant, colorScheme, size })}
         {...props}
       >
         {text ? text : children}
