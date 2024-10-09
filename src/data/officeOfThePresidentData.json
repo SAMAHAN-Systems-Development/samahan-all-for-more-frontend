@@ -6,6 +6,11 @@
       "fileName": "[PRESIDENT] Leen Juliet Lapatis 1.png"
     },
     {
+      "fullName": "Cai Roxana Reyes",
+      "position": "Chief-of-Staff",
+      "fileName": "[Chief-of-Staff] Cai Roxana Reyes.png"
+    },
+    {
       "fullName": "Chantal Reiy A. Solarte",
       "position": "Executive Secretary",
       "fileName": "[Executive Secretary] Chantal Reiy A. Solarte 1.png"
@@ -33,11 +38,18 @@
       "fileName": "[DEA Deputy Director] Lendon John G. Gabato.png"
     }
   ],
-  "EcoteneoStudentUnit": {
-    "fullName": "Mary Jastine D. Lapating",
-    "position": "ECOTENEO Director",
-    "fileName": "[ECOTENEO Director] Mary Jastine D. Lapating.png"
-  },
+  "EcoteneoStudentUnit": [
+    {
+      "fullName": "Mary Jastine D. Lapating",
+      "position": "ECOTENEO Director",
+      "fileName": "[ECOTENEO Director] Mary Jastine D. Lapating.png"
+    },
+    {
+      "fullName": "Jann Pers E. Lagman",
+      "position": "ECOTENEO Deputy Director",
+      "fileName": "[ECOTENEO Deputy Director] Jann Pers E. Lagman"
+    }
+  ],
   "DepartmentOfCampaignsAndAdvocacies": [
     {
       "fullName": "Jewel B. Batoon",
