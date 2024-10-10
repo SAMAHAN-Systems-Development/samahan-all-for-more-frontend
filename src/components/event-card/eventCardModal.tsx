@@ -8,47 +8,44 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import Button from '@/components/ui/Button';
+import type { EventData } from '@/lib/types/eventData.type';
+import type { EventLocation } from '@/lib/types/eventLocation.type';
 
-type EventCardModalProps = {
-  description: string;
-  end_time: string;
-  location: {
-    name: string;
-  };
-  name: string;
-  onClose: () => void;
-  posters: {
-    image_url: string;
-  };
-  registration_link: string;
-  start_time: string;
-};
+interface EventCardModalProps extends React.HTMLAttributes<HTMLDivElement> {
+  event: EventData;
+  location: EventLocation;
+  onClose: () => void; // Add onClose prop here
+}
 
 const EventCardModal = ({
-  name,
   location,
-  start_time,
-  end_time,
-  registration_link,
-  description,
-  posters,
-
-  onClose,
+  event,
+  onClose, // Destructure onClose from props
 }: EventCardModalProps) => {
+  const {
+    start_time,
+    name,
+    posters,
+    end_time,
+    description,
+    registration_link,
+  } = event;
+  const { image_url } = posters;
+
   return (
     <div className="relative shadow-2xl w-full max-w-[900px] rounded-3xl overflow-hidden mx-auto bg-white">
       {/* Header with Cover Image */}
       <div className="relative h-[400px] sm:h-[300px] md:h-[400px]">
         <Image
-          src={posters.image_url}
+          src={image_url}
           alt={name}
           className="w-full h-full object-cover"
         />
 
         {/* Close button inside modal */}
         <button
-          onClick={onClose}
-          className="absolute top-4 right-4 text-black text-3xl p-2 "
+          onClick={onClose} // Call onClose when button is clicked
+          className="absolute top-4 right-4 text-black text-3xl p-2"
         >
           <AiOutlineClose />
         </button>

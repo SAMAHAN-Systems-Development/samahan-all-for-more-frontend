@@ -1,21 +1,14 @@
+import type { Key } from 'react';
+
 import type { EventPoster } from '@/lib/types/eventPoster.type';
 
 export interface EventData {
+  description: string;
+  end_time: string;
+  id: Key | null | undefined;
+  location_id: string;
   name: string;
   posters: EventPoster;
-  // Using a string for time becasue when I was using react query, it returned a string instead of date.
+  registration_link: string;
   start_time: string;
 }
-
-// created_at
-// deleted_at
-// description
-// end_time
-// id
-// location
-// location_id
-// name
-// posters
-// registration_link
-// start_time
-// updated_at
