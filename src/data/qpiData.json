@@ -1,0 +1,11 @@
+[
+  { "letterGrade": "A", "qualityPoint": "4.0" },
+  { "letterGrade": "B+", "qualityPoint": "3.5" },
+  { "letterGrade": "B", "qualityPoint": "3.0" },
+  { "letterGrade": "C+", "qualityPoint": "2.5" },
+  { "letterGrade": "C", "qualityPoint": "2.0" },
+  { "letterGrade": "D", "qualityPoint": "1.0" },
+  { "letterGrade": "F", "qualityPoint": "0" },
+  { "letterGrade": "WP", "qualityPoint": "Not counted in QPI" },
+  { "letterGrade": "No grade", "qualityPoint": "0" }
+]

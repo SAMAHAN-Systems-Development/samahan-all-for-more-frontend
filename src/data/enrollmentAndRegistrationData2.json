@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Why cannot a student find the subject even if he searched for the correct subject code?",
+    "content": "The search function is limited only to subjects included in the student’s curriculum assignment. If the subject is outside of the student’s specific curricula, it cannot be searched."
+  },
+  {
+    "title": "Can a student enroll after the enrollment period or when classes have already started?",
+    "content": "Late enrollment may be allowed until the first week of the semester or the first two days during summer, subject to the payment of surcharges. Students who failed to confirm their enrollment via their payment of the fees before the deadline set (or the commencement of the Enrolment Confirmation and Reservation Cancellation Procedure) shall be treated as late enrollees when no payment has been made prior to the start of classes."
+  },
+  {
+    "title": "What will happen to excess payments or balances?",
+    "content": "Excess payments or balances may be refunded or be deducted in the student’s tuition in the following semester."
+  },
+  {
+    "title": "If a student overpays for the previous semester, is he automatically enrolled?",
+    "content": "For the upcoming semesters, if the overpayment is sufficient to cover the fees required for enrollment, the student will be tagged as enrolled."
+  },
+  {
+    "title": "What should a student do when his/her enrolled classes are dissolved?",
+    "content": "Dissolved classes shall be appropriately marked as such on the SIS registration of the students. If a class is dissolved during the enrollment, or during the adding and dropping period, substitute courses may be added online. The assistance and endorsement of the Department Chairpersons are required for dissolutions after such periods."
+  },
+  {
+    "title": "For transferees, who to coordinate about crediting of subjects?",
+    "content": "Coordinate with the Office of the Admissions and Aid."
+  },
+  {
+    "title": "When and how can withdrawal be made?",
+    "content": "A student may officially withdraw his enrollment within six weeks from the start of the semester or within two weeks from the start of summer school. No request for withdrawal will be entertained thereafter. For now, this may be done by sending a request to admissions@addu.edu.ph (for the first years and new students) and registrar@addu.edu.ph (for old students)."
+  }
+]

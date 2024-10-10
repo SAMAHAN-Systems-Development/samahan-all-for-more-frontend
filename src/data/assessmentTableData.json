@@ -1,0 +1,13 @@
+[
+  { "week": "1st Week of Classes", "percentage": "10% of Total Assessment" },
+  {
+    "week": "2nd and 3rd Week of Classes",
+    "percentage": "25% of Total Assessment"
+  },
+  {
+    "week": "4th and 5th Week of Classes",
+    "percentage": "50% of Total Assessment"
+  },
+  { "week": "6th Week of Classes", "percentage": "75% of Total Assessment" },
+  { "week": "7th Week of Classes", "percentage": "100% of Total Assessment" }
+]

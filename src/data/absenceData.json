@@ -1,0 +1,14 @@
+[
+  {
+    "subject": "Any subject meeting once a week",
+    "absences": ["= 3 absences maximum", "= 4 absences over cut"]
+  },
+  {
+    "subject": "Any subject meeting twice a week",
+    "absences": ["= 7 absences maximum", "= 8 absences over cut"]
+  },
+  {
+    "subject": "Any subject meeting thrice a week",
+    "absences": ["= 10 absences maximum", "= 11 absences over cut"]
+  }
+]
