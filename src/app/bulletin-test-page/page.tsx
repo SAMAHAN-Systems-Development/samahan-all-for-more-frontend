@@ -9,6 +9,9 @@ const Test: React.FC = () => {
   if (isLoading) return <p>Loading bulletins...</p>;
   if (error) return <p>An error occurred</p>;
 
+  if (!bulletins || bulletins.length === 0)
+    return <p>No bulletins available.</p>;
+
   return (
     <div>
       {bulletins.map((bulletin) => (
