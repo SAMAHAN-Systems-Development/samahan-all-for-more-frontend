@@ -56,20 +56,15 @@ const BulletinCard = ({
         </div>
       </div>
 
-      <div className="space-y-1">
+      <div className="p-4">
         {pdfAttachments.map((attachment) => (
           <Link
             key={attachment.id}
             href={attachment.file_path}
-            passHref
-            legacyBehavior
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <a target="_blank" rel="noopener noreferrer">
-              <Button
-                text={`View Details ${attachment.category}`}
-                width="full"
-              />
-            </a>
+            <Button text={`View Details`} size={'wide'} />
           </Link>
         ))}
       </div>

@@ -7,7 +7,7 @@ const Test: React.FC = () => {
   const { data: bulletins, isLoading, error } = useBulletins();
 
   if (isLoading) return <p>Loading bulletins...</p>;
-  if (error) return <p>Error fetching bulletins: {error.message}</p>;
+  if (error) return <p>An error occurred</p>;
 
   return (
     <div>
