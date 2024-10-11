@@ -90,35 +90,6 @@ const OSPPage: React.FC = () => {
               </div>
             )}
 
-            {/* {section.sectionTitle === 'Office of the Samahan President' && (
-              <div className="flex justify-center">
-                <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
-                  {PresidentOfficeData.OfficeOfTheSamahanPresident.map(
-                    (officer: Officer, officerIndex: number) => (
-                      <div
-                        key={officerIndex}
-                        className={`flex flex-col items-center ${
-                          shouldCenterLastCard(
-                            officerIndex,
-                            PresidentOfficeData.OfficeOfTheSamahanPresident
-                              .length
-                          )
-                            ? 'lg:col-span-3 text-center'
-                            : ''
-                        }`}
-                      >
-                        <ProfileCard
-                          fileName={officer.fileName}
-                          fullName={officer.fullName}
-                          position={officer.position}
-                        />
-                      </div>
-                    )
-                  )}
-                </div>
-              </div>
-            )} */}
-
             {/* Department of External Affairs */}
             {section.sectionTitle === 'Department of External Affairs' && (
               <div className="flex justify-center">
