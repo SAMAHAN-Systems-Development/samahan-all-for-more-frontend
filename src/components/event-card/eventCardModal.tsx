@@ -28,7 +28,7 @@ const EventCardModal = ({ event, onClose }: EventCardModalProps) => {
   const { image_url } = posters;
 
   return (
-    <div className="relative shadow-2xl w-full max-w-[900px] rounded-3xl overflow-hidden mx-auto bg-white">
+    <div className="relative shadow-2xl w-full max-w-[900px] border-blue border-solid border-[2px] rounded-3xl overflow-hidden mx-auto bg-white">
       {/* Header with Cover Image */}
       <div className="relative h-[300px] ">
         <Image
@@ -42,7 +42,7 @@ const EventCardModal = ({ event, onClose }: EventCardModalProps) => {
         {/* Close button inside modal */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-black text-3xl p-2"
+          className="absolute top-4 right-4 text-white text-3xl p-2"
         >
           <AiOutlineClose />
         </button>
