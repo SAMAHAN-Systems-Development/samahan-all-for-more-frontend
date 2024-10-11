@@ -9,19 +9,13 @@ import Link from 'next/link';
 
 import Button from '@/components/ui/Button';
 import type { EventData } from '@/lib/types/eventData.type';
-import type { EventLocation } from '@/lib/types/eventLocation.type';
 
 interface EventCardModalProps extends React.HTMLAttributes<HTMLDivElement> {
   event: EventData;
-  location: EventLocation;
-  onClose: () => void; // Add onClose prop here
+  onClose: () => void;
 }
 
-const EventCardModal = ({
-  location,
-  event,
-  onClose, // Destructure onClose from props
-}: EventCardModalProps) => {
+const EventCardModal = ({ event, onClose }: EventCardModalProps) => {
   const {
     start_time,
     name,
@@ -29,22 +23,25 @@ const EventCardModal = ({
     end_time,
     description,
     registration_link,
+    location,
   } = event;
   const { image_url } = posters;
 
   return (
     <div className="relative shadow-2xl w-full max-w-[900px] rounded-3xl overflow-hidden mx-auto bg-white">
       {/* Header with Cover Image */}
-      <div className="relative h-[400px] sm:h-[300px] md:h-[400px]">
+      <div className="relative h-[300px] ">
         <Image
           src={image_url}
           alt={name}
+          width={1100}
+          height={350}
           className="w-full h-full object-cover"
         />
 
         {/* Close button inside modal */}
         <button
-          onClick={onClose} // Call onClose when button is clicked
+          onClick={onClose}
           className="absolute top-4 right-4 text-black text-3xl p-2"
         >
           <AiOutlineClose />
@@ -52,24 +49,32 @@ const EventCardModal = ({
       </div>
 
       {/* Main Content */}
-      <div className="p-6 text-blue mb-24">
+      <div className="p-6 text-blue">
         <h2 className="text-2xl sm:text-3xl font-bold mb-4">{name}</h2>
-        <div className="flex flex-row">
-          <PiUsersFill /> <span>open to all AdDU Students</span>
-          <BsCalendarWeek />
-          <span>{start_time}</span>
-          <span>{end_time}</span>
-          <MdLocationOn />
-          <span>{location.name}</span>
+        <div className="flex flex-row gap-x-5">
+          <span className="flex flex-row gap-x-2 justify-center items-center">
+            <PiUsersFill size={25} />
+            open to all AdDU Students
+          </span>
+
+          <span className="flex flex-row gap-x-2 justify-center items-center">
+            {' '}
+            <BsCalendarWeek size={25} />
+            {start_time} -<span>{end_time}</span>
+          </span>
+          <span className="flex flex-row justify-center items-center">
+            <MdLocationOn size={25} />
+            {location.name}
+          </span>
         </div>
-        <p className="mx-6 text-sm sm:text-base">{description}</p>
+        <p className="text-base mt-3">{description}</p>
       </div>
 
       <div className="flex flex-col p-6 text-blue italic">
         <span className="">Dept. Name</span>
         <span>deptname@addu.edu.ph</span>
-        <Link href={registration_link}>
-          <Button fontSize={'lg'} text="Register Now" />
+        <Link href={registration_link} className="mt-8">
+          <Button size={'wide'} text="Register Now" />
         </Link>
       </div>
     </div>

@@ -7,7 +7,7 @@ import { useEvents } from '@/lib/queries/eventQueries';
 import type { EventData } from '@/lib/types/eventData.type';
 
 const EventsList = () => {
-  const { data, isLoading, isError, error } = useEvents();
+  const { data, isLoading } = useEvents();
   const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -25,12 +25,6 @@ const EventsList = () => {
     return <div className="text-center text-gray-500">Loading events...</div>;
   }
 
-  if (isError) {
-    return (
-      <div className="text-center text-red-500">Error: {error.message}</div>
-    );
-  }
-
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Upcoming Events</h1>
@@ -42,10 +36,10 @@ const EventsList = () => {
             onClick={() => handleOpenModal(event)}
             onKeyDown={(keyEvent) =>
               keyEvent.key === 'Enter' && handleOpenModal(event)
-            } // Renamed 'e' to 'keyEvent'
+            }
             role="button"
             tabIndex={0}
-            aria-label={`Open modal for ${event.name}`} // Added aria-label for better accessibility
+            aria-label={`Open modal for ${event.name}`}
           >
             <h2 className="text-xl font-semibold mb-2">{event.name}</h2>
             <p className="text-gray-600 mb-2">{event.description}</p>
@@ -55,7 +49,7 @@ const EventsList = () => {
             {event.posters.length > 0 && (
               <div className="mt-4">
                 <Image
-                  src={event.posters.image_url} // Accessing the first poster correctly
+                  src={event.posters.image_url}
                   alt={event.name}
                   className="rounded-lg w-full h-48 object-cover"
                   width={500}
@@ -78,8 +72,8 @@ const EventsList = () => {
       {/* Modal for displaying selected event details */}
       {modalOpen && selectedEvent && (
         <EventCardModal
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
           event={selectedEvent}
-          location={{ name: selectedEvent.location_id }}
           onClose={handleCloseModal}
         />
       )}
