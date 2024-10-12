@@ -28,7 +28,7 @@ const EventCardModal = ({ event, onClose }: EventCardModalProps) => {
   const { image_url } = posters;
 
   return (
-    <div className="relative shadow-2xl w-full max-w-[900px] border-blue border-solid border-[2px] rounded-3xl overflow-hidden mx-auto bg-white">
+    <div className="relative shadow-2xl w-full max-w-[1000px] border-blue border-solid border-[2px] rounded-3xl overflow-hidden mx-auto bg-white">
       {/* Header with Cover Image */}
       <div className="relative h-[300px] ">
         <Image
@@ -58,7 +58,6 @@ const EventCardModal = ({ event, onClose }: EventCardModalProps) => {
           </span>
 
           <span className="flex flex-row gap-x-2 justify-center items-center">
-            {' '}
             <BsCalendarWeek size={25} />
             {start_time} -<span>{end_time}</span>
           </span>

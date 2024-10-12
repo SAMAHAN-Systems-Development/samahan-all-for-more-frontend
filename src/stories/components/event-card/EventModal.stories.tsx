@@ -15,8 +15,8 @@ export default {
 const mockEventData: EventData = {
   name: 'Sample Event',
   description: 'This is a description for a sample event.',
-  start_time: '2024-10-15 10:00',
-  end_time: '2024-10-15 12:00',
+  start_time: '2024-10-17T16:53:09.505Z',
+  end_time: '2024-10-17T16:53:09.505Z',
   posters: {
     image_url:
       'https://qph.cf2.quoracdn.net/main-qimg-ebdbe6ad5edda19e6f55fc13e4e5d3ba.webp',
@@ -24,7 +24,7 @@ const mockEventData: EventData = {
   },
   registration_link: 'https://example.com/register',
   location: {
-    name: 'Sample Location',
+    name: '62327 Bradley Meadows',
   },
   id: '',
   location_id: '',
