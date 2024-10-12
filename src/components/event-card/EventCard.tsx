@@ -27,7 +27,7 @@ export const EventCard: React.FC<EventCardProps> = ({
   target = '_blank',
 }) => {
   const { start_time, name, posters } = event;
-  const image_url = posters.length ? posters[0].image_url : placeholder; // assuming one poster per event and always first poster
+  const image_url = posters.length ? posters[0].image_url : placeholder;
 
   function formatDate(date: Date): string {
     const options: Intl.DateTimeFormatOptions = {
@@ -48,8 +48,8 @@ export const EventCard: React.FC<EventCardProps> = ({
         height={imageHeight}
         width={imageWidth}
         src={image_url}
-        alt={'poster image'}
-        className=" w-full h-44 object-cover bg-blue "
+        alt="event poster"
+        className="w-full h-44 object-cover bg-blue"
       />
       <div className=" p-5 inline-flex flex-col gap-[0.625rem] justify-around border-t-2 border-blue h-full ">
         <div>

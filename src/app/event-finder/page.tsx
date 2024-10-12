@@ -85,23 +85,28 @@ export default function EventFinder() {
 
       <section className="border p-10">
         <span className="text-bold font-bold text-blue">ONGOING EVENTS</span>
-        {eventsLoaded
-          ? ongoingEvents.map((event: EventData) => (
-              <>
-                <EventCard event={event} href="/" />
-              </>
-            ))
-          : 'Loading'}
+        <div className="grid grid-cols-2 my-10 w-fit justify-items-center items-end border mx-auto gap-10">
+          {eventsLoaded
+            ? ongoingEvents.map((event: EventData) => (
+                <>
+                  <EventCard event={event} href="/" />
+                </>
+              ))
+            : 'Loading'}
+        </div>
       </section>
+
       <section className="border p-10">
         <span className="text-bold font-bold text-blue">UPCOMING EVENTS</span>
-        {eventsLoaded
-          ? upcomingEvents.map((event: EventData) => (
-              <>
-                <EventCard event={event} href="/" />
-              </>
-            ))
-          : 'Loading'}
+        <div className="grid grid-cols-2 my-10 w-fit justify-items-center items-end border mx-auto gap-10">
+          {eventsLoaded
+            ? upcomingEvents.map((event: EventData) => (
+                <>
+                  <EventCard event={event} href="/" />
+                </>
+              ))
+            : 'Loading'}
+        </div>
       </section>
     </>
   );
