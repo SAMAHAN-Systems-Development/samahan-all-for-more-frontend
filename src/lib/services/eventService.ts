@@ -40,12 +40,23 @@ import type { EventsResponse } from '@/lib/types/eventsResponse.type';
 // export { getEvents, getEventById, createEvent, updateEvent, deleteEvent };
 
 // If dont work, ask for help
-export const getEvents = async (): Promise<EventsResponse> => {
-  const response = await _get<EventsResponse>('/api/events');
+export const getEvents = async (
+  page_number: number
+): Promise<EventsResponse> => {
+  const response = await _get<EventsResponse>(
+    `/api/events?page=${page_number}`
+  );
   return response.data;
 };
 
 export const getEventById = async (id: number): Promise<EventData> => {
   const response = await _get<EventData>(`/api/events/${id}`);
+  return response.data;
+};
+
+export const getEventsByPage = async (
+  page: number
+): Promise<EventsResponse> => {
+  const response = await _get<EventsResponse>(`/api/events?page=${page}`);
   return response.data;
 };

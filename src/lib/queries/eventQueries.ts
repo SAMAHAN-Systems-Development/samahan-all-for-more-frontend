@@ -2,7 +2,7 @@
 // Then: use the query function in the component
 // Sample: const { data: events, isLoading, error } = useEvents();
 
-import type { UseQueryResult} from '@tanstack/react-query';
+import type { UseQueryResult } from '@tanstack/react-query';
 import { useQuery } from '@tanstack/react-query';
 
 import { getEventById, getEvents } from '@/lib/services/eventService';
@@ -10,10 +10,12 @@ import type { EventData } from '@/lib/types/eventData.type';
 import type { EventsResponse } from '@/lib/types/eventsResponse.type';
 
 // Query all events
-export const useEvents = (): UseQueryResult<EventsResponse, Error> => {
+export const useEvents = (
+  page_number: number = 1
+): UseQueryResult<EventsResponse, Error> => {
   return useQuery({
-    queryKey: ['events'],
-    queryFn: () => getEvents(),
+    queryKey: ['events', page_number],
+    queryFn: () => getEvents(page_number),
   });
 };
 
@@ -24,3 +26,12 @@ export const useEvent = (id: number): UseQueryResult<EventData, Error> => {
     queryFn: () => getEventById(id),
   });
 };
+
+// export const useEventPage = (
+//   page: number
+// ): UseQueryResult<EventsResponse, Error> => {
+//   return useQuery({
+//     queryKey: ['events', page],
+//     queryFn: () => getEventsByPage(page),
+//   });
+// };

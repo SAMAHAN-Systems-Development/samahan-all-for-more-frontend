@@ -1,9 +1,11 @@
+import type { EventLocation } from '@/lib/types/eventLocation.type';
 import type { EventPoster } from '@/lib/types/eventPoster.type';
 
 export interface EventData {
+  end_time: string;
+  location: EventLocation;
   name: string;
-  posters: EventPoster;
-  // Using a string for time becasue when I was using react query, it returned a string instead of date.
+  posters: EventPoster[];
   start_time: string;
 }
 
