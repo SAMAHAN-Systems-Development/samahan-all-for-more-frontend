@@ -1,7 +1,3 @@
-// THIS IS JUST SAMPLE CODE. USE THIS AS GUIDE TO CREATE YOUR OWN SERVICE FUNCTIONS
-// ALSO MAKE SURE TO DEFINE TYPES INSIDE LIB/TYPES FOLDER
-// NAMING CONVENTION FOR TYPES: entityName.type.ts
-
 import { _get } from '@/lib/client/client';
 import type { EventData } from '@/lib/types/eventData.type';
 import type { EventsResponse } from '@/lib/types/eventsResponse.type';

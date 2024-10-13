@@ -2,22 +2,13 @@ import type { EventLocation } from '@/lib/types/eventLocation.type';
 import type { EventPoster } from '@/lib/types/eventPoster.type';
 
 export interface EventData {
+  description: string;
   end_time: string;
+  id: string;
   location: EventLocation;
+  location_id: string;
   name: string;
   posters: EventPoster[];
+  registration_link: string;
   start_time: string;
 }
-
-// created_at
-// deleted_at
-// description
-// end_time
-// id
-// location
-// location_id
-// name
-// posters
-// registration_link
-// start_time
-// updated_at
