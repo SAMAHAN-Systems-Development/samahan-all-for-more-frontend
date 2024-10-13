@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useMemo, useState } from 'react';
 
-import { EventCard } from '@/components/event-card/EventCard';
+import { EventCard } from '@/components/event-finder/event-card/EventCard';
 import { Banner } from '@/components/ui/banner/Banner';
 import { useEvents } from '@/lib/queries/eventQueries';
 import type { EventData } from '@/lib/types/eventData.type';
@@ -77,15 +77,18 @@ export default function EventFinder() {
   return (
     <>
       <Banner
-        image={'/images/samahan-members.png'}
+        image={'/images/addu-roxas-front.png'}
         imageAlt={'SAMAHAN Members'}
         subtitle={'SAMAHAN'}
         title={'EVENT FINDER'}
       />
 
-      <section className="border p-10">
-        <span className="text-bold font-bold text-blue">ONGOING EVENTS</span>
-        <div className="grid grid-cols-2 my-10 w-fit justify-items-center items-end border mx-auto gap-10">
+      <section className="border px-28 py-10 text-main text-blue leading-tight">
+        <span className="text-bold font-bold  mb-2">ONGOING EVENTS</span>
+        <br />
+        Current activities happening now in SAMAHAN, where students can join and
+        engage. Stay updated to participate!
+        <div className="grid grid-cols-2 my-10 w-full justify-items-center items-end mx-auto gap-10">
           {eventsLoaded
             ? ongoingEvents.map((event: EventData) => (
                 <>
@@ -96,13 +99,15 @@ export default function EventFinder() {
         </div>
       </section>
 
-      <section className="border p-10">
-        <span className="text-bold font-bold text-blue">UPCOMING EVENTS</span>
+      <section className="border px-28 py-10  text-main text-blue leading-tight p-10">
+        <h3 className="text-bold font-bold mb-2">UPCOMING EVENTS</h3>
+        Current activities happening now in SAMAHAN, where students can join and
+        engage. Stay updated to participate!
         <div className="grid grid-cols-2 my-10 w-fit justify-items-center items-end border mx-auto gap-10">
           {eventsLoaded
             ? upcomingEvents.map((event: EventData) => (
                 <>
-                  <EventCard event={event} href="/" />
+                  <EventCard event={event} href="/" upcoming />
                 </>
               ))
             : 'Loading'}

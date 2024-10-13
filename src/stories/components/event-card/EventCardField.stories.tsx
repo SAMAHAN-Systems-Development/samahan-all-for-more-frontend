@@ -3,7 +3,7 @@ import { FaLocationDot } from 'react-icons/fa6';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { EventCardField } from '@/components/event-card/EventCardField';
+import { EventCardField } from '@/components/event-finder/event-card/EventCardField';
 
 const meta: Meta<typeof EventCardField> = {
   component: EventCardField,
