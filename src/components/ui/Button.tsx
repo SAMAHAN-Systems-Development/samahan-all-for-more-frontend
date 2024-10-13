@@ -4,7 +4,7 @@ import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
 
 const buttonStyles = cva(
-  'py-3 px-8 rounded-full font-bold text-lg transition-all duration-300 cursor-pointer',
+  'py-3 px-8 rounded-full font-bold transition-all duration-300 cursor-pointer',
   {
     variants: {
       variant: {
@@ -12,12 +12,22 @@ const buttonStyles = cva(
       },
       colorScheme: {
         blue: 'text-blue border-2 border-blue hover:bg-blue hover:text-white',
-        white: 'text-white border-2 border-white hover:bg-white hover:text-blue',
+        white:
+          'text-white border-2 border-white hover:bg-white hover:text-blue',
+      },
+      fontSize: {
+        lg: 'text-lg',
+        sm: 'text-[1rem]',
+      },
+      size: {
+        default: '',
+        wide: 'w-full',
       },
     },
     defaultVariants: {
       variant: 'outline',
       colorScheme: 'blue',
+      size: 'default',
     },
   }
 );
@@ -31,7 +41,7 @@ interface ButtonProps extends VariantProps<typeof buttonStyles> {
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
-    { text, children, variant, colorScheme, onClick, asChild, ...props },
+    { text, children, variant, colorScheme, size, onClick, asChild, ...props },
     ref
   ) => {
     const Comp = asChild ? Slot : 'button';
@@ -40,7 +50,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <Comp
         ref={ref}
         onClick={onClick}
-        className={buttonStyles({ variant, colorScheme })}
+        className={buttonStyles({ variant, colorScheme, size })}
         {...props}
       >
         {text ? text : children}
