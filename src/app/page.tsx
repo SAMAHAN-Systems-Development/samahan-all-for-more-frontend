@@ -6,5 +6,10 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <main>test</main>;
+  return (
+    <main>
+      test
+      {/* add sections here */}
+    </main>
+  );
 }
