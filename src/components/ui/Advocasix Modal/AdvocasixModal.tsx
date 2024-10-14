@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
+import Image from 'next/image';
 
 interface AdvocasixModalProps {
   content: string;
@@ -17,7 +18,7 @@ const AdvocasixModal: React.FC<AdvocasixModalProps> = ({
     <div className="relative shadow-2xl w-full max-w-[900px] rounded-3xl overflow-hidden mx-auto bg-white">
       {/* Header with Cover Image */}
       <div className="relative h-[400px] sm:h-[300px] md:h-[400px]">
-        <img
+        <Image
           src={`/images/advocasix-pictures/${image}`}
           alt={title}
           className="w-full h-full object-cover"
