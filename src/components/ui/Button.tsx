@@ -9,7 +9,6 @@ const buttonStyles = cva(
     variants: {
       variant: {
         outline: 'bg-transparent',
-        icon: 'flex flex-row items-center gap-3',
       },
       colorScheme: {
         blue: 'text-blue border-2 border-blue hover:bg-blue hover:text-white',
@@ -27,14 +26,13 @@ const buttonStyles = cva(
 interface ButtonProps extends VariantProps<typeof buttonStyles> {
   asChild?: boolean;
   children?: React.ReactNode;
-  icon?: React.ReactNode;
   onClick?: () => void;
   text?: string;
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
-    { text, children, variant, colorScheme, onClick, asChild, icon, ...props },
+    { text, children, variant, colorScheme, onClick, asChild, ...props },
     ref
   ) => {
     const Comp = asChild ? Slot : 'button';
@@ -46,7 +44,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         className={buttonStyles({ variant, colorScheme })}
         {...props}
       >
-        {variant === 'icon' && icon}
         {text ? text : children}
       </Comp>
     );
