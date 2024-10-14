@@ -38,7 +38,7 @@ export const SecretaryGeneralCard: Story = {
   args: {
     name: 'ALIYA MEDIDA',
     title: 'SAMAHAN Secretary-General',
-    imageSrc: '@/public/images/samahan-cutouts/[Secretary-General] Aliya R. Medida.png',
+    imageSrc: '/images/samahan-cutouts/[Secretary-General] Aliya R. Medida.png',
   },
 };
 
@@ -47,6 +47,6 @@ export const TreasurerCard: Story = {
   args: {
     name: 'MARY CLAIR CLARDE',
     title: 'SAMAHAN Treasurer',
-    imageSrc: '/images/samahan-cutouts/[VICE PRESIDENT] Sung Goon L. Acosta.png',
+    imageSrc: '/images/samahan-cutouts/[TREASURER] Mary Clair Clarde.png',
   },
 };

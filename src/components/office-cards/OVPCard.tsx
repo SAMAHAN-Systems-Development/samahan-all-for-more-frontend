@@ -4,7 +4,7 @@ const OVPCard = () => (
   <BaseCard
     name="SUNG GOON ACOSTA"
     title="SAMAHAN Vice President"
-    imageSrc="@/public/images/samahan-cutouts/[VICE PRESIDENT] Sung Goon L. Acosta.png"
+    imageSrc="/images/samahan-cutouts/[VICE PRESIDENT] Sung Goon L. Acosta.png"
   />
 );
 

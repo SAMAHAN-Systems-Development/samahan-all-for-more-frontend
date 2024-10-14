@@ -8,28 +8,26 @@ const BaseCard: React.FC<{
   title: string;
 }> = ({ name, title, imageSrc }) => {
   return (
-    <div className="flex relative items-center p-6 bg-blue text-white w-full max-w-[800px] rounded-[30px] md:max-w-[900px] transition-all duration-300">
+    <div className="relative flex items-center bg-blue text-white w-full max-w-[900px] rounded-[30px] md:max-w-[900px] transition-all duration-300 overflow-visible" style={{ height: '400px' }}>
       {/* Officer Image */}
-      <div className="w-1/3 h-auto">
+      <div className="absolute left-0 bottom-0 w-[50%] h-auto" style={{ transform: 'translateY(-.1%)' }}>
         <Image
           src={imageSrc}
           alt={name}
-          width={400}
-          height={400}
-          className="object-contain"
+          width={450}
+          height={600}
+          className="object-cover"
           priority
         />
       </div>
 
       {/* Text content */}
-      <div className="flex flex-col w-2/3 pl-4 space-y-2">
-        <h2 className="text-bold font-bold leading-tight mt-1">{name}</h2> 
-        <p className="text-thin">{title}</p> 
-      </div>
-
-      {/* Button positioned to bottom-right */}
-      <div className="absolute bottom-6 right-6">
-        <Button text="View Office" colorScheme="white" />
+      <div className="flex flex-col ml-auto w-1/2 space-y-2 pl-8 pr-8 z-10">
+        <h2 className="text-bold font-bold text-3xl leading-tight mt-1">{name}</h2>
+        <p className="text-lg">{title}</p>
+        <div className="mt-4">
+          <Button text="View Office" colorScheme="white" />
+        </div>
       </div>
     </div>
   );

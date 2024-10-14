@@ -4,7 +4,7 @@ const OSGCard = () => (
   <BaseCard
     name="ALIYA MEDIDA"
     title="SAMAHAN Secretary-General"
-    imageSrc="@/public/images/samahan-cutouts/[Secretary-General] Aliya R. Medida.png"
+    imageSrc="/images/samahan-cutouts/[Secretary-General] Aliya R. Medida.png"
   />
 );
 
