@@ -4,7 +4,7 @@ import type { EventPoster } from '@/lib/types/eventPoster.type';
 export interface EventData {
   description: string;
   end_time: string;
-  id: string;
+  id: number;
   location: EventLocation;
   location_id: string;
   name: string;

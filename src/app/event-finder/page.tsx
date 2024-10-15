@@ -1,15 +1,23 @@
 'use client';
 import React, { useEffect, useMemo, useState } from 'react';
 
-import { EventCard } from '@/components/event-finder/event-card/EventCard';
+import EventCardModal from '@/components/event-finder/event-card/eventCardModal';
+import EventsSection from '@/components/event-finder/EventsSection';
+import { useEventModal } from '@/components/event-finder/hooks/useEventModal';
 import { Banner } from '@/components/ui/banner/Banner';
 import { useEvents } from '@/lib/queries/eventQueries';
 import type { EventData } from '@/lib/types/eventData.type';
 
+type EventsSectionProps = {
+  description: string;
+  events: EventData[];
+  title: string;
+  upcoming?: boolean;
+};
+
 export default function EventFinder() {
   const [pageNumber, setPageNumber] = useState<number>(1);
-  const [allEvents, setEvents] = useState<EventData[]>([]);
-  const { data: events, isLoading } = useEvents(pageNumber);
+  const { data: events } = useEvents(pageNumber);
 
   const [ongoingEvents, setOngoingEvents] = useState<EventData[]>([]);
   const [upcomingEvents, setUpcomingEvents] = useState<EventData[]>([]);
@@ -32,19 +40,10 @@ export default function EventFinder() {
 
       setOngoingEvents((prevOngoing) => [...prevOngoing, ...newOngoing]);
       setUpcomingEvents((prevUpcoming) => [...prevUpcoming, ...newUpcoming]);
-
-      setEvents(() => {
-        const all = events.data;
-        // eslint-disable-next-line no-console
-        console.log('filtered', all);
-        return all;
-      });
     }
   }, [events, pageNumber]);
 
   const allRelevantEvents = useMemo(() => {
-    // eslint-disable-next-line no-console
-    console.log('memo', [...ongoingEvents, ...upcomingEvents]);
     return [...ongoingEvents, ...upcomingEvents];
   }, [ongoingEvents, upcomingEvents]);
 
@@ -56,24 +55,32 @@ export default function EventFinder() {
       pageNumber < (events?.totalPages || 1)
     ) {
       setPageNumber((prevPage) => prevPage + 1);
-      // eslint-disable-next-line no-console
-      console.log('new page', allRelevantEvents);
     } else {
       setEventsLoaded(true);
     }
   }, [allRelevantEvents]);
 
-  // eslint-disable-next-line no-console
-  console.log(
-    'allEvents',
-    !isLoading && allEvents.length === 0 ? 'loading' : allEvents
-  );
+  const allData: EventsSectionProps[] = [
+    {
+      title: 'ONGOING EVENTS',
+      description:
+        'Current activities happening now in SAMAHAN, where students can join and engage. Stay updated to participate!',
+      events: ongoingEvents,
+    },
+    {
+      title: 'UPCOMING EVENTS',
+      description:
+        ' Exciting events lined up for the future, mark your calendars and get ready for what’s ahead!',
+      events: upcomingEvents,
+      upcoming: true,
+    },
+  ];
+
+  const { handleModal, modalOpen, modalActive, closeModal } = useEventModal();
 
   // eslint-disable-next-line no-console
-  console.log('ongoing:', ongoingEvents);
+  console.log('page', modalActive);
 
-  // eslint-disable-next-line no-console
-  console.log('upcoming:', upcomingEvents);
   return (
     <>
       <Banner
@@ -83,36 +90,37 @@ export default function EventFinder() {
         title={'EVENT FINDER'}
       />
 
-      <section className="border px-28 py-10 text-main text-blue leading-tight">
-        <span className="text-bold font-bold  mb-2">ONGOING EVENTS</span>
-        <br />
-        Current activities happening now in SAMAHAN, where students can join and
-        engage. Stay updated to participate!
-        <div className="grid grid-cols-2 my-10 w-full justify-items-center items-end mx-auto gap-10">
-          {eventsLoaded
-            ? ongoingEvents.map((event: EventData) => (
-                <>
-                  <EventCard event={event} href="/" />
-                </>
-              ))
-            : 'Loading'}
+      <div className="py-20">
+        {allData.map((data: EventsSectionProps) => (
+          <EventsSection
+            title={data.title}
+            description={data.description}
+            events={data.events}
+            eventsLoaded={eventsLoaded}
+            key={data.title}
+            upcoming={data.upcoming}
+            handleModal={handleModal}
+          />
+        ))}
+      </div>
+      {modalActive && (
+        <div className="fixed top-0 bg-blue backdrop-blur-sm bg-opacity-30 z-50 w-full h-dvh overflow-hidden place-items-center touch-none overscroll-y-contain">
+          <div className="h-full flex items-center scale-75 xl:scale-1">
+            <EventCardModal
+              event={modalOpen!}
+              status={modalActive}
+              onClose={closeModal}
+            />
+          </div>
         </div>
-      </section>
+      )}
 
-      <section className="border px-28 py-10  text-main text-blue leading-tight p-10">
-        <h3 className="text-bold font-bold mb-2">UPCOMING EVENTS</h3>
-        Current activities happening now in SAMAHAN, where students can join and
-        engage. Stay updated to participate!
-        <div className="grid grid-cols-2 my-10 w-fit justify-items-center items-end border mx-auto gap-10">
-          {eventsLoaded
-            ? upcomingEvents.map((event: EventData) => (
-                <>
-                  <EventCard event={event} href="/" upcoming />
-                </>
-              ))
-            : 'Loading'}
-        </div>
-      </section>
+      {/* {isModalOpen && (
+        <EventCardModal
+          event={}
+          onClose={() => setModalOpen((prev) => !prev)}
+        />
+      )} */}
     </>
   );
 }

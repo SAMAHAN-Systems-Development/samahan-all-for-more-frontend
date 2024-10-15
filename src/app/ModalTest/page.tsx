@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-import EventCardModal from '@/components/event-card/eventCardModal';
+import EventCardModal from '@/components/event-finder/event-card/eventCardModal';
 import { useEvents } from '@/lib/queries/eventQueries';
 import type { EventData } from '@/lib/types/eventData.type';
 

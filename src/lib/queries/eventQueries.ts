@@ -26,12 +26,3 @@ export const useEvent = (id: number): UseQueryResult<EventData, Error> => {
     queryFn: () => getEventById(id),
   });
 };
-
-// export const useEventPage = (
-//   page: number
-// ): UseQueryResult<EventsResponse, Error> => {
-//   return useQuery({
-//     queryKey: ['events', page],
-//     queryFn: () => getEventsByPage(page),
-//   });
-// };

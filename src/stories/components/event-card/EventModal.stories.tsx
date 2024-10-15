@@ -2,7 +2,7 @@ import React from 'react';
 
 import type { Meta, StoryFn } from '@storybook/react';
 
-import EventCardModal from '@/components/event-card/eventCardModal';
+import EventCardModal from '@/components/event-finder/event-card/eventCardModal';
 import type { EventData } from '@/lib/types/eventData.type';
 
 export default {

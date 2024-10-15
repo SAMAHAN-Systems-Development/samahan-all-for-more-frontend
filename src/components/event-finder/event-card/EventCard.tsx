@@ -13,17 +13,16 @@ import type { EventData } from '@/lib/types/eventData.type';
 
 interface EventCardProps extends React.HTMLAttributes<HTMLDivElement> {
   event: EventData;
-  href: string;
+  handleModal: (event: EventData) => void;
+
   imageHeight?: number;
   imageWidth?: number;
-  target?: string;
   upcoming?: boolean;
 }
 
 export const EventCard: React.FC<EventCardProps> = ({
-  href,
+  handleModal,
   event,
-  target = '_blank',
   upcoming,
 }) => {
   const { start_time, name, posters } = event;
@@ -42,9 +41,16 @@ export const EventCard: React.FC<EventCardProps> = ({
     () => formatDate(new Date(start_time)),
     [start_time]
   );
+
+  const openModal = () => {
+    // eslint-disable-next-line no-console
+    console.log('HERE');
+    handleModal(event);
+  };
+
   return (
-    <div className=" w-[31.25rem] h-[27.8125rem]  border-blue rounded-3xl border-2 flex flex-col overflow-hidden ">
-      <div className="w-full h-96  relative border">
+    <div className=" w-full h-[27.8125rem]  border-blue rounded-3xl border-2 flex flex-col overflow-hidden ">
+      <div className="w-full h-96  relative">
         <Image
           fill
           src={image_url}
@@ -70,13 +76,8 @@ export const EventCard: React.FC<EventCardProps> = ({
             />
           </div>
         </div>
-        <a
-          href={href}
-          target={target}
-          className=" w-full flex flex-col justify-stretch items-stretch "
-        >
-          <Button fontSize={'sm'} text="View Details" />
-        </a>
+
+        <Button fontSize={'sm'} text="View Details" onClick={openModal} />
       </div>
     </div>
   );

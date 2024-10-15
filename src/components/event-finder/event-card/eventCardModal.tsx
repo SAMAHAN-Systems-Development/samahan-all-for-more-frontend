@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { BsCalendarWeek } from 'react-icons/bs';
 import { MdLocationOn } from 'react-icons/md';
@@ -7,15 +7,28 @@ import { PiUsersFill } from 'react-icons/pi';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import placeholder from 'public/images/UniversitySealLogo.png';
+
 import Button from '@/components/ui/Button';
 import type { EventData } from '@/lib/types/eventData.type';
 
 interface EventCardModalProps extends React.HTMLAttributes<HTMLDivElement> {
   event: EventData;
   onClose: () => void;
+  status: boolean;
 }
 
-const EventCardModal = ({ event, onClose }: EventCardModalProps) => {
+const EventCardModal = ({ event, status, onClose }: EventCardModalProps) => {
+  // const [eventDetails, setDetails] = useState<EventData>();
+
+  // useEffect(()=>{
+
+  //   if(event){
+  //     setDetails(event);
+  //   }
+
+  // },[event])
+
   const {
     start_time,
     name,
@@ -25,18 +38,28 @@ const EventCardModal = ({ event, onClose }: EventCardModalProps) => {
     registration_link,
     location,
   } = event;
-  const { image_url } = posters;
+
+  const image_url = posters.length ? posters[0].image_url : placeholder;
+
+  const [modalActive, setModalActive] = useState<boolean>(status);
+
+  // const handleClose = () => setModalActive(false);
+
+  useEffect(() => {
+    setModalActive(status);
+  }, [status]);
 
   return (
-    <div className="relative shadow-2xl w-full max-w-[90%] lg:max-w-[1000px] border-blue border-solid border-[2px] rounded-3xl overflow-hidden mx-auto bg-white">
+    <div
+      className={`${modalActive ? 'block' : 'hidden'} relative shadow-2xl w-full max-w-[90%] lg:max-w-[1000px] border-blue border-solid border-[2px] rounded-3xl overflow-hidden mx-auto bg-white`}
+    >
       {/* Header with Cover Image */}
       <div className="relative h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px]">
         <Image
           src={image_url}
           alt={name}
-          width={1100}
-          height={350}
-          className="w-full h-full object-cover"
+          fill
+          className="w-full h-full object-cover bg-blue"
         />
 
         {/* Close button inside modal */}
@@ -44,7 +67,7 @@ const EventCardModal = ({ event, onClose }: EventCardModalProps) => {
           onClick={onClose}
           className="absolute top-4 right-4 text-white text-3xl p-2"
         >
-          <AiOutlineClose />
+          <AiOutlineClose className="drop-shadow-md" />
         </button>
       </div>
 
