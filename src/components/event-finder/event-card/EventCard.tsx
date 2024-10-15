@@ -43,8 +43,6 @@ export const EventCard: React.FC<EventCardProps> = ({
   );
 
   const openModal = () => {
-    // eslint-disable-next-line no-console
-    console.log('HERE');
     handleModal(event);
   };
 

@@ -5,6 +5,7 @@ import EventCardModal from '@/components/event-finder/event-card/eventCardModal'
 import EventsSection from '@/components/event-finder/EventsSection';
 import { useEventModal } from '@/components/event-finder/hooks/useEventModal';
 import { Banner } from '@/components/ui/banner/Banner';
+import Button from '@/components/ui/Button';
 import { useEvents } from '@/lib/queries/eventQueries';
 import type { EventData } from '@/lib/types/eventData.type';
 
@@ -21,6 +22,7 @@ export default function EventFinder() {
 
   const [ongoingEvents, setOngoingEvents] = useState<EventData[]>([]);
   const [upcomingEvents, setUpcomingEvents] = useState<EventData[]>([]);
+  const [visibleUpcomingEvents, setVisibleUpcoming] = useState<number>(4);
   const [eventsLoaded, setEventsLoaded] = useState<boolean>(false);
 
   useEffect(() => {
@@ -48,6 +50,8 @@ export default function EventFinder() {
   }, [ongoingEvents, upcomingEvents]);
 
   // pagination
+  // if no upcoming/ongoing events on page, next page
+  // if upcoming does go upto 4, next page
   useEffect(() => {
     const maxUpcoming = 4;
     if (
@@ -71,15 +75,19 @@ export default function EventFinder() {
       title: 'UPCOMING EVENTS',
       description:
         ' Exciting events lined up for the future, mark your calendars and get ready for what’s ahead!',
-      events: upcomingEvents,
+      events: upcomingEvents.slice(0, visibleUpcomingEvents),
       upcoming: true,
     },
   ];
 
   const { handleModal, modalOpen, modalActive, closeModal } = useEventModal();
 
+  const handleLoad = () => {
+    setVisibleUpcoming((prev) => prev + 4);
+  };
+
   // eslint-disable-next-line no-console
-  console.log('page', modalActive);
+  console.log(visibleUpcomingEvents, upcomingEvents.length);
 
   return (
     <>
@@ -102,6 +110,11 @@ export default function EventFinder() {
             handleModal={handleModal}
           />
         ))}
+        {visibleUpcomingEvents < upcomingEvents.length && (
+          <div className="mx-auto w-fit">
+            <Button text="Load More" onClick={handleLoad} />
+          </div>
+        )}
       </div>
       {modalActive && (
         <div className="fixed top-0 bg-blue backdrop-blur-sm bg-opacity-30 z-50 w-full h-dvh overflow-hidden place-items-center touch-none overscroll-y-contain">
@@ -114,13 +127,6 @@ export default function EventFinder() {
           </div>
         </div>
       )}
-
-      {/* {isModalOpen && (
-        <EventCardModal
-          event={}
-          onClose={() => setModalOpen((prev) => !prev)}
-        />
-      )} */}
     </>
   );
 }
