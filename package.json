@@ -26,7 +26,6 @@
   "dependencies": {
     "@cyrilolanolan/eslint-config-ts": "^0.2.1",
     "@cyrilolanolan/prettier-config": "0.2.1",
-<<<<<<< HEAD
     "@hookform/resolvers": "^3.9.0",
     "@radix-ui/react-avatar": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.2",
@@ -36,9 +35,6 @@
     "@radix-ui/react-popover": "^1.1.2",
     "@radix-ui/react-scroll-area": "^1.2.0",
     "@radix-ui/react-select": "^2.1.2",
-=======
-    "@radix-ui/react-icons": "^1.3.0",
->>>>>>> 154a827b227f5aaf458540aaf8c8a3d85fcf530e
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-switch": "^1.1.1",
     "@radix-ui/react-tabs": "^1.1.1",
@@ -50,10 +46,7 @@
     "cmdk": "^1.0.0",
     "date-fns": "^3.6.0",
     "framer-motion": "11.3.30",
-<<<<<<< HEAD
     "lodash": "^4.17.21",
-=======
->>>>>>> 154a827b227f5aaf458540aaf8c8a3d85fcf530e
     "lucide-react": "^0.451.0",
     "next": "^14.2.6",
     "next-themes": "^0.3.0",
