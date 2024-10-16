@@ -4,7 +4,7 @@ import { EventCard } from '@/components/event-card/EventCard';
 import type { EventData } from '@/lib/types/eventData.type';
 // import placeholder from '/event-card-placeholder.png';
 import type { EventLocation } from '@/lib/types/eventLocation.type';
-import type { EventPoster } from '@/lib/types/eventPoster.type';
+import type { EventPoster } from '@/lib/types/entities/eventPoster.type';
 
 const meta: Meta<typeof EventCard> = {
   component: EventCard,
