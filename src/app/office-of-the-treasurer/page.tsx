@@ -42,17 +42,19 @@ const OSTPage: React.FC = () => {
         subtitle="Office of the"
         title="TREASURER"
       />
-      <section className="text-center p-12">
+      <section className="text-center p-12 w-screen">
         {sectionTitles.map((section, index) => (
           <div key={index} className="p-10">
-            <h1 className="text-bold font-bold uppercase text-blue pb-2">
+            <h1 className="text-bold font-bold uppercase text-blue pb-2 max-w-[200]">
               {section.sectionTitle}
             </h1>
-            {section.subText && (
-              <p className="text-main text-blue mb-4 md:px-80 sm:px-10">
-                {section.subText}
-              </p>
-            )}
+            <div className="flex justify-center w-100">
+              {section.subText && (
+                <p className="text-main text-blue text-center mb-4 max-w-[1200px]">
+                  {section.subText}
+                </p>
+              )}
+            </div>
 
             {/* Office of the Treasurer */}
             {section.sectionTitle === 'Office of the Samahan Treasurer' && (
