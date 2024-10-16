@@ -26,8 +26,10 @@ const ProfileCard = ({ fullName, position, fileName }: ProfileCardProps) => {
 
       {/* text section */}
       <div className="mt-4">
-        <p className="text-[18px] font-[700] leading-[21.78px]">{fullName}</p>
-        <p className="text-[12px] font-[400]">{position}</p>
+        <p className="flex justify-start uppercase text-[18px] font-[700] text-start leading-[21.78px]">
+          {fullName}
+        </p>
+        <p className="flex justify-start text-[12px] font-[400]">{position}</p>
       </div>
     </div>
   );
