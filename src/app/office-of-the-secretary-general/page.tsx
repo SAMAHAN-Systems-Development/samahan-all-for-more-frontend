@@ -73,27 +73,38 @@ const OSGPage: React.FC = () => {
             {section.sectionTitle ===
               'Office Of The Samahan Secretary-General' && (
               <div className="flex flex-col items-center">
-                <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-20">
-                  {SecretaryGeneralOfficeData.OfficeOfTheSecretaryGeneral.map(
-                    (officer: Officer, officerIndex: number) => (
-                      <div
-                        key={officerIndex}
-                        className={`flex flex-col items-center text-center ${
-                          officerIndex === 0
-                            ? 'lg:col-span-3' // First card spans full width
-                            : officerIndex >= 1 && officerIndex <= 3
-                              ? 'lg:col-span-1 ' // Three cards in the second row
-                              : 'lg:col-span-1' // Last two cards beside each other, centered
-                        }`}
-                      >
-                        <ProfileCard
-                          fileName={officer.fileName}
-                          fullName={officer.fullName}
-                          position={officer.position}
-                        />
-                      </div>
-                    )
-                  )}
+                {/* Grid layout  */}
+                <div className="grid gap-y-6 gap-x-20 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+                  {SecretaryGeneralOfficeData.OfficeOfTheSecretaryGeneral.slice(
+                    0,
+                    4
+                  ).map((officer: Officer, officerIndex: number) => (
+                    <div
+                      key={officerIndex}
+                      className={`flex flex-col items-center  ${
+                        officerIndex === 0 ? 'lg:col-span-3' : 'lg:col-span-1'
+                      }`}
+                    >
+                      <ProfileCard
+                        fileName={officer.fileName}
+                        fullName={officer.fullName}
+                        position={officer.position}
+                      />
+                    </div>
+                  ))}
+                </div>
+                <div className="grid py-6 lg:gap-20 lg:grid-cols-2 md:col-span-2 md:gap-10">
+                  {SecretaryGeneralOfficeData.OfficeOfTheSecretaryGeneral.slice(
+                    4,
+                    6
+                  ).map((officer: Officer, officerIndex: number) => (
+                    <ProfileCard
+                      key={officerIndex}
+                      fileName={officer.fileName}
+                      fullName={officer.fullName}
+                      position={officer.position}
+                    />
+                  ))}
                 </div>
               </div>
             )}
