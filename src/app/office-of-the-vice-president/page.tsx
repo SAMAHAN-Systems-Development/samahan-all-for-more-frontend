@@ -68,15 +68,16 @@ const OVPPage: React.FC = () => {
             {section.sectionTitle ===
               'Office of the Samahan Vice President' && (
               <div className="flex flex-col items-center">
-                <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 lg:gap-10">
+                {/* Grid layout for both rows */}
+                <div className="grid gap-y-6 gap-x-20 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
                   {VicePresidentOfficeData.OfficeOfTheSamahanVicePresident.map(
                     (officer: Officer, officerIndex: number) => (
                       <div
                         key={officerIndex}
                         className={`flex flex-col items-center ${
                           officerIndex === 0
-                            ? 'lg:col-span-2 text-center'
-                            : 'lg:col-span-1 text-center'
+                            ? 'lg:col-span-2 text-center' // First row spans 2 columns
+                            : 'lg:col-span-1 text-center' // Second row has 2 columns with gap-x-20
                         }`}
                       >
                         <ProfileCard
