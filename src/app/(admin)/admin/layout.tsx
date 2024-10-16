@@ -1,5 +1,5 @@
 import '@/styles/globals.css';
-import Sidebar from './_components/Sidebar';
+import Sidebar from '../_components/Sidebar';
 import { Toaster } from 'sonner';
 import { redirect, useRouter } from 'next/navigation';
 import { useGetUser } from '@/lib/queries/userQueries';
