@@ -1,18 +1,11 @@
-import type { UseQueryResult} from '@tanstack/react-query';
+import type { UseQueryResult } from '@tanstack/react-query';
 import { useQuery } from '@tanstack/react-query';
+import { getLocations } from '@/lib/services/locationService';
+import { Location } from '../types/entities/location.type';
 
-import { getLocationById, getLocations } from '@/lib/services/locationService';
-
-export const useLocations = (): UseQueryResult => {
+export const useGetLocations = (): UseQueryResult<Location[], Error> => {
   return useQuery({
-    queryKey: ['location'],
+    queryKey: ['locations'],
     queryFn: () => getLocations(),
-  });
-};
-
-export const useLocation = (id: number): UseQueryResult => {
-  return useQuery({
-    queryKey: ['location', id],
-    queryFn: () => getLocationById(id),
   });
 };

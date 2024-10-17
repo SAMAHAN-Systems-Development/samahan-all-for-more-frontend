@@ -23,4 +23,11 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-unsafe-assignment': 'off',
   },
+  overrides: [
+    {
+      rules: {
+        '@typescript-eslint/no-unsafe-assignment': 'off',
+      },
+    },
+  ],
 };
