@@ -131,7 +131,7 @@ const BulletinsPage = () => {
     []
   );
 
-  const tabOptions = ['All', 'Games', 'Toys', 'Industrial', 'Garden'];
+  const tabOptions = ['All', 'Memorandums', 'Bills', 'Resolutions'];
 
   const modals = {
     [BulletinDialogEnum.ADD_BULLETIN_DIALOG]: (
