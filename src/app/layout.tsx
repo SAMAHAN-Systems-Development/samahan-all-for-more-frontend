@@ -3,8 +3,8 @@ import { Inter } from 'next/font/google';
 
 import '@/styles/globals.css';
 
-import { ReactQueryClientProvider } from '@/components/react-query/ReactQuery';
 import Footer from '@/components/ui/Footer/Footer';
+import { ReactQueryClientProvider } from '@/lib/providers/ReactQuery';
 
 const inter = Inter({ subsets: ['latin'] });
 

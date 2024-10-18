@@ -8,8 +8,7 @@ import Image from 'next/image';
 import { EventCardField } from '@/components/event-card/EventCardField';
 import { EventCardTag } from '@/components/event-card/EventCardTag';
 import Button from '@/components/ui/Button';
-import type { EventData } from '@/lib/types/eventData.type';
-import type { EventLocation } from '@/lib/types/eventLocation.type';
+import { Event } from '@/lib/types/entities/event.type';
 
 // interface EventCardProps extends React.HTMLAttributes<HTMLDivElement> {
 //   height: number;
@@ -24,11 +23,11 @@ import type { EventLocation } from '@/lib/types/eventLocation.type';
 // }
 
 interface EventCardProps extends React.HTMLAttributes<HTMLDivElement> {
-  event: EventData;
+  event: Event;
   href: string;
   imageHeight: number;
   imageWidth: number;
-  location: EventLocation;
+  location: { name: string };
   target: string;
 }
 
