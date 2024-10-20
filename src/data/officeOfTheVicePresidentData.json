@@ -1,69 +1,67 @@
 {
-    "OfficeOfTheSamahanVicePresident": [
-      {
-        "fullName": "Sung Goon L. Acosta",
-        "position": "SAMAHAN Vice President",
-        "fileName": "[VICE PRESIDENT] Sung Goon L. Acosta.png"
-      },
-      {
-        "fullName": "Hyacinth Louise R. Duldulao",
-        "position": "Chief-of-Staff",
-        "fileName": "[Chief-of-Staff] Hyacinth Louise R. Duldulao.png"
-      },
-      {
-        "fullName": "Winarni M. Bungabong",
-        "position": "Deputy Chief-of-Staff",
-        "fileName": "[Deputy Chief-of-Staff] Winarni M. Bungabong.png"
-      }
-    ],
-    "OfficeOfTheLegislativeSecretary": [
-      {
-        "fullName": "Joie Noreen G. Garces",
-        "position": "Legislative Secretary",
-        "fileName": "[Legislative Secretary] Joie Noreen G. Garces.png"
-      },
-      {
-        "fullName": "Mikyla M. Josol",
-        "position": "Legislative Undersecretary",
-        "fileName": "[Legislative Undersecretary] Mikyla M. Josol.png"
-      }
-    ],
-    "DepartmentOfAcademicAffairs": [
-      {
-        "fullName": "Alessandra Marie Leyma",
-        "position": "DAA Director",
-        "fileName": "[DAA Director] Alessandra Marie Leyma.png"
-      },
-      {
-        "fullName": "Shaira R. Alimpulos",
-        "position": "DAA Deputy Director",
-        "fileName": "[DAA Deputy Director] Shaira R. Alimpulos.png"
-      }
-    ],
-    "DepartmentOfDisasterRiskReductionAndManagement": [
-      {
-        "fullName": "Alex Dave C. Escalante",
-        "position": "DRRM Director",
-        "fileName": "[DRRM Director] Alex Dave C. Escalante.png"
-      },
-      {
-        "fullName": "Ethel Marren M. Guerra",
-        "position": "DRRM Deputy Director",
-        "fileName": "[DRRM Deputy Director] Ethel Marren M. Guerra.png"
-      }
-    ],
-    "SamahanPoliticalAffairsAndEngagementsDepartment": [
-        {
-          "fullName": "Iesha Jaesamin Twaye D. Bastian",
-          "position": "SPAED Director",
-          "fileName": "[SPAED Director] Iesha Jaesamin Twaye D. Bastian.png"
-        },
-        {
-          "fullName": "Luis Miguel L. Torres",
-          "position": "SPAED Deputy Director",
-          "fileName": "[SPAED Deputy Director] Luis Miguel L. Torres.png"
-        }
-      ]
-  
-  }
-  
+  "OfficeOfTheSamahanVicePresident": [
+    {
+      "fullName": "Sung Goon L. Acosta",
+      "position": "SAMAHAN Vice President",
+      "fileName": "[VICE PRESIDENT] Sung Goon L. Acosta.png"
+    },
+    {
+      "fullName": "Hyacinth Louise R. Duldulao",
+      "position": "Chief-of-Staff",
+      "fileName": "[Chief-of-Staff] Hyacinth Louise R. Duldulao.png"
+    },
+    {
+      "fullName": "Winarni M. Bungabong",
+      "position": "Deputy Chief-of-Staff",
+      "fileName": "[Deputy Chief-of-Staff] Winarni M. Bungabong.png"
+    }
+  ],
+  "OfficeOfTheLegislativeSecretary": [
+    {
+      "fullName": "Joie Noreen G. Garces",
+      "position": "Legislative Secretary",
+      "fileName": "[Legislative Secretary] Joie Noreen G. Garces.png"
+    },
+    {
+      "fullName": "Mikyla M. Josol",
+      "position": "Legislative Undersecretary",
+      "fileName": "[Legislative Undersecretary] Mikyla M. Josol.png"
+    }
+  ],
+  "DepartmentOfAcademicAffairs": [
+    {
+      "fullName": "Alessandra Marie Leyma",
+      "position": "DAA Director",
+      "fileName": "[DAA Director] Alessandra Marie Leyma.png"
+    },
+    {
+      "fullName": "Shaira R. Alimpulos",
+      "position": "DAA Deputy Director",
+      "fileName": "[DAA Deputy Director] Shaira R. Alimpulos.png"
+    }
+  ],
+  "DepartmentOfDisasterRiskReductionAndManagement": [
+    {
+      "fullName": "Alex Dave C. Escalante",
+      "position": "DRRM Director",
+      "fileName": "[DRRM Director] Alex Dave C. Escalante.png"
+    },
+    {
+      "fullName": "Ethel Marren M. Guerra",
+      "position": "DRRM Deputy Director",
+      "fileName": "[DRRM Deputy Director] Ethel Marren M. Guerra.png"
+    }
+  ],
+  "SamahanPoliticalAffairsAndEngagementsDepartment": [
+    {
+      "fullName": "Iesha Jaesamin Twaye D. Bastian",
+      "position": "SPAED Director",
+      "fileName": "[SPAED Director] Iesha Jaesamin Twaye D. Bastian.png"
+    },
+    {
+      "fullName": "Luis Miguel L. Torres",
+      "position": "SPAED Deputy Director",
+      "fileName": "[SPAED Deputy Director] Luis Miguel L. Torres.png"
+    }
+  ]
+}
