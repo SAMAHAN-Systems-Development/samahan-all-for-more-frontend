@@ -1,5 +1,6 @@
 import React from 'react';
 
+import BaseCard from '@/components/office-cards/BaseCard';
 import { Banner } from '@/components/ui/banner/Banner';
 import ProfileCard from '@/components/ui/ProfileCard';
 import Officers from '@/data/officersData.json';
@@ -41,15 +42,15 @@ const CentralBoardPage: React.FC = () => {
       />
       <section className="text-center p-12">
         {/* SAMAHAN CORE OFFICERS */}
-        <div className="flex justify-center">
-          <div className="grid lg:gap-20 lg:grid-cols-2 md:grid-cols-1 md:gap-10">
+        <div className="flex justify-center p-20">
+          <div className="grid lg:gap-20 xl:grid-cols-2 lg:grid-cols-1 md:gap-28">
             {OfficerData.SamahanCoreOfficers.map(
               (officer: OfficerTypes, officerIndex: number) => (
-                <ProfileCard
+                <BaseCard
                   key={officerIndex}
-                  fileName={officer.fileName}
-                  fullName={officer.fullName}
-                  position={officer.position}
+                  imageSrc={officer.fileName}
+                  name={officer.fullName}
+                  title={officer.position}
                 />
               )
             )}
