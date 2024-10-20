@@ -4,14 +4,14 @@ import Image from 'next/image';
 
 import EventCardModal from '@/components/event-card/eventCardModal';
 import { useEvents } from '@/lib/queries/eventQueries';
-import type { EventData } from '@/lib/types/eventData.type';
+import { Event } from '@/lib/types/entities/event.type';
 
 const EventsList = () => {
-  const { data, isLoading } = useEvents();
-  const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
+  const { data, isLoading } = useEvents({});
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
 
-  const handleOpenModal = (event: EventData) => {
+  const handleOpenModal = (event: Event) => {
     setSelectedEvent(event);
     setModalOpen(true);
   };
@@ -29,7 +29,7 @@ const EventsList = () => {
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Upcoming Events</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {data?.data.map((event: EventData) => (
+        {data?.map((event: Event) => (
           <div
             key={event.id}
             className="bg-white shadow-lg rounded-lg p-6 cursor-pointer"
