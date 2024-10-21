@@ -7,6 +7,7 @@ import {
   LibraryFacilities,
   PhysicalPlantOfficeFacilities,
   SuzanDoromalFacilities,
+  HisFlexRoomFacilities,
 } from '@/components/guidesite/Facilities';
 import guidesiteData from '@/data/guidesiteData.json';
 
@@ -83,20 +84,20 @@ const Steps: React.FC<StepsProps> = ({ steps }) => {
                 <li>
                   <span>
                     <div className="mt-3">
-                      {guidesiteData.bookingLinks.map((link, index) => (
-                        <div key={index}>
+                      {guidesiteData.bookingLinks.length > 0 && (
+                        <div key={0}>
                           <Link
-                            href={link.href}
+                            href={guidesiteData.bookingLinks[0].href}
                             className="underline text-blue"
                           >
-                            {link.label}
+                            {guidesiteData.bookingLinks[0].label}
                           </Link>{' '}
                           for the following library facilities:
                           <div className="ml-6">
                             <LibraryFacilities />
                           </div>
                         </div>
-                      ))}
+                      )}
                     </div>
                   </span>
                 </li>
@@ -117,6 +118,26 @@ const Steps: React.FC<StepsProps> = ({ steps }) => {
                       <div className="ml-6">
                         <SuzanDoromalFacilities />
                       </div>
+                    </div>
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <div className="mt-3">
+                      {guidesiteData.bookingLinks.length > 0 && (
+                        <div key={0}>
+                          <Link
+                            href={guidesiteData.bookingLinks[1].href}
+                            className="underline text-blue"
+                          >
+                            {guidesiteData.bookingLinks[1].label}
+                          </Link>{' '}
+                          for:
+                          <div className="ml-6">
+                            <HisFlexRoomFacilities />
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </span>
                 </li>
