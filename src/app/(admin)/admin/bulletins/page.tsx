@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { BulletinDialogEnum } from '../../_constants/dialogs';
-import { useRouter } from 'next/navigation';
 import { useGetBulletins } from '@/lib/queries/bulletinQueries';
 import {
   useCreateBulletin,
@@ -22,8 +21,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/shadcn-ui/card';
-import { PlusCircle, Search } from 'lucide-react';
-import { Input } from '@/components/shadcn-ui/input';
+import { PlusCircle } from 'lucide-react';
 import { debounce } from 'lodash';
 import { GetBulletinDto } from '@/lib/types/dto/getBulletinData.type';
 
