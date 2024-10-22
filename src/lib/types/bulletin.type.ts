@@ -1,5 +1,6 @@
-export type Bulletin = {
+export interface Bulletin {
   author: string;
+  category_id: number;
   content: string;
   id: number;
   pdfAttachments: {
@@ -9,4 +10,4 @@ export type Bulletin = {
   };
   published_at: string;
   title: string;
-};
+}

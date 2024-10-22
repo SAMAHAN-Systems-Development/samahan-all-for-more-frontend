@@ -1,50 +1,39 @@
 import { Banner } from '@/components/ui/banner/Banner';
+import BulletinCard from '@/components/ui/BulletinCard';
 import Footer from '@/components/ui/Footer/Footer';
+// import { Categories } from '@/lib/types/categories.type';
+// import { useCategories } from '@/lib/queries/categoriesQueries';
+// import { useBulletins } from '@/lib/queries/bulletinQueries';
+// import { Bulletin } from '@/lib/types/bulletin.type';
+
+// type CategoriesProps = {
+//   description: string;
+//   name: string;
+// }
 
 const BulletinPage = () => {
   return (
     <main>
       <Banner
-        image="/images/samahan-members.png"
+        image="/images/office-of-the-president.png"
         imageAlt="SAMAHAN Members Image"
         subtitle="SAMAHAN"
         title="BULLETIN"
       />
       <div className="p-12 overflow-x-hidden" />
-
-      <div className="flex flex-col text-center justify-center mx-12">
-        {/* memorandum section */}
+      <div className="flex flex-col text-center justify-center mx-10">
         <div className="mb-32">
-          <h1 className="text-blue font-bold text-title mb-4">MEMEORANDUM</h1>
-          <p className="text-blue text-main">
-            Official communications issued by the SAMAHAN to convey important
-            information, directives, or updates to members, ensuring
-            transparency and awareness of relevant matters within the
-            organization.
-          </p>
-          {/* memo cards here */}
-        </div>
-
-        {/* resolutions section */}
-        <div className="mb-32">
-          <h1 className="text-blue font-bold text-title mb-4">RESOLUTIONS</h1>
-          <p className="text-blue text-main">
-            Formal expressions of the SAMAHAN&apos;s stance on issues or
-            proposals, resolutions serve to articulate collective decisions or
-            recommendations that reflect the voice and will of the student body.
-          </p>
-          {/* resolution cards here */}
-        </div>
-
-        {/* bills section */}
-        <div className="mb-32">
-          <h1 className="text-blue font-bold text-title mb-4">BILLS</h1>
-          <p className="text-blue text-main">
-            Proposed legislative measures aimed at enacting new policies or
-            amending existing ones within the SAMAHAN framework, bills undergo
-            discussion and voting processes before becoming official laws.
-          </p>
-          {/* bills cards here */}
+          <h1 className="text-blue font-bold text-title mb-4">BULLETINS</h1>
+          <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-10">
+            <BulletinCard
+              author={''}
+              content={''}
+              id={0}
+              pdfAttachments={[]}
+              published_at={''}
+              title={''}
+            />
+          </div>
         </div>
       </div>
       <footer>
@@ -53,4 +42,5 @@ const BulletinPage = () => {
     </main>
   );
 };
+
 export default BulletinPage;
