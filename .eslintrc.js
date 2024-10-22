@@ -11,13 +11,7 @@ module.exports = {
     sourceType: 'module',
   },
 
-  extends: [
-    '@cyrilolanolan/ts',
-    'next',
-    'plugin:storybook/recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
-  ],
+  extends: [],
 
   plugins: ['@typescript-eslint'],
   rules: {
