@@ -1,0 +1,11 @@
+export enum EventDialogEnum {
+  EDIT_EVENT_DIALOG = 'EDIT_BOOKING',
+  ADD_EVENT_DIALOG = 'ADD_BOOKING',
+  DELETE_MODAL = 'DELETE',
+}
+
+export enum BulletinDialogEnum {
+  EDIT_BULLETIN_DIALOG = 'EDIT_BULLETIN',
+  ADD_BULLETIN_DIALOG = 'ADD_BULLETIN',
+  DELETE_MODAL = 'DELETE',
+}

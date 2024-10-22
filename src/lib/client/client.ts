@@ -1,4 +1,4 @@
-const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:3000';
+const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:8000';
 
 interface ApiConfig {
   headers?: Record<string, string>;
@@ -55,13 +55,18 @@ const apiRequest = async <T>(
   return handleResponse<T>(response);
 };
 
-const _get = async <T>(
+const _get = async <T, U = undefined>(
   url: string,
+  data?: U,
   config: ApiConfig = {}
 ): Promise<ApiResponse<T>> => {
-  return apiRequest<T>(url, createRequestOptions('GET', undefined, config));
-};
+  const queryString = data
+    ? '?' + new URLSearchParams(data as any).toString()
+    : '';
+  const fullUrl = `${url}${queryString}`;
 
+  return apiRequest<T>(fullUrl, createRequestOptions('GET', undefined, config));
+};
 const _delete = async <T>(
   url: string,
   config: ApiConfig = {}

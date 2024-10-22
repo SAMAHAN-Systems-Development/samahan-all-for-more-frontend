@@ -4,25 +4,15 @@
 
 import type { UseQueryResult } from '@tanstack/react-query';
 import { useQuery } from '@tanstack/react-query';
+import { getEvents } from '@/lib/services/eventService';
+import { Event } from '../types/entities/event.type';
+import { GetEventDto } from '../types/dto/getEventsData.type';
 
-import { getEventById, getEvents } from '@/lib/services/eventService';
-import type { EventData } from '@/lib/types/eventData.type';
-import type { EventsResponse } from '@/lib/types/eventsResponse.type';
-
-// Query all events
 export const useEvents = (
-  page_number: number = 1
-): UseQueryResult<EventsResponse, Error> => {
+  getEventData: GetEventDto
+): UseQueryResult<Event[], Error> => {
   return useQuery({
-    queryKey: ['events', page_number],
-    queryFn: () => getEvents(page_number),
-  });
-};
-
-// Query a single event by ID
-export const useEvent = (id: number): UseQueryResult<EventData, Error> => {
-  return useQuery({
-    queryKey: ['event', id],
-    queryFn: () => getEventById(id),
+    queryKey: ['events', { ...getEventData }],
+    queryFn: () => getEvents(getEventData),
   });
 };

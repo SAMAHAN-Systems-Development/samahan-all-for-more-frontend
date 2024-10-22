@@ -12,3 +12,4 @@ export interface EventData {
   registration_link: string;
   start_time: string;
 }
+

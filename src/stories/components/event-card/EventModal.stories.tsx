@@ -2,8 +2,8 @@ import React from 'react';
 
 import type { Meta, StoryFn } from '@storybook/react';
 
-import EventCardModal from '@/components/event-finder/event-card/eventCardModal';
-import type { EventData } from '@/lib/types/eventData.type';
+import EventCardModal from '@/components/event-card/eventCardModal';
+import { Event } from '@/lib/types/entities/event.type';
 
 export default {
   title: 'Components/EventCardModal',
@@ -12,22 +12,25 @@ export default {
 } as Meta<typeof EventCardModal>;
 
 // Mock event data for the story
-const mockEventData: EventData = {
-  name: 'Sample Event',
-  description: 'This is a description for a sample event.',
-  start_time: '2024-10-17T16:53:09.505Z',
-  end_time: '2024-10-17T16:53:09.505Z',
-  posters: {
-    image_url:
-      'https://qph.cf2.quoracdn.net/main-qimg-ebdbe6ad5edda19e6f55fc13e4e5d3ba.webp',
-    length: 0,
-  },
+const mockEventData: Event = {
+  id: 1,
+  name: 'UFEST: Battle of the Bands',
+  description: 'A battle of the bands event.',
+  start_time: new Date().toISOString(),
+  end_time: new Date().toISOString(),
   registration_link: 'https://example.com/register',
-  location: {
-    name: '62327 Bradley Meadows',
+  posters: {
+    image_url: '',
+    length: 1, // Add the length property
   },
-  id: '',
-  location_id: '',
+  location: {
+    id: 1,
+    name: 'Martin Hall 4F',
+    address: 'Ateneo de Davao University',
+  },
+  location_id: 1,
+  created_at: new Date().toISOString(),
+  updated_at: new Date().toISOString(),
 };
 
 //  Template for the modal

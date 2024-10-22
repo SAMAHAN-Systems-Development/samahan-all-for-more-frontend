@@ -1,33 +1,41 @@
-// To use: go to page where you want to use the mutation and import the mutation function
-// Then: use the mutation function in the component
-// Sample: const { mutate: createEvent, isLoading, error } = useCreateEvent();
+import { useMutation, UseMutationOptions } from '@tanstack/react-query';
+import {
+  createEvent,
+  deleteEvent,
+  updateEvent,
+} from '../services/eventService';
+import { CreateEventData } from '../types/dto/createEventData.type';
 
-// // Mutation for creating an event
+// Not fully type safe because of the useMutationOptions type
 
-// export const useCreateEvent = (
-//   mutationOptions: UseMutationOptions<Event, Error, { eventData: CreateEventPayload }>
-// ) =>
-//   useMutation({
-//     mutationFn: ({ eventData }) => createEvent(eventData),
-//     ...mutationOptions,
-//   });
+export const useCreateEvent = (
+  mutationOptions: UseMutationOptions<
+    unknown,
+    Error,
+    { eventData: CreateEventData }
+  >
+) =>
+  useMutation({
+    mutationFn: ({ eventData }) => createEvent(eventData),
+    ...mutationOptions,
+  });
 
-// // Mutation for deleting an event
+export const useDeleteEvent = (
+  mutationOptions: UseMutationOptions<unknown, Error, { eventId: string }>
+) =>
+  useMutation({
+    mutationFn: ({ eventId }) => deleteEvent(eventId),
+    ...mutationOptions,
+  });
 
-// export const useDeleteEvent = (
-//   mutationOptions: UseMutationOptions<void, Error, { eventId: string }>
-// ) =>
-//   useMutation({
-//     mutationFn: ({ eventId }) => deleteEvent(eventId),
-//     ...mutationOptions,
-//   });
-
-// // Mutation for updating an event
-
-// export const useUpdateEvent = (
-//   mutationOptions: UseMutationOptions<Event, Error, { eventId: string; eventData: Partial<CreateEventPayload> }>
-// ) =>
-//   useMutation({
-//     mutationFn: ({ eventId, eventData }) => updateEvent(eventId, eventData),
-//     ...mutationOptions,
-//   });
+export const useUpdateEvent = (
+  mutationOptions: UseMutationOptions<
+    unknown,
+    Error,
+    { eventId: string; eventData: Partial<CreateEventData> }
+  >
+) =>
+  useMutation({
+    mutationFn: ({ eventId, eventData }) => updateEvent(eventId, eventData),
+    ...mutationOptions,
+  });

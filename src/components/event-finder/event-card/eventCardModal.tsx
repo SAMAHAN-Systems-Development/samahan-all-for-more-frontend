@@ -10,10 +10,10 @@ import Link from 'next/link';
 import placeholder from 'public/images/UniversitySealLogo.png';
 
 import Button from '@/components/ui/Button';
-import type { EventData } from '@/lib/types/eventData.type';
+import { Event } from '@/lib/types/entities/event.type';
 
 interface EventCardModalProps extends React.HTMLAttributes<HTMLDivElement> {
-  event: EventData;
+  event: Event;
   onClose: () => void;
   status: boolean;
 }
