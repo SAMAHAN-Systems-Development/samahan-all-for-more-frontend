@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { EventCard } from '@/components/event-card/EventCard';
-import { EventPoster } from '@/lib/types/entities/eventPoster.type';
 
 const meta: Meta<typeof EventCard> = {
   component: EventCard,
