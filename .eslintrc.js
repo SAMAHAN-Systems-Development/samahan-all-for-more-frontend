@@ -25,6 +25,7 @@ module.exports = {
   },
   overrides: [
     {
+      files: ['*.ts', '*.tsx'], // Apply the override to TypeScript files
       rules: {
         '@typescript-eslint/no-unsafe-assignment': 'off',
       },
