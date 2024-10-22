@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { FaPenNib } from 'react-icons/fa';
 import { IoNewspaperOutline } from 'react-icons/io5';

@@ -2,13 +2,12 @@ package-lock.json
 package.json
 tsconfig.json
 tailwind.config.ts
+
 BulletinDialog.tsx
 DeleteDialog.tsx
 Dropzone.tsx
 EventDialog.tsx
-bulletins/page.tsx
-events/columns.tsx
-events/page.tsx
+columns.tsx
 layout.tsx
 page.tsx
 calendar.tsx
@@ -19,4 +18,7 @@ createBulletinData.type.ts
 attachment.type.ts
 bulletin.type.ts
 category.type.ts
+columns.tsx
+BulletinCard.tsx
+loginService.ts
 
