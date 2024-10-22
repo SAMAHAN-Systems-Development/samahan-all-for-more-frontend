@@ -1,5 +1,8 @@
-import { _delete, _get, _post, _put } from '@/lib/client/client';
+/* eslint-disable no-restricted-imports */
+/* eslint-disable @typescript-eslint/consistent-type-imports */
 import { GetBulletinDto } from '../types/dto/getBulletinData.type';
+
+import { _delete, _get, _post, _put } from '@/lib/client/client';
 
 const getBulletins = async (
   bulletinFilters?: GetBulletinDto

@@ -1,7 +1,9 @@
-import { _delete, _get, _post, _put } from '@/lib/client/client';
-import type { EventsResponse } from '@/lib/types/eventsResponse.type';
+/* eslint-disable no-restricted-imports */
+/* eslint-disable @typescript-eslint/consistent-type-imports */
 import { CreateEventData } from '../types/dto/createEventData.type';
 import { GetEventDto } from '../types/dto/getEventsData.type';
+
+import { _delete, _get, _post, _put } from '@/lib/client/client';
 
 const getEvents = async (eventsFilters: GetEventDto): Promise<Event[]> => {
   const response = await _get<Event[], GetEventDto>(

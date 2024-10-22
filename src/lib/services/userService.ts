@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-imports */
 import { _get } from '../client/client';
 
 export const getUser = async () => {
