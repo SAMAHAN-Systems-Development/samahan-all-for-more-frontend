@@ -15,8 +15,8 @@ const Guidesite = () => {
   return (
     <>
       <Banner
-        image={'/images/samahan-members.png'}
-        imageAlt={'SAMAHAN Members'}
+        image={'/images/guidesite-banner.jpg'}
+        imageAlt={'Guidesite'}
         subtitle={'SAMAHAN'}
         title={'GUIDESITE'}
       />
