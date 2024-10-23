@@ -12,8 +12,7 @@ module.exports = {
   },
 
   extends: [
-    '@cyrilolanolan/ts',
-    'next',
+    'plugin:@next/next/recommended',
     'plugin:storybook/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
@@ -25,6 +24,7 @@ module.exports = {
   },
   overrides: [
     {
+      files: ['*.ts', '*.tsx'], // Apply the override to TypeScript files
       rules: {
         '@typescript-eslint/no-unsafe-assignment': 'off',
       },
