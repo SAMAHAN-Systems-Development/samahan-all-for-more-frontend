@@ -6,9 +6,9 @@ const meta: Meta<typeof BaseCard> = {
   title: 'Components/OfficeCards',
   component: BaseCard,
   argTypes: {
-    name: { control: 'text' },   
-    title: { control: 'text' },  
-    imageSrc: { control: 'text' }, 
+    name: { control: 'text' },
+    title: { control: 'text' },
+    imageSrc: { control: 'text' },
   },
 };
 
@@ -29,7 +29,8 @@ export const VicePresidentCard: Story = {
   args: {
     name: 'SUNG GOON ACOSTA',
     title: 'SAMAHAN Vice President',
-    imageSrc: '/images/samahan-cutouts/[VICE PRESIDENT] Sung Goon L. Acosta.png',
+    imageSrc:
+      '/images/samahan-cutouts/[VICE PRESIDENT] Sung Goon L. Acosta.png',
   },
 };
 
