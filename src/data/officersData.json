@@ -1,0 +1,122 @@
+{
+  "SamahanCoreOfficers": [
+    {
+      "fullName": "Leen Juliet Lapatis",
+      "position": "SAMAHAN President",
+      "fileName": "[PRESIDENT] Leen Juliet Lapatis 1.png"
+    },
+    {
+      "fullName": "Sung Goon Acosta",
+      "position": "SAMAHAN Vice President",
+      "fileName": "[VICE PRESIDENT] Sung Goon L. Acosta.png"
+    },
+    {
+      "fullName": "Aliya Medida",
+      "position": "SAMAHAN Secretary-General",
+      "fileName": "[Secretary-General] Aliya R. Medida.png"
+    },
+    {
+      "fullName": "Mary Clair Clarde",
+      "position": "SAMAHAN Treasurer",
+      "fileName": "[TREASURER] Mary Clair Clarde.png"
+    }
+  ],
+  "ClusterRepresentatives": [
+    {
+      "fullName": "Adrian Neil D. Jamila",
+      "position": "ACC Representative",
+      "fileName": "[ACC] Adrian Neil D. Jamila.png"
+    },
+    {
+      "fullName": "Christian Kush F. Casona",
+      "position": "B&M Representative",
+      "fileName": "[B&M] Christian Kush F. Casona.png"
+    },
+    {
+      "fullName": "Dominic Miguel D. Almonte",
+      "position": "CS Representative",
+      "fileName": "[CS] Dominic Miguel D. Almonte.png"
+    },
+    {
+      "fullName": "Mia Angela G. Cabaobao",
+      "position": "HUMLET Representative",
+      "fileName": "[HUMLET] Mia Angela G. Cabaobao.png"
+    },
+    {
+      "fullName": "Mikaela Juliana E. Franco",
+      "position": "NSM Representative",
+      "fileName": "[NSM] Mikaela Juliana E. Franco.png"
+    },
+    {
+      "fullName": "Mark James B. Albaracin",
+      "position": "SOE Representative",
+      "fileName": "[SOE] Mark James B. Albaracin.png"
+    },
+    {
+      "fullName": "Norsheena M. Pacamaman",
+      "position": "SEA Representative",
+      "fileName": "[SEA] Norsheena M. Pacamaman.png"
+    },
+    {
+      "fullName": "Kristal Eden N. Magno",
+      "position": "SON Representative",
+      "fileName": "[SON] Kristal Eden N. Magno.png"
+    },
+    {
+      "fullName": "Archie R. Barroga",
+      "position": "SS Representative",
+      "fileName": "[SS] Archie R. Barroga.png"
+    }
+  ],
+  "OfficeOfTheSamahanPresident": [
+    {
+      "fullName": "Leen Juliet Lapatis",
+      "position": "SAMAHAN President",
+      "fileName": "[PRESIDENT] Leen Juliet Lapatis 1.png"
+    },
+    {
+      "fullName": "Chantal Reiy A. Solarte",
+      "position": "Executive Secretary",
+      "fileName": "[Executive Secretary] Chantal Reiy A. Solarte 1.png"
+    },
+    {
+      "fullName": "Julianne Faye Bonifacio",
+      "position": "Executive Undersecretary",
+      "fileName": "[Executive Undersecretary] Julianne Faye Bonifacio 1.png"
+    },
+    {
+      "fullName": "Rey Angelo Santella",
+      "position": "Executive Undersecretary",
+      "fileName": "[Executive Undersecretary] Rey Angelo Santella 2.png"
+    }
+  ],
+  "DepartmentOfExternalAffairs": [
+    {
+      "fullName": "Kisha Barot",
+      "position": "DEA Director",
+      "fileName": "[DEA Director] Krisha Barot 2.png"
+    },
+    {
+      "fullName": "Lendon John G. Gabato",
+      "position": "DEA Deputy Director",
+      "fileName": "[DEA Deputy Director] Lendon John G. Gabato.png"
+    }
+  ],
+  "EcoteneoStudentUnit": {
+    "fullName": "Mary Jastine D. Lapating",
+    "position": "ECOTENEO Director",
+    "fileName": "[ECOTENEO Director] Mary Jastine D. Lapating.png"
+  },
+  "DepartmentOfCampaignsAndAdvocacies": [
+    {
+      "fullName": "Jewel B. Batoon",
+      "position": "DCA Director",
+      "fileName": "[DCA Director] Jewel B. Batoon.png"
+    },
+    {
+      "fullName": "Maharanii Shaili S. Trazo",
+      "position": "DCA Deputy Director",
+      "fileName": "[DCA Deputy Director] Maharanii Shaili S. Trazo.png"
+    }
+  ]
+}
