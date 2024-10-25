@@ -1,3 +1,4 @@
+'use client';
 import { useMutation, UseMutationOptions } from '@tanstack/react-query';
 import {
   createBulletin,

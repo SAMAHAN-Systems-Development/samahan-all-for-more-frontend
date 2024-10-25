@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { FaPenNib } from 'react-icons/fa';
 import { IoNewspaperOutline } from 'react-icons/io5';
@@ -57,16 +56,15 @@ const BulletinCard = ({
       </div>
 
       <div className="p-4">
-        {pdfAttachments.map((attachment) => (
+        {pdfAttachments.length > 0 && (
           <Link
-            key={attachment.id}
-            href={attachment.file_path}
+            href={pdfAttachments[0].file_path}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button text={`View Details`} size={'wide'} />
+            <Button text="View Details" size="wide" />
           </Link>
-        ))}
+        )}
       </div>
     </div>
   );

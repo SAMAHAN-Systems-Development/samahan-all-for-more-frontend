@@ -1,10 +1,9 @@
+'use client';
 import {
   ResponsiveModal,
   ResponsiveModalContent,
-  ResponsiveModalDescription,
   ResponsiveModalHeader,
   ResponsiveModalTitle,
-  ResponsiveModalTrigger,
 } from '@/components/shadcn-ui/responsive-modal';
 import {
   Select,
@@ -17,17 +16,14 @@ import { Button } from '@/components/shadcn-ui/button';
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from '@/components/shadcn-ui/form';
 import { Input } from '@/components/shadcn-ui/input';
-import { createEventSchema } from '@/form-schemas/event-schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { Create } from 'sharp';
 import { z } from 'zod';
 import { Textarea } from '@/components/shadcn-ui/textarea';
 import {
@@ -35,18 +31,12 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/shadcn-ui/popover';
-import { CalendarIcon, CheckIcon, FileIcon } from 'lucide-react';
+import { CalendarIcon } from 'lucide-react';
 import { format } from 'date-fns';
 import { cn } from '@/lib/utils';
 import { Calendar } from '@/components/shadcn-ui/calendar';
-import { TimePicker } from '@/components/shadcn-ui/time-picker';
 import Dropzone from './Dropzone';
-import { CaretSortIcon } from '@radix-ui/react-icons';
-import Link from 'next/link';
-import { Event } from '@/lib/types/entities/event.type';
-import { CreateEventData } from '@/lib/types/dto/createEventData.type';
 import { createBulletinSchema } from '@/form-schemas/bulletin-schema';
-import { useState } from 'react';
 import { useGetCategories } from '@/lib/queries/categoryQueries';
 
 type BulletinDialogProps = {
@@ -64,8 +54,6 @@ const BulletinDialog = ({
   addBulletin,
   updateBulletin,
 }: BulletinDialogProps) => {
-  const [deletedAttachments, setDeletedAttachments] = useState<number[]>([]);
-
   const { data: categories } = useGetCategories();
   console.log(categories);
 
