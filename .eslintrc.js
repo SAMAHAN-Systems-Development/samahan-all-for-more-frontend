@@ -25,6 +25,7 @@ module.exports = {
   },
   overrides: [
     {
+      files: ['.tsx', '.ts'],
       rules: {
         '@typescript-eslint/no-unsafe-assignment': 'off',
       },
