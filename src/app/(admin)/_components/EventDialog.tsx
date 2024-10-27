@@ -2,10 +2,8 @@
 import {
   ResponsiveModal,
   ResponsiveModalContent,
-  ResponsiveModalDescription,
   ResponsiveModalHeader,
   ResponsiveModalTitle,
-  ResponsiveModalTrigger,
 } from '@/components/shadcn-ui/responsive-modal';
 import {
   Command,
@@ -19,7 +17,6 @@ import { Button } from '@/components/shadcn-ui/button';
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -29,7 +26,6 @@ import { Input } from '@/components/shadcn-ui/input';
 import { createEventSchema } from '@/form-schemas/event-schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { Create } from 'sharp';
 import { z } from 'zod';
 import { Textarea } from '@/components/shadcn-ui/textarea';
 import {
@@ -42,7 +38,6 @@ import { format } from 'date-fns';
 import { cn } from '@/lib/utils';
 import { Calendar } from '@/components/shadcn-ui/calendar';
 import { TimePicker } from '@/components/shadcn-ui/time-picker';
-import Dropzone from './Dropzone';
 import { CaretSortIcon } from '@radix-ui/react-icons';
 import Link from 'next/link';
 import { Event } from '@/lib/types/entities/event.type';
@@ -74,6 +69,8 @@ const EventDialog = ({
       end_time: event?.end_time ? new Date(event.end_time) : undefined,
       location_id: event?.location.id ?? 0,
       registration_link: event?.registration_link ?? '',
+      thumbnail: null,
+      // thumbnail: event?.thumbnail_url ?? '',
       // file: undefined,
     },
     shouldFocusError: true,
@@ -282,7 +279,7 @@ const EventDialog = ({
                                   location.value.toString() ===
                                   field.value.toString()
                               )?.label
-                            : 'Select language'}
+                            : 'Select location'}
                           <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                         </Button>
                       </FormControl>
@@ -350,6 +347,27 @@ const EventDialog = ({
                 </FormItem>
               )}
             /> */}
+            <FormField
+              control={form.control}
+              name="thumbnail"
+              render={({ field }) => (
+                <FormItem className="w-full">
+                  <FormLabel>Event Thumbnail</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="file"
+                      accept="image/*"
+                      onChange={(e) => {
+                        if (e.target.files && e.target.files.length > 0) {
+                          field.onChange(e.target.files[0]);
+                        }
+                      }}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
             <Button type="submit" className="w-full">
               Submit
             </Button>

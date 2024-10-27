@@ -9,6 +9,7 @@ export const createEventSchema = z.object({
   start_time: z.date({ required_error: 'Start time is required' }),
   end_time: z.date({ required_error: 'End time is required' }),
   location_id: z.number({ required_error: 'Location is required' }),
+  thumbnail: z.union([z.instanceof(File), z.null()]),
   // file: z
   //   .union([z.instanceof(File), z.null()])
   //   .refine((file) => file !== null, {
