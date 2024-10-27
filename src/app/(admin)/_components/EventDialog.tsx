@@ -69,43 +69,43 @@ const EventDialog = ({
     defaultValues: {
       name: event?.name ?? '',
       description: event?.description ?? '',
-      start_time: event?.start_time ?? '',
-      end_time: event?.end_time ?? '',
+      start_time: event?.start_time ? new Date(event.start_time) : undefined,
+      end_time: event?.end_time ? new Date(event.end_time) : undefined,
       location_id: event?.location.id ?? 0,
       registration_link: event?.registration_link ?? '',
-      file: undefined,
+      // file: undefined,
     },
     shouldFocusError: true,
     shouldUnregister: false,
     shouldUseNativeValidation: false,
   });
 
-  const handleOnDrop = (acceptedFiles: FileList | null) => {
-    if (acceptedFiles && acceptedFiles.length > 0) {
-      const allowedTypes = [
-        { name: 'jpeg', types: ['image/jpeg'] },
-        { name: 'png', types: ['image/png'] },
-        { name: 'gif', types: ['image/gif'] },
-      ];
-      const fileType = allowedTypes.find((allowedType) =>
-        allowedType.types.find((type) => type === acceptedFiles[0].type)
-      );
-      if (!fileType) {
-        form.setError('file', {
-          message: 'File type is not valid',
-          type: 'typeError',
-        });
-      } else {
-        form.setValue('file', acceptedFiles[0]);
-        form.clearErrors('file');
-      }
-    } else {
-      form.setError('file', {
-        message: 'File is required',
-        type: 'typeError',
-      });
-    }
-  };
+  // const handleOnDrop = (acceptedFiles: FileList | null) => {
+  //   if (acceptedFiles && acceptedFiles.length > 0) {
+  //     const allowedTypes = [
+  //       { name: 'jpeg', types: ['image/jpeg'] },
+  //       { name: 'png', types: ['image/png'] },
+  //       { name: 'gif', types: ['image/gif'] },
+  //     ];
+  //     const fileType = allowedTypes.find((allowedType) =>
+  //       allowedType.types.find((type) => type === acceptedFiles[0].type)
+  //     );
+  //     if (!fileType) {
+  //       form.setError('file', {
+  //         message: 'File type is not valid',
+  //         type: 'typeError',
+  //       });
+  //     } else {
+  //       form.setValue('file', acceptedFiles[0]);
+  //       form.clearErrors('file');
+  //     }
+  //   } else {
+  //     form.setError('file', {
+  //       message: 'File is required',
+  //       type: 'typeError',
+  //     });
+  //   }
+  // };
 
   const onSubmit = (data: CreateEventData) => {
     if (event) {
@@ -332,7 +332,7 @@ const EventDialog = ({
                 </FormItem>
               )}
             />
-            <FormField
+            {/* <FormField
               control={form.control}
               name="file"
               render={({ field }) => (
@@ -348,7 +348,7 @@ const EventDialog = ({
                   <FormMessage />
                 </FormItem>
               )}
-            />
+            /> */}
             <Button type="submit" className="w-full">
               Submit
             </Button>
