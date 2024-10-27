@@ -70,7 +70,6 @@ const EventDialog = ({
       location_id: event?.location.id ?? 0,
       registration_link: event?.registration_link ?? '',
       thumbnail: null,
-      // thumbnail: event?.thumbnail_url ?? '',
       // file: undefined,
     },
     shouldFocusError: true,

@@ -5,5 +5,5 @@ export interface CreateEventData {
   start_time: Date;
   end_time: Date;
   location_id: number;
-  thumbnail: File | null;
+  thumbnail?: File | null;
 }
