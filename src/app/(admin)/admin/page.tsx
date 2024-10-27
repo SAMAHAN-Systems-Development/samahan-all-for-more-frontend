@@ -1,4 +1,5 @@
 'use client';
+import { useGetUser } from '@/lib/queries/userQueries';
 import React from 'react';
 
 const AdminPage = () => {

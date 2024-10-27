@@ -55,48 +55,47 @@ const BulletinDialog = ({
   updateBulletin,
 }: BulletinDialogProps) => {
   const { data: categories } = useGetCategories();
-  console.log(categories);
 
   const form = useForm<z.infer<typeof createBulletinSchema>>({
     resolver: zodResolver(createBulletinSchema),
     defaultValues: {
       title: bulletin?.title || '',
       content: bulletin?.content || '',
-      category_id: bulletin?.category_id || undefined,
+      category_id: bulletin?.category_id.toString() || undefined,
       published_at: bulletin?.published_at || new Date(),
-      file: undefined,
+      // pdfAttachments: undefined,
     },
     shouldFocusError: true,
     shouldUnregister: false,
     shouldUseNativeValidation: false,
   });
 
-  const handleOnDrop = (acceptedFiles: FileList | null) => {
-    if (acceptedFiles && acceptedFiles.length > 0) {
-      const allowedTypes = [
-        { name: 'jpeg', types: ['image/jpeg'] },
-        { name: 'png', types: ['image/png'] },
-        { name: 'pdf', types: ['application/pdf'] },
-      ];
-      const fileType = allowedTypes.find((allowedType) =>
-        allowedType.types.find((type) => type === acceptedFiles[0].type)
-      );
-      if (!fileType) {
-        form.setError('file', {
-          message: 'File type is not valid',
-          type: 'typeError',
-        });
-      } else {
-        form.setValue('file', acceptedFiles[0]);
-        form.clearErrors('file');
-      }
-    } else {
-      form.setError('file', {
-        message: 'File is required',
-        type: 'typeError',
-      });
-    }
-  };
+  // const handleOnDrop = (acceptedFiles: FileList | null) => {
+  //   if (acceptedFiles && acceptedFiles.length > 0) {
+  //     const allowedTypes = [
+  //       { name: 'jpeg', types: ['image/jpeg'] },
+  //       { name: 'png', types: ['image/png'] },
+  //       { name: 'pdf', types: ['application/pdf'] },
+  //     ];
+  //     const fileType = allowedTypes.find((allowedType) =>
+  //       allowedType.types.find((type) => type === acceptedFiles[0].type)
+  //     );
+  //     if (!fileType) {
+  //       form.setError('pdfAttachments', {
+  //         message: 'File type is not valid',
+  //         type: 'typeError',
+  //       });
+  //     } else {
+  //       form.setValue('pdfAttachments', acceptedFiles[0]);
+  //       form.clearErrors('pdfAttachments');
+  //     }
+  //   } else {
+  //     form.setError('pdfAttachments', {
+  //       message: 'File is required',
+  //       type: 'typeError',
+  //     });
+  //   }
+  // };
 
   const onSubmit = (data: CreateBulletinData) => {
     if (bulletin) {
@@ -220,9 +219,9 @@ const BulletinDialog = ({
                 </FormItem>
               )}
             />
-            <FormField
+            {/* <FormField
               control={form.control}
-              name="file"
+              name="pdfAttachments"
               render={({ field }) => (
                 <FormItem className="w-full">
                   <FormLabel>Bulletin Attachments</FormLabel>
@@ -236,7 +235,7 @@ const BulletinDialog = ({
                   <FormMessage />
                 </FormItem>
               )}
-            />
+            /> */}
             {bulletin && bulletin.pdfAttachments.length > 0 && (
               <div>{/* TODO - display current attachments */}</div>
             )}
