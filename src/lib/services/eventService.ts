@@ -1,5 +1,4 @@
 import { _delete, _get, _post, _put } from '@/lib/client/client';
-import type { EventsResponse } from '@/lib/types/eventsResponse.type';
 import { CreateEventData } from '../types/dto/createEventData.type';
 import { GetEventDto } from '../types/dto/getEventsData.type';
 import { Event } from '@/lib/types/entities/event.type';

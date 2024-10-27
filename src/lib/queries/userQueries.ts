@@ -1,9 +1,10 @@
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, UseQueryResult } from '@tanstack/react-query';
 import { getUser } from '../services/userService';
 
-export const useGetUser = () => {
+/* eslint-disable */
+export const useGetUser = (): UseQueryResult<any, Error> => {
   return useQuery({
     queryKey: ['user'],
-    queryFn: () => getUser,
+    queryFn: () => getUser(),
   });
 };
