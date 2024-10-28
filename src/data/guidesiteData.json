@@ -3,6 +3,10 @@
     {
       "href": "https://library.addu.edu.ph/book-a-library-facility",
       "label": "https://library.addu.edu.ph/book-a-library-facility"
+    },
+    {
+      "href": "https://docs.google.com/forms/d/e/1FAIpQLSct6wNGvtJsVIeflR7znaHjxw6PAAc3aseK8HcVBM3WCQEMzw/viewform",
+      "label": "HISFLEX ROOM RESERVATION FORM"
     }
   ],
   "venueReservations": {
@@ -62,7 +66,7 @@
     {
       "label": "Classrooms",
       "nestedInstructions": [
-        "First, go to the registrar's office and inquire what are the available rooms at the time of your activity. After the confirmation, you will be directed to go to the Physical Plant Office to request a form that you need to complete."
+        "Go to the registrar's office and inquire what are the available rooms at the time of your activity. After the confirmation, you will be directed to go to the Physical Plant Office to request a form that you need to complete."
       ]
     }
   ],
@@ -70,7 +74,17 @@
     {
       "label": "Martin Hall (4th, 6th, 7th Floor)",
       "nestedInstructions": [
-        "First, proceed to the Athletics Office located at the back of the 4th Floor, Martin Hall, and inquire for the availability of the venue. Obtain a copy of the Martin Hall reservation form."
+        "First, proceed to the Athletics Office located at the back of the 4th Floor, Martin Hall, and inquire about the availability of the venue.",
+        "Then, send a letter addressed to Ma’am Suzanne Doromal about reserving any of the Martin Hall floors. The letter can be sent online through her addu email address: smadoromal@addu.edu.ph or submit a physical letter on the 9th floor of the CCFC building.",
+        "After the approval of Ma’am Su, proceed to the University Athletics Office to obtain a copy of the Martin Hall reservation form. Attached to the reservation form is the letter approved by Ma’am Su. Before submitting the reservation form back to the University Athletics Office, the necessary information must be inputted, along with the needed signatories."
+      ]
+    }
+  ],
+  "hisflexRoom": [
+    {
+      "label": "HisFlex Rooms:",
+      "nestedInstructions": [
+        "Before submitting your reservation request, please obtain the necessary approval from your immediate supervisor and attach a PDF or image of the approval document to the form. No additional paper submissions will be required."
       ]
     }
   ],

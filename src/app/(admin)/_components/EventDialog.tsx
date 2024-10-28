@@ -1,10 +1,9 @@
+'use client';
 import {
   ResponsiveModal,
   ResponsiveModalContent,
-  ResponsiveModalDescription,
   ResponsiveModalHeader,
   ResponsiveModalTitle,
-  ResponsiveModalTrigger,
 } from '@/components/shadcn-ui/responsive-modal';
 import {
   Command,
@@ -18,7 +17,6 @@ import { Button } from '@/components/shadcn-ui/button';
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -28,7 +26,6 @@ import { Input } from '@/components/shadcn-ui/input';
 import { createEventSchema } from '@/form-schemas/event-schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { Create } from 'sharp';
 import { z } from 'zod';
 import { Textarea } from '@/components/shadcn-ui/textarea';
 import {
@@ -41,7 +38,6 @@ import { format } from 'date-fns';
 import { cn } from '@/lib/utils';
 import { Calendar } from '@/components/shadcn-ui/calendar';
 import { TimePicker } from '@/components/shadcn-ui/time-picker';
-import Dropzone from './Dropzone';
 import { CaretSortIcon } from '@radix-ui/react-icons';
 import Link from 'next/link';
 import { Event } from '@/lib/types/entities/event.type';
@@ -69,43 +65,45 @@ const EventDialog = ({
     defaultValues: {
       name: event?.name ?? '',
       description: event?.description ?? '',
-      start_time: event?.start_time ?? '',
-      end_time: event?.end_time ?? '',
+      start_time: event?.start_time ? new Date(event.start_time) : undefined,
+      end_time: event?.end_time ? new Date(event.end_time) : undefined,
       location_id: event?.location.id ?? 0,
       registration_link: event?.registration_link ?? '',
-      file: undefined,
+      thumbnail: null,
+      // thumbnail: event?.thumbnail_url ?? '',
+      // file: undefined,
     },
     shouldFocusError: true,
     shouldUnregister: false,
     shouldUseNativeValidation: false,
   });
 
-  const handleOnDrop = (acceptedFiles: FileList | null) => {
-    if (acceptedFiles && acceptedFiles.length > 0) {
-      const allowedTypes = [
-        { name: 'jpeg', types: ['image/jpeg'] },
-        { name: 'png', types: ['image/png'] },
-        { name: 'gif', types: ['image/gif'] },
-      ];
-      const fileType = allowedTypes.find((allowedType) =>
-        allowedType.types.find((type) => type === acceptedFiles[0].type)
-      );
-      if (!fileType) {
-        form.setError('file', {
-          message: 'File type is not valid',
-          type: 'typeError',
-        });
-      } else {
-        form.setValue('file', acceptedFiles[0]);
-        form.clearErrors('file');
-      }
-    } else {
-      form.setError('file', {
-        message: 'File is required',
-        type: 'typeError',
-      });
-    }
-  };
+  // const handleOnDrop = (acceptedFiles: FileList | null) => {
+  //   if (acceptedFiles && acceptedFiles.length > 0) {
+  //     const allowedTypes = [
+  //       { name: 'jpeg', types: ['image/jpeg'] },
+  //       { name: 'png', types: ['image/png'] },
+  //       { name: 'gif', types: ['image/gif'] },
+  //     ];
+  //     const fileType = allowedTypes.find((allowedType) =>
+  //       allowedType.types.find((type) => type === acceptedFiles[0].type)
+  //     );
+  //     if (!fileType) {
+  //       form.setError('file', {
+  //         message: 'File type is not valid',
+  //         type: 'typeError',
+  //       });
+  //     } else {
+  //       form.setValue('file', acceptedFiles[0]);
+  //       form.clearErrors('file');
+  //     }
+  //   } else {
+  //     form.setError('file', {
+  //       message: 'File is required',
+  //       type: 'typeError',
+  //     });
+  //   }
+  // };
 
   const onSubmit = (data: CreateEventData) => {
     if (event) {
@@ -281,7 +279,7 @@ const EventDialog = ({
                                   location.value.toString() ===
                                   field.value.toString()
                               )?.label
-                            : 'Select language'}
+                            : 'Select location'}
                           <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                         </Button>
                       </FormControl>
@@ -332,7 +330,7 @@ const EventDialog = ({
                 </FormItem>
               )}
             />
-            <FormField
+            {/* <FormField
               control={form.control}
               name="file"
               render={({ field }) => (
@@ -343,6 +341,27 @@ const EventDialog = ({
                       {...field}
                       dropMessage="Drop files or click here"
                       handleOnDrop={handleOnDrop}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            /> */}
+            <FormField
+              control={form.control}
+              name="thumbnail"
+              render={({ field }) => (
+                <FormItem className="w-full">
+                  <FormLabel>Event Thumbnail</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="file"
+                      accept="image/*"
+                      onChange={(e) => {
+                        if (e.target.files && e.target.files.length > 0) {
+                          field.onChange(e.target.files[0]);
+                        }
+                      }}
                     />
                   </FormControl>
                   <FormMessage />
