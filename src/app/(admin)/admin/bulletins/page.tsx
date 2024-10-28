@@ -44,8 +44,6 @@ const BulletinsPage = () => {
     refetch: refetchBulletin,
   } = useGetBulletins(filters);
 
-  console.log(bulletins);
-
   const { mutate: createEvent } = useCreateBulletin({
     onSuccess: () => {
       toast.success('Bulletin created successfully');

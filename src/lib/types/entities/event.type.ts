@@ -8,6 +8,7 @@ export interface Event {
   start_time: string;
   end_time: string;
   location_id: number;
+  thumbnail_url?: string;
   location: {
     id: number;
     name: string;
