@@ -27,6 +27,8 @@ const BulletinCard = ({
   published_at,
   pdfAttachments,
 }: BulletinCardProps) => {
+  const firstPdfAttachment = pdfAttachments[0];
+
   return (
     <div
       key={id}
@@ -54,18 +56,18 @@ const BulletinCard = ({
           <span className="text-main">{published_at}</span>
         </div>
       </div>
-
-      <div className="p-4">
-        {pdfAttachments.length > 0 && (
+      {/* renders 1 button if there is atleast 1 pdf */}
+      {firstPdfAttachment && (
+        <div className="p-4">
           <Link
-            href={pdfAttachments[0].file_path}
+            href={firstPdfAttachment.file_path}
             target="_blank"
             rel="noopener noreferrer"
           >
             <Button text="View Details" size="wide" />
           </Link>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };
