@@ -22,9 +22,11 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   rules: {
     '@typescript-eslint/no-unsafe-assignment': 'off',
+    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
   },
   overrides: [
     {
+      files: ['*.ts', '*.tsx'],
       rules: {
         '@typescript-eslint/no-unsafe-assignment': 'off',
       },
