@@ -18,6 +18,7 @@ type Story = StoryObj<typeof AdvocasixCard>;
 export const AdvocasixCards: Story = {
   render: () => (
     <div>
+      {/* call advocasix description sa home page */}
       <AdvocasixDescription />
       <AdvocasixCard data={advocasixCardData} />{' '}
     </div>

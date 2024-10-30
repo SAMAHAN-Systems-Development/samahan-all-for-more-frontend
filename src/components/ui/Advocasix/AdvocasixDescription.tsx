@@ -3,7 +3,7 @@ import React from 'react';
 const AdvocasixDescription = () => {
   return (
     <>
-      <h2 className="text-title text-blue font-bold pt-20 pl-20 pr-20">
+      <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-title text-blue font-bold pt-20 px-4 sm:px-10 md:px-16 lg:px-20 text-center md:text-left">
         ADVOCASIX
       </h2>
       <p className="text-blue text-main md:text-xl xl:text-2xl pr-20 pl-20 pt-5">
