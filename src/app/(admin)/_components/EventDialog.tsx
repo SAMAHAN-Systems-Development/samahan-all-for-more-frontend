@@ -43,6 +43,7 @@ import Link from 'next/link';
 import { Event } from '@/lib/types/entities/event.type';
 import { CreateEventData } from '@/lib/types/dto/createEventData.type';
 import { useGetLocations } from '@/lib/queries/locationQueries';
+import FileUpload from './FileUpload';
 
 type EventDialogProps = {
   isOpen: boolean;
@@ -350,16 +351,14 @@ const EventDialog = ({
               control={form.control}
               name="thumbnail"
               render={({ field }) => (
-                <FormItem className="w-full">
+                <FormItem>
                   <FormLabel>Event Thumbnail</FormLabel>
                   <FormControl>
-                    <Input
-                      type="file"
-                      accept="image/*"
-                      onChange={(e) => {
-                        if (e.target.files && e.target.files.length > 0) {
-                          field.onChange(e.target.files[0]);
-                        }
+                    <FileUpload
+                      value={field.value}
+                      onChange={field.onChange}
+                      onError={(error) => {
+                        form.setError('thumbnail', { message: error });
                       }}
                     />
                   </FormControl>

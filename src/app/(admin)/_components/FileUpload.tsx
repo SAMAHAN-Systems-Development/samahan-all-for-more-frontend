@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import React, { useState } from 'react';
-import { useDropzone } from 'react-dropzone';
+import { useDropzone, FileRejection } from 'react-dropzone';
 import { cn } from '@/lib/utils';
 import { UploadIcon, XIcon } from 'lucide-react';
 import { Button } from '@/components/shadcn-ui/button';
@@ -14,20 +14,23 @@ interface FileUploadProps {
 }
 
 const FileUpload = ({ value, onChange, onError }: FileUploadProps) => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     accept: {
-      'image/*': ['.png', '.jpg', '.jpeg', '.gif'],
+      'image/jpeg': ['.jpeg', '.jpg'],
+      'image/png': ['.png'],
+      'image/gif': ['.gif'],
     },
     maxSize: 5 * 1024 * 1024, // 5MB
     maxFiles: 1,
-    onDrop: (acceptedFiles, rejectedFiles) => {
+    onDrop: (acceptedFiles: File[], rejectedFiles: FileRejection[]) => {
       if (rejectedFiles.length > 0) {
         const error = rejectedFiles[0].errors[0];
         if (error.code === 'file-too-large') {
           onError?.('File is too large. Maximum size is 5MB.');
         } else if (error.code === 'file-invalid-type') {
-          onError?.('Invalid file type. Please upload an image.');
+          onError?.(
+            'Invalid file type. Please upload a JPEG, PNG, or GIF image.'
+          );
         }
         return;
       }
@@ -37,8 +40,8 @@ const FileUpload = ({ value, onChange, onError }: FileUploadProps) => {
       }
     },
   });
-  const DEFAULT_WIDTH = 100; // or any appropriate default value
-  const DEFAULT_HEIGHT = 100; // or any appropriate default value
+  const DEFAULT_WIDTH = 100;
+  const DEFAULT_HEIGHT = 100;
   const [imageDimensions, setImageDimensions] = useState<{
     width: number;
     height: number;
@@ -78,9 +81,9 @@ const FileUpload = ({ value, onChange, onError }: FileUploadProps) => {
             src={preview}
             alt="Preview"
             className="object-cover w-full h-full"
-            width={imageDimensions?.width || DEFAULT_WIDTH} // Use width from state or default
-            height={imageDimensions?.height || DEFAULT_HEIGHT} // Use height from state or default
-            onLoadingComplete={handleImageLoad} // Get dimensions once the image is loaded
+            width={imageDimensions?.width || DEFAULT_WIDTH}
+            height={imageDimensions?.height || DEFAULT_HEIGHT}
+            onLoadingComplete={handleImageLoad}
           />
           <Button
             variant="destructive"
