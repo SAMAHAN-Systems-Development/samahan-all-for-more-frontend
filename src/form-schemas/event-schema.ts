@@ -9,7 +9,22 @@ export const createEventSchema = z.object({
   start_time: z.date({ required_error: 'Start time is required' }),
   end_time: z.date({ required_error: 'End time is required' }),
   location_id: z.number({ required_error: 'Location is required' }),
-  thumbnail: z.union([z.instanceof(File), z.null()]),
+  thumbnail: z
+    .instanceof(File)
+    .nullable()
+    .optional()
+    .refine(
+      (file) => (file ? file.size <= 5000000 : true),
+      'Max file size is 5MB'
+    )
+    .refine(
+      (file) =>
+        file
+          ? ['image/jpeg', 'image/png', 'image/gif'].includes(file.type)
+          : true,
+      'Only JPEG, PNG, and GIF formats are supported'
+    ),
+
   // file: z
   //   .union([z.instanceof(File), z.null()])
   //   .refine((file) => file !== null, {
