@@ -20,39 +20,37 @@ const ClusterAcademicArms: React.FC<ClusterAcademicArmsProps> = ({
 
   return (
     <>
-      <div className="bg-blue text-center py-12">
+      <div className="bg-blue w-full py-16 text-center">
         <h2 className="text-white font-bold text-3xl">
           GET TO KNOW YOUR <br /> CLUSTER ACADEMIC ARMS
         </h2>
       </div>
+
       {/* Container */}
-      <div className="flex flex-wrap justify-center">
-        <div className="flex flex-wrap justify-center px-4 lg:px-16 py-10 bg-white text-blue-900 rounded-md">
-          {/* content */}
-          {sections.map((section, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center text-center p-4 hover:bg-gray-100 transition-all duration-300 rounded-lg gap-x-2"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              style={{ minWidth: '200px', maxWidth: '240px' }}
-            >
-              <Image
-                src={
-                  hoveredIndex === index
-                    ? `/images/cluster-academix-arms/${section.hoverlogo}`
-                    : `/images/cluster-academix-arms/${section.logo}`
-                }
-                alt={section.title}
-                className="h-16 w-16 mb-2 transition-all duration-300"
-                width={150}
-                height={150}
-              />
-              <h2 className="text-2xl font-semibold">{section.title}</h2>
-              <p className="text-xl text-gray-700">{section.description}</p>
-            </div>
-          ))}
-        </div>
+      <div className="flex flex-wrap justify-center py-10 px-12 bg-white text-blue">
+        {/* content */}
+        {sections.map((section, index) => (
+          <div
+            key={index}
+            className="w-[250px] flex flex-col items-center text-center p-6 hover:bg-gray-100 transition-all duration-300 rounded-lg mx-4 my-6"
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            <Image
+              src={
+                hoveredIndex === index
+                  ? `/images/cluster-academix-arms/${section.hoverlogo}`
+                  : `/images/cluster-academix-arms/${section.logo}`
+              }
+              alt={section.title}
+              className="mb-2 transition-all duration-300"
+              width={125}
+              height={125}
+            />
+            <h2 className="text-xl font-semibold">{section.title}</h2>
+            <p className="text-lg text-gray-700">{section.description}</p>
+          </div>
+        ))}
       </div>
     </>
   );
