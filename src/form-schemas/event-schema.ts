@@ -14,8 +14,8 @@ export const createEventSchema = z.object({
     .nullable()
     .optional()
     .refine(
-      (file) => (file ? file.size <= 5000000 : true),
-      'Max file size is 5MB'
+      (file) => (file ? file.size <= 50000000 : true),
+      'Max file size is 50MB'
     )
     .refine(
       (file) =>
@@ -24,7 +24,6 @@ export const createEventSchema = z.object({
           : true,
       'Only JPEG, PNG, and GIF formats are supported'
     ),
-
   // file: z
   //   .union([z.instanceof(File), z.null()])
   //   .refine((file) => file !== null, {
