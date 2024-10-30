@@ -1,0 +1,62 @@
+[
+  {
+    "title": "MAIN",
+    "description": "SAMAHAN Department of Academic Affairs",
+    "logo": "Main.png",
+    "hoverlogo": "Main_Hover.png"
+  },
+  {
+    "title": "ACCOUNTANCY",
+    "description": "Accountancy Students’ Scholastic Events and Tutorials Support (ASSETS)",
+    "logo": "Accountancy.png",
+    "hoverlogo": "Accountancy_Hover.png"
+  },
+  {
+    "title": "BUSINESS & MANAGEMENT",
+    "description": "B&M Academic Affairs Department",
+    "logo": "B&M.png",
+    "hoverlogo": "B&M_Hover.png"
+  },
+  {
+    "title": "COMPUTER STUDIES",
+    "description": "Ateneo Circle of Computer Enthusiasts for Study and Success (ACCESS)",
+    "logo": "CS.png",
+    "hoverlogo": "CS_Hover.png"
+  },
+  {
+    "title": "HUMANITIES & LETTERS",
+    "description": "Wolves Academic Affairs Space",
+    "logo": "HUMLET.png",
+    "hoverlogo": "HUMLET_Hover.png"
+  },
+  {
+    "title": "NATURAL SCIENCE & MATHEMATICS",
+    "description": "NSM Educational Services and Tutorials (NEST)",
+    "logo": "NSM.png",
+    "hoverlogo": "NSM_Hover.png"
+  },
+  {
+    "title": "SCHOOL OF EDUCATION",
+    "description": "The Seaside Academic Den",
+    "logo": "SOE.png",
+    "hoverlogo": "SOE_Hover.png"
+  },
+  {
+    "title": "SCHOOL OF ENGINEERING & ARCHITECTURE",
+    "description": "SEA Central Warehouse",
+    "logo": "EA.png",
+    "hoverlogo": "EA_Hover.png"
+  },
+  {
+    "title": "SCHOOL OF NURSING",
+    "description": "Panthers Academic Tutorials and Services (PATS)",
+    "logo": "SON.png",
+    "hoverlogo": "SON_Hover.png"
+  },
+  {
+    "title": "SOCIAL SCIENCES",
+    "description": "Social Sciences Committee of Academic Leaders (SCALES)",
+    "logo": "SS.png",
+    "hoverlogo": "SS_Hover.png"
+  }
+]
