@@ -32,7 +32,7 @@ const ClusterAcademicArms: React.FC<ClusterAcademicArmsProps> = ({
           {sections.map((section, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center p-4 hover:bg-gray-100 transition-all duration-300 rounded-lg m-4"
+              className="flex flex-col items-center text-center p-4 hover:bg-gray-100 transition-all duration-300 rounded-lg gap-x-2"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
               style={{ minWidth: '200px', maxWidth: '240px' }}
@@ -45,11 +45,11 @@ const ClusterAcademicArms: React.FC<ClusterAcademicArmsProps> = ({
                 }
                 alt={section.title}
                 className="h-16 w-16 mb-2 transition-all duration-300"
-                width={74}
-                height={74}
+                width={150}
+                height={150}
               />
-              <h2 className="text-lg font-semibold">{section.title}</h2>
-              <p className="text-sm text-gray-700">{section.description}</p>
+              <h2 className="text-2xl font-semibold">{section.title}</h2>
+              <p className="text-xl text-gray-700">{section.description}</p>
             </div>
           ))}
         </div>
