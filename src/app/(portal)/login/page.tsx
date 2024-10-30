@@ -31,7 +31,6 @@ const LoginPage = () => {
     onSuccess: (data) => {
       toast.success('Login successful');
       router.push('/admin/');
-      console.log(data);
     },
     onError: (error) => {
       toast.error('Invalid Credentials');

@@ -1,10 +1,9 @@
+'use client';
 import {
   ResponsiveModal,
   ResponsiveModalContent,
-  ResponsiveModalDescription,
   ResponsiveModalHeader,
   ResponsiveModalTitle,
-  ResponsiveModalTrigger,
 } from '@/components/shadcn-ui/responsive-modal';
 import {
   Select,
@@ -17,17 +16,14 @@ import { Button } from '@/components/shadcn-ui/button';
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from '@/components/shadcn-ui/form';
 import { Input } from '@/components/shadcn-ui/input';
-import { createEventSchema } from '@/form-schemas/event-schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { Create } from 'sharp';
 import { z } from 'zod';
 import { Textarea } from '@/components/shadcn-ui/textarea';
 import {
@@ -35,19 +31,14 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/shadcn-ui/popover';
-import { CalendarIcon, CheckIcon, FileIcon } from 'lucide-react';
+import { CalendarIcon } from 'lucide-react';
 import { format } from 'date-fns';
 import { cn } from '@/lib/utils';
 import { Calendar } from '@/components/shadcn-ui/calendar';
-import { TimePicker } from '@/components/shadcn-ui/time-picker';
 import Dropzone from './Dropzone';
-import { CaretSortIcon } from '@radix-ui/react-icons';
-import Link from 'next/link';
-import { Event } from '@/lib/types/entities/event.type';
-import { CreateEventData } from '@/lib/types/dto/createEventData.type';
 import { createBulletinSchema } from '@/form-schemas/bulletin-schema';
-import { useState } from 'react';
 import { useGetCategories } from '@/lib/queries/categoryQueries';
+import FileUpload from './FileUpload';
 
 type BulletinDialogProps = {
   isOpen: boolean;
@@ -64,51 +55,48 @@ const BulletinDialog = ({
   addBulletin,
   updateBulletin,
 }: BulletinDialogProps) => {
-  const [deletedAttachments, setDeletedAttachments] = useState<number[]>([]);
-
   const { data: categories } = useGetCategories();
-  console.log(categories);
 
   const form = useForm<z.infer<typeof createBulletinSchema>>({
     resolver: zodResolver(createBulletinSchema),
     defaultValues: {
       title: bulletin?.title || '',
       content: bulletin?.content || '',
-      category_id: bulletin?.category_id || undefined,
+      category_id: bulletin?.category_id.toString() || undefined,
       published_at: bulletin?.published_at || new Date(),
-      file: undefined,
+      pdfAttachments: undefined,
     },
     shouldFocusError: true,
     shouldUnregister: false,
     shouldUseNativeValidation: false,
   });
 
-  const handleOnDrop = (acceptedFiles: FileList | null) => {
-    if (acceptedFiles && acceptedFiles.length > 0) {
-      const allowedTypes = [
-        { name: 'jpeg', types: ['image/jpeg'] },
-        { name: 'png', types: ['image/png'] },
-        { name: 'pdf', types: ['application/pdf'] },
-      ];
-      const fileType = allowedTypes.find((allowedType) =>
-        allowedType.types.find((type) => type === acceptedFiles[0].type)
-      );
-      if (!fileType) {
-        form.setError('file', {
-          message: 'File type is not valid',
-          type: 'typeError',
-        });
-      } else {
-        form.setValue('file', acceptedFiles[0]);
-        form.clearErrors('file');
-      }
-    } else {
-      form.setError('file', {
-        message: 'File is required',
-        type: 'typeError',
-      });
-    }
-  };
+  // const handleOnDrop = (acceptedFiles: FileList | null) => {
+  //   if (acceptedFiles && acceptedFiles.length > 0) {
+  //     const allowedTypes = [
+  //       { name: 'jpeg', types: ['image/jpeg'] },
+  //       { name: 'png', types: ['image/png'] },
+  //       { name: 'pdf', types: ['application/pdf'] },
+  //     ];
+  //     const fileType = allowedTypes.find((allowedType) =>
+  //       allowedType.types.find((type) => type === acceptedFiles[0].type)
+  //     );
+  //     if (!fileType) {
+  //       form.setError('pdfAttachments', {
+  //         message: 'File type is not valid',
+  //         type: 'typeError',
+  //       });
+  //     } else {
+  //       form.setValue('pdfAttachments', acceptedFiles[0]);
+  //       form.clearErrors('pdfAttachments');
+  //     }
+  //   } else {
+  //     form.setError('pdfAttachments', {
+  //       message: 'File is required',
+  //       type: 'typeError',
+  //     });
+  //   }
+  // };
 
   const onSubmit = (data: CreateBulletinData) => {
     if (bulletin) {
@@ -232,9 +220,9 @@ const BulletinDialog = ({
                 </FormItem>
               )}
             />
-            <FormField
+            {/* <FormField
               control={form.control}
-              name="file"
+              name="pdfAttachments"
               render={({ field }) => (
                 <FormItem className="w-full">
                   <FormLabel>Bulletin Attachments</FormLabel>
@@ -248,7 +236,7 @@ const BulletinDialog = ({
                   <FormMessage />
                 </FormItem>
               )}
-            />
+            /> */}
             {bulletin && bulletin.pdfAttachments.length > 0 && (
               <div>{/* TODO - display current attachments */}</div>
             )}

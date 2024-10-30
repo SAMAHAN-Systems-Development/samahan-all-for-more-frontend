@@ -99,10 +99,10 @@ export const bulletinColumns = ({
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={() => onUpdate(bulletin)}>
-              Update Event
+              Update Bulletin
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => onDelete(bulletin)}>
-              Delete Event
+              Delete Bulletin
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
