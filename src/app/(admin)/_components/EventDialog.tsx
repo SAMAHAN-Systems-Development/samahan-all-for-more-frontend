@@ -358,6 +358,7 @@ const EventDialog = ({
                     <FileUpload
                       value={field.value}
                       onChange={field.onChange}
+                      multiple={false}
                       onError={(error) => {
                         form.setError('thumbnail', { message: error });
                       }}
