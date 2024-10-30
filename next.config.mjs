@@ -2,6 +2,7 @@
 const nextConfig = {
   images: {
     domains: ['picsum.photos', 'loremflickr.com'],
+    unoptimized: true,
   },
   output: 'export',
 };
