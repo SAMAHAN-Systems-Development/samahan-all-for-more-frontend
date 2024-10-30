@@ -83,7 +83,7 @@ const FileUpload = ({ value, onChange, onError }: FileUploadProps) => {
             className="object-cover w-full h-full"
             width={imageDimensions?.width || DEFAULT_WIDTH}
             height={imageDimensions?.height || DEFAULT_HEIGHT}
-            onLoadingComplete={handleImageLoad}
+            onLoad={handleImageLoad}
           />
           <Button
             variant="destructive"

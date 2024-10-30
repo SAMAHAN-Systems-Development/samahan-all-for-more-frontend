@@ -106,6 +106,7 @@ const EventDialog = ({
   // };
 
   const onSubmit = (data: CreateEventData) => {
+    console.log('Submitted data:', JSON.stringify(data, null, 2));
     if (event) {
       updateEvent?.(data);
     } else {
