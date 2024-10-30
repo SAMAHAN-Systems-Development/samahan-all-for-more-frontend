@@ -60,7 +60,7 @@ const AdvocasixCard: React.FC<AdvocasixCardProps> = ({ data: _data }) => {
               </div>
 
               <div className="absolute inset-x-0 bottom-0 h-32 bg-blue flex items-end p-4">
-                <strong className="text-white font-main uppercase text-[30px]">
+                <strong className="text-white font-inter font-main uppercase text-[30px]">
                   {card.title}
                 </strong>
               </div>
