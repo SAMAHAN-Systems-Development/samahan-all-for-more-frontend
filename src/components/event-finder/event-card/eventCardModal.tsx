@@ -15,9 +15,10 @@ import { Event } from '@/lib/types/entities/event.type';
 interface EventCardModalProps extends React.HTMLAttributes<HTMLDivElement> {
   event: Event;
   onClose: () => void;
+  modalRef: React.RefObject<HTMLDivElement>;
 }
 
-const EventCardModal = ({ event, onClose }: EventCardModalProps) => {
+const EventCardModal = ({ event, onClose, modalRef }: EventCardModalProps) => {
   const {
     start_time,
     name,
@@ -50,6 +51,7 @@ const EventCardModal = ({ event, onClose }: EventCardModalProps) => {
 
   return (
     <div
+      ref={modalRef}
       className={`relative shadow-2xl w-full max-w-[90%] lg:max-w-[1000px] border-blue border-solid border-[2px] rounded-3xl overflow-hidden mx-auto bg-white`}
     >
       {/* Header with Cover Image */}
