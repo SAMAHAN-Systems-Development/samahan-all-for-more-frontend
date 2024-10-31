@@ -20,7 +20,6 @@ type EventsSectionProps = {
 export default function EventFinder() {
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [hasNext, setNext] = useState<boolean>(false);
-  // const { data: events } = useEvents({});
   const [hasLoaded, setLoaded] = useState<boolean>(false);
 
   const { data: ongoingEvents } = useEvents({ status: 'Ongoing' });
@@ -118,7 +117,7 @@ export default function EventFinder() {
           </div>
         )}
       </div>
-      <section className="pb-20 px-10 text-blue w-full lg:w-3/5 flex flex-col items-center mx-auto text-center gap-6">
+      <section className="pb-20 px-10 text-blue w-full lg:w-4/5 xl:w-3/5 flex flex-col items-center mx-auto text-center gap-6">
         <p>
           For the clubs, departments, and organizations that would like to
           promote and disseminate their upcoming events through the Event
@@ -141,8 +140,8 @@ export default function EventFinder() {
       </section>
 
       {modalActive && (
-        <div className="fixed top-0 bg-blue backdrop-blur-sm bg-opacity-30 z-50 w-full h-dvh overflow-hidden place-items-center touch-none overscroll-y-contain">
-          <div className="h-full flex items-center scale-75 xl:scale-1">
+        <div className="fixed top-0 flex flex-col justify-center items-center bg-blue backdrop-blur-sm bg-opacity-30 z-50 w-full h-dvh overflow-hidden touch-none overscroll-y-contain">
+          <div className="scale-75 xl:scale-1">
             <EventCardModal
               modalRef={ref}
               event={modalOpen!}
