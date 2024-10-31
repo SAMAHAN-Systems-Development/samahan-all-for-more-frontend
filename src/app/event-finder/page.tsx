@@ -8,6 +8,7 @@ import { Banner } from '@/components/ui/banner/Banner';
 import Button from '@/components/ui/Button';
 import { useEvents } from '@/lib/queries/eventQueries';
 import type { Event } from '@/lib/types/entities/event.type';
+import Link from 'next/link';
 
 type EventsSectionProps = {
   description: string;
@@ -31,13 +32,6 @@ export default function EventFinder() {
   });
 
   const [allUpcomingEvents, setUpcomingEvents] = useState<Event[]>([]);
-
-  // const [visibleUpcomingEvents, setVisibleUpcoming] = useState<number>(4);
-  // const [eventsLoaded, setEventsLoaded] = useState<boolean>(false);
-
-  // // pagination
-  // // if no upcoming/ongoing events on page, next page
-  // // if upcoming does go upto 4, next page
 
   const { data: nextPage } = useEvents({
     status: 'Upcoming',
@@ -63,16 +57,12 @@ export default function EventFinder() {
   }, [hasLoaded]);
 
   const handleNextUpcoming = () => {
-    // console.log('HERE');
     if (nextPage && nextPage.length > 0) {
       setUpcomingEvents((prev) => [...prev, ...nextPage]);
-      // console.log(allUpcomingEvents);
       setNext(true);
-      // console.log('next true');
       setPageNumber((prev) => prev + 1);
     } else {
       setNext(false);
-      // console.log('next false');
     }
   };
 
@@ -94,6 +84,10 @@ export default function EventFinder() {
   ];
 
   const { handleModal, modalOpen, modalActive, closeModal } = useEventModal();
+
+  const samahanEmail = 'samahan@addu.edu.ph';
+  const ccEmail = 'armedida@addu.edu.ph';
+  const mailTo = `mailto:${samahanEmail}?cc=${ccEmail}`;
 
   return (
     <>
@@ -123,6 +117,28 @@ export default function EventFinder() {
           </div>
         )}
       </div>
+      <section className="pb-20 px-10 text-blue w-full lg:w-3/5 flex flex-col items-center mx-auto text-center gap-6">
+        <p>
+          For the clubs, departments, and organizations that would like to
+          promote and disseminate their upcoming events through the Event
+          Finder, kindly fill out our Google Form
+        </p>
+        <p className="lg:w-3/4">
+          To request a university-wide email blast for the dissemination of
+          event information, send a letter of request to{' '}
+          <Link className="underline" href={mailTo}>
+            {samahanEmail}
+          </Link>
+          ; cc’ed to{' '}
+          <Link className="underline" href={mailTo}>
+            {ccEmail}
+          </Link>
+        </p>
+        <Link href={'https://forms.gle/WZ1LUJd22ZTVForA7'}>
+          <Button text="ACCESS THE FORMS HERE" />
+        </Link>
+      </section>
+
       {modalActive && (
         <div className="fixed top-0 bg-blue backdrop-blur-sm bg-opacity-30 z-50 w-full h-dvh overflow-hidden place-items-center touch-none overscroll-y-contain">
           <div className="h-full flex items-center scale-75 xl:scale-1">

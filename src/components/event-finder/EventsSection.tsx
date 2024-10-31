@@ -26,7 +26,7 @@ export default function EventsSection({
       {description}
       {eventsLoaded ? (
         events.length ? (
-          <div className="grid grid-cols-[repeat(2,minmax(20rem,37rem))] justify-evenly my-10 w-full mx-auto gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[repeat(2,minmax(20rem,37rem))] justify-evenly my-10 w-full mx-auto gap-10">
             {events.map((event: Event, index: number) => (
               <EventCard
                 event={event}

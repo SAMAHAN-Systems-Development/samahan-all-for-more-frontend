@@ -9,12 +9,11 @@ import placeholder from 'public/images/UniversitySealLogo.png';
 import { EventCardField } from '@/components/event-finder/event-card/EventCardField';
 import { EventCardTag } from '@/components/event-finder/event-card/EventCardTag';
 import Button from '@/components/ui/Button';
-import type { EventData } from '@/lib/types/eventData.type';
+import type { Event } from '@/lib/types/entities/event.type';
 
 interface EventCardProps extends React.HTMLAttributes<HTMLDivElement> {
-  event: EventData;
-  handleModal: (event: EventData) => void;
-
+  event: Event;
+  handleModal: (event: Event) => void;
   imageHeight?: number;
   imageWidth?: number;
   upcoming?: boolean;
@@ -25,8 +24,8 @@ export const EventCard: React.FC<EventCardProps> = ({
   event,
   upcoming,
 }) => {
-  const { start_time, name, posters } = event;
-  const image_url = posters.length ? posters[0].image_url : placeholder;
+  const { start_time, name, thumbnail } = event;
+  const image_url = thumbnail ?? placeholder;
 
   function formatDate(date: Date): string {
     const options: Intl.DateTimeFormatOptions = {

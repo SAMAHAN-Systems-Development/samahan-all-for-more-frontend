@@ -22,14 +22,14 @@ const EventCardModal = ({ event, onClose }: EventCardModalProps) => {
   const {
     start_time,
     name,
-    posters,
+    thumbnail,
     end_time,
     description,
     registration_link,
     location,
   } = event;
 
-  const image_url = posters.length ? posters[0].image_url : placeholder;
+  const image_url = thumbnail ?? placeholder;
 
   return (
     <div
