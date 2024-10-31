@@ -27,9 +27,27 @@ const EventCardModal = ({ event, onClose }: EventCardModalProps) => {
     description,
     registration_link,
     location,
+    department_name,
+    email,
   } = event;
 
   const image_url = thumbnail ?? placeholder;
+
+  const formatDate = (date: string) => {
+    const toDate = new Date(date);
+    const day = toDate.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: '2-digit',
+    });
+    const time = toDate.toLocaleString('en-US', {
+      hour12: true,
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+
+    return `${day} ${time}`;
+  };
 
   return (
     <div
@@ -54,7 +72,7 @@ const EventCardModal = ({ event, onClose }: EventCardModalProps) => {
       </div>
 
       {/* Main Content */}
-      <div className="p-4 sm:p-6 text-blue">
+      <div className="p-4 sm:p-6 text-blue leading-none">
         <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-5 sm:mb-4">
           {name}
         </h2>
@@ -69,7 +87,7 @@ const EventCardModal = ({ event, onClose }: EventCardModalProps) => {
           <span className="flex items-center gap-x-2">
             <BsCalendarWeek className="text-xl sm:text-2xl md:text-3xl lg:text-2xl" />
             <span className="text-sm sm:text-base">
-              {start_time} - <span>{end_time}</span>
+              {formatDate(start_time)} - <span>{formatDate(end_time)}</span>
             </span>
           </span>
 
@@ -82,9 +100,9 @@ const EventCardModal = ({ event, onClose }: EventCardModalProps) => {
       </div>
 
       {/* Footer Content */}
-      <div className="flex flex-col p-4 sm:p-6 text-blue italic">
-        <span className="text-sm sm:text-base">Dept. Name</span>
-        <span className="text-sm sm:text-base">deptname@addu.edu.ph</span>
+      <div className="flex flex-col p-4 sm:p-6 text-blue italic text-sm sm:text-base ">
+        <span className="font-bold">{department_name}</span>
+        <span>{email}</span>
         <Link href={registration_link} className="mt-6 sm:mt-8">
           <Button size={'wide'} text="Register Now" />
         </Link>

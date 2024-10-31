@@ -56,7 +56,7 @@ export const EventCard: React.FC<EventCardProps> = ({
           className={`object-cover bg-blue ${upcoming && 'grayscale'}`}
         />
       </div>
-      <div className=" p-5 py-1 inline-flex flex-col gap-[0.625rem] justify-around border-t-2 border-blue h-full ">
+      <div className="p-5 py-4 inline-flex flex-col gap-[0.625rem] justify-around border-t-2 border-blue h-full ">
         <div>
           <div className=" flex flex-wrap justify-start items-start gap-1 mb-1">
             <EventCardTag
@@ -64,7 +64,11 @@ export const EventCard: React.FC<EventCardProps> = ({
               title="Open to all AdDU students"
             />
           </div>
-          <strong className="text-blue text-[25px] ">{name}</strong>
+          <strong
+            className={`text-blue ${name.length > 45 ? 'text-xl leading-snug' : 'text-[25px]'}`}
+          >
+            {name}
+          </strong>
           <div className="flex flex-col gap-[0.625rem] mt-1">
             <EventCardField icon={<FaRegCalendarAlt />} title={startDate} />
             <EventCardField
