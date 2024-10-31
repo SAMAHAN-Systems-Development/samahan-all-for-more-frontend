@@ -142,11 +142,7 @@ export default function EventFinder() {
       {modalActive && (
         <div className="fixed top-0 bg-blue backdrop-blur-sm bg-opacity-30 z-50 w-full h-dvh overflow-hidden place-items-center touch-none overscroll-y-contain">
           <div className="h-full flex items-center scale-75 xl:scale-1">
-            <EventCardModal
-              event={modalOpen}
-              status={modalActive}
-              onClose={closeModal}
-            />
+            <EventCardModal event={modalOpen!} onClose={closeModal} />
           </div>
         </div>
       )}

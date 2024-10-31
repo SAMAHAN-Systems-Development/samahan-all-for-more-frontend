@@ -1,21 +1,19 @@
 import { useCallback, useState } from 'react';
 
-import type { EventData } from '@/lib/types/eventData.type';
+import type { Event } from '@/lib/types/entities/event.type';
 
 export const useEventModal = () => {
   const [modalActive, setModalActive] = useState<boolean>(false);
-  const [modalOpen, setModalOpen] = useState<EventData>();
+  const [modalOpen, setModalOpen] = useState<Event>();
 
-  const openModal = useCallback((event: EventData) => {
+  const openModal = useCallback((event: Event) => {
     setModalActive((prev) => !prev);
     setModalOpen(event);
   }, []);
 
   const handleModal = useCallback(
-    (event: EventData) => {
+    (event: Event) => {
       openModal(event);
-      // eslint-disable-next-line no-console
-      console.log('hi', event);
     },
     [openModal]
   );
