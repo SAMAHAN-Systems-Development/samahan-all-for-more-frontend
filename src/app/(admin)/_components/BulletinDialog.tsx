@@ -38,6 +38,7 @@ import { Calendar } from '@/components/shadcn-ui/calendar';
 import Dropzone from './Dropzone';
 import { createBulletinSchema } from '@/form-schemas/bulletin-schema';
 import { useGetCategories } from '@/lib/queries/categoryQueries';
+import FileUpload from './FileUpload';
 
 type BulletinDialogProps = {
   isOpen: boolean;
@@ -63,7 +64,7 @@ const BulletinDialog = ({
       content: bulletin?.content || '',
       category_id: bulletin?.category_id.toString() || undefined,
       published_at: bulletin?.published_at || new Date(),
-      // pdfAttachments: undefined,
+      pdfAttachments: undefined,
     },
     shouldFocusError: true,
     shouldUnregister: false,
