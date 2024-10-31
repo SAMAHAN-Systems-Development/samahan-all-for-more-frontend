@@ -98,7 +98,7 @@ export default function EventFinder() {
         title={'EVENT FINDER'}
       />
 
-      <div className="py-20">
+      <div className="pt-20">
         {allData.map((data: EventsSectionProps) => (
           <EventsSection
             title={data.title}
@@ -112,7 +112,7 @@ export default function EventFinder() {
         ))}
 
         {hasLoaded && hasNext && allUpcomingEvents.length % 4 == 0 && (
-          <div className="mx-auto w-fit">
+          <div className="mx-auto w-fit mb-20">
             <Button text="Load More" onClick={handleNextUpcoming} />
           </div>
         )}
