@@ -15,7 +15,7 @@ import { Event } from '@/lib/types/entities/event.type';
 interface EventCardModalProps extends React.HTMLAttributes<HTMLDivElement> {
   event: Event;
   onClose: () => void;
-  modalRef: React.RefObject<HTMLDivElement>;
+  modalRef?: React.RefObject<HTMLDivElement>;
 }
 
 const EventCardModal = ({ event, onClose, modalRef }: EventCardModalProps) => {
