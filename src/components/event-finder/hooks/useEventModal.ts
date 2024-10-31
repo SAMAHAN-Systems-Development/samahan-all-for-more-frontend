@@ -12,7 +12,6 @@ export const useEventModal = () => {
     const handleClickOutside = (event: MouseEvent | TouchEvent) => {
       if (ref.current && !ref.current.contains(event.target as Node)) {
         setModalActive(false);
-        console.log('closed');
       }
     };
 
