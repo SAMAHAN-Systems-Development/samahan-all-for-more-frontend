@@ -1,10 +1,13 @@
+'use client';
+import AdvocasixCard from '@/components/ui/Advocasix/AdvocasixCard';
 import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Samahan 2024',
-  description: 'The official Samahan 2024 Website.',
-};
+import advocasixCardData from '@/data/advocasixCardData.json';
 
 export default function Home() {
-  return <main>{/* add sections here */}</main>;
+  return (
+    <main>
+      {/* add sections here */}
+      <AdvocasixCard data={advocasixCardData} />
+    </main>
+  );
 }
