@@ -20,7 +20,7 @@ const Guidesite = () => {
         subtitle={'SAMAHAN'}
         title={'GUIDESITE'}
       />
-      <div className="text-blue font-sans px-8 md:px-32 py-10 bg-gray-100">
+      <div className="text-blue font-sans px-8 md:px-32 sm:px-32 py-10 bg-gray-100">
         <div className="max-w-screen-lg mx-auto">
           <section>
             <h2 className="text-bold font-bold mb-4 pt-20">{title}</h2>
