@@ -15,7 +15,11 @@ const ProfileCard = ({ fullName, position, fileName }: ProfileCardProps) => {
 
         <div className="rounded-[32px] translate-y-[4px] overflow-hidden">
           <Image
-            src={`/images/samahan-cutouts/${fileName}`}
+            src={
+              fileName
+                ? `/images/samahan-cutouts/${fileName}`
+                : '/images/samahan-cutouts/Officer-No-Picture.png'
+            }
             alt={`${fullName}'s Picture`}
             width={250}
             height={380}
