@@ -70,7 +70,7 @@ const CentralBoardPage: React.FC = () => {
               )}
               {/* CLUSTER REPRESENTATIVES */}
               <div className="flex justify-center">
-                <div className="grid lg:grid-cols-3 lg:gap-20 md:grid-cols-1 md:gap-10">
+                <div className="grid lg:grid-cols-3 lg:gap-20 md:grid-cols-1 md:gap-10 xsm:gap-10">
                   {OfficerData.ClusterRepresentatives.map(
                     (officer: OfficerTypes, officerIndex: number) => (
                       <ProfileCard
