@@ -43,6 +43,7 @@ import Link from 'next/link';
 import { Event } from '@/lib/types/entities/event.type';
 import { CreateEventData } from '@/lib/types/dto/createEventData.type';
 import { useGetLocations } from '@/lib/queries/locationQueries';
+import FileUpload from './FileUpload';
 
 type EventDialogProps = {
   isOpen: boolean;
@@ -70,7 +71,6 @@ const EventDialog = ({
       location_id: event?.location.id ?? 0,
       registration_link: event?.registration_link ?? '',
       thumbnail: null,
-      // thumbnail: event?.thumbnail_url ?? '',
       // file: undefined,
     },
     shouldFocusError: true,
@@ -106,6 +106,7 @@ const EventDialog = ({
   // };
 
   const onSubmit = (data: CreateEventData) => {
+    console.log('Submitted data:', JSON.stringify(data, null, 2));
     if (event) {
       updateEvent?.(data);
     } else {
@@ -351,16 +352,15 @@ const EventDialog = ({
               control={form.control}
               name="thumbnail"
               render={({ field }) => (
-                <FormItem className="w-full">
+                <FormItem>
                   <FormLabel>Event Thumbnail</FormLabel>
                   <FormControl>
-                    <Input
-                      type="file"
-                      accept="image/*"
-                      onChange={(e) => {
-                        if (e.target.files && e.target.files.length > 0) {
-                          field.onChange(e.target.files[0]);
-                        }
+                    <FileUpload
+                      value={field.value}
+                      onChange={field.onChange}
+                      multiple={false}
+                      onError={(error) => {
+                        form.setError('thumbnail', { message: error });
                       }}
                     />
                   </FormControl>

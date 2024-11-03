@@ -64,7 +64,7 @@ const OSGPage: React.FC = () => {
               {section.sectionTitle}
             </h1>
             {section.subText && (
-              <p className="text-main text-blue mb-4 md:px-80 sm:px-10">
+              <p className="text-main text-blue mb-4 md:px-8 sm:px-10">
                 {section.subText}
               </p>
             )}

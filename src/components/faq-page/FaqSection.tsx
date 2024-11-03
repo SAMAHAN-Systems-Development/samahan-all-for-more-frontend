@@ -6,6 +6,7 @@ import Button from '@/components/ui/Button';
 import EmailData from '@/data/emailDataFaq.json';
 import EnrollmentAndRegistrationData1 from '@/data/enrollmentAndRegistrationData1.json';
 import EnrollmentAndRegistrationData2 from '@/data/enrollmentAndRegistrationData2.json';
+import Link from 'next/link';
 const FaqSection = () => {
   return (
     <div className="mx-28">
@@ -293,7 +294,9 @@ const FaqSection = () => {
             your information. Just email us at
             <span className="font-bold"> samahan@addu.edu.ph</span>
           </p>
-          <Button text="CONTACT US" />
+          <Link href="mailto:samahan@addu.edu.ph">
+            <Button text="CONTACT US" />
+          </Link>
         </div>
       </div>
     </div>

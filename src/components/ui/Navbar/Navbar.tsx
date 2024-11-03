@@ -12,23 +12,32 @@ import MobileMenu from 'src/components/ui/Navbar/viewscreens/MobileMenu';
 
 const Navbar = () => {
   const navItemsOne = [
-    { title: 'Home', link: '/Home' },
-    { title: 'About', link: '/About' },
+    { title: 'Home', link: '/' },
+    { title: 'About', link: '/about-us' },
   ];
 
   const navItemsTwo = [
     { title: 'Central Board', link: '/central-board' },
-    { title: 'FAQs', link: '/faqs' },
+    { title: 'FAQs', link: '/frequently-asked-questions' },
   ];
 
   const officesDropdownItems = [
-    { title: 'Office of the President', link: '/offices/president' },
-    { title: 'Office of the Vice President', link: '/offices/vice-president' },
+    {
+      title: 'Office of the President',
+      link: '/offices/office-of-the-president',
+    },
+    {
+      title: 'Office of the Vice President',
+      link: '/offices/office-of-the-vice-president',
+    },
     {
       title: 'Office of the Secretary General',
-      link: '/offices/secretary-general',
+      link: '/offices/office-of-the-secretary-general',
     },
-    { title: 'Office of the Treasurer', link: '/offices/treasurer' },
+    {
+      title: 'Office of the Treasurer',
+      link: '/offices/office-of-the-treasurer',
+    },
   ];
 
   const infoPortalDropdownItems = [
@@ -86,7 +95,7 @@ const Navbar = () => {
     ));
 
   return (
-    <nav className="bg-white py-3 px-6 shadow-[0_4px_20px_rgba(0,0,0,0.1)] rounded-[100px] flex justify-between items-center">
+    <nav className="fixed top-4 left-0 w-full z-50 bg-white py-3 px-6 shadow-[0_4px_20px_rgba(0,0,0,0.1)] rounded-[100px] flex justify-between items-center">
       <div className="flex items-center">
         <Link href="/" aria-label="Home">
           <Image

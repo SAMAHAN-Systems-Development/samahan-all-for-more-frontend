@@ -57,6 +57,7 @@ const socialIcon = cva('mx-1', {
     size: {
       [SOCIAL_ICON_SIZE_ENUM.SMALL]: 'mx-0.5',
       [SOCIAL_ICON_SIZE_ENUM.MEDIUM]: 'mx-1',
+      [SOCIAL_ICON_SIZE_ENUM.LARGE]: 'mx-2',
     },
   },
 });
@@ -70,19 +71,22 @@ interface FooterProps {
 
 // Store links in constants
 const quickLinks = [
-  { href: '#', label: 'About' },
-  { href: '#', label: 'Academix' },
+  { href: '/about-us', label: 'About' },
+  { href: '/academix/acadhub', label: 'Academix' },
   {
-    href: '#',
+    href: '/developers',
     label: 'Meet the Developers',
     icon: <GoArrowUpRight className="inline-block align-middle ml-1" />,
   },
 ];
 const officeLinks = [
-  { href: '#', label: 'President' },
-  { href: '#', label: 'Vice President' },
-  { href: '#', label: 'Secretary-General' },
-  { href: '#', label: 'Treasurer' },
+  { href: '/offices/office-of-the-president', label: 'President' },
+  { href: '/offices/office-of-the-vice-president', label: 'Vice President' },
+  {
+    href: '/offices/office-of-the-secretary-general',
+    label: 'Secretary-General',
+  },
+  { href: '/offices/office-of-the-treasurer', label: 'Treasurer' },
 ];
 
 const policyLinks = [{ href: '', label: 'Privacy Policy' }];
@@ -92,7 +96,7 @@ const socialLinks = [
     href: 'https://www.facebook.com/AdDUSAMAHAN',
     icon: (
       <FaFacebook
-        className={socialIcon({ size: SOCIAL_ICON_SIZE_ENUM.MEDIUM })}
+        className={`size-6 ${socialIcon({ size: SOCIAL_ICON_SIZE_ENUM.LARGE })}`}
       />
     ),
     size: LINK_SIZE_ENUM.MEDIUM,
@@ -101,7 +105,7 @@ const socialLinks = [
     href: 'https://www.instagram.com/samahan_ateneo',
     icon: (
       <FaInstagram
-        className={socialIcon({ size: SOCIAL_ICON_SIZE_ENUM.MEDIUM })}
+        className={`size-6 ${socialIcon({ size: SOCIAL_ICON_SIZE_ENUM.LARGE })}`}
       />
     ),
     size: LINK_SIZE_ENUM.MEDIUM,
@@ -110,7 +114,7 @@ const socialLinks = [
     href: 'https://x.com/addusamahan',
     icon: (
       <FaXTwitter
-        className={socialIcon({ size: SOCIAL_ICON_SIZE_ENUM.MEDIUM })}
+        className={`size-6 ${socialIcon({ size: SOCIAL_ICON_SIZE_ENUM.LARGE })}`}
       />
     ),
     size: LINK_SIZE_ENUM.MEDIUM,

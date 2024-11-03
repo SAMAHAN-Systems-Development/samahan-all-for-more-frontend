@@ -32,27 +32,31 @@ const BulletinCard = ({
   return (
     <div
       key={id}
-      className="w-[525px] border-2 border-blue rounded-2xl shadow-md overflow-hidden"
+      className="w-full md:max-w-[525px] border-2 border-blue rounded-2xl shadow-md overflow-hidden"
     >
       {/* Header Section */}
-      <div className="bg-blue text-white text-left p-6 uppercase font-bold text-lg">
+      <div className="bg-blue text-white text-left p-4 md:p-6 uppercase font-bold text-base md:text-lg">
         {title}
       </div>
 
       {/* Content Section */}
-      <div className="p-5 space-y-4">
-        <div className="flex items-center text-blue space-x-2">
-          <FaPenNib />
+      <div className="p-4 md:p-5 space-y-3 md:space-y-4">
+        <div className="flex items-center text-blue space-x-2 text-sm md:text-base">
+          <FaPenNib className="flex-shrink-0" />
           <span className="text-main">{author}</span>
         </div>
 
-        <div className="flex items-center text-blue space-x-2">
+        <div className="flex items-center text-blue space-x-2 text-sm md:text-base">
           <IoNewspaperOutline className="w-5 h-5 flex-shrink-0" />
-          <span className="text-main">{content}</span>
+          <span className="text-main">
+            {content.length <= 100
+              ? content
+              : content.substring(0, 100) + '...'}
+          </span>
         </div>
 
-        <div className="flex items-center text-blue space-x-2">
-          <RiCalendar2Fill />
+        <div className="flex items-center text-blue space-x-2 text-sm md:text-base">
+          <RiCalendar2Fill className="flex-shrink-0" />
           <span className="text-main">{published_at}</span>
         </div>
       </div>
