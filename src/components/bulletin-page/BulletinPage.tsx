@@ -47,7 +47,11 @@ const BulletinPage: React.FC = () => {
                         author={bulletin.author}
                         content={bulletin.content}
                         id={bulletin.id}
-                        pdfAttachments={bulletin.pdfAttachments} // empty for a while till fixed
+                        pdfAttachments={
+                          Array.isArray(bulletin.pdfAttachments)
+                            ? bulletin.pdfAttachments
+                            : []
+                        } // empty for a while till fixed
                         published_at={formatDate(bulletin.published_at)}
                         title={bulletin.title}
                       />
