@@ -7,7 +7,7 @@
 
 export interface EventsResponse {
   currentPage: number;
-  data: [];
+  data: Event[];
   totalEvents: number;
   totalPages: number;
 }
