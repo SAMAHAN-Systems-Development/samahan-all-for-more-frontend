@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { PiPlayBold , PiPlayFill } from 'react-icons/pi';
+import { PiPlayBold, PiPlayFill } from 'react-icons/pi';
 
 interface AccordionProps {
   content: React.ReactNode;
@@ -34,7 +34,7 @@ const Accordion = ({ title, content }: AccordionProps) => {
         role="button"
         tabIndex={0}
       >
-        <h3>{title}</h3>
+        <h3 className="mr-5">{title}</h3>
         <span
           className={`transition-transform duration-300 size-8 ${isOpen ? 'rotate-90' : ''}`}
         >

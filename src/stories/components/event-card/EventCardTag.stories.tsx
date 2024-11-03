@@ -2,7 +2,7 @@ import { MdPeople } from 'react-icons/md';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { EventCardTag } from '@/components/event-card/EventCardTag';
+import { EventCardTag } from '@/components/event-finder/event-card/EventCardTag';
 
 const meta: Meta<typeof EventCardTag> = {
   component: EventCardTag,

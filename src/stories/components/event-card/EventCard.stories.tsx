@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { EventCard } from '@/components/event-card/EventCard';
+import { EventCard } from '@/components/event-finder/event-card/EventCard';
 
 const meta: Meta<typeof EventCard> = {
   component: EventCard,
@@ -18,6 +18,8 @@ export const Default: Story = {
       id: 1,
       name: 'Missing Name',
       description: '',
+      email: '',
+      department_name: '',
       start_time: new Date().toISOString(),
       end_time: new Date().toISOString(),
       registration_link: '',
@@ -34,8 +36,6 @@ export const Default: Story = {
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
     },
-    location: { name: '' },
-    href: '',
     imageWidth: 0,
     imageHeight: 0,
   },
@@ -47,6 +47,8 @@ export const WithValues: Story = {
       id: 1,
       name: 'UFEST: Battle of the Bands',
       description: 'A battle of the bands event.',
+      email: '',
+      department_name: '',
       start_time: new Date().toISOString(),
       end_time: new Date().toISOString(),
       registration_link: 'https://example.com/register',
@@ -63,8 +65,6 @@ export const WithValues: Story = {
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
     },
-    location: { name: 'Martin Hall 4F' },
-    href: 'https://facebook.com',
     imageWidth: 5600,
     imageHeight: 2028,
   },

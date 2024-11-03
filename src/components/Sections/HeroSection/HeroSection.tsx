@@ -34,7 +34,7 @@ export default function HeroSection() {
     >
       <div className="rounded-[10%_10%_50%_50%/0%_0%_20%_20%] w-full h-[23rem] min-[400px]:h-[26rem] sm:h-[36rem] md:h-[42rem] xl:h-[46rem] bg-blue pt-32 min-[400px]:pt-10 sm:pt-20 pb-28 sm:pb-36 flex flex-col items-center justify-center text-white">
         {/* temp navigation bar */}
-        <div className="w-9/12 mx-auto rounded-full bg-white h-10 fixed top-10 z-10 mb-20 " />
+        {/* <div className="w-9/12 mx-auto rounded-full bg-white h-10 fixed top-10 z-10 mb-20 " /> */}
 
         {/* logo and titles */}
         <div className="w-full flex flex-col gap-4 pt-8 pb-2 sm:pb-8 items-center z-10 justify-center ">
