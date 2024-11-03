@@ -2,7 +2,7 @@ import React from 'react';
 import HeroSection from './HeroSection/HeroSection';
 import AdvocasixCard from '../ui/Advocasix/AdvocasixCard';
 import advocasixCardData from '@/data/advocasixCardData.json';
-import homepagedata from '@/data/homepagedata.json';
+import homepagedata from '../../data/homepagedata.json';
 
 interface Paragraph {
   text: string;
