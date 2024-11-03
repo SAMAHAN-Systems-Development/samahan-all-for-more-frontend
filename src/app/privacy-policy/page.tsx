@@ -5,6 +5,7 @@ import { Banner } from '@/components/ui/banner/Banner';
 import Button from '@/components/ui/Button';
 import accordionData from '@/data/accordionData.json';
 import privacyData from '@/data/privacyData.json';
+import Link from 'next/link';
 
 const formatEmail = (content: string) => {
   const email = 'samahan@addu.edu.ph';
@@ -59,7 +60,9 @@ const renderAccordion = () => {
           </a>
           .
         </p>
-        <Button text="CONTACT US" />
+        <Link href="mailto:samahan@addu.edu.ph">
+          <Button text="CONTACT US" />
+        </Link>
       </div>
     </>
   );

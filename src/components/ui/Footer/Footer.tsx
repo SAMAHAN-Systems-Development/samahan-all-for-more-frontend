@@ -89,7 +89,7 @@ const officeLinks = [
   { href: '/offices/office-of-the-treasurer', label: 'Treasurer' },
 ];
 
-const policyLinks = [{ href: '', label: 'Privacy Policy' }];
+const policyLinks = [{ href: '/privacy-policy', label: 'Privacy Policy' }];
 
 const socialLinks = [
   {
