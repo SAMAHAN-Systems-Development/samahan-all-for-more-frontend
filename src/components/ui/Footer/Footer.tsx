@@ -57,6 +57,7 @@ const socialIcon = cva('mx-1', {
     size: {
       [SOCIAL_ICON_SIZE_ENUM.SMALL]: 'mx-0.5',
       [SOCIAL_ICON_SIZE_ENUM.MEDIUM]: 'mx-1',
+      [SOCIAL_ICON_SIZE_ENUM.LARGE]: 'mx-2',
     },
   },
 });
@@ -95,7 +96,7 @@ const socialLinks = [
     href: 'https://www.facebook.com/AdDUSAMAHAN',
     icon: (
       <FaFacebook
-        className={socialIcon({ size: SOCIAL_ICON_SIZE_ENUM.MEDIUM })}
+        className={`size-6 ${socialIcon({ size: SOCIAL_ICON_SIZE_ENUM.LARGE })}`}
       />
     ),
     size: LINK_SIZE_ENUM.MEDIUM,
@@ -104,7 +105,7 @@ const socialLinks = [
     href: 'https://www.instagram.com/samahan_ateneo',
     icon: (
       <FaInstagram
-        className={socialIcon({ size: SOCIAL_ICON_SIZE_ENUM.MEDIUM })}
+        className={`size-6 ${socialIcon({ size: SOCIAL_ICON_SIZE_ENUM.LARGE })}`}
       />
     ),
     size: LINK_SIZE_ENUM.MEDIUM,
@@ -113,7 +114,7 @@ const socialLinks = [
     href: 'https://x.com/addusamahan',
     icon: (
       <FaXTwitter
-        className={socialIcon({ size: SOCIAL_ICON_SIZE_ENUM.MEDIUM })}
+        className={`size-6 ${socialIcon({ size: SOCIAL_ICON_SIZE_ENUM.LARGE })}`}
       />
     ),
     size: LINK_SIZE_ENUM.MEDIUM,
