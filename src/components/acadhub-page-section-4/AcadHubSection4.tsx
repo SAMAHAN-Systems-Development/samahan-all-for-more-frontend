@@ -21,7 +21,7 @@ const AcadhubSection4 = () => {
           </p>
         </section>
       </div>
-      <section className="mx-28 mb-72">
+      <section className="mx-9 mb-72">
         <AcadhubSection4Table />
       </section>
     </main>

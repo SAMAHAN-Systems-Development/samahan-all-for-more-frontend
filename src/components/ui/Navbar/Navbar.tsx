@@ -41,7 +41,7 @@ const Navbar = () => {
   ];
 
   const infoPortalDropdownItems = [
-    { title: 'Bulletin', link: '/info-portal/bulletin' },
+    { title: 'Gazette', link: '/info-portal/gazette' },
     { title: 'GuideSite', link: '/info-portal/guidesite' },
     { title: 'Event Finder', link: '/info-portal/event-finder' },
   ];

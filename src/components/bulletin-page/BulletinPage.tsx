@@ -23,7 +23,7 @@ const BulletinPage: React.FC = () => {
         image="/images/office-of-the-president.png"
         imageAlt="SAMAHAN Members Image"
         subtitle="SAMAHAN"
-        title="BULLETIN"
+        title="GAZETTE"
       />
       <div className="p-12 overflow-x-hidden">
         <div className="flex flex-col items-center mx-4 md:mx-12">

@@ -32,7 +32,7 @@ const LogoSection: React.FC = () => {
           height={576}
           className="w-[36rem] h-auto"
         />
-        <p className="text-blue text-main leading-tight text-center mx-10">
+        <p className="text-blue text-[18px] leading-tight text-center mx-10">
           The Samahan ng Mga Mag-Aaral ng Pamantasang Ateneo de Davao, or
           SAMAHAN, is the lone autonomous Student Government of the College unit
           of Ateneo de Davao University.
