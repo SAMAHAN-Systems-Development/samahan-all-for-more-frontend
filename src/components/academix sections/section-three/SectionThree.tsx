@@ -22,7 +22,10 @@ const SectionThree: React.FC<SectionThreeProps> = ({ sections }) => {
 
   return (
     <>
-      <div className="bg-blue w-full py-24 mb-48 text-center">
+      <div
+        id="Helpful Digital Applications"
+        className="bg-blue w-full py-24 mb-48 text-center"
+      >
         <h2 className=" text-white font-bold text-3xl">
           HELPFUL DIGITAL APPLICATION
         </h2>

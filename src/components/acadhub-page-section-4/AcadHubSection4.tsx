@@ -1,10 +1,14 @@
 import React from 'react';
 import AcadhubSection4Table from '@/components/acadhub-page-section-4/acadhub-page-table/AcadhubSection4Table';
 
-const AcadhubSection4 = () => {
+interface AcadhubSection4Props {
+  id?: string;
+}
+
+const AcadhubSection4: React.FC<AcadhubSection4Props> = ({}) => {
   return (
     <main>
-      <div className="bg-blue text-white">
+      <div id="GE Courses Descriptions" className="bg-blue text-white">
         <section className="py-24 mb-48 text-center">
           <header>
             <h1 className="font-bold text-3xl mb-4">GE COURSES DESCRIPTION</h1>

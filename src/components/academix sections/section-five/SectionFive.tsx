@@ -18,10 +18,14 @@ const iconMap: Record<string, React.ElementType> = {
   FaInstagram,
 };
 
-const SectionFive = () => {
+interface SectionFiveProps {
+  id?: string;
+}
+
+const SectionFive: React.FC<SectionFiveProps> = ({}) => {
   return (
     <main>
-      <div className="bg-blue text-white">
+      <div id="Recommended Websites for RRL" className="bg-blue text-white">
         <section className="py-24 mb-48 text-center">
           <header>
             <h1 className="font-bold text-3xl mb-4">

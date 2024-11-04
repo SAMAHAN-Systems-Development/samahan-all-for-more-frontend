@@ -30,10 +30,22 @@ const SectionOne = () => {
           engaged Atenean academic community!
         </p>
         <section className="mb-64">
-          <AccordionStatic title="Get to Know Your Cluster Academic Arms" />
-          <AccordionStatic title="Helpful Digital Applications" />
-          <AccordionStatic title="GE Courses Descriptions" />
-          <AccordionStatic title="Recommended Websites for RRL" />
+          <AccordionStatic
+            title="Get to Know Your Cluster Academic Arms"
+            href="#ClusterAcademicArms"
+          />
+          <AccordionStatic
+            title="Helpful Digital Applications"
+            href="#Helpful Digital Applications"
+          />
+          <AccordionStatic
+            title="GE Courses Descriptions"
+            href="#GE Courses Descriptions"
+          />
+          <AccordionStatic
+            title="Recommended Websites for RRL"
+            href="#Recommended Websites for RRL"
+          />
         </section>
       </div>
     </main>
