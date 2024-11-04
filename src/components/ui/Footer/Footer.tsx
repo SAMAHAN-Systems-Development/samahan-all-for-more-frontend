@@ -52,12 +52,12 @@ const footerLink = cva('text-white', {
   },
 });
 
-const socialIcon = cva('mx-1', {
+const socialIcon = cva('ml-1', {
   variants: {
     size: {
       [SOCIAL_ICON_SIZE_ENUM.SMALL]: 'mx-0.5',
       [SOCIAL_ICON_SIZE_ENUM.MEDIUM]: 'mx-1',
-      [SOCIAL_ICON_SIZE_ENUM.LARGE]: 'mx-2',
+      [SOCIAL_ICON_SIZE_ENUM.LARGE]: 'ml-2',
     },
   },
 });
