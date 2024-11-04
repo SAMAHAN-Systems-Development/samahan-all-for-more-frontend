@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ClusterAcademicArms from '@/academix sections/sectionTwo';
+import ClusterAcademicArms from '@/components/academix sections/sectionTwo';
 import sections from '@/data/ClusterAcademicArms.json';
 
 const meta: Meta<typeof ClusterAcademicArms> = {
