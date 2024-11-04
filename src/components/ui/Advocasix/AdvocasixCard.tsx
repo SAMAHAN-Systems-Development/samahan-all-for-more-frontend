@@ -59,8 +59,8 @@ const AdvocasixCard: React.FC<AdvocasixCardProps> = ({ data: _data }) => {
                 <div className="absolute inset-0 bg-blue bg-opacity-30" />
               </div>
 
-              <div className="absolute inset-x-0 bottom-0 h-32 bg-blue flex items-end p-4">
-                <strong className="text-white font-inter font-main uppercase text-[30px]">
+              <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 md:h-20 lg:h-32 bg-blue flex items-end p-2 sm:p-4 md:p-4 lg:p-6">
+                <strong className="text-white font-inter font-main uppercase sm:text-main md:text-[20px] lg:text-[30px]">
                   {card.title}
                 </strong>
               </div>
