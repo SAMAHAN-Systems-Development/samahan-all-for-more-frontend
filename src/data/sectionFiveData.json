@@ -1,0 +1,62 @@
+[
+  {
+    "title": "QUIZLET",
+    "logo": "Quizlet.png",
+    "hoverlogo": "Quizlet_Hover.png"
+  },
+  {
+    "title": "GIZMO AI",
+    "logo": "Gizmo.png",
+    "hoverlogo": "Gizmo_Hover.png"
+  },
+  {
+    "title": "ANKI",
+    "logo": "Anki.png",
+    "hoverlogo": "Anki_Hover.png"
+  },
+  {
+    "title": "FLOW",
+    "logo": "Flow.png",
+    "hoverlogo": "Flow_Hover.png"
+  },
+  {
+    "title": "STUDY BUNNY",
+    "logo": "StudyBunny.png",
+    "hoverlogo": "StudyBunny_Hover.png"
+  },
+  {
+    "title": "FOREST",
+    "logo": "Forest.png",
+    "hoverlogo": "Forest_Hover.png"
+  },
+  {
+    "title": "FOLDERLY",
+    "logo": "Folderly.png",
+    "hoverlogo": "Folderly_Hover.png"
+  },
+  {
+    "title": "MINIMALIST",
+    "logo": "Minimalist.png",
+    "hoverlogo": "Minimalist_Hover.png"
+  },
+  {
+    "title": "TODOMATE",
+    "logo": "Todomate.png",
+    "hoverlogo": "Todomate_Hover.png"
+  },
+  {
+    "title": "ONEMORE",
+    "logo": "Onemore.png",
+    "hoverlogo": "Onemore_Hover.png"
+  },
+  {
+    "title": "KHAN ACADEMY",
+    "logo": "KhanAcademy.png",
+    "hoverlogo": "KhanAcademy_Hover.png"
+  },
+  {
+    "title": "CRASH COURSE",
+    "logo": "CrashCourse.png",
+    "hoverlogo": "CrashCourse_Hover.png"
+  }
+]
