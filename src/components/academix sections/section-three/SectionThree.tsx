@@ -40,7 +40,7 @@ const SectionThree: React.FC<SectionThreeProps> = ({ sections }) => {
           </p>
         </div>
 
-        <div className="flex justify-center mb-24">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-24">
           {group1.map((section, index) => (
             <div
               key={index}
@@ -71,10 +71,10 @@ const SectionThree: React.FC<SectionThreeProps> = ({ sections }) => {
             Boosts productivity by minimizing distractions and promoting
             effective time management through timed study intervals. Often uses
             reward systems to motivate users and enhance productivity such as
-            earning points, unlocking achievements, or growing a virtual tree. 
+            earning points, unlocking achievements, or growing a virtual tree.
           </p>
         </div>
-        <div className="flex justify-center mb-24">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-24">
           {group2.map((section, index) => (
             <div
               key={index + 3}
@@ -107,7 +107,7 @@ const SectionThree: React.FC<SectionThreeProps> = ({ sections }) => {
             workflow and keep you focused for better time management.
           </p>
         </div>
-        <div className="flex justify-center mb-24">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-24">
           {group3.map((section, index) => (
             <div
               key={index + 6}
@@ -140,7 +140,7 @@ const SectionThree: React.FC<SectionThreeProps> = ({ sections }) => {
             illustrations that can aid those who are visual learners.
           </p>
         </div>
-        <div className="flex justify-center mb-40">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-24">
           {group4.map((section, index) => (
             <div
               key={index + 10}

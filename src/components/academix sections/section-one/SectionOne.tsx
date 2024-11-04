@@ -3,6 +3,7 @@ import AccordionStatic from '@/components/academix sections/section-one/Accordio
 
 const SectionOne = () => {
   return (
+    // mx28
     <main className="mt-72 mx-28">
       <div className="text-blue">
         <h1 className="font-bold text-title mb-12">STUDENT RESOURCE GUIDE</h1>
