@@ -1,12 +1,13 @@
 import Image from 'next/image';
-
+import Link from 'next/link';
 import Button from '@/components/ui/Button';
 
 const BaseCard: React.FC<{
   imageSrc: string;
   name: string;
   title: string;
-}> = ({ name, title, imageSrc }) => {
+  buttonLink: string;
+}> = ({ name, title, imageSrc, buttonLink }) => {
   return (
     <div className="relative w-[525px] h-[250px] flex items-center bg-blue text-white max-w-3xl rounded-[32.5px] transition-all duration-300 overflow-visible">
       {/* Officer Image */}
@@ -28,7 +29,13 @@ const BaseCard: React.FC<{
         </div>
         {/* Button */}
         <div className="flex justify-end">
-          <Button text="View Office" colorScheme="white" />
+          {buttonLink ? (
+            <Link href={buttonLink}>
+              <Button text="View Office" colorScheme="white" />
+            </Link>
+          ) : (
+            <Button text="View Office" colorScheme="white" />
+          )}
         </div>
       </div>
     </div>
