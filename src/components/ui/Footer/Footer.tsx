@@ -181,7 +181,7 @@ const PolicyLinks = () => (
 
 // Social Links
 const SocialLinks = () => (
-  <div className="flex justify-center xl:justify-end">
+  <div className="flex justify-center xl:justify-end lg:justify-end">
     {socialLinks.map((link, index) => (
       <Link
         href={link.href}

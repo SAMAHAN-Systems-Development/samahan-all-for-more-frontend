@@ -232,7 +232,7 @@ const RequestForDocuments = () => {
           ))}
         </ul>
 
-        <div className="mt-[15px] ml-[70px]">
+        <div className="mt-[15px] ml-[70px] pb-16">
           <Button text="Request Certificate" />
         </div>
       </div>
