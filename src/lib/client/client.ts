@@ -1,4 +1,8 @@
-const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:8000';
+// const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:8000';
+// this change should not be pulled to main
+const BASE_URL =
+  process.env.REACT_APP_BASE_URL ||
+  '"https://samahan-all-for-more-backend.onrender.com"';
 console.log('BACKEND URL:', BASE_URL);
 
 interface ApiConfig {
