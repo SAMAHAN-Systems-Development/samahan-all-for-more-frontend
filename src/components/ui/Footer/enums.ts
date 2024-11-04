@@ -1,4 +1,5 @@
 export enum SOCIAL_ICON_SIZE_ENUM {
+  LARGE = 'large',
   MEDIUM = 'medium',
   SMALL = 'small',
 }

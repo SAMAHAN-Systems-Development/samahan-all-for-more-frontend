@@ -32,7 +32,8 @@
     "src/stories/*",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/contexts/WebsocketContext.jsx"
+    "src/contexts/WebsocketContext.jsx",
+    "src/app/not-found.js"
   ],
   "exclude": ["node_modules"]
 }

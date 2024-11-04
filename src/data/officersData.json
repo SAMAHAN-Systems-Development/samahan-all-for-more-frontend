@@ -3,22 +3,26 @@
     {
       "fullName": "Leen Juliet Lapatis",
       "position": "SAMAHAN President",
-      "fileName": "[PRESIDENT] Leen Juliet Lapatis 1.png"
+      "fileName": "[PRESIDENT] Leen Juliet Lapatis 1.png",
+      "offices": "/offices/office-of-the-president"
     },
     {
       "fullName": "Sung Goon Acosta",
       "position": "SAMAHAN Vice President",
-      "fileName": "[VICE PRESIDENT] Sung Goon L. Acosta.png"
+      "fileName": "[VICE PRESIDENT] Sung Goon L. Acosta.png",
+      "offices": "/offices/office-of-the-vice-president"
     },
     {
       "fullName": "Aliya Medida",
       "position": "SAMAHAN Secretary-General",
-      "fileName": "[Secretary-General] Aliya R. Medida.png"
+      "fileName": "[Secretary-General] Aliya R. Medida.png",
+      "offices": "/offices/office-of-the-secretary-general"
     },
     {
       "fullName": "Mary Clair Clarde",
       "position": "SAMAHAN Treasurer",
-      "fileName": "[TREASURER] Mary Clair Clarde.png"
+      "fileName": "[TREASURER] Mary Clair Clarde.png",
+      "offices": "/offices/office-of-the-treasurer"
     }
   ],
   "ClusterRepresentatives": [

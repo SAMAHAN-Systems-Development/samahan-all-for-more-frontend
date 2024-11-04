@@ -1,10 +1,13 @@
-import type { Metadata } from 'next';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Samahan 2024',
-  description: 'The official Samahan 2024 Website.',
-};
+import HomeSection from '@/components/Sections/HomePage';
+import AdvocasixCard from '@/components/ui/Advocasix/AdvocasixCard';
 
 export default function Home() {
-  return <main>{/* add sections here */}</main>;
+  return (
+    <main>
+      {/* add sections here */}
+      <HomeSection />
+    </main>
+  );
 }

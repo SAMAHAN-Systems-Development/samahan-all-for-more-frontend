@@ -9,6 +9,7 @@ type OfficerTypes = {
   fileName: string;
   fullName: string;
   position: string;
+  offices?: string;
 };
 
 type data = {
@@ -51,6 +52,7 @@ const CentralBoardPage: React.FC = () => {
                   imageSrc={officer.fileName}
                   name={officer.fullName}
                   title={officer.position}
+                  buttonLink={officer.offices || ''}
                 />
               )
             )}

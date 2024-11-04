@@ -2,7 +2,7 @@ import React from 'react';
 
 import type { Meta, StoryFn } from '@storybook/react';
 
-import EventCardModal from '@/components/event-card/eventCardModal';
+import EventCardModal from '@/components/event-finder/event-card/eventCardModal';
 import { Event } from '@/lib/types/entities/event.type';
 
 export default {
@@ -16,6 +16,8 @@ const mockEventData: Event = {
   id: 1,
   name: 'UFEST: Battle of the Bands',
   description: 'A battle of the bands event.',
+  email: '',
+  department_name: '',
   start_time: new Date().toISOString(),
   end_time: new Date().toISOString(),
   registration_link: 'https://example.com/register',
