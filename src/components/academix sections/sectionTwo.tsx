@@ -20,7 +20,10 @@ const ClusterAcademicArms: React.FC<ClusterAcademicArmsProps> = ({
 
   return (
     <>
-      <div className="bg-blue w-full py-16 text-center">
+      <div
+        id="ClusterAcademicArms"
+        className="bg-blue w-full py-16 text-center"
+      >
         <h2 className="text-white font-bold text-3xl">
           GET TO KNOW YOUR <br /> CLUSTER ACADEMIC ARMS
         </h2>

@@ -3,6 +3,7 @@ import AccordionStatic from '@/components/academix sections/section-one/Accordio
 
 const SectionOne = () => {
   return (
+    // mx28
     <main className="mt-72 mx-28">
       <div className="text-blue">
         <h1 className="font-bold text-title mb-12">STUDENT RESOURCE GUIDE</h1>
@@ -29,10 +30,22 @@ const SectionOne = () => {
           engaged Atenean academic community!
         </p>
         <section className="mb-64">
-          <AccordionStatic title="Get to Know Your Cluster Academic Arms" />
-          <AccordionStatic title="Helpful Digital Applications" />
-          <AccordionStatic title="GE Courses Descriptions" />
-          <AccordionStatic title="Recommended Websites for RRL" />
+          <AccordionStatic
+            title="Get to Know Your Cluster Academic Arms"
+            href="#ClusterAcademicArms"
+          />
+          <AccordionStatic
+            title="Helpful Digital Applications"
+            href="#Helpful Digital Applications"
+          />
+          <AccordionStatic
+            title="GE Courses Descriptions"
+            href="#GE Courses Descriptions"
+          />
+          <AccordionStatic
+            title="Recommended Websites for RRL"
+            href="#Recommended Websites for RRL"
+          />
         </section>
       </div>
     </main>
