@@ -44,7 +44,7 @@ const OSTPage: React.FC = () => {
       />
       <section className="text-center p-12">
         {sectionTitles.map((section, index) => (
-          <div key={index} className="p-10">
+          <div key={index} className="p-[0.1rem] sm:p-10">
             <h1 className="text-bold font-bold uppercase text-blue pb-2">
               {section.sectionTitle}
             </h1>
@@ -57,7 +57,7 @@ const OSTPage: React.FC = () => {
             {/* Office of the Treasurer */}
             {section.sectionTitle === 'Office of the Treasurer' && (
               <div className="flex flex-col items-center">
-                <div className="grid gap-y-6 gap-x-20 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+                <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
                   {TreasurerOfficeData.OfficeOfTheSamahanTreasurer.map(
                     (officer: Officer, officerIndex: number) => (
                       <div
