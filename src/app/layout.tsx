@@ -25,7 +25,9 @@ export default function RootLayout({
         <body className={inter.className}>
           {children}
           <Navbar />
-          <Footer />
+          <div className="mt-[200px]">
+            <Footer />
+          </div>
         </body>
       </html>
     </ReactQueryClientProvider>

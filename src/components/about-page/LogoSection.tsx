@@ -39,7 +39,7 @@ const LogoSection: React.FC = () => {
         </p>
       </div>
 
-      <div className="flex items-center flex-col lg:flex-row mb-14 lg:mb-0">
+      <div className="flex items-start flex-col gap-[7px] md:flex-row mb-14 lg:mb-0">
         {/* Map through contactsData */}
         {contactsData.map((contact: Contact, index: number) => {
           const IconComponent = iconMap[contact.icon];

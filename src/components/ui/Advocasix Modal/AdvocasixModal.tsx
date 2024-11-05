@@ -18,11 +18,11 @@ const AdvocasixModal: React.FC<AdvocasixModalProps> = ({
 }) => {
   return (
     <div
-      className="fixed inset-0 top-28 sm:top-24 md:top-20 flex items-center justify-center z-40 px-4 sm:px-6"
+      className="fixed top-0 w-full h-screen flex items-center justify-center z-[100] px-4 sm:px-6"
       onClick={onClose}
     >
       {/* Overlay to darken the background */}
-      <div className="absolute inset-0 bg-black bg-opacity-50" />
+      <div className="fixed inset-0 w-screen h-screen bg-blue backdrop-blur-sm bg-opacity-20" />
 
       {/* Modal content */}
       <div
@@ -51,7 +51,7 @@ const AdvocasixModal: React.FC<AdvocasixModalProps> = ({
 
         {/* Main Content */}
         <div className="p-4 sm:p-6 text-blue text-center mb-16 sm:mb-20 md:mb-24">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 uppercase">
             {title}
           </h2>
           <p className="text-xs sm:text-sm md:text-base lg:text-lg mx-2 sm:mx-6">
