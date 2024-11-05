@@ -72,8 +72,8 @@ const Page = () => {
   return (
     <div>
       <Banner
-        image={'/images/samahan-members.png'}
-        imageAlt={'SAMAHAN Members'}
+        image={'/images/privacypolicy-banner.jpg'}
+        imageAlt={'Privacy Policy Image'}
         subtitle={'SAMAHAN'}
         title={'Privacy Policy'}
       />

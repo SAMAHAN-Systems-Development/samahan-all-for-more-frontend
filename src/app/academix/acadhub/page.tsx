@@ -12,8 +12,8 @@ const AcadHub = () => {
   return (
     <div>
       <Banner
-        image={'/images/samahan-members.png'}
-        imageAlt={'SAMAHAN Members'}
+        image={'/images/privacypolicy-banner.jpg'}
+        imageAlt={'ACADHUB Image'}
         subtitle={'ACADEMIX'}
         title={'ACADHUB'}
       />

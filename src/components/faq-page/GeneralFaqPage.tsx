@@ -8,8 +8,8 @@ const GeneralFaqPage = () => {
   return (
     <div>
       <Banner
-        image="/images/samahan-members.png"
-        imageAlt="SAMAHAN Members Image"
+        image="/images/faqs-banner.jpg"
+        imageAlt="FAQS Image"
         subtitle="FAQ"
         title="SAMAHAN"
       />
