@@ -36,7 +36,7 @@ const CentralBoardPage: React.FC = () => {
   return (
     <div className="min-h-screen">
       <Banner
-        image="/images/central-board.png"
+        image="/images/central-board.jpg"
         imageAlt="SAMAHAN Office of the President Image"
         subtitle="SAMAHAN"
         title="CENTRAL BOARD"
