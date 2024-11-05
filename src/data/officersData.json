@@ -21,7 +21,7 @@
     {
       "fullName": "Mary Clair Clarde",
       "position": "SAMAHAN Treasurer",
-      "fileName": "[TREASURER] Mary Clair Clarde.png",
+      "fileName": "[TREASURER] Mary Clair A. Clarde.png",
       "offices": "/offices/office-of-the-treasurer"
     }
   ],
@@ -70,57 +70,6 @@
       "fullName": "Archie R. Barroga",
       "position": "SS Representative",
       "fileName": "[SS] Archie R. Barroga.png"
-    }
-  ],
-  "OfficeOfTheSamahanPresident": [
-    {
-      "fullName": "Leen Juliet Lapatis",
-      "position": "SAMAHAN President",
-      "fileName": "[PRESIDENT] Leen Juliet Lapatis 1.png"
-    },
-    {
-      "fullName": "Chantal Reiy A. Solarte",
-      "position": "Executive Secretary",
-      "fileName": "[Executive Secretary] Chantal Reiy A. Solarte 1.png"
-    },
-    {
-      "fullName": "Julianne Faye Bonifacio",
-      "position": "Executive Undersecretary",
-      "fileName": "[Executive Undersecretary] Julianne Faye Bonifacio 1.png"
-    },
-    {
-      "fullName": "Rey Angelo Santella",
-      "position": "Executive Undersecretary",
-      "fileName": "[Executive Undersecretary] Rey Angelo Santella 2.png"
-    }
-  ],
-  "DepartmentOfExternalAffairs": [
-    {
-      "fullName": "Kisha Barot",
-      "position": "DEA Director",
-      "fileName": "[DEA Director] Krisha Barot 2.png"
-    },
-    {
-      "fullName": "Lendon John G. Gabato",
-      "position": "DEA Deputy Director",
-      "fileName": "[DEA Deputy Director] Lendon John G. Gabato.png"
-    }
-  ],
-  "EcoteneoStudentUnit": {
-    "fullName": "Mary Jastine D. Lapating",
-    "position": "ECOTENEO Director",
-    "fileName": "[ECOTENEO Director] Mary Jastine D. Lapating.png"
-  },
-  "DepartmentOfCampaignsAndAdvocacies": [
-    {
-      "fullName": "Jewel B. Batoon",
-      "position": "DCA Director",
-      "fileName": "[DCA Director] Jewel B. Batoon.png"
-    },
-    {
-      "fullName": "Maharanii Shaili S. Trazo",
-      "position": "DCA Deputy Director",
-      "fileName": "[DCA Deputy Director] Maharanii Shaili S. Trazo.png"
     }
   ]
 }

@@ -42,7 +42,7 @@ const OSPPage: React.FC = () => {
   return (
     <div className="min-h-screen">
       <Banner
-        image="/images/office-of-the-president.png"
+        image="/images/office-of-the-president.jpg"
         imageAlt="SAMAHAN Office of the President Image"
         subtitle="Office of the"
         title="PRESIDENT"
