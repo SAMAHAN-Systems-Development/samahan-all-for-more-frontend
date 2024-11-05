@@ -48,7 +48,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
   };
 
   return (
-    <div className="absolute px-6 left-1/2 transform -translate-x-1/2 top-28 w-full md:hidden z-50">
+    <div className="absolute px-6 left-1/2 transform -translate-x-1/2 top-20 w-full md:hidden z-50">
       <div className="w-full space-y-2 text-blue text-center text-md pt-4 pb-3 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.1)] rounded-[25px] flex flex-col items-center">
         {/* Home and About Links */}
         <ul>
