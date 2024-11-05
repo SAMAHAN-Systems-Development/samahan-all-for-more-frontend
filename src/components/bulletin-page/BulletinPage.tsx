@@ -33,11 +33,7 @@ const BulletinPage: React.FC = () => {
                 <p className="text-title text-blue font-bold text-center">
                   {category.name}
                 </p>
-                <p className="text-blue text-center">
-                  {category.description} lorem ipsum lorem ipsum lorem ipsum
-                  lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                  lorem ipsum lorem ipsum
-                </p>
+                <p className="text-blue text-center">{category.description}</p>
               </div>
               <div className="flex justify-center">
                 <div className="flex-row lg:grid grid-cols-1 md:grid-cols-2 gap-x-12">
