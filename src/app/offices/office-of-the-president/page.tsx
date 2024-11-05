@@ -42,14 +42,14 @@ const OSPPage: React.FC = () => {
   return (
     <div className="min-h-screen">
       <Banner
-        image="/images/office-of-the-president.png"
+        image="/images/office-of-the-president.jpg"
         imageAlt="SAMAHAN Office of the President Image"
         subtitle="Office of the"
         title="PRESIDENT"
       />
       <section className="text-center p-12">
         {sectionTitles.map((section, index) => (
-          <div key={index} className="p-10">
+          <div key={index} className="p-[0.1rem] sm:p-10">
             <h1 className="text-bold font-bold uppercase text-blue pb-2">
               {section.sectionTitle}
             </h1>

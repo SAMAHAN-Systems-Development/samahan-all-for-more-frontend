@@ -32,13 +32,13 @@ const AdvocasixCard: React.FC<AdvocasixCardProps> = ({ data: _data }) => {
   return (
     <>
       <div
-        className={`container mx-auto p-6 ${isModalOpen ? 'filter blur-sm' : ''}`}
+        className={`container mx-auto p-1 sm:p-6 ${isModalOpen ? 'filter blur-sm' : ''}`}
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 p-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
           {advocasixCardData.map((card, index) => (
             <div
               key={index}
-              className="relative w-full aspect-square rounded-3xl overflow-hidden cursor-pointer border-2 border-blue"
+              className="relative w-full min-w-[200px] sm:min-w-[250px] aspect-square rounded-3xl overflow-hidden cursor-pointer border-2 border-blue"
               role="button"
               tabIndex={0}
               onClick={() => handleOpenModal(card.title)}

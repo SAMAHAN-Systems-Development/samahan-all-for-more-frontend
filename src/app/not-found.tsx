@@ -17,7 +17,7 @@ export default function NotFound() {
         </div>
         <span className="leading-tight text-center w-2/3">
           <h2 className="text-base font-medium xsm:text-[30px] sm:text-[35px] lg:text-[35px] xl:text-title">
-            There&apos;s nothing here!
+            There&apos;s nothing here at the moment!
           </h2>
           <div className="flex items-center justify-center mt-1 sm:mt-0 lg:mt-2 xl:mt-0">
             <h2 className="font-medium text-base xsm:text-[30px] sm:text-[35px] lg:text-[35px] xl:text-title">

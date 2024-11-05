@@ -1,3 +1,5 @@
+'use client';
+
 import AllowableAbsences from '@/components/faq-page/faq-page-tables/AllowableAbsences';
 import QPI from '@/components/faq-page/faq-page-tables/QPI';
 import WPA from '@/components/faq-page/faq-page-tables/WPA';
@@ -19,7 +21,12 @@ const GeneralInfoPage = () => {
             Meet the dedicated leaders guiding our academic programs and shaping
             the future of our departments.
           </p>
-          <Button text="View Directory" />
+          <Button
+            text="View Directory"
+            onClick={() =>
+              window.open('/charts/SchoolDeansandDepartmentHeads.pdf', '_blank')
+            }
+          />
         </div>
       </div>
 

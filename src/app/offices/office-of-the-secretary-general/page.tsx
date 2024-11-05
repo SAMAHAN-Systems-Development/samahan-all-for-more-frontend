@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useState } from 'react';
 
 import { Banner } from '@/components/ui/banner/Banner';
 import ProfileCard from '@/components/ui/ProfileCard';
@@ -49,6 +50,17 @@ const sectionTitles: SectionTitleData[] = [
 ];
 
 const OSGPage: React.FC = () => {
+  const [windowWidth, setWindowWidth] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setWindowWidth(window.innerWidth);
+      const handleResize = () => setWindowWidth(window.innerWidth);
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Banner
@@ -59,8 +71,10 @@ const OSGPage: React.FC = () => {
       />
       <section className="text-center p-12">
         {sectionTitles.map((section, index) => (
-          <div key={index} className="p-10">
-            <h1 className="text-bold font-bold uppercase text-blue pb-2">
+          <div key={index} className="p-[0.1rem] sm:p-10">
+            <h1
+              className={`font-bold uppercase text-blue pb-2 ${windowWidth !== null && windowWidth <= 485 ? 'text-[28px]' : 'text-[40px]'}`}
+            >
               {section.sectionTitle}
             </h1>
             {section.subText && (
@@ -112,7 +126,7 @@ const OSGPage: React.FC = () => {
             {/* SAMAHAN Communications */}
             {section.sectionTitle === 'SAMAHAN Communications' && (
               <div className="flex justify-center">
-                <div className="grid lg:gap-20 lg:grid-cols-2 md:col-span-2 md:gap-10">
+                <div className="grid gap lg:gap-20 lg:grid-cols-2 md:col-span-2 md:gap-10">
                   {SecretaryGeneralOfficeData.SamahanCommunications.map(
                     (officer: Officer, officerIndex: number) => (
                       <ProfileCard
