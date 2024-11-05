@@ -10,7 +10,7 @@ import Navbar from '@/components/ui/Navbar/Navbar';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Samahan 2024',
+  title: 'SAMAHAN 2024',
   description: 'The official Samahan 2024 Website.',
 };
 
