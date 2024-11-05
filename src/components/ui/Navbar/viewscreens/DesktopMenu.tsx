@@ -35,7 +35,10 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({
   DropdownItems,
   handleKeyDown,
 }) => (
-  <ul className="hidden md:flex space-x-6 text-blue font-semibold" role="menu">
+  <ul
+    className="hidden md:flex space-x-6 text-blue font-semibold z-50"
+    role="menu"
+  >
     {/* Home and About Links */}
     {navItemsOne.map(({ title, link }) => (
       <li className="cursor-pointer font-semibold" key={title}>
