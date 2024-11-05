@@ -50,7 +50,7 @@ const sectionTitles: SectionTitleData[] = [
 ];
 
 const OSGPage: React.FC = () => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState<number | null>(null);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -73,7 +73,7 @@ const OSGPage: React.FC = () => {
         {sectionTitles.map((section, index) => (
           <div key={index} className="p-[0.1rem] sm:p-10">
             <h1
-              className={`font-bold uppercase text-blue pb-2 ${windowWidth <= 485 ? 'text-[28px]' : 'text-[40px]'}`}
+              className={`font-bold uppercase text-blue pb-2 ${windowWidth !== null && windowWidth <= 485 ? 'text-[28px]' : 'text-[40px]'}`}
             >
               {section.sectionTitle}
             </h1>
