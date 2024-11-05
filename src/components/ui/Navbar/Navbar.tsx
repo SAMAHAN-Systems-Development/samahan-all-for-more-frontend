@@ -48,8 +48,6 @@ const Navbar = () => {
 
   const academixDropdownItems = [
     { title: 'AcadHub', link: '/academix/acadhub' },
-    { title: 'AcadDrive', link: '/academix/acaddrive' },
-    { title: 'Atheneum', link: '/academix/atheneum' },
   ];
 
   const ArrowSize = 15;
