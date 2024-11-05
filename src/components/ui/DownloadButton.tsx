@@ -1,7 +1,6 @@
 import React from 'react';
-import Link from 'next/link';
-
 import { ArrowDownToLine } from 'lucide-react';
+import Link from 'next/link';
 
 import Button from '@/components/ui/Button';
 
@@ -11,6 +10,8 @@ const DownloadButton = () => {
       <Link
         href="/charts/SAMAHANOrganizationalChart.pdf"
         download="Samahan Organizational Chart"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <Button
           variant="icon"
