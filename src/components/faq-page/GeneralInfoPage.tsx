@@ -24,7 +24,11 @@ const GeneralInfoPage = () => {
           <Button
             text="View Directory"
             onClick={() =>
-              window.open('/charts/SchoolDeansandDepartmentHeads.pdf', '_blank')
+              window.open(
+                '/charts/SchoolDeansandDepartmentHeads.pdf',
+                '_blank',
+                'noopener,noreferrer'
+              )
             }
           />
         </div>
