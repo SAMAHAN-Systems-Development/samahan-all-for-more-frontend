@@ -43,8 +43,8 @@ const CentralBoardPage: React.FC = () => {
       />
       <section className="text-center p-12">
         {/* SAMAHAN CORE OFFICERS */}
-        <div className="flex justify-center p-20">
-          <div className="grid lg:gap-20 xl:grid-cols-2 lg:grid-cols-1 md:gap-28">
+        <div className="flex justify-center p-14">
+          <div className="grid lg:gap-20 xl:grid-cols-2 lg:grid-cols-1 xsm:gap-28">
             {OfficerData.SamahanCoreOfficers.map(
               (officer: OfficerTypes, officerIndex: number) => (
                 <BaseCard
