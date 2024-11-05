@@ -153,7 +153,7 @@ export default function BallFrame({ hero }: BallFrameProp) {
   };
 
   const bannerBallStyle: InitialBallStyle = {
-    ballScale: 'lg:[--scale-to:0.6]',
+    ballScale: 'lg:[--scale-to:0.6] xl:[--scale-to:0.8]',
     offsetMargin: 24,
     translateFrom: 180,
   };

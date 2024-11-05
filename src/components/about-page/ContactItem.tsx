@@ -12,8 +12,8 @@ const ContactItem: React.FC<ContactItemProps> = ({
   icon: Icon,
 }) => (
   <div className="text-blue text-footer-main lg:mb-14 flex items-center mr-6">
-    <div className="w-4 h-4 bg-blue rounded-full mr-2 flex items-center justify-center">
-      <Icon className="text-white w-2 h-2" />
+    <div className="w-8 h-8 bg-blue rounded-full mr-2 flex items-center justify-center">
+      <Icon className="text-white w-5 h-5" />
     </div>
     <Link href={href} className="hover:underline">
       {children}

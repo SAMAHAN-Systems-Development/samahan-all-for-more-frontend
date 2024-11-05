@@ -1,7 +1,5 @@
 import React from 'react';
-
 import type { Meta, StoryObj } from '@storybook/react';
-
 import AdvocasixModal from '@/components/ui/Advocasix Modal/AdvocasixModal';
 import advocasixData from '@/data/advocasixData.json';
 
@@ -23,6 +21,7 @@ export const AdvocasixModals: Story = {
           title={modal.title}
           content={modal.content}
           image={modal.image}
+          onClose={() => {}}
         />
       ))}
     </div>

@@ -9,6 +9,7 @@ type OfficerTypes = {
   fileName: string;
   fullName: string;
   position: string;
+  offices?: string;
 };
 
 type data = {
@@ -35,15 +36,15 @@ const CentralBoardPage: React.FC = () => {
   return (
     <div className="min-h-screen">
       <Banner
-        image="/images/central-board.png"
+        image="/images/central-board.jpg"
         imageAlt="SAMAHAN Office of the President Image"
         subtitle="SAMAHAN"
         title="CENTRAL BOARD"
       />
       <section className="text-center p-12">
         {/* SAMAHAN CORE OFFICERS */}
-        <div className="flex justify-center p-20">
-          <div className="grid lg:gap-20 xl:grid-cols-2 lg:grid-cols-1 md:gap-28">
+        <div className="flex justify-center p-14">
+          <div className="grid lg:gap-20 xl:grid-cols-2 lg:grid-cols-1 xsm:gap-28">
             {OfficerData.SamahanCoreOfficers.map(
               (officer: OfficerTypes, officerIndex: number) => (
                 <BaseCard
@@ -51,6 +52,7 @@ const CentralBoardPage: React.FC = () => {
                   imageSrc={officer.fileName}
                   name={officer.fullName}
                   title={officer.position}
+                  buttonLink={officer.offices || ''}
                 />
               )
             )}

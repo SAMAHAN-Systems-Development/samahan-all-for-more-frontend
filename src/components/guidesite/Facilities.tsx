@@ -110,6 +110,21 @@ const SuzanDoromalFacilities = () => (
   </ol>
 );
 
+const HisFlexRoomFacilities = () => (
+  <ol className="list-outside list-[lower-roman] mb-4">
+    {guidesiteData.hisflexRoom.map((facility, index) => (
+      <li key={index}>
+        {facility.label}
+        <ol className="list-decimal list-inside ml-6">
+          {facility.nestedInstructions.map((instruction, instructionIndex) => (
+            <li key={instructionIndex}>{instruction}</li>
+          ))}
+        </ol>
+      </li>
+    ))}
+  </ol>
+);
+
 const IcommpEquipment = () => {
   const { title, mainText, linkText, linkUrl, content } =
     guidesiteData.icommpEquipment;
@@ -217,7 +232,7 @@ const RequestForDocuments = () => {
           ))}
         </ul>
 
-        <div className="mt-[15px] ml-[70px]">
+        <div className="mt-[15px] ml-[70px] pb-16">
           <Button text="Request Certificate" />
         </div>
       </div>
@@ -232,4 +247,5 @@ export {
   SuzanDoromalFacilities,
   IcommpEquipment,
   RequestForDocuments,
+  HisFlexRoomFacilities,
 };

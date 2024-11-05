@@ -1,5 +1,5 @@
 interface CreateBulletinData {
-  category_id: number;
+  category_id: string;
   title: string;
   content: string;
   author: string;

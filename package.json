@@ -55,6 +55,7 @@
     "react": "^18.3.1",
     "react-day-picker": "^8.10.1",
     "react-dom": "^18.3.1",
+    "react-dropzone": "^14.2.10",
     "react-hook-form": "^7.53.0",
     "react-icons": "^5.3.0",
     "sharp": "^0.33.5",
@@ -75,6 +76,7 @@
     "@storybook/react": "8.2.9",
     "@storybook/test": "8.2.9",
     "@tanstack/react-query": "^5.59.8",
+    "@types/date-fns": "^2.5.3",
     "@types/node": "20",
     "@types/npmlog": "^7.0.0",
     "@types/react": "18",
@@ -97,4 +99,5 @@
     "typescript": "5",
     "typescript-eslint": "8.1.0"
   }
+  
 }
