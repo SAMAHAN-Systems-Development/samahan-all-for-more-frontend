@@ -44,7 +44,7 @@ const OSTPage: React.FC = () => {
       />
       <section className="text-center p-12">
         {sectionTitles.map((section, index) => (
-          <div key={index} className="p-10">
+          <div key={index} className="p-[0.1rem] sm:p-10">
             <h1 className="text-bold font-bold uppercase text-blue pb-2">
               {section.sectionTitle}
             </h1>
