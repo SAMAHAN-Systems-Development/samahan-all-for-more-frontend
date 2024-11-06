@@ -160,7 +160,13 @@ const IcommpEquipment = () => {
       </ul>
 
       <div className="mt-[15px] ml-[70px]">
-        <Button text="Book ICOMMP Equipment" />
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfZECyMcQ7dCiQUr8dosFKrdfuoExv_9AxDNQzMZ8oWzimhHQ/viewform"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button text="Book ICOMMP Equipment" />
+        </a>
       </div>
     </div>
   );
@@ -202,7 +208,13 @@ const RequestForDocuments = () => {
       </ul>
 
       <div className="mt-[15px] ml-[70px]">
-        <Button text="Request Registrar's Certificate" />
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfD7NdpLyGHiFTzhDTwadbOaJ-6SM5oVwFmGi7869z0nHDxAQ/viewform"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button text="Request Registrar's Certificate" />
+        </a>
       </div>
 
       <div className="mt-8">
@@ -220,6 +232,8 @@ const RequestForDocuments = () => {
                     {document.details.mainText.split('link')[0]}
                     <Link
                       href={document.details.linkUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="underline text-blue"
                     >
                       {document.details.linkText}
@@ -233,7 +247,13 @@ const RequestForDocuments = () => {
         </ul>
 
         <div className="mt-[15px] ml-[70px] pb-16">
-          <Button text="Request Certificate" />
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSf2yDCKM-mBypxukNhE5i0ersX59JjDFObSVGuP8UkenS8kMA/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button text="Request Certificate" />
+          </a>
         </div>
       </div>
     </div>
