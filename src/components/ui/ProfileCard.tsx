@@ -17,8 +17,9 @@ const ProfileCard = ({ fullName, position, fileName }: ProfileCardProps) => {
           <Image
             src={`/images/samahan-cutouts/${fileName}`}
             alt={`${fullName}'s Picture`}
-            width={250}
-            height={380}
+            //set the width and height of the image to high reso for high quality
+            width={1280}
+            height={720}
             className="relative"
           />
         </div>
