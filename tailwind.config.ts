@@ -32,6 +32,9 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       colors: {
+        blue: 'rgb(var(--color-blue) / <alpha-value>)',
+        white: 'rgb(var(--color-white) / <alpha-value>)',
+
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -77,10 +80,6 @@ const config: Config = {
     fontFamily: {
       inter: ['var(--font-inter)'],
     },
-    colors: {
-      blue: 'rgb(var(--color-blue) / <alpha-value>)',
-      white: 'rgb(var(--color-white) / <alpha-value>)',
-    },
     screens: {
       xsm: '0px',
       sm: '576px',
@@ -88,6 +87,10 @@ const config: Config = {
       lg: '992px',
       xl: '1200px',
       '2xl': '1400px',
+    },
+    animation: {
+      spin: 'spin 7s linear infinite',
+      'spin-reverse': 'spin 7s linear infinite reverse',
     },
   },
   plugins: [

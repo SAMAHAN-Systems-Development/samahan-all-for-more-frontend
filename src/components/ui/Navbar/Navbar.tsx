@@ -48,8 +48,6 @@ const Navbar = () => {
 
   const academixDropdownItems = [
     { title: 'AcadHub', link: '/academix/acadhub' },
-    { title: 'AcadDrive', link: '/academix/acaddrive' },
-    { title: 'Atheneum', link: '/academix/atheneum' },
   ];
 
   const ArrowSize = 15;
@@ -95,47 +93,22 @@ const Navbar = () => {
     ));
 
   return (
-    <nav className="fixed top-4 left-0 w-full z-50 bg-white py-3 px-6 shadow-[0_4px_20px_rgba(0,0,0,0.1)] rounded-[100px] flex justify-between items-center">
-      <div className="flex items-center">
-        <Link href="/" aria-label="Home">
-          <Image
-            src={logo}
-            alt="Logo"
-            className="cursor-pointer"
-            width={90}
-            height={90}
-          />
-        </Link>
-      </div>
+    <div className="fixed top-4 z-50 px-[20px] lg:px-[50px] w-full">
+      <nav className="w-full bg-white py-3 px-6 shadow-[0_4px_20px_rgba(0,0,0,0.1)] rounded-[100px] flex justify-between items-center">
+        <div className="flex items-center">
+          <Link href="/" aria-label="Home">
+            <Image
+              src={logo}
+              alt="Logo"
+              className="cursor-pointer"
+              width={90}
+              height={90}
+            />
+          </Link>
+        </div>
 
-      {/* Desktop Navigation */}
-      <DesktopMenu
-        navItemsOne={navItemsOne}
-        navItemsTwo={navItemsTwo}
-        officesDropdownItems={officesDropdownItems}
-        infoPortalDropdownItems={infoPortalDropdownItems}
-        academixDropdownItems={academixDropdownItems}
-        openDropdowns={openDropdowns}
-        toggleDropdown={toggleDropdown}
-        AcademixDropdowns={AcademixDropdowns}
-        setAcademixDropdowns={setAcademixDropdowns}
-        ArrowSize={ArrowSize}
-        DropdownItems={DropdownItems}
-        handleKeyDown={handleKeyDown}
-      />
-
-      {/* Mobile Navigation */}
-      <button
-        className="md:hidden text-blue"
-        onClick={toggleMobileMenu}
-        aria-label="Toggle Mobile Menu"
-      >
-        {isMobileMenuOpen ? <IoClose size={40} /> : <HiBars3 size={40} />}
-      </button>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <MobileMenu
+        {/* Desktop Navigation */}
+        <DesktopMenu
           navItemsOne={navItemsOne}
           navItemsTwo={navItemsTwo}
           officesDropdownItems={officesDropdownItems}
@@ -145,9 +118,36 @@ const Navbar = () => {
           toggleDropdown={toggleDropdown}
           AcademixDropdowns={AcademixDropdowns}
           setAcademixDropdowns={setAcademixDropdowns}
+          ArrowSize={ArrowSize}
+          DropdownItems={DropdownItems}
+          handleKeyDown={handleKeyDown}
         />
-      )}
-    </nav>
+
+        {/* Mobile Navigation */}
+        <button
+          className="lg:hidden text-blue"
+          onClick={toggleMobileMenu}
+          aria-label="Toggle Mobile Menu"
+        >
+          {isMobileMenuOpen ? <IoClose size={40} /> : <HiBars3 size={40} />}
+        </button>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <MobileMenu
+            navItemsOne={navItemsOne}
+            navItemsTwo={navItemsTwo}
+            officesDropdownItems={officesDropdownItems}
+            infoPortalDropdownItems={infoPortalDropdownItems}
+            academixDropdownItems={academixDropdownItems}
+            openDropdowns={openDropdowns}
+            toggleDropdown={toggleDropdown}
+            AcademixDropdowns={AcademixDropdowns}
+            setAcademixDropdowns={setAcademixDropdowns}
+          />
+        )}
+      </nav>
+    </div>
   );
 };
 

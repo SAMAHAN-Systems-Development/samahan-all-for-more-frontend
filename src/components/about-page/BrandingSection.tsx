@@ -1,7 +1,8 @@
 import Image from 'next/image';
 
-import A4MLogo from '/public/images/about-page/A4M LOGO.png';
-import A4MSLogoHd from '/public/images/about-page/A4M S-LOGOHD.png';
+// import A4MLogo from '/public/images/about-page/A4M LOGO.png';
+// import A4MSLogoHd from '/public/images/about-page/A4M S-LOGOHD.png';
+import A4MSMerged from '/public/images/about-page/A4M Merged.png';
 import BlueE1 from '/public/images/about-page/Blue E1.png';
 import BlueM1 from '/public/images/about-page/Blue M1.png';
 import BlueO3 from '/public/images/about-page/Blue O3.png';
@@ -24,7 +25,7 @@ const BrandingSection = () => {
             alt="Left Image 1"
             width={576}
             height={576}
-            className="w-[20rem] h-auto absolute top-0 left-[-10rem] rotate-[30deg]"
+            className="w-[20rem] h-auto absolute top-0 left-[-10rem] animate-spin"
           />
         </div>
         <div>
@@ -33,7 +34,7 @@ const BrandingSection = () => {
             alt="Left Image 2"
             width={576}
             height={576}
-            className="w-28 h-auto absolute left-12 top-1/2 transform -translate-y-1/2 rotate-[-30deg]"
+            className="w-28 h-auto absolute left-12 top-1/2 animate-spin-reverse"
           />
         </div>
         <div>
@@ -42,30 +43,21 @@ const BrandingSection = () => {
             alt="Left Image 3"
             width={576}
             height={576}
-            className="w-[16rem] h-auto absolute bottom-0 left-[-10rem] rotate-[-150deg]"
+            className="w-[16rem] h-auto absolute bottom-0 left-[-10rem] animate-spin"
           />
         </div>
       </div>
 
       {/*to align this whole section with the logo*/}
       <section className="lg:mx-[15rem]">
-        <div className="flex items-center mb-5 mt-28">
-          <Image
-            src={A4MSLogoHd}
-            alt=""
-            width={576}
-            height={576}
-            className="w-28 h-auto "
-          />
-          <Image
-            src={A4MLogo}
-            alt="A4M Logo"
-            width={576}
-            height={576}
-            className="w-48 h-auto"
-          />
+        <div className="w-full items-center mb-5 mt-28">
+          <div className="flex gap-[10px] max-w-[250px]">
+            <Image src={A4MSMerged} alt="" className="max-h-[70px]" />
+          </div>
         </div>
-        <h1 className="text-blue font-bold text-title mb-14">THE BRANDING</h1>
+        <h1 className="text-blue font-bold text-[35px] sm:text-title mb-14 leading-none">
+          THE BRANDING
+        </h1>
         {/*map this*/}
         {paragraphsDataTyped.map((paragraph: Paragraph, index: number) => (
           <p key={index} className="text-blue mb-14 leading-tight text-main">
@@ -80,7 +72,7 @@ const BrandingSection = () => {
             alt="Left Image 1"
             width={576}
             height={576}
-            className="w-[19rem] h-auto absolute top-28 right-[-10rem] rotate-[-30deg]"
+            className="w-[19rem] h-auto absolute top-28 right-[-10rem] animate-spin"
           />
         </div>
         <div>
@@ -89,7 +81,7 @@ const BrandingSection = () => {
             alt="Left Image 2"
             width={576}
             height={576}
-            className="w-24 h-auto absolute right-12 top-[60%] transform -translate-y-1/2 rotate-[-30deg]"
+            className="w-24 h-auto absolute right-12 top-[60%] animate-spin"
           />
         </div>
         <div>
@@ -98,7 +90,7 @@ const BrandingSection = () => {
             alt="Left Image 3"
             width={576}
             height={576}
-            className="w-[13rem] h-auto absolute bottom-0 right-[-6rem] rotate-[30deg]"
+            className="w-[13rem] h-auto absolute bottom-0 right-[-6rem] animate-spin-reverse"
           />
         </div>
       </div>

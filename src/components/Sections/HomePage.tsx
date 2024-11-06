@@ -13,19 +13,18 @@ function HomePage() {
   return (
     <div>
       <HeroSection />
-      <section className="sm:mx-[5rem] lg:mx-[10rem]">
-        <h1 className="p-2 uppercase text-blue font-bold text-title mt-14">
-          Advocasix
-        </h1>
-        {homepagedatatext.map((paragraph: Paragraph, index: number) => (
-          <p
-            key={index}
-            className="mx-5 mb-4 text-blue leading-tight text-main"
-          >
-            {paragraph.text}
-          </p>
-        ))}
-      </section>
+      <div className="flex justify-center w-full">
+        <section className="max-w-[1400px] mx-[50px]">
+          <h1 className="uppercase text-blue font-bold text-title mt-14">
+            Advocasix
+          </h1>
+          {homepagedatatext.map((paragraph: Paragraph, index: number) => (
+            <p key={index} className="mb-4 text-blue leading-tight text-main">
+              {paragraph.text}
+            </p>
+          ))}
+        </section>
+      </div>
       <AdvocasixCard data={advocasixCardData} />
     </div>
   );
