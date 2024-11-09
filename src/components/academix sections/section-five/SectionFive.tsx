@@ -46,15 +46,15 @@ const SectionFive: React.FC<SectionFiveProps> = ({}) => {
         <SectionFiveTable />
       </section>
 
-      <section className="flex flex-col items-center justify-center bg-white border border-blue rounded-lg mx-28 mb-40">
-        <div className="text-center text-sm mt-10 mb-8 text-blue">
+      <section className="flex flex-col items-center justify-center bg-white border border-blue rounded-lg mx-4 sm:mx-8 md:mx-28 mb-20 sm:mb-40">
+        <div className="text-center text-xs sm:text-sm mt-6 sm:mt-10 mb-4 sm:mb-8 text-blue px-4">
           <p>
             Need academic help?{' '}
             <span className="font-bold text-blue">Contact us.</span>
           </p>
         </div>
 
-        <div className="flex flex-col text-blue mb-16">
+        <div className="flex flex-col text-blue mb-8 sm:mb-16 w-full max-w-xl mx-auto px-8 sm:px-12">
           {academixContactItemData.map((contact: Contact, index: number) => {
             const IconComponent = iconMap[contact.icon];
 
@@ -69,17 +69,16 @@ const SectionFive: React.FC<SectionFiveProps> = ({}) => {
             );
           })}
         </div>
-
-        <div className="bg-blue w-full py-4 text-white flex items-center justify-center rounded-bl-md rounded-br-md">
-          <div className="flex items-center">
+        <div className="bg-blue w-full py-3 sm:py-4 text-white flex items-center justify-center rounded-bl-md rounded-br-md">
+          <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 px-4 text-center sm:text-left">
             <Image
               src="/images/academix-acadhub-page/smhnAcadAffairs.png"
               alt="Samahan White Logo"
               width={576}
               height={576}
-              className="w-[5rem] h-auto"
+              className="w-[3rem] sm:w-[5rem] h-auto"
             />
-            <span className="font-semibold">
+            <span className="text-sm sm:text-base font-semibold sm:ml-2">
               SAMAHAN DEPARTMENT OF ACADEMIC AFFAIRS
             </span>
           </div>
