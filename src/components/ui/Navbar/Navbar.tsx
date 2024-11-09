@@ -61,6 +61,7 @@ const Navbar = () => {
       if (navRef.current && !navRef.current.contains(event.target as Node)) {
         setOpenDropdowns([]);
         setAcademixDropdowns(false);
+        setIsMobileMenuOpen(false);
       }
     };
 
