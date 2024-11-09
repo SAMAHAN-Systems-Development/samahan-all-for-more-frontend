@@ -26,7 +26,7 @@ const SectionThree: React.FC<SectionThreeProps> = ({ sections }) => {
         id="Helpful Digital Applications"
         className="bg-blue w-full py-24 mb-48 text-center"
       >
-        <h2 className=" text-white font-bold text-3xl">
+        <h2 className=" text-white font-bold text-3xl mx-4">
           HELPFUL DIGITAL APPLICATION
         </h2>
       </div>

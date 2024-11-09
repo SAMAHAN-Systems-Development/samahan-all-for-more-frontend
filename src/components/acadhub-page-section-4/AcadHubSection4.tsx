@@ -11,7 +11,9 @@ const AcadhubSection4: React.FC<AcadhubSection4Props> = ({}) => {
       <div id="GE Courses Descriptions" className="bg-blue text-white">
         <section className="py-24 mb-48 text-center">
           <header>
-            <h1 className="font-bold text-3xl mb-4">GE COURSES DESCRIPTION</h1>
+            <h1 className="font-bold text-3xl mb-4 mx-4">
+              GE COURSES DESCRIPTION
+            </h1>
           </header>
           <p className="text-main mx-24">
             These interdisciplinary courses are designed to enhance students'
