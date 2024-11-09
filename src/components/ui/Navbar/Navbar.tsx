@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { HiBars3 } from 'react-icons/hi2';
 import { IoClose } from 'react-icons/io5';
 import Image from 'next/image';
@@ -11,6 +11,7 @@ import DesktopMenu from 'src/components/ui/Navbar/viewscreens/DesktopMenu';
 import MobileMenu from 'src/components/ui/Navbar/viewscreens/MobileMenu';
 
 const Navbar = () => {
+  const navRef = useRef<HTMLDivElement>(null);
   const navItemsOne = [
     { title: 'Home', link: '/' },
     { title: 'About', link: '/about-us' },
@@ -55,6 +56,20 @@ const Navbar = () => {
   const [AcademixDropdowns, setAcademixDropdowns] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setOpenDropdowns([]);
+        setAcademixDropdowns(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   const toggleDropdown = (id: string, isDesktop: boolean) => {
     setOpenDropdowns((prev) =>
       isDesktop
@@ -94,7 +109,10 @@ const Navbar = () => {
 
   return (
     <div className="fixed top-4 z-50 px-[20px] lg:px-[50px] w-full">
-      <nav className="w-full bg-white py-3 px-6 shadow-[0_4px_20px_rgba(0,0,0,0.1)] rounded-[100px] flex justify-between items-center">
+      <nav
+        ref={navRef}
+        className="w-full bg-white py-3 px-6 shadow-[0_4px_20px_rgba(0,0,0,0.1)] rounded-[100px] flex justify-between items-center"
+      >
         <div className="flex items-center">
           <Link href="/" aria-label="Home">
             <Image
@@ -107,7 +125,6 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Desktop Navigation */}
         <DesktopMenu
           navItemsOne={navItemsOne}
           navItemsTwo={navItemsTwo}
@@ -123,7 +140,6 @@ const Navbar = () => {
           handleKeyDown={handleKeyDown}
         />
 
-        {/* Mobile Navigation */}
         <button
           className="lg:hidden text-blue"
           onClick={toggleMobileMenu}
@@ -132,7 +148,6 @@ const Navbar = () => {
           {isMobileMenuOpen ? <IoClose size={40} /> : <HiBars3 size={40} />}
         </button>
 
-        {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <MobileMenu
             navItemsOne={navItemsOne}
