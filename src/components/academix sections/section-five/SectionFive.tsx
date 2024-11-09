@@ -28,7 +28,7 @@ const SectionFive: React.FC<SectionFiveProps> = ({}) => {
       <div id="Recommended Websites for RRL" className="bg-blue text-white">
         <section className="py-24 mb-48 text-center">
           <header>
-            <h1 className="font-bold text-3xl mb-4">
+            <h1 className="font-bold text-3xl mb-4 mx-4">
               RECOMMENDED WEBSITES FOR RRL
             </h1>
           </header>
