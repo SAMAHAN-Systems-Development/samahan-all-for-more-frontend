@@ -4,10 +4,14 @@ import AccordionStatic from '@/components/academix sections/section-one/Accordio
 const SectionOne = () => {
   return (
     // mx28
-    <main className="mt-72 mx-28">
+    <main className="mt-52 mx-28">
       <div className="text-blue">
-        <h1 className="font-bold text-title mb-12">STUDENT RESOURCE GUIDE</h1>
-        <p className="mb-12">
+        <div className="w-full mx-auto">
+          <h1 className="font-bold text-center sm:text-start text-[24px] xs:text-[28px] sm:text-[40px] md:text-title mb-6 sm:mb-8 md:mb-12 leading-tight">
+            STUDENT RESOURCE GUIDE
+          </h1>
+        </div>
+        <p className="mb-12 sm:text-start text-center">
           Traversing into new pathways towards attaining academic excellence,
           sustaining academic service, and empowering academic integrity, the
           SAMAHAN Department of Academic Affairs pioneers its mission to provide
@@ -15,7 +19,7 @@ const SectionOne = () => {
           knowledge and cultivating community engagement on resource sharing and
           distribution.
         </p>
-        <p className="mb-36">
+        <p className="mb-36 sm:text-start text-center">
           <span className="font-bold">
             AcadHub: The Student Resource Guide,
           </span>{' '}
