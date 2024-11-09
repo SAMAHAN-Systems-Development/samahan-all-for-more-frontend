@@ -42,7 +42,7 @@ const SectionFive: React.FC<SectionFiveProps> = ({}) => {
           </p>
         </section>
       </div>
-      <section className="mx-28 mb-40">
+      <section className="mx-9 mb-72">
         <SectionFiveTable />
       </section>
 

@@ -5,7 +5,7 @@ const SectionFiveTable = () => {
   return (
     <div className="overflow-x-auto mt-5">
       {/* Standard Table View for Desktop */}
-      <table className="hidden sm:table table-auto border-collapse border w-full text-blue border-blue">
+      <table className="hidden sm:table table-auto border-collapse w-full text-blue border border-blue">
         <thead>
           <tr className="bg-blue-100">
             <th className="border border-blue px-4 py-2 text-left">Source</th>
@@ -17,7 +17,7 @@ const SectionFiveTable = () => {
         <tbody>
           {acadhubData.map((data, index) => (
             <tr key={index} className="even:bg-blue-50">
-              <td className="border border-blue px-4 py-2 text-main font-bold underline">
+              <td className="border border-blue px-4 py-2 font-bold underline">
                 {data.source}
               </td>
               <td className="border border-blue px-4 py-2">
@@ -37,7 +37,7 @@ const SectionFiveTable = () => {
           >
             <div className="mb-2">
               <strong>Source:</strong>{' '}
-              <span className="block sm:inline text-main font-bold underline">
+              <span className="block sm:inline font-bold underline">
                 {data.source}
               </span>
             </div>
