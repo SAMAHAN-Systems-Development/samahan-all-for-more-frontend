@@ -359,6 +359,7 @@ const EventDialog = ({
                       value={field.value}
                       onChange={field.onChange}
                       multiple={false}
+                      fileType="image"
                       onError={(error) => {
                         form.setError('thumbnail', { message: error });
                       }}

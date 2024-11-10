@@ -13,6 +13,7 @@ interface FileUploadProps {
   onError?: (error: string) => void;
   acceptedTypes?: { [key: string]: string[] };
   multiple?: boolean;
+  fileType?: 'pdf' | 'image' | 'all';
 }
 
 const FileUpload = ({
@@ -26,9 +27,28 @@ const FileUpload = ({
     'application/pdf': ['.pdf'],
   },
   multiple = false,
+  fileType = 'all',
 }: FileUploadProps) => {
+  const fileTypeRestrictions = {
+    pdf: {
+      'application/pdf': ['.pdf'],
+    },
+    image: {
+      'image/jpeg': ['.jpeg', '.jpg'],
+      'image/png': ['.png'],
+      'image/gif': ['.gif'],
+    },
+    all: {
+      'image/jpeg': ['.jpeg', '.jpg'],
+      'image/png': ['.png'],
+      'image/gif': ['.gif'],
+      'application/pdf': ['.pdf'],
+    },
+  };
+  const finalAcceptedTypes = acceptedTypes || fileTypeRestrictions[fileType];
+
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    accept: acceptedTypes,
+    accept: finalAcceptedTypes,
     maxSize: 5 * 1024 * 1024, // currently set as 5mb
     maxFiles: multiple ? 10 : 1,
     multiple,
