@@ -15,7 +15,7 @@ const ProfileCard = ({ fullName, position, fileName }: ProfileCardProps) => {
 
         <div className="rounded-[32px] translate-y-[4px] overflow-hidden">
           <Image
-            src={`/images/samahan-cutouts/${fileName}`}
+            src={`/images/samahan-cutouts-new/${fileName}`}
             alt={`${fullName}'s Picture`}
             //set the width and height of the image to high reso for high quality
             width={1280}
