@@ -4,7 +4,7 @@ const nextConfig = {
     domains: ['picsum.photos', 'loremflickr.com'],
     unoptimized: true,
   },
-  output: 'export',
+  output: 'standalone',
 };
 
 export default nextConfig;

@@ -2,7 +2,7 @@
 // this change should not be pulled to main, easy fix is to deploy as web service
 const BASE_URL =
   process.env.REACT_APP_BASE_URL ||
-  'https://samahan-all-for-more-backend.onrender.com';
+  'http://samahan.addu.edu.ph/api';
 console.log('BACKEND URL:', BASE_URL);
 
 interface ApiConfig {
