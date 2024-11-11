@@ -3,46 +3,46 @@
     {
       "fullName": "Mary Clair A. Clarde",
       "position": "SAMAHAN Treasurer",
-      "fileName": "[TREASURER] Mary Clair A. Clarde.png"
+      "fileName": "TREASURER_Mary_Clair_A._Clarde.png"
     },
     {
       "fullName": "Alaisa Kella Abjilina",
       "position": "Finance Secretary",
-      "fileName": "[Finance Secretary] Alaisa Kella Abjilina.png"
+      "fileName": "Finance_Secretary_Alaisa_Kella_Abjilina.png"
     },
     {
       "fullName": "Mickyla Loriene Almadin",
       "position": "Finance Undersecretary",
-      "fileName": "[Finance Undersecretary] Mickyla Loriene Almadin.png"
+      "fileName": "Finance_Undersecretary_Mickyla_Loriene_Almadin.png"
     },
     {
       "fullName": "Chang Hyun Park",
       "position": "Finance Undersecretary",
-      "fileName": "[Finance Undersecretary] Chang Hyun Park.png"
+      "fileName": "Finance_Undersecretary_Chang_Hyun_Park.png"
     }
   ],
   "SamahanLogisticsDepartment": [
     {
       "fullName": "Ralph Rainer Abarca",
       "position": "SLD Director",
-      "fileName": "[SLD Director] Ralph Rainer Abarca.png"
+      "fileName": "SLD_Director_Ralph_Rainer_Abarca.png"
     },
     {
       "fullName": "Tomas Nazareno",
       "position": "SLD Deputy Director",
-      "fileName": "[SLD Deputy Director] Tomas Nazareno.png"
+      "fileName": "SLD_Deputy_Director_Tomas_Nazareno.png"
     }
   ],
   "SamahanSponsorshipAndSupport": [
     {
       "fullName": "Nikko Paul Izack Maghuyop",
       "position": "SAS Director",
-      "fileName": "[SAS Director] Nikko Paul Izack Maghuyop.png"
+      "fileName": "SAS_Director_Nikko_Paul_Izack_Maghuyop.png"
     },
     {
       "fullName": "Regine Cabel",
       "position": "SAS Deputy Director",
-      "fileName": "[SAS Deputy Director] Regine Cabel.png"
+      "fileName": "SAS_Deputy_Director_Regine_Cabel.png"
     }
   ]
 }

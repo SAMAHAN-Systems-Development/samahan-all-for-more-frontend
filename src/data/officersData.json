@@ -3,25 +3,25 @@
     {
       "fullName": "Leen Juliet Lapatis",
       "position": "SAMAHAN President",
-      "fileName": "[PRESIDENT] SCB Leen Juliet Lapatis.png",
+      "fileName": "PRESIDENT_SCB_Leen_Juliet_Lapatis.png",
       "offices": "/offices/office-of-the-president"
     },
     {
       "fullName": "Sung Goon Acosta",
       "position": "SAMAHAN Vice President",
-      "fileName": "[VICE PRESIDENT] SCB Sung Goon Acosta.png",
+      "fileName": "VICE_PRESIDENT_SCB_Sung_Goon_Acosta.png",
       "offices": "/offices/office-of-the-vice-president"
     },
     {
       "fullName": "Aliya Medida",
       "position": "SAMAHAN Secretary-General",
-      "fileName": "[SECRETARY-GENERAL] SCB Aliya Medida.png",
+      "fileName": "SECRETARY-GENERAL_SCB_Aliya_Medida.png",
       "offices": "/offices/office-of-the-secretary-general"
     },
     {
       "fullName": "Mary Clair Clarde",
       "position": "SAMAHAN Treasurer",
-      "fileName": "[TREASURER] SCB Mary Clair Clarde.png",
+      "fileName": "TREASURER_SCB_Mary_Clair_Clarde.png",
       "offices": "/offices/office-of-the-treasurer"
     }
   ],
@@ -29,47 +29,47 @@
     {
       "fullName": "Adrian Neil D. Jamila",
       "position": "ACC Representative",
-      "fileName": "[ACC] Adrian Neil D. Jamila.png"
+      "fileName": "ACC_Adrian_Neil_D._Jamila.png"
     },
     {
       "fullName": "Christian Kush F. Casona",
       "position": "B&M Representative",
-      "fileName": "[B&M] Christian Kush F. Casona.png"
+      "fileName": "BM_Christian_Kush_F._Casona.png"
     },
     {
       "fullName": "Dominic Miguel D. Almonte",
       "position": "CS Representative",
-      "fileName": "[CS] Dominic Miguel D. Almonte.png"
+      "fileName": "CS_Dominic_Miguel_D._Almonte.png"
     },
     {
       "fullName": "Mia Angela G. Cabaobao",
       "position": "HUMLET Representative",
-      "fileName": "[HUMLET] Mia Angela G. Cabaobao.png"
+      "fileName": "HUMLET_Mia_Angela_G._Cabaobao.png"
     },
     {
       "fullName": "Mikaela Juliana E. Franco",
       "position": "NSM Representative",
-      "fileName": "[NSM] Mikaela Juliana E. Franco.png"
+      "fileName": "NSM_Mikaela_Juliana_E._Franco.png"
     },
     {
       "fullName": "Mark James B. Albaracin",
       "position": "SOE Representative",
-      "fileName": "[SOE] Mark James B. Albaracin.png"
+      "fileName": "SOE_Mark_James_B._Albaracin.png"
     },
     {
       "fullName": "Norsheena M. Pacamaman",
       "position": "SEA Representative",
-      "fileName": "[SEA] Norsheena M. Pacamaman.png"
+      "fileName": "SEA_Norsheena_M._Pacamaman.png"
     },
     {
       "fullName": "Kristal Eden N. Magno",
       "position": "SON Representative",
-      "fileName": "[SON] Kristal Eden N. Magno.png"
+      "fileName": "SON_Kristal_Eden_N._Magno.png"
     },
     {
       "fullName": "Archie R. Barroga",
       "position": "SS Representative",
-      "fileName": "[SS] Archie R. Barroga.png"
+      "fileName": "SS_Archie_R._Barroga.png"
     }
   ]
 }
