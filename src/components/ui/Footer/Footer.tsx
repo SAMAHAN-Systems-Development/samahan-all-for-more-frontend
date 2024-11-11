@@ -225,34 +225,35 @@ const Footer: React.FC<FooterProps> = ({}) => {
       {/* Oblong Shape*/}
       <div
         id="main"
-        className={`${footerSection({ background: FOOTER_BACKGROUND_ENUM.BLUE })} ${footerLink()} w-full flex flex-col px-[50px] md:px-[50px] items-center`}
+        className={`${footerSection({ background: FOOTER_BACKGROUND_ENUM.BLUE })} ${footerLink()} w-full flex flex-col items-center`}
       >
         <div className="w-full flex items-center">
           <div
             id="Logo-Text"
-            className="flex flex-col xl:flex-row items-center xl:items-center xl:justify-start justify-center w-full"
+            className="flex flex-col xl:flex-row items-center xl:items-center xl:justify-start justify-center w-full mx-[50px]"
           >
             {/* Logos */}
 
-            <div id="logo " className="flex flex-row items-center">
+            <div
+              id="logo "
+              className="flex flex-row items-center mt-10 gap-[20px]"
+            >
               <Image
                 src={UniversitySealLogo}
                 width={122}
                 height={122}
-                className="mt-10 mr-[20px]"
                 alt="University Seal Logo"
               />
               <Image
                 src={SamahanLogoWhite}
                 width={122}
                 height={122}
-                className="mt-10"
                 alt="Samahan Logo White"
               />
             </div>
             <div
               id="Text"
-              className="mt-5 xl:mt-10 lg:ml-4 text-center xl:text-left"
+              className="mt-5 xl:mt-10 lg:ml-5 text-center xl:text-left px-[50px]"
             >
               <h3 className="text-2xl font-semibold font-inter">
                 Samahan ng mga Mag-aaral ng Pamantasan
@@ -271,7 +272,7 @@ const Footer: React.FC<FooterProps> = ({}) => {
 
         <div
           id="content"
-          className="font-inter flex flex-col lg:flex-row mt-[42px] w-full ml-start mr-auto items-center lg:items-start lg:justify-between"
+          className="font-inter flex flex-col lg:flex-row mt-[42px] w-full px-[50px] ml-start mr-auto items-center lg:items-start lg:justify-between"
         >
           <div
             id="left"
@@ -358,24 +359,27 @@ const Footer: React.FC<FooterProps> = ({}) => {
           </div>
         </div>
 
-        <div className="font-inter border-t border-gray-500 pb-10 text-center w-full flex justify-center items-center mt-[2.625rem]">
-          <div
-            id="credits"
-            className="flex flex-col text-center lg:flex-row items-center lg:justify-between px-0 w-full mt-[2.625rem]"
-          >
+        <div className="font-inter pb-10 text-center w-full flex justify-center items-center mt-[2.625rem]">
+          <div className="flex flex-col w-full mx-[50px]">
+            <div className="h-[2px] bg-gray-500 opacity-75 w-full"></div>
             <div
-              className={`text-center xl:text-left mb-4 lg:mb-0 text-sm ${LINK_SIZE_ENUM.REGULAR}`}
+              id="credits"
+              className="flex flex-col text-center lg:flex-row items-center lg:justify-between px-0 w-full mt-[2.625rem]"
             >
-              <p>
-                Assets by <strong>SAMAHAN Creative Team</strong>
-              </p>
-              <p>
-                Developed by <strong> SAMAHAN Systems Development </strong>
+              <div
+                className={`text-center lg:text-left mb-4 lg:mb-0 text-sm ${LINK_SIZE_ENUM.REGULAR}`}
+              >
+                <p>
+                  Assets by <strong>SAMAHAN Creative Team</strong>
+                </p>
+                <p>
+                  Developed by <strong> SAMAHAN Systems Development </strong>
+                </p>
+              </div>
+              <p className="text-sm font-normal lg:mt-0">
+                © {currentYear} SAMAHAN All For More
               </p>
             </div>
-            <p className="text-sm font-normal lg:mt-0">
-              © {currentYear} SAMAHAN All For More
-            </p>
           </div>
         </div>
       </div>

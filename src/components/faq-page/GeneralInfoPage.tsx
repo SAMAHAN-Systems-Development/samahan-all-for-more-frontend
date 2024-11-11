@@ -6,8 +6,8 @@ import WPA from '@/components/faq-page/faq-page-tables/WPA';
 import Button from '@/components/ui/Button';
 const GeneralInfoPage = () => {
   return (
-    <div className="mx-28">
-      <h1 className="text-blue font-bold text-title mt-24">
+    <div className="sm:mx-24 mx-4">
+      <h1 className="text-blue font-bold text-3xl sm:text-title mt-24">
         GENERAL INFORMATION CENTER
       </h1>
 
@@ -24,7 +24,11 @@ const GeneralInfoPage = () => {
           <Button
             text="View Directory"
             onClick={() =>
-              window.open('/charts/SchoolDeansandDepartmentHeads.pdf', '_blank')
+              window.open(
+                '/charts/SchoolDeansandDepartmentHeads.pdf',
+                '_blank',
+                'noopener,noreferrer'
+              )
             }
           />
         </div>

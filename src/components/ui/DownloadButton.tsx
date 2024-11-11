@@ -11,6 +11,8 @@ const DownloadButton = () => {
       <Link
         href="/charts/SAMAHANOrganizationalChart.pdf"
         download="Samahan Organizational Chart"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <Button
           variant="icon"

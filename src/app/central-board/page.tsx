@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useState } from 'react';
 
 import BaseCard from '@/components/office-cards/BaseCard';
 import { Banner } from '@/components/ui/banner/Banner';
@@ -33,6 +34,17 @@ const sectionTitles: SectionTitleData[] = [
 ];
 
 const CentralBoardPage: React.FC = () => {
+  const [windowWidth, setWindowWidth] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setWindowWidth(window.innerWidth);
+      const handleResize = () => setWindowWidth(window.innerWidth);
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Banner
@@ -43,8 +55,8 @@ const CentralBoardPage: React.FC = () => {
       />
       <section className="text-center p-12">
         {/* SAMAHAN CORE OFFICERS */}
-        <div className="flex justify-center p-14">
-          <div className="grid lg:gap-20 xl:grid-cols-2 lg:grid-cols-1 xsm:gap-28">
+        <div className="flex justify-center xsm:p-1 sm:p-14">
+          <div className="grid lg:gap-20 xl:grid-cols-2 lg:grid-cols-1 xsm:gap-28 xsm:scale-75 sm:scale-100">
             {OfficerData.SamahanCoreOfficers.map(
               (officer: OfficerTypes, officerIndex: number) => (
                 <BaseCard
@@ -61,8 +73,11 @@ const CentralBoardPage: React.FC = () => {
 
         <div className="">
           {sectionTitles.map((section, index) => (
-            <div key={index} className="p-10">
-              <h1 className="text-bold font-bold uppercase text-blue pb-2 text-center">
+            <div key={index} className="p-[0.1rem] sm:p-10">
+              <h1
+                className={`font-bold uppercase text-blue pb-2 ${windowWidth !== null && windowWidth <= 485 ? 'text-[28px]' : 'text-[40px]'}`}
+              >
+                {' '}
                 {section.sectionTitle}
               </h1>
               {section.subText && (

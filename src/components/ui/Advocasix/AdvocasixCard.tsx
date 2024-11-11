@@ -31,9 +31,7 @@ const AdvocasixCard: React.FC<AdvocasixCardProps> = ({ data: _data }) => {
 
   return (
     <>
-      <div
-        className={`container mx-auto p-1 sm:p-6 ${isModalOpen ? 'filter blur-sm' : ''}`}
-      >
+      <div className={`container mx-auto p-1 sm:p-6 ${isModalOpen ? '' : ''}`}>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
           {advocasixCardData.map((card, index) => (
             <div
@@ -57,12 +55,11 @@ const AdvocasixCard: React.FC<AdvocasixCardProps> = ({ data: _data }) => {
                   draggable={false}
                 />
                 <div className="absolute inset-0 bg-blue bg-opacity-30" />
-              </div>
-
-              <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 md:h-20 lg:h-32 bg-blue flex items-end p-2 sm:p-4 md:p-4 lg:p-6">
-                <strong className="text-white font-inter font-main uppercase sm:text-main md:text-[20px] lg:text-[30px]">
-                  {card.title}
-                </strong>
+                <div className="absolute flex items-end bottom-0 h-[100px] bg-blue w-full p-[15px]">
+                  <div className="text-white font-semibold text-[20px] sm:text-[25px] uppercase">
+                    {card.title}
+                  </div>
+                </div>
               </div>
             </div>
           ))}

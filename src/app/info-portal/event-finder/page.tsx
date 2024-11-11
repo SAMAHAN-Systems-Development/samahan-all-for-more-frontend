@@ -134,9 +134,13 @@ export default function EventFinder() {
             {ccEmail}
           </Link>
         </p>
-        <Link href={'https://forms.gle/WZ1LUJd22ZTVForA7'}>
+        <a
+          href="https://forms.gle/WZ1LUJd22ZTVForA7"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Button text="ACCESS THE FORMS HERE" />
-        </Link>
+        </a>
       </section>
 
       {modalActive && (

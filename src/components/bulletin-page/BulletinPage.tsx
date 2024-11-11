@@ -20,8 +20,8 @@ const BulletinPage: React.FC = () => {
   return (
     <main>
       <Banner
-        image="/images/office-of-the-president.png"
-        imageAlt="SAMAHAN Members Image"
+        image="/images/bulletin-banner.jpg"
+        imageAlt="Gazette Image"
         subtitle="SAMAHAN"
         title="GAZETTE"
       />
@@ -68,7 +68,7 @@ const BulletinPage: React.FC = () => {
             ))
           ) : (
             <p className="text-center text-blue font-medium">
-              No content has been published for now
+              No content has been published for now.
             </p>
           )}
         </div>

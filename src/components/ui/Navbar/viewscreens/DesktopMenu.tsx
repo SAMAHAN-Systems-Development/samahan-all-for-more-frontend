@@ -36,7 +36,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({
   handleKeyDown,
 }) => (
   <ul
-    className="hidden md:flex space-x-6 text-blue font-semibold z-50"
+    className="hidden lg:flex gap-[50px] text-blue font-semibold z-50"
     role="menu"
   >
     {/* Home and About Links */}
@@ -69,7 +69,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({
           openDropdowns.includes('offices')
             ? 'opacity-100 max-h-[300px]'
             : 'opacity-0 max-h-0'
-        } absolute transition-all duration-300 ease-in-out font-normal left-1/2 transform -translate-x-1/2 bg-white w-[255px] text-center shadow-[0_4px_20px_rgba(0,0,0,0.1)] rounded-[20px] py-3 px-7 mt-10 z-10 overflow-hidden`}
+        } absolute transition-all duration-300 ease-in-out font-normal left-1/2 transform -translate-x-1/2 bg-white w-[255px] text-center shadow-[0_4px_20px_rgba(0,0,0,0.1)] rounded-[20px] py-3 px-7 mt-10 z-10`}
         role="menu"
       >
         {DropdownItems(officesDropdownItems)}
