@@ -3,63 +3,63 @@
     {
       "fullName": "Leen Juliet Lapatis",
       "position": "SAMAHAN President",
-      "fileName": "PRESIDENT Leen Juliet Lapatis 1.png"
+      "fileName": "PRESIDENT_Leen_Juliet_Lapatis_1.png"
     },
     {
       "fullName": "Cai Roxana Reyes",
       "position": "Chief-of-Staff",
-      "fileName": "Chief-of-Staff Cai Roxana Reyes.png"
+      "fileName": "Chief-of-Staff_Cai_Roxana_Reyes.png"
     },
     {
       "fullName": "Chantal Reiy A. Solarte",
       "position": "Executive Secretary",
-      "fileName": "Executive Secretary Chantal Reiy A. Solarte 1.png"
+      "fileName": "Executive_Secretary_Chantal_Reiy_A._Solarte_1.png"
     },
     {
       "fullName": "Julianne Faye Bonifacio",
       "position": "Executive Undersecretary",
-      "fileName": "Executive Undersecretary Julianne Faye Bonifacio 1.png"
+      "fileName": "Executive_Undersecretary_Julianne_Faye_Bonifacio_1.png"
     },
     {
       "fullName": "Rey Angelo Santella",
       "position": "Executive Undersecretary",
-      "fileName": "Executive Undersecretary Rey Angelo Santella 2.png"
+      "fileName": "Executive_Undersecretary_Rey_Angelo_Santella_2.png"
     }
   ],
   "DepartmentOfExternalAffairs": [
     {
       "fullName": "Kisha Barot",
       "position": "DEA Director",
-      "fileName": "DEA Director Krisha Barot 2.png"
+      "fileName": "DEA_Director_Krisha_Barot_2.png"
     },
     {
       "fullName": "Lendon John G. Gabato",
       "position": "DEA Deputy Director",
-      "fileName": "DEA Deputy Director Lendon John G. Gabato.png"
+      "fileName": "DEA_Deputy_Director_Lendon_John_G._Gabato.png"
     }
   ],
   "EcoteneoStudentUnit": [
     {
       "fullName": "Mary Jastine D. Lapating",
       "position": "ECOTENEO Director",
-      "fileName": "ECOTENEO Director Mary Jastine D. Lapating.png"
+      "fileName": "ECOTENEO_Director_Mary_Jastine_D._Lapating.png"
     },
     {
       "fullName": "Jann Pers E. Lagman",
       "position": "ECOTENEO Deputy Director",
-      "fileName": "DRRM Deputy Director Ethel Marren M. Guerra.png"
+      "fileName": "DRRM_Deputy_Director_Ethel_Marren_M._Guerra.png"
     }
   ],
   "DepartmentOfCampaignsAndAdvocacies": [
     {
       "fullName": "Jewel B. Batoon",
       "position": "DCA Director",
-      "fileName": "DCA Director Jewel B. Batoon.png"
+      "fileName": "DCA_Director_Jewel_B._Batoon.png"
     },
     {
       "fullName": "Maharanii Shaili S. Trazo",
       "position": "DCA Deputy Director",
-      "fileName": "DCA Deputy Director Maharanii Shaili S. Trazo.png"
+      "fileName": "DCA_Deputy_Director_Maharanii_Shaili_S._Trazo.png"
     }
   ]
 }
