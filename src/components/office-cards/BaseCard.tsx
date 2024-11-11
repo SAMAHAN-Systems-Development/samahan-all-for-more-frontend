@@ -13,7 +13,7 @@ const BaseCard: React.FC<{
       {/* Officer Image */}
       <div className="absolute left-0 bottom-0 w-1/2 h-auto transform translate-x-[-0.5px] translate-y-[0%] z-0">
         <Image
-          src={`/images/samahan-cutouts/${imageSrc}`}
+          src={`/images/samahan-cutouts-new/${imageSrc}`}
           alt={name}
           width={450}
           height={600}
