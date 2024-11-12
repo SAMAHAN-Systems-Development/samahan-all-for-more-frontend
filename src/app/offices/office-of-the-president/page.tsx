@@ -50,7 +50,7 @@ const OSPPage: React.FC = () => {
       <section className="text-center p-12">
         {sectionTitles.map((section, index) => (
           <div key={index} className="p-[0rem] sm:p-10">
-            <h1 className="text-bold font-bold uppercase text-blue pb-2">
+            <h1 className="text-[30px] sm:text-bold font-bold uppercase text-blue pb-2">
               {section.sectionTitle}
             </h1>
             {section.subText && (

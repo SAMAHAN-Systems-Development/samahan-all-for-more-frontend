@@ -9,7 +9,7 @@ const BaseCard: React.FC<{
   buttonLink: string;
 }> = ({ name, title, imageSrc, buttonLink }) => {
   return (
-    <div className="relative w-[525px] h-[250px] flex items-center bg-blue text-white max-w-3xl rounded-[32.5px] transition-all duration-300 overflow-visible z-40">
+    <div className="relative mx-4 w-[400px] h-[250px] sm:w-[525px] sm:h-[250px] flex items-center bg-blue text-white max-w-3xl rounded-[32.5px] transition-all duration-300 overflow-visible z-40">
       {/* Officer Image */}
       <div className="absolute left-0 bottom-0 w-1/2 h-auto transform translate-x-[-0.5px] translate-y-[0%] z-0">
         <Image
