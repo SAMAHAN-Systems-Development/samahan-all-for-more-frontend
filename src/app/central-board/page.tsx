@@ -53,9 +53,9 @@ const CentralBoardPage: React.FC = () => {
         subtitle="SAMAHAN"
         title="CENTRAL BOARD"
       />
-      <section className="text-center p-12">
+      <section className="text-center p-12 sm:mt-10">
         {/* SAMAHAN CORE OFFICERS */}
-        <div className="flex justify-center xsm:p-1 sm:p-14">
+        <div className="flex justify-center p-1 sm:p-14">
           <div className="grid lg:gap-20 xl:grid-cols-2 lg:grid-cols-1 xsm:gap-28 xsm:scale-75 sm:scale-100">
             {OfficerData.SamahanCoreOfficers.map(
               (officer: OfficerTypes, officerIndex: number) => (
