@@ -9,7 +9,7 @@ import EnrollmentAndRegistrationData2 from '@/data/enrollmentAndRegistrationData
 import Link from 'next/link';
 const FaqSection = () => {
   return (
-    <div className="sm:mx-24 mx-4">
+    <div className="sm:mx-24 mx-8">
       <div className="">
         <h1 className="text-blue font-bold text-3xl sm:text-title mb-8 mt-12 leading-relaxed">
           FREQUENTLY ASKED QUESTIONS
