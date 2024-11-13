@@ -110,14 +110,8 @@ export default function EventFinder() {
             handleModal={handleModal}
           />
         ))}
-
-        {hasLoaded && hasNext && allUpcomingEvents.length % 4 == 0 && (
-          <div className="mx-auto w-fit mb-20">
-            <Button text="Load More" onClick={handleNextUpcoming} />
-          </div>
-        )}
       </div>
-      <section className="pb-20 px-10 md:px-20 lg:px-10 text-blue w-full lg:w-4/5 xl:max-w-5xl flex flex-col items-center mx-auto text-center gap-6">
+      <section className=" pb-20 px-10 md:px-20 lg:px-10 text-blue w-full lg:w-4/5 xl:max-w-5xl flex flex-col items-center mx-auto text-center gap-6">
         <p>
           For the clubs, departments, and organizations that would like to
           promote and disseminate their upcoming events through the Event

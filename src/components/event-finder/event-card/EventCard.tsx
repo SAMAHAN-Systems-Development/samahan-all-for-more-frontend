@@ -53,7 +53,7 @@ export const EventCard: React.FC<EventCardProps> = ({
           src={image_url}
           alt="event poster"
           sizes="(max-width: 640px) 100vw, (max-width: 320px) 50vw, 33vw"
-          className={`object-fill bg-blue ${upcoming && 'grayscale'}`}
+          className={`object-contain bg-blue ${upcoming && 'grayscale'}`}
         />
       </div>
       <div className="p-5 py-4 inline-flex flex-col gap-[0.625rem] justify-around border-t-2 border-blue h-full ">
