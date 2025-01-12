@@ -24,6 +24,8 @@ import {
 import { PlusCircle } from 'lucide-react';
 import { debounce } from 'lodash';
 import { GetBulletinDto } from '@/lib/types/dto/getBulletinData.type';
+import { createClient } from 'supabase/client';
+import { useRouter } from 'next/navigation';
 
 const BulletinsPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,6 +39,20 @@ const BulletinsPage = () => {
       setActiveModal(null);
     }
   }, [isOpen]);
+
+  const supabase = createClient();
+  const router = useRouter();
+
+  useEffect(() => {
+    const getSession = async () => {
+      const { data: session, error } = await supabase.auth.getUser();
+      if (!session || error) {
+        router.push('/login');
+      }
+    };
+
+    getSession();
+  }, [supabase, router]);
 
   const {
     data: bulletins,
