@@ -1,0 +1,142 @@
+{
+  "ProjectHeads": [
+    {
+      "fullName": "Isabelle Faith N. Labuguen",
+      "position": "Project Manager",
+      "fileName": "[Project Manager] Isabelle Faith N. Labuguen.png"
+    },
+    {
+      "fullName": "Francis Rhaey L. Casas",
+      "position": "DevOps Engineer",
+      "fileName": "[DevOps Engineer] Francis Rhaey L. Casas.png"
+    },
+    {
+      "fullName": "Jiyo Seth N. Valmoria",
+      "position": "QA Tester",
+      "fileName": "[QA Tester] Jiyo Seth N. Valmoria.png"
+    }
+  ],
+  "TeamHeads": [
+    {
+      "fullName": "Maverick Jasper R. Pigao",
+      "position": "UI/UX Head",
+      "fileName": "[UI UX Head] Maverick Jasper R. Pigao.png"
+    },
+    {
+      "fullName": "Paolo Luis R. Ramirez",
+      "position": "Frontend Head",
+      "fileName": "[Frontend Head] Paolo Luis R. Ramirez.png"
+    },
+    {
+      "fullName": "Ivan Sam R. Wabina",
+      "position": "Backend Head",
+      "fileName": "[Backend Head] Ivan Sam R. Wabina.png"
+    }
+  ],
+  "UIUXTeam": [
+    {
+      "fullName": "Martina Aaron M. Angeles",
+      "position": "UI/UX Designer",
+      "fileName": "[UI UX Designer] Martina Aaron M. Angeles.png"
+    },
+    {
+      "fullName": "Sarah Y. Haw",
+      "position": "UI/UX Designer",
+      "fileName": "[UI UX Designer] Sarah Y. Haw.png"
+    },
+    {
+      "fullName": "John Michael F. Rivera",
+      "position": "UI/UX Designer",
+      "fileName": "[UI UX Designer] John Michael F. Rivera.png"
+    },
+    {
+      "fullName": "Sam Adrianne R. Tesoro",
+      "position": "UI/UX Designer",
+      "fileName": "[UI UX Designer] Sam Adrianne R. Tesoro.png"
+    }
+  ],
+  "FrontendTeam": [
+    {
+      "fullName": "Sean Elijah V. Chavez",
+      "position": "Frontend Developer",
+      "fileName": "[Frontend Developer] Sean Elijah V. Chavez.png"
+    },
+    {
+      "fullName": "Ellyana Nicole L. Du",
+      "position": "Frontend Developer",
+      "fileName": "[Frontend Developer] Ellyana Nicole L. Du.png"
+    },
+    {
+      "fullName": "Loejee Miguel L. Dulaugon",
+      "position": "Frontend Developer",
+      "fileName": "[Frontend Developer] Loejee Miguel L. Dulaugon.png"
+    },
+    {
+      "fullName": "Anya Patricia M. Kuan",
+      "position": "Frontend Developer",
+      "fileName": "[Frontend Developer] Anya Patricia M. Kuan.png"
+    },
+    {
+      "fullName": "EJ F. Liu",
+      "position": "Frontend Developer",
+      "fileName": "[Frontend Developer] EJ F. Liu.png"
+    },
+    {
+      "fullName": "Jan Patrick D. Matayabas",
+      "position": "Frontend Developer",
+      "fileName": "[Frontend Developer] Jan Patrick D. Matayabas.png"
+    },
+    {
+      "fullName": "Mariel G. Mabano",
+      "position": "Frontend Developer",
+      "fileName": "[Frontend Developer] Mariel G. Mabano.png"
+    },
+    {
+      "fullName": "Arabella Grace M. Mejorada",
+      "position": "Frontend Developer",
+      "fileName": "[Frontend Developer] Arabella Grace M. Mejorada.png"
+    },
+    {
+      "fullName": "Marjhealou Niña Anne M. Paraiso",
+      "position": "Frontend Developer",
+      "fileName": "[Frontend Developer] Marjhealou Niña Anne M. Paraiso.png"
+    },
+    {
+      "fullName": "Yassir M. Utara",
+      "position": "Frontend Developer",
+      "fileName": "[Frontend Developer] Yassir M. Utara.png"
+    }
+  ],
+  "BackendTeam": [
+    {
+      "fullName": "Jose Miguel T. Aliño",
+      "position": "Backend Developer",
+      "fileName": "[Backend Developer] Jose Miguel T. Aliño.png"
+    },
+    {
+      "fullName": "Ron Joshua L. Bersabal",
+      "position": "Backend Developer",
+      "fileName": "[Backend Developer] Ron Joshua L. Bersabal.png"
+    },
+    {
+      "fullName": "Adrianne Mykhel C. Bulao",
+      "position": "Backend Developer",
+      "fileName": "[Backend Developer] Adrianne Mykhel C. Bulao.png"
+    },
+    {
+      "fullName": "Mark Cyryl A. Clarde",
+      "position": "Backend Developer",
+      "fileName": "[Backend Developer] Mark Cyryl A. Clarde.png"
+    },
+    {
+      "fullName": "AJ R. Tollo",
+      "position": "Backend Developer",
+      "fileName": "[Backend Developer] AJ R. Tollo.png"
+    },
+    {
+      "fullName": "Anthony Dexter L. Yap",
+      "position": "Backend Developer",
+      "fileName": "[Backend Developer] Anthony Dexter L. Yap.png"
+    }
+  ]
+}

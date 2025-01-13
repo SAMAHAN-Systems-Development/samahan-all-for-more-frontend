@@ -4,9 +4,15 @@ interface ProfileCardProps {
   fileName: string;
   fullName: string;
   position: string;
+  directory?: string;
 }
 
-const ProfileCard = ({ fullName, position, fileName }: ProfileCardProps) => {
+const ProfileCard = ({
+  fullName,
+  position,
+  fileName,
+  directory = 'samahan-cutouts',
+}: ProfileCardProps) => {
   return (
     <div className="relative w-[250px] h-[380px] text-blue hover:scale-105 transition ease-in-out delay-100">
       <div className="relative">
@@ -15,7 +21,7 @@ const ProfileCard = ({ fullName, position, fileName }: ProfileCardProps) => {
 
         <div className="rounded-[32px] translate-y-[4px] overflow-hidden">
           <Image
-            src={`/images/samahan-cutouts/${fileName}`}
+            src={`/images/${directory}/${fileName}`}
             alt={`${fullName}'s Picture`}
             //set the width and height of the image to high reso for high quality
             width={1280}
