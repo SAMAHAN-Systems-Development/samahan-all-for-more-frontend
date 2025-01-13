@@ -1,6 +1,6 @@
 import { Banner } from '../ui/banner/Banner';
 import ProfileCard from '../ui/ProfileCard';
-import MeetTheDevelopersData from '@/data/meetTheDevelopersData.json'; // Import your JSON file
+import MeetTheDevelopersData from '@/data/meetTheDevelopersData.json';
 
 export default function MeetTheDevelopersPage() {
   return (
@@ -21,7 +21,6 @@ export default function MeetTheDevelopersPage() {
               <p>Description</p>
             </div>
             <div className="mt-12">
-              {/* First card on its own */}
               <div className="flex justify-center mb-8">
                 <ProfileCard
                   key={MeetTheDevelopersData.ProjectHeads[0].fullName}
@@ -31,8 +30,6 @@ export default function MeetTheDevelopersPage() {
                   directory="developers-cutouts"
                 />
               </div>
-
-              {/* Remaining cards in a grid */}
               <div className="flex flex-wrap gap-16 items-center justify-center mt-12">
                 {MeetTheDevelopersData.ProjectHeads.slice(1).map((head) => (
                   <ProfileCard
