@@ -26,6 +26,8 @@ import { Event } from '@/lib/types/entities/event.type';
 import { CreateEventData } from '@/lib/types/dto/createEventData.type';
 import { PlusCircle } from 'lucide-react';
 import { GetEventDto } from '@/lib/types/dto/getEventsData.type';
+import { createClient } from 'supabase/client';
+import { cookies } from 'next/headers';
 
 const EventsPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,6 +40,20 @@ const EventsPage = () => {
       setActiveModal(null);
     }
   }, [isOpen]);
+
+  const supabase = createClient();
+  const router = useRouter();
+
+  useEffect(() => {
+    const getSession = async () => {
+      const { data: session, error } = await supabase.auth.getUser();
+      if (!session || error) {
+        router.push('/login');
+      }
+    };
+
+    getSession();
+  }, [supabase, router]);
 
   const {
     data: events,

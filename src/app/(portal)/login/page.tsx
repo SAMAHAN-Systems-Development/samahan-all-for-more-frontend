@@ -23,26 +23,30 @@ import Image from 'next/image';
 import { useLoginUser } from '@/lib/mutations/loginMutations';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
+import { createClient } from 'supabase/client';
 
 const LoginPage = () => {
   const router = useRouter();
-
-  const { mutate: loginUser } = useLoginUser({
-    onSuccess: (data) => {
-      toast.success('Login successful');
-      router.push('/admin/');
-    },
-    onError: (error) => {
-      toast.error('Invalid Credentials');
-    },
-  });
 
   const form = useForm<z.infer<typeof loginSchema>>({
     resolver: zodResolver(loginSchema),
   });
 
-  const onSubmit = (data: any) => {
-    loginUser({ loginData: data });
+  const supabase = createClient();
+
+  const onSubmit = async (values: z.infer<typeof loginSchema>) => {
+    const { email, password } = values;
+
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+
+    if (error) {
+      toast.error(error.message);
+    } else {
+      router.push('/admin');
+    }
   };
 
   return (
