@@ -74,7 +74,7 @@ const quickLinks = [
   { href: '/about-us', label: 'About' },
   { href: '/academix/acadhub', label: 'Academix' },
   {
-    href: '/developers',
+    href: '/meet-the-developers',
     label: 'Meet the Developers',
     icon: <GoArrowUpRight className="inline-block align-middle ml-1" />,
   },

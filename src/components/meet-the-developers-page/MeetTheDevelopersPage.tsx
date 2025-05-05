@@ -18,7 +18,7 @@ export default function MeetTheDevelopersPage() {
           <div className="mt-40 text-blue">
             <div className="text-center">
               <p className=" text-bold font-bold">Project Heads</p>
-              <p>Description</p>
+              <p>Lead and managed the development of the SAMAHAN Website.</p>
             </div>
             <div className="mt-12">
               <div className="flex justify-center mb-8">
@@ -48,7 +48,7 @@ export default function MeetTheDevelopersPage() {
           <div className="mt-40 text-blue">
             <div className="text-center">
               <p className="text-bold font-bold">Team Heads</p>
-              <p>Description</p>
+              <p>Coordinated and supervised their respective teams.</p>
             </div>
             <div className="flex flex-wrap gap-16 items-center justify-center mt-12">
               {MeetTheDevelopersData.TeamHeads.map((head) => (
@@ -67,7 +67,7 @@ export default function MeetTheDevelopersPage() {
           <div className="mt-40 text-blue">
             <div className="text-center">
               <p className="text-bold font-bold">UI/UX Team</p>
-              <p>Description</p>
+              <p>Designed the interface and user experience.</p>
             </div>
             <div className="flex flex-wrap gap-16 items-center justify-center mt-12">
               {MeetTheDevelopersData.UIUXTeam.map((member) => (
@@ -86,7 +86,7 @@ export default function MeetTheDevelopersPage() {
           <div className="mt-40 text-blue">
             <div className="text-center">
               <p className="text-bold font-bold">Frontend Team</p>
-              <p>Description</p>
+              <p>Built the website’s user-facing side.</p>
             </div>
             <div className="flex flex-wrap gap-16 items-center justify-center mt-12">
               {MeetTheDevelopersData.FrontendTeam.map((member) => (
@@ -105,7 +105,7 @@ export default function MeetTheDevelopersPage() {
           <div className="mt-40 text-blue">
             <div className="text-center">
               <p className="text-bold font-bold">Backend Team</p>
-              <p>Description</p>
+              <p>Developed and managed the server-side systems.</p>
             </div>
             <div className="flex flex-wrap gap-16 items-center justify-center mt-12">
               {MeetTheDevelopersData.BackendTeam.map((member) => (

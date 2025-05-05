@@ -3,6 +3,7 @@ import React from 'react';
 
 import { Banner } from '@/components/ui/banner/Banner';
 import BulletinCard from '@/components/ui/BulletinCard';
+import DocumentCard from '@/components/ui/DocumentCard';
 import { useCategories } from '@/lib/queries/categoriesQueries';
 
 const formatDate = (dateString: string | number | Date) => {
@@ -26,6 +27,28 @@ const BulletinPage: React.FC = () => {
         title="GAZETTE"
       />
       <div className="p-12 overflow-x-hidden">
+        <div className="mb-32 w-full">
+          <div className="flex flex-col mb-8 items-center">
+            <p className="text-title text-blue font-bold text-center">
+              Governing Documents
+            </p>
+            <p className="text-blue text-center">
+              View and download the latest Constitution of the Undergraduate
+              students of the Ateneo de Davao University.
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <div className="flex-row">
+              <div className="w-full mb-12">
+                <DocumentCard
+                  title="AMENDED 2020 SAMAHAN CONSTITUTION"
+                  description="The foundational legal document outlining the structure and function of the student government."
+                  downloadLink="/amended-2020-samahan-constitution.pdf"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="flex flex-col items-center mx-4 md:mx-12">
           {categories && categories.length > 0 ? (
             categories.map((category) => (
@@ -68,7 +91,7 @@ const BulletinPage: React.FC = () => {
             ))
           ) : (
             <p className="text-center text-blue font-medium">
-              No content has been published for now.
+              No other content has been published for now.
             </p>
           )}
         </div>
